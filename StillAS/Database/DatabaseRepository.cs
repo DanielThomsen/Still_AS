@@ -6,11 +6,8 @@ using System.Threading.Tasks;
 
 namespace Database
 {
-    class Program
+    class DatabaseRepository
     {
-        static void Main(string[] args)
-        {
 
-        }
     }
 }
