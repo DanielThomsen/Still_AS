@@ -7,13 +7,25 @@ using System.Data.Entity;
 
 namespace Database
 {
-    class DatabaseRepository
+    public class DatabaseRepository
     {
+        stillasEntities meContext = new stillasEntities();
         public void CreateModelName(string ModelName)
         {
             var ModelN = new ModelNavn { Modelnavn1 = ModelName };
-            var meContext = new stillasEntities();
             meContext.ModelNavns.Add(ModelN);
+            meContext.SaveChanges();
+        }
+        public void CreateMachine(string DemoNumber, string ModelName, string ModelNumber, string Brand, string CNumber, 
+            string MastType, int MastBuildingHeight, int MastLiftHeight, int MastFreeLift, string AggregatType,
+            string AggregatNumber, string BatteryType, string BatteryNumber, string ChargerType, string ChargerNumber,
+            string Controller)
+        {
+            var Machine = new Maskine { DemoNummer = DemoNumber, ModelNavn = ModelName, Type = ModelNumber, Fabrikant = Brand, Chassisnummer = CNumber,
+                MastType = MastType, MastByggeHøjde = MastBuildingHeight, MastLøfteHøjde = MastLiftHeight, MastFriLøft = MastFreeLift,
+                Aggregat = AggregatType, AggregarNummer = AggregatNumber, BatteriType = BatteryType, BatteriNummer = BatteryNumber,
+                LaderType = ChargerType, LaderNummer = ChargerNumber, Betjening = Controller, DemonAnsvarligID = 1};
+            meContext.Maskines.Add(Machine);
             meContext.SaveChanges();
         }
     }
