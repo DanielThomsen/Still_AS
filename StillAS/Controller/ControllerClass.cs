@@ -18,7 +18,7 @@ namespace Controller
             DBR.CreateModelName(ModelName);
             DBR.CreateMachine(DemoNumber, ModelName, ModelNumber, Brand, CNumber, MastType, MastBuildingHeight, MastLiftHeight, 
                 MastFreeLift, AggregatType, AggregatNumber, BatteryType, BatteryNumber, ChargerType, ChargerNumber, Controller);
-        } 
-                
+        }
+        Console.WriteLine();
     }
 }
