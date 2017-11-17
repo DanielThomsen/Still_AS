@@ -1,0 +1,910 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="stillasModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="Booking">
+          <Key>
+            <PropertyRef Name="BookingID" />
+          </Key>
+          <Property Name="BookingID" Type="int" Nullable="false" />
+          <Property Name="KundeID" Type="int" />
+          <Property Name="SælgerID" Type="int" />
+          <Property Name="VærkstedID" Type="int" />
+          <Property Name="DemoAnsvarligID" Type="int" />
+          <Property Name="TransportørID" Type="int" />
+          <Property Name="LeveringsDato" Type="date" />
+          <Property Name="AfhentningsDato" Type="date" />
+          <Property Name="Leverandør" Type="varchar" MaxLength="50" />
+          <Property Name="BeskedTilVærksted" Type="varchar" MaxLength="50" />
+          <Property Name="BeskedTilFølgeSeddel" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'stillas.dbo.BookingLinje' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="BookingLinje">
+          <Key>
+            <PropertyRef Name="DemoNummer" />
+            <PropertyRef Name="BookingID" />
+          </Key>
+          <Property Name="DemoNummer" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="BookingID" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Bruger">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" Nullable="false" />
+          <Property Name="Navn" Type="varchar" MaxLength="50" />
+          <Property Name="Adgangskode" Type="varchar" MaxLength="50" />
+          <Property Name="AccessLevel" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="DemoAnsvarlig">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Konfiguration">
+          <Key>
+            <PropertyRef Name="KonfigurationsNavn" />
+          </Key>
+          <Property Name="KonfigurationsNavn" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="DemoAnsvarligID" Type="int" />
+        </EntityType>
+        <EntityType Name="Kunde">
+          <Key>
+            <PropertyRef Name="KundeID" />
+          </Key>
+          <Property Name="KundeID" Type="int" Nullable="false" />
+          <Property Name="Navn1" Type="varchar" MaxLength="50" />
+          <Property Name="Navn2" Type="varchar" MaxLength="50" />
+          <Property Name="Att" Type="varchar" MaxLength="50" />
+          <Property Name="Adresse" Type="varchar" MaxLength="50" />
+          <Property Name="Postnummer" Type="int" />
+          <Property Name="By" Type="varchar" MaxLength="50" />
+          <Property Name="Telefon" Type="int" />
+          <Property Name="RampeVedLevering" Type="int" />
+        </EntityType>
+        <EntityType Name="Maskine">
+          <Key>
+            <PropertyRef Name="DemoNummer" />
+          </Key>
+          <Property Name="DemoNummer" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="ModelNavn" Type="varchar" MaxLength="50" />
+          <Property Name="DemonAnsvarligID" Type="int" />
+          <Property Name="Type" Type="varchar" MaxLength="50" />
+          <Property Name="Fabrikant" Type="varchar" MaxLength="50" />
+          <Property Name="Chassisnummer" Type="varchar" MaxLength="50" />
+          <Property Name="MastType" Type="varchar" MaxLength="50" />
+          <Property Name="MastByggeHøjde" Type="int" />
+          <Property Name="MastLøfteHøjde" Type="int" />
+          <Property Name="MastFriLøft" Type="int" />
+          <Property Name="Betjening" Type="varchar" MaxLength="30" />
+          <Property Name="Aggregat" Type="varchar" MaxLength="30" />
+          <Property Name="AggregarNummer" Type="varchar" MaxLength="30" />
+          <Property Name="BatteriType" Type="varchar" MaxLength="30" />
+          <Property Name="BatteriNummer" Type="varchar" MaxLength="30" />
+          <Property Name="LaderType" Type="varchar" MaxLength="30" />
+          <Property Name="LaderNummer" Type="varchar" MaxLength="30" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'stillas.dbo.MaskineKonfiguration' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="MaskineKonfiguration">
+          <Key>
+            <PropertyRef Name="DemoNummer" />
+            <PropertyRef Name="Konfiguration" />
+          </Key>
+          <Property Name="DemoNummer" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Konfiguration" Type="varchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <EntityType Name="ModelNavn">
+          <Key>
+            <PropertyRef Name="Modelnavn" />
+          </Key>
+          <Property Name="Modelnavn" Type="varchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Sælger">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Transportør">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Værksted">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" Nullable="false" />
+        </EntityType>
+        <Association Name="FK__Booking__DemoAns__1BC821DD">
+          <End Role="DemoAnsvarlig" Type="Self.DemoAnsvarlig" Multiplicity="0..1" />
+          <End Role="Booking" Type="Self.Booking" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="DemoAnsvarlig">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Booking">
+              <PropertyRef Name="DemoAnsvarligID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Booking__KundeID__18EBB532">
+          <End Role="Kunde" Type="Self.Kunde" Multiplicity="0..1" />
+          <End Role="Booking" Type="Self.Booking" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Kunde">
+              <PropertyRef Name="KundeID" />
+            </Principal>
+            <Dependent Role="Booking">
+              <PropertyRef Name="KundeID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Booking__SælgerI__19DFD96B">
+          <End Role="Sælger" Type="Self.Sælger" Multiplicity="0..1" />
+          <End Role="Booking" Type="Self.Booking" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Sælger">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Booking">
+              <PropertyRef Name="SælgerID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Booking__Transpo__1CBC4616">
+          <End Role="Transportør" Type="Self.Transportør" Multiplicity="0..1" />
+          <End Role="Booking" Type="Self.Booking" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Transportør">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Booking">
+              <PropertyRef Name="TransportørID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Booking__Værkste__1AD3FDA4">
+          <End Role="Værksted" Type="Self.Værksted" Multiplicity="0..1" />
+          <End Role="Booking" Type="Self.Booking" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Værksted">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Booking">
+              <PropertyRef Name="VærkstedID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__BookingLi__Booki__25518C17">
+          <End Role="Booking" Type="Self.Booking" Multiplicity="1" />
+          <End Role="BookingLinje" Type="Self.BookingLinje" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Booking">
+              <PropertyRef Name="BookingID" />
+            </Principal>
+            <Dependent Role="BookingLinje">
+              <PropertyRef Name="BookingID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__BookingLi__DemoN__245D67DE">
+          <End Role="Maskine" Type="Self.Maskine" Multiplicity="1" />
+          <End Role="BookingLinje" Type="Self.BookingLinje" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Maskine">
+              <PropertyRef Name="DemoNummer" />
+            </Principal>
+            <Dependent Role="BookingLinje">
+              <PropertyRef Name="DemoNummer" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__DemoAnsvarli__ID__7B5B524B">
+          <End Role="Bruger" Type="Self.Bruger" Multiplicity="1" />
+          <End Role="DemoAnsvarlig" Type="Self.DemoAnsvarlig" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="Bruger">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="DemoAnsvarlig">
+              <PropertyRef Name="ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Konfigura__DemoA__06CD04F7">
+          <End Role="DemoAnsvarlig" Type="Self.DemoAnsvarlig" Multiplicity="0..1" />
+          <End Role="Konfiguration" Type="Self.Konfiguration" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="DemoAnsvarlig">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Konfiguration">
+              <PropertyRef Name="DemoAnsvarligID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Maskine__DemonAn__0C85DE4D">
+          <End Role="DemoAnsvarlig" Type="Self.DemoAnsvarlig" Multiplicity="0..1" />
+          <End Role="Maskine" Type="Self.Maskine" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="DemoAnsvarlig">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Maskine">
+              <PropertyRef Name="DemonAnsvarligID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Maskine__ModelNa__0B91BA14">
+          <End Role="ModelNavn" Type="Self.ModelNavn" Multiplicity="0..1" />
+          <End Role="Maskine" Type="Self.Maskine" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ModelNavn">
+              <PropertyRef Name="Modelnavn" />
+            </Principal>
+            <Dependent Role="Maskine">
+              <PropertyRef Name="ModelNavn" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__MaskineKo__DemoN__2180FB33">
+          <End Role="Maskine" Type="Self.Maskine" Multiplicity="1" />
+          <End Role="MaskineKonfiguration" Type="Self.MaskineKonfiguration" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Maskine">
+              <PropertyRef Name="DemoNummer" />
+            </Principal>
+            <Dependent Role="MaskineKonfiguration">
+              <PropertyRef Name="DemoNummer" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__MaskineKo__Konfi__22751F6C">
+          <End Role="Konfiguration" Type="Self.Konfiguration" Multiplicity="1" />
+          <End Role="MaskineKonfiguration" Type="Self.MaskineKonfiguration" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Konfiguration">
+              <PropertyRef Name="KonfigurationsNavn" />
+            </Principal>
+            <Dependent Role="MaskineKonfiguration">
+              <PropertyRef Name="Konfiguration" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Sælger__ID__75A278F5">
+          <End Role="Bruger" Type="Self.Bruger" Multiplicity="1" />
+          <End Role="Sælger" Type="Self.Sælger" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="Bruger">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Sælger">
+              <PropertyRef Name="ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Transportør__ID__7E37BEF6">
+          <End Role="Bruger" Type="Self.Bruger" Multiplicity="1" />
+          <End Role="Transportør" Type="Self.Transportør" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="Bruger">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Transportør">
+              <PropertyRef Name="ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Værksted__ID__787EE5A0">
+          <End Role="Bruger" Type="Self.Bruger" Multiplicity="1" />
+          <End Role="Værksted" Type="Self.Værksted" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="Bruger">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Værksted">
+              <PropertyRef Name="ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="stillasModelStoreContainer">
+          <EntitySet Name="Booking" EntityType="Self.Booking" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Bruger" EntityType="Self.Bruger" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="DemoAnsvarlig" EntityType="Self.DemoAnsvarlig" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Konfiguration" EntityType="Self.Konfiguration" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Kunde" EntityType="Self.Kunde" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Maskine" EntityType="Self.Maskine" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="ModelNavn" EntityType="Self.ModelNavn" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Sælger" EntityType="Self.Sælger" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Transportør" EntityType="Self.Transportør" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Værksted" EntityType="Self.Værksted" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="BookingLinje" EntityType="Self.BookingLinje" store:Type="Tables" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [BookingLinje].[DemoNummer] AS [DemoNummer], 
+    [BookingLinje].[BookingID] AS [BookingID]
+    FROM [dbo].[BookingLinje] AS [BookingLinje]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="MaskineKonfiguration" EntityType="Self.MaskineKonfiguration" store:Type="Tables" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [MaskineKonfiguration].[DemoNummer] AS [DemoNummer], 
+    [MaskineKonfiguration].[Konfiguration] AS [Konfiguration]
+    FROM [dbo].[MaskineKonfiguration] AS [MaskineKonfiguration]</DefiningQuery>
+          </EntitySet>
+          <AssociationSet Name="FK__Booking__DemoAns__1BC821DD" Association="Self.FK__Booking__DemoAns__1BC821DD">
+            <End Role="DemoAnsvarlig" EntitySet="DemoAnsvarlig" />
+            <End Role="Booking" EntitySet="Booking" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Booking__KundeID__18EBB532" Association="Self.FK__Booking__KundeID__18EBB532">
+            <End Role="Kunde" EntitySet="Kunde" />
+            <End Role="Booking" EntitySet="Booking" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Booking__SælgerI__19DFD96B" Association="Self.FK__Booking__SælgerI__19DFD96B">
+            <End Role="Sælger" EntitySet="Sælger" />
+            <End Role="Booking" EntitySet="Booking" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Booking__Transpo__1CBC4616" Association="Self.FK__Booking__Transpo__1CBC4616">
+            <End Role="Transportør" EntitySet="Transportør" />
+            <End Role="Booking" EntitySet="Booking" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Booking__Værkste__1AD3FDA4" Association="Self.FK__Booking__Værkste__1AD3FDA4">
+            <End Role="Værksted" EntitySet="Værksted" />
+            <End Role="Booking" EntitySet="Booking" />
+          </AssociationSet>
+          <AssociationSet Name="FK__BookingLi__Booki__25518C17" Association="Self.FK__BookingLi__Booki__25518C17">
+            <End Role="Booking" EntitySet="Booking" />
+            <End Role="BookingLinje" EntitySet="BookingLinje" />
+          </AssociationSet>
+          <AssociationSet Name="FK__BookingLi__DemoN__245D67DE" Association="Self.FK__BookingLi__DemoN__245D67DE">
+            <End Role="Maskine" EntitySet="Maskine" />
+            <End Role="BookingLinje" EntitySet="BookingLinje" />
+          </AssociationSet>
+          <AssociationSet Name="FK__DemoAnsvarli__ID__7B5B524B" Association="Self.FK__DemoAnsvarli__ID__7B5B524B">
+            <End Role="Bruger" EntitySet="Bruger" />
+            <End Role="DemoAnsvarlig" EntitySet="DemoAnsvarlig" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Konfigura__DemoA__06CD04F7" Association="Self.FK__Konfigura__DemoA__06CD04F7">
+            <End Role="DemoAnsvarlig" EntitySet="DemoAnsvarlig" />
+            <End Role="Konfiguration" EntitySet="Konfiguration" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Maskine__DemonAn__0C85DE4D" Association="Self.FK__Maskine__DemonAn__0C85DE4D">
+            <End Role="DemoAnsvarlig" EntitySet="DemoAnsvarlig" />
+            <End Role="Maskine" EntitySet="Maskine" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Maskine__ModelNa__0B91BA14" Association="Self.FK__Maskine__ModelNa__0B91BA14">
+            <End Role="ModelNavn" EntitySet="ModelNavn" />
+            <End Role="Maskine" EntitySet="Maskine" />
+          </AssociationSet>
+          <AssociationSet Name="FK__MaskineKo__DemoN__2180FB33" Association="Self.FK__MaskineKo__DemoN__2180FB33">
+            <End Role="Maskine" EntitySet="Maskine" />
+            <End Role="MaskineKonfiguration" EntitySet="MaskineKonfiguration" />
+          </AssociationSet>
+          <AssociationSet Name="FK__MaskineKo__Konfi__22751F6C" Association="Self.FK__MaskineKo__Konfi__22751F6C">
+            <End Role="Konfiguration" EntitySet="Konfiguration" />
+            <End Role="MaskineKonfiguration" EntitySet="MaskineKonfiguration" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Sælger__ID__75A278F5" Association="Self.FK__Sælger__ID__75A278F5">
+            <End Role="Bruger" EntitySet="Bruger" />
+            <End Role="Sælger" EntitySet="Sælger" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Transportør__ID__7E37BEF6" Association="Self.FK__Transportør__ID__7E37BEF6">
+            <End Role="Bruger" EntitySet="Bruger" />
+            <End Role="Transportør" EntitySet="Transportør" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Værksted__ID__787EE5A0" Association="Self.FK__Værksted__ID__787EE5A0">
+            <End Role="Bruger" EntitySet="Bruger" />
+            <End Role="Værksted" EntitySet="Værksted" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="stillasModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="Booking">
+          <Key>
+            <PropertyRef Name="BookingID" />
+          </Key>
+          <Property Name="BookingID" Type="Int32" Nullable="false" />
+          <Property Name="KundeID" Type="Int32" />
+          <Property Name="SælgerID" Type="Int32" />
+          <Property Name="VærkstedID" Type="Int32" />
+          <Property Name="DemoAnsvarligID" Type="Int32" />
+          <Property Name="TransportørID" Type="Int32" />
+          <Property Name="LeveringsDato" Type="DateTime" Precision="0" />
+          <Property Name="AfhentningsDato" Type="DateTime" Precision="0" />
+          <Property Name="Leverandør" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="BeskedTilVærksted" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="BeskedTilFølgeSeddel" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="DemoAnsvarlig" Relationship="Self.FK__Booking__DemoAns__1BC821DD" FromRole="Booking" ToRole="DemoAnsvarlig" />
+          <NavigationProperty Name="Kunde" Relationship="Self.FK__Booking__KundeID__18EBB532" FromRole="Booking" ToRole="Kunde" />
+          <NavigationProperty Name="Sælger" Relationship="Self.FK__Booking__SælgerI__19DFD96B" FromRole="Booking" ToRole="Sælger" />
+          <NavigationProperty Name="Transportør" Relationship="Self.FK__Booking__Transpo__1CBC4616" FromRole="Booking" ToRole="Transportør" />
+          <NavigationProperty Name="Værksted" Relationship="Self.FK__Booking__Værkste__1AD3FDA4" FromRole="Booking" ToRole="Værksted" />
+          <NavigationProperty Name="Maskines" Relationship="Self.BookingLinje" FromRole="Booking" ToRole="Maskine" />
+        </EntityType>
+        <EntityType Name="Bruger">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" />
+          <Property Name="Navn" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Adgangskode" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="AccessLevel" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="DemoAnsvarlig" Relationship="Self.FK__DemoAnsvarli__ID__7B5B524B" FromRole="Bruger" ToRole="DemoAnsvarlig" />
+          <NavigationProperty Name="Sælger" Relationship="Self.FK__Sælger__ID__75A278F5" FromRole="Bruger" ToRole="Sælger" />
+          <NavigationProperty Name="Transportør" Relationship="Self.FK__Transportør__ID__7E37BEF6" FromRole="Bruger" ToRole="Transportør" />
+          <NavigationProperty Name="Værksted" Relationship="Self.FK__Værksted__ID__787EE5A0" FromRole="Bruger" ToRole="Værksted" />
+        </EntityType>
+        <EntityType Name="DemoAnsvarlig">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Bookings" Relationship="Self.FK__Booking__DemoAns__1BC821DD" FromRole="DemoAnsvarlig" ToRole="Booking" />
+          <NavigationProperty Name="Bruger" Relationship="Self.FK__DemoAnsvarli__ID__7B5B524B" FromRole="DemoAnsvarlig" ToRole="Bruger" />
+          <NavigationProperty Name="Konfigurations" Relationship="Self.FK__Konfigura__DemoA__06CD04F7" FromRole="DemoAnsvarlig" ToRole="Konfiguration" />
+          <NavigationProperty Name="Maskines" Relationship="Self.FK__Maskine__DemonAn__0C85DE4D" FromRole="DemoAnsvarlig" ToRole="Maskine" />
+        </EntityType>
+        <EntityType Name="Konfiguration">
+          <Key>
+            <PropertyRef Name="KonfigurationsNavn" />
+          </Key>
+          <Property Name="KonfigurationsNavn" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="DemoAnsvarligID" Type="Int32" />
+          <NavigationProperty Name="DemoAnsvarlig" Relationship="Self.FK__Konfigura__DemoA__06CD04F7" FromRole="Konfiguration" ToRole="DemoAnsvarlig" />
+          <NavigationProperty Name="Maskines" Relationship="Self.MaskineKonfiguration" FromRole="Konfiguration" ToRole="Maskine" />
+        </EntityType>
+        <EntityType Name="Kunde">
+          <Key>
+            <PropertyRef Name="KundeID" />
+          </Key>
+          <Property Name="KundeID" Type="Int32" Nullable="false" />
+          <Property Name="Navn1" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Navn2" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Att" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Adresse" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Postnummer" Type="Int32" />
+          <Property Name="By" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Telefon" Type="Int32" />
+          <Property Name="RampeVedLevering" Type="Int32" />
+          <NavigationProperty Name="Bookings" Relationship="Self.FK__Booking__KundeID__18EBB532" FromRole="Kunde" ToRole="Booking" />
+        </EntityType>
+        <EntityType Name="Maskine">
+          <Key>
+            <PropertyRef Name="DemoNummer" />
+          </Key>
+          <Property Name="DemoNummer" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="ModelNavn" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="DemonAnsvarligID" Type="Int32" />
+          <Property Name="Type" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Fabrikant" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Chassisnummer" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="MastType" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="MastByggeHøjde" Type="Int32" />
+          <Property Name="MastLøfteHøjde" Type="Int32" />
+          <Property Name="MastFriLøft" Type="Int32" />
+          <Property Name="Betjening" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="Aggregat" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="AggregarNummer" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="BatteriType" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="BatteriNummer" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="LaderType" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="LaderNummer" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="DemoAnsvarlig" Relationship="Self.FK__Maskine__DemonAn__0C85DE4D" FromRole="Maskine" ToRole="DemoAnsvarlig" />
+          <NavigationProperty Name="ModelNavn1" Relationship="Self.FK__Maskine__ModelNa__0B91BA14" FromRole="Maskine" ToRole="ModelNavn" />
+          <NavigationProperty Name="Bookings" Relationship="Self.BookingLinje" FromRole="Maskine" ToRole="Booking" />
+          <NavigationProperty Name="Konfigurations" Relationship="Self.MaskineKonfiguration" FromRole="Maskine" ToRole="Konfiguration" />
+        </EntityType>
+        <EntityType Name="ModelNavn">
+          <Key>
+            <PropertyRef Name="Modelnavn1" />
+          </Key>
+          <Property Name="Modelnavn1" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <NavigationProperty Name="Maskines" Relationship="Self.FK__Maskine__ModelNa__0B91BA14" FromRole="ModelNavn" ToRole="Maskine" />
+        </EntityType>
+        <EntityType Name="Sælger">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Bookings" Relationship="Self.FK__Booking__SælgerI__19DFD96B" FromRole="Sælger" ToRole="Booking" />
+          <NavigationProperty Name="Bruger" Relationship="Self.FK__Sælger__ID__75A278F5" FromRole="Sælger" ToRole="Bruger" />
+        </EntityType>
+        <EntityType Name="Transportør">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Bookings" Relationship="Self.FK__Booking__Transpo__1CBC4616" FromRole="Transportør" ToRole="Booking" />
+          <NavigationProperty Name="Bruger" Relationship="Self.FK__Transportør__ID__7E37BEF6" FromRole="Transportør" ToRole="Bruger" />
+        </EntityType>
+        <EntityType Name="Værksted">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Bookings" Relationship="Self.FK__Booking__Værkste__1AD3FDA4" FromRole="Værksted" ToRole="Booking" />
+          <NavigationProperty Name="Bruger" Relationship="Self.FK__Værksted__ID__787EE5A0" FromRole="Værksted" ToRole="Bruger" />
+        </EntityType>
+        <Association Name="FK__Booking__DemoAns__1BC821DD">
+          <End Role="DemoAnsvarlig" Type="Self.DemoAnsvarlig" Multiplicity="0..1" />
+          <End Role="Booking" Type="Self.Booking" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="DemoAnsvarlig">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Booking">
+              <PropertyRef Name="DemoAnsvarligID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Booking__KundeID__18EBB532">
+          <End Role="Kunde" Type="Self.Kunde" Multiplicity="0..1" />
+          <End Role="Booking" Type="Self.Booking" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Kunde">
+              <PropertyRef Name="KundeID" />
+            </Principal>
+            <Dependent Role="Booking">
+              <PropertyRef Name="KundeID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Booking__SælgerI__19DFD96B">
+          <End Role="Sælger" Type="Self.Sælger" Multiplicity="0..1" />
+          <End Role="Booking" Type="Self.Booking" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Sælger">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Booking">
+              <PropertyRef Name="SælgerID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Booking__Transpo__1CBC4616">
+          <End Role="Transportør" Type="Self.Transportør" Multiplicity="0..1" />
+          <End Role="Booking" Type="Self.Booking" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Transportør">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Booking">
+              <PropertyRef Name="TransportørID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Booking__Værkste__1AD3FDA4">
+          <End Role="Værksted" Type="Self.Værksted" Multiplicity="0..1" />
+          <End Role="Booking" Type="Self.Booking" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Værksted">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Booking">
+              <PropertyRef Name="VærkstedID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__DemoAnsvarli__ID__7B5B524B">
+          <End Role="Bruger" Type="Self.Bruger" Multiplicity="1" />
+          <End Role="DemoAnsvarlig" Type="Self.DemoAnsvarlig" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="Bruger">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="DemoAnsvarlig">
+              <PropertyRef Name="ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Sælger__ID__75A278F5">
+          <End Role="Bruger" Type="Self.Bruger" Multiplicity="1" />
+          <End Role="Sælger" Type="Self.Sælger" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="Bruger">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Sælger">
+              <PropertyRef Name="ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Transportør__ID__7E37BEF6">
+          <End Role="Bruger" Type="Self.Bruger" Multiplicity="1" />
+          <End Role="Transportør" Type="Self.Transportør" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="Bruger">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Transportør">
+              <PropertyRef Name="ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Værksted__ID__787EE5A0">
+          <End Role="Bruger" Type="Self.Bruger" Multiplicity="1" />
+          <End Role="Værksted" Type="Self.Værksted" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="Bruger">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Værksted">
+              <PropertyRef Name="ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Konfigura__DemoA__06CD04F7">
+          <End Role="DemoAnsvarlig" Type="Self.DemoAnsvarlig" Multiplicity="0..1" />
+          <End Role="Konfiguration" Type="Self.Konfiguration" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="DemoAnsvarlig">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Konfiguration">
+              <PropertyRef Name="DemoAnsvarligID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Maskine__DemonAn__0C85DE4D">
+          <End Role="DemoAnsvarlig" Type="Self.DemoAnsvarlig" Multiplicity="0..1" />
+          <End Role="Maskine" Type="Self.Maskine" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="DemoAnsvarlig">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Maskine">
+              <PropertyRef Name="DemonAnsvarligID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Maskine__ModelNa__0B91BA14">
+          <End Role="ModelNavn" Type="Self.ModelNavn" Multiplicity="0..1" />
+          <End Role="Maskine" Type="Self.Maskine" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ModelNavn">
+              <PropertyRef Name="Modelnavn1" />
+            </Principal>
+            <Dependent Role="Maskine">
+              <PropertyRef Name="ModelNavn" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="BookingLinje">
+          <End Role="Booking" Type="Self.Booking" Multiplicity="*" />
+          <End Role="Maskine" Type="Self.Maskine" Multiplicity="*" />
+        </Association>
+        <Association Name="MaskineKonfiguration">
+          <End Role="Maskine" Type="Self.Maskine" Multiplicity="*" />
+          <End Role="Konfiguration" Type="Self.Konfiguration" Multiplicity="*" />
+        </Association>
+        <EntityContainer Name="stillasEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Bookings" EntityType="Self.Booking" />
+          <EntitySet Name="Brugers" EntityType="Self.Bruger" />
+          <EntitySet Name="DemoAnsvarligs" EntityType="Self.DemoAnsvarlig" />
+          <EntitySet Name="Konfigurations" EntityType="Self.Konfiguration" />
+          <EntitySet Name="Kundes" EntityType="Self.Kunde" />
+          <EntitySet Name="Maskines" EntityType="Self.Maskine" />
+          <EntitySet Name="ModelNavns" EntityType="Self.ModelNavn" />
+          <EntitySet Name="Sælger" EntityType="Self.Sælger" />
+          <EntitySet Name="Transportør" EntityType="Self.Transportør" />
+          <EntitySet Name="Værksted" EntityType="Self.Værksted" />
+          <AssociationSet Name="FK__Booking__DemoAns__1BC821DD" Association="Self.FK__Booking__DemoAns__1BC821DD">
+            <End Role="DemoAnsvarlig" EntitySet="DemoAnsvarligs" />
+            <End Role="Booking" EntitySet="Bookings" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Booking__KundeID__18EBB532" Association="Self.FK__Booking__KundeID__18EBB532">
+            <End Role="Kunde" EntitySet="Kundes" />
+            <End Role="Booking" EntitySet="Bookings" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Booking__SælgerI__19DFD96B" Association="Self.FK__Booking__SælgerI__19DFD96B">
+            <End Role="Sælger" EntitySet="Sælger" />
+            <End Role="Booking" EntitySet="Bookings" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Booking__Transpo__1CBC4616" Association="Self.FK__Booking__Transpo__1CBC4616">
+            <End Role="Transportør" EntitySet="Transportør" />
+            <End Role="Booking" EntitySet="Bookings" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Booking__Værkste__1AD3FDA4" Association="Self.FK__Booking__Værkste__1AD3FDA4">
+            <End Role="Værksted" EntitySet="Værksted" />
+            <End Role="Booking" EntitySet="Bookings" />
+          </AssociationSet>
+          <AssociationSet Name="FK__DemoAnsvarli__ID__7B5B524B" Association="Self.FK__DemoAnsvarli__ID__7B5B524B">
+            <End Role="Bruger" EntitySet="Brugers" />
+            <End Role="DemoAnsvarlig" EntitySet="DemoAnsvarligs" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Sælger__ID__75A278F5" Association="Self.FK__Sælger__ID__75A278F5">
+            <End Role="Bruger" EntitySet="Brugers" />
+            <End Role="Sælger" EntitySet="Sælger" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Transportør__ID__7E37BEF6" Association="Self.FK__Transportør__ID__7E37BEF6">
+            <End Role="Bruger" EntitySet="Brugers" />
+            <End Role="Transportør" EntitySet="Transportør" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Værksted__ID__787EE5A0" Association="Self.FK__Værksted__ID__787EE5A0">
+            <End Role="Bruger" EntitySet="Brugers" />
+            <End Role="Værksted" EntitySet="Værksted" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Konfigura__DemoA__06CD04F7" Association="Self.FK__Konfigura__DemoA__06CD04F7">
+            <End Role="DemoAnsvarlig" EntitySet="DemoAnsvarligs" />
+            <End Role="Konfiguration" EntitySet="Konfigurations" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Maskine__DemonAn__0C85DE4D" Association="Self.FK__Maskine__DemonAn__0C85DE4D">
+            <End Role="DemoAnsvarlig" EntitySet="DemoAnsvarligs" />
+            <End Role="Maskine" EntitySet="Maskines" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Maskine__ModelNa__0B91BA14" Association="Self.FK__Maskine__ModelNa__0B91BA14">
+            <End Role="ModelNavn" EntitySet="ModelNavns" />
+            <End Role="Maskine" EntitySet="Maskines" />
+          </AssociationSet>
+          <AssociationSet Name="BookingLinje" Association="Self.BookingLinje">
+            <End Role="Booking" EntitySet="Bookings" />
+            <End Role="Maskine" EntitySet="Maskines" />
+          </AssociationSet>
+          <AssociationSet Name="MaskineKonfiguration" Association="Self.MaskineKonfiguration">
+            <End Role="Maskine" EntitySet="Maskines" />
+            <End Role="Konfiguration" EntitySet="Konfigurations" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="stillasModelStoreContainer" CdmEntityContainer="stillasEntities">
+          <EntitySetMapping Name="Bookings">
+            <EntityTypeMapping TypeName="stillasModel.Booking">
+              <MappingFragment StoreEntitySet="Booking">
+                <ScalarProperty Name="BookingID" ColumnName="BookingID" />
+                <ScalarProperty Name="KundeID" ColumnName="KundeID" />
+                <ScalarProperty Name="SælgerID" ColumnName="SælgerID" />
+                <ScalarProperty Name="VærkstedID" ColumnName="VærkstedID" />
+                <ScalarProperty Name="DemoAnsvarligID" ColumnName="DemoAnsvarligID" />
+                <ScalarProperty Name="TransportørID" ColumnName="TransportørID" />
+                <ScalarProperty Name="LeveringsDato" ColumnName="LeveringsDato" />
+                <ScalarProperty Name="AfhentningsDato" ColumnName="AfhentningsDato" />
+                <ScalarProperty Name="Leverandør" ColumnName="Leverandør" />
+                <ScalarProperty Name="BeskedTilVærksted" ColumnName="BeskedTilVærksted" />
+                <ScalarProperty Name="BeskedTilFølgeSeddel" ColumnName="BeskedTilFølgeSeddel" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Brugers">
+            <EntityTypeMapping TypeName="stillasModel.Bruger">
+              <MappingFragment StoreEntitySet="Bruger">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="Navn" ColumnName="Navn" />
+                <ScalarProperty Name="Adgangskode" ColumnName="Adgangskode" />
+                <ScalarProperty Name="AccessLevel" ColumnName="AccessLevel" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="DemoAnsvarligs">
+            <EntityTypeMapping TypeName="stillasModel.DemoAnsvarlig">
+              <MappingFragment StoreEntitySet="DemoAnsvarlig">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Konfigurations">
+            <EntityTypeMapping TypeName="stillasModel.Konfiguration">
+              <MappingFragment StoreEntitySet="Konfiguration">
+                <ScalarProperty Name="KonfigurationsNavn" ColumnName="KonfigurationsNavn" />
+                <ScalarProperty Name="DemoAnsvarligID" ColumnName="DemoAnsvarligID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Kundes">
+            <EntityTypeMapping TypeName="stillasModel.Kunde">
+              <MappingFragment StoreEntitySet="Kunde">
+                <ScalarProperty Name="KundeID" ColumnName="KundeID" />
+                <ScalarProperty Name="Navn1" ColumnName="Navn1" />
+                <ScalarProperty Name="Navn2" ColumnName="Navn2" />
+                <ScalarProperty Name="Att" ColumnName="Att" />
+                <ScalarProperty Name="Adresse" ColumnName="Adresse" />
+                <ScalarProperty Name="Postnummer" ColumnName="Postnummer" />
+                <ScalarProperty Name="By" ColumnName="By" />
+                <ScalarProperty Name="Telefon" ColumnName="Telefon" />
+                <ScalarProperty Name="RampeVedLevering" ColumnName="RampeVedLevering" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Maskines">
+            <EntityTypeMapping TypeName="stillasModel.Maskine">
+              <MappingFragment StoreEntitySet="Maskine">
+                <ScalarProperty Name="DemoNummer" ColumnName="DemoNummer" />
+                <ScalarProperty Name="ModelNavn" ColumnName="ModelNavn" />
+                <ScalarProperty Name="DemonAnsvarligID" ColumnName="DemonAnsvarligID" />
+                <ScalarProperty Name="Type" ColumnName="Type" />
+                <ScalarProperty Name="Fabrikant" ColumnName="Fabrikant" />
+                <ScalarProperty Name="Chassisnummer" ColumnName="Chassisnummer" />
+                <ScalarProperty Name="MastType" ColumnName="MastType" />
+                <ScalarProperty Name="MastByggeHøjde" ColumnName="MastByggeHøjde" />
+                <ScalarProperty Name="MastLøfteHøjde" ColumnName="MastLøfteHøjde" />
+                <ScalarProperty Name="MastFriLøft" ColumnName="MastFriLøft" />
+                <ScalarProperty Name="Betjening" ColumnName="Betjening" />
+                <ScalarProperty Name="Aggregat" ColumnName="Aggregat" />
+                <ScalarProperty Name="AggregarNummer" ColumnName="AggregarNummer" />
+                <ScalarProperty Name="BatteriType" ColumnName="BatteriType" />
+                <ScalarProperty Name="BatteriNummer" ColumnName="BatteriNummer" />
+                <ScalarProperty Name="LaderType" ColumnName="LaderType" />
+                <ScalarProperty Name="LaderNummer" ColumnName="LaderNummer" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ModelNavns">
+            <EntityTypeMapping TypeName="stillasModel.ModelNavn">
+              <MappingFragment StoreEntitySet="ModelNavn">
+                <ScalarProperty Name="Modelnavn1" ColumnName="Modelnavn" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Sælger">
+            <EntityTypeMapping TypeName="stillasModel.Sælger">
+              <MappingFragment StoreEntitySet="Sælger">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Transportør">
+            <EntityTypeMapping TypeName="stillasModel.Transportør">
+              <MappingFragment StoreEntitySet="Transportør">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Værksted">
+            <EntityTypeMapping TypeName="stillasModel.Værksted">
+              <MappingFragment StoreEntitySet="Værksted">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <AssociationSetMapping Name="BookingLinje" TypeName="stillasModel.BookingLinje" StoreEntitySet="BookingLinje">
+            <EndProperty Name="Booking">
+              <ScalarProperty Name="BookingID" ColumnName="BookingID" />
+            </EndProperty>
+            <EndProperty Name="Maskine">
+              <ScalarProperty Name="DemoNummer" ColumnName="DemoNummer" />
+            </EndProperty>
+          </AssociationSetMapping>
+          <AssociationSetMapping Name="MaskineKonfiguration" TypeName="stillasModel.MaskineKonfiguration" StoreEntitySet="MaskineKonfiguration">
+            <EndProperty Name="Maskine">
+              <ScalarProperty Name="DemoNummer" ColumnName="DemoNummer" />
+            </EndProperty>
+            <EndProperty Name="Konfiguration">
+              <ScalarProperty Name="KonfigurationsNavn" ColumnName="Konfiguration" />
+            </EndProperty>
+          </AssociationSetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>
