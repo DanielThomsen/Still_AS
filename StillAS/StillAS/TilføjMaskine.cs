@@ -13,7 +13,7 @@ namespace StillAS
 {
     public partial class TilføjMaskine : Form
     {
-        ControllerClass CC = new ControllerClass();
+        ControllerClass CC = new ControllerClass();        
         public TilføjMaskine()
         {
             InitializeComponent();
@@ -21,6 +21,7 @@ namespace StillAS
 
         private void btnSaveMachine_Click(object sender, EventArgs e)
         {
+
             string DemoNumber = txtDemoMachine.Text;
             string ModelName = txtModelName.Text;
             string ModelNumber = txtModelNumber.Text;
@@ -39,6 +40,7 @@ namespace StillAS
             string Controller = txtController.Text;
             CC.CreateMachine(DemoNumber, ModelName, ModelNumber, Brand, CNumber, MastType, MastBuildingHeight, MastLiftHeight,
                              MastFreeLift, AggregatType, AggregatNumber, BatteryType, BatteryNumber, ChargerType, ChargerNumber, Controller);
+
         }
     }
 }
