@@ -62,6 +62,8 @@
             this.txtMastBuildingHeight = new System.Windows.Forms.TextBox();
             this.label18 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.label4 = new System.Windows.Forms.Label();
+            this.txtModelNumber = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.txtChassisNumber = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
@@ -76,8 +78,6 @@
             this.label12 = new System.Windows.Forms.Label();
             this.checkedListBox1 = new System.Windows.Forms.CheckedListBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.txtModelNumber = new System.Windows.Forms.TextBox();
             this.groupBox4.SuspendLayout();
             this.groupBox3.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -94,12 +94,12 @@
             this.groupBox4.Controls.Add(this.label28);
             this.groupBox4.Controls.Add(this.txtHeight);
             this.groupBox4.Controls.Add(this.label29);
-            this.groupBox4.Location = new System.Drawing.Point(509, 443);
+            this.groupBox4.Location = new System.Drawing.Point(540, 411);
             this.groupBox4.Margin = new System.Windows.Forms.Padding(2);
             this.groupBox4.Name = "groupBox4";
             this.groupBox4.Padding = new System.Windows.Forms.Padding(2);
             this.groupBox4.Size = new System.Drawing.Size(349, 141);
-            this.groupBox4.TabIndex = 93;
+            this.groupBox4.TabIndex = 103;
             this.groupBox4.TabStop = false;
             this.groupBox4.Text = "Dimenstions";
             // 
@@ -183,12 +183,12 @@
             this.groupBox3.Controls.Add(this.label21);
             this.groupBox3.Controls.Add(this.txtAggregateNumber);
             this.groupBox3.Controls.Add(this.label22);
-            this.groupBox3.Location = new System.Drawing.Point(27, 431);
+            this.groupBox3.Location = new System.Drawing.Point(58, 399);
             this.groupBox3.Margin = new System.Windows.Forms.Padding(2);
             this.groupBox3.Name = "groupBox3";
             this.groupBox3.Padding = new System.Windows.Forms.Padding(2);
             this.groupBox3.Size = new System.Drawing.Size(349, 230);
-            this.groupBox3.TabIndex = 92;
+            this.groupBox3.TabIndex = 102;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Aggregate, battery, charger and controller";
             // 
@@ -314,12 +314,12 @@
             this.groupBox2.Controls.Add(this.label17);
             this.groupBox2.Controls.Add(this.txtMastBuildingHeight);
             this.groupBox2.Controls.Add(this.label18);
-            this.groupBox2.Location = new System.Drawing.Point(27, 268);
+            this.groupBox2.Location = new System.Drawing.Point(58, 236);
             this.groupBox2.Margin = new System.Windows.Forms.Padding(2);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Padding = new System.Windows.Forms.Padding(2);
             this.groupBox2.Size = new System.Drawing.Size(349, 141);
-            this.groupBox2.TabIndex = 91;
+            this.groupBox2.TabIndex = 101;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Mast";
             // 
@@ -399,14 +399,30 @@
             this.groupBox1.Controls.Add(this.label13);
             this.groupBox1.Controls.Add(this.txtModelName);
             this.groupBox1.Controls.Add(this.label14);
-            this.groupBox1.Location = new System.Drawing.Point(27, 62);
+            this.groupBox1.Location = new System.Drawing.Point(58, 30);
             this.groupBox1.Margin = new System.Windows.Forms.Padding(2);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Padding = new System.Windows.Forms.Padding(2);
             this.groupBox1.Size = new System.Drawing.Size(349, 187);
-            this.groupBox1.TabIndex = 90;
+            this.groupBox1.TabIndex = 100;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Machine";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(189, 76);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(102, 17);
+            this.label4.TabIndex = 80;
+            this.label4.Text = "Model number:";
+            // 
+            // txtModelNumber
+            // 
+            this.txtModelNumber.Location = new System.Drawing.Point(193, 94);
+            this.txtModelNumber.Name = "txtModelNumber";
+            this.txtModelNumber.Size = new System.Drawing.Size(128, 22);
+            this.txtModelNumber.TabIndex = 3;
             // 
             // label2
             // 
@@ -476,26 +492,26 @@
             // 
             this.listBox1.FormattingEnabled = true;
             this.listBox1.ItemHeight = 16;
-            this.listBox1.Location = new System.Drawing.Point(537, 159);
+            this.listBox1.Location = new System.Drawing.Point(569, 128);
             this.listBox1.Name = "listBox1";
             this.listBox1.Size = new System.Drawing.Size(301, 196);
-            this.listBox1.TabIndex = 89;
+            this.listBox1.TabIndex = 99;
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(538, 604);
+            this.button2.Location = new System.Drawing.Point(569, 572);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(133, 44);
-            this.button2.TabIndex = 21;
+            this.button2.TabIndex = 95;
             this.button2.Text = "Edit machine";
             this.button2.UseVisualStyleBackColor = true;
             // 
             // btnSaveMachine
             // 
-            this.btnSaveMachine.Location = new System.Drawing.Point(694, 604);
+            this.btnSaveMachine.Location = new System.Drawing.Point(725, 572);
             this.btnSaveMachine.Name = "btnSaveMachine";
             this.btnSaveMachine.Size = new System.Drawing.Size(133, 44);
-            this.btnSaveMachine.TabIndex = 20;
+            this.btnSaveMachine.TabIndex = 94;
             this.btnSaveMachine.Text = "Save machine";
             this.btnSaveMachine.UseVisualStyleBackColor = true;
             this.btnSaveMachine.Click += new System.EventHandler(this.btnSaveMachine_Click);
@@ -503,51 +519,35 @@
             // label12
             // 
             this.label12.AutoSize = true;
-            this.label12.Location = new System.Drawing.Point(596, 109);
+            this.label12.Location = new System.Drawing.Point(627, 77);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(103, 17);
-            this.label12.TabIndex = 86;
+            this.label12.TabIndex = 98;
             this.label12.Text = "Configurations:";
             // 
             // checkedListBox1
             // 
             this.checkedListBox1.FormattingEnabled = true;
-            this.checkedListBox1.Location = new System.Drawing.Point(507, 131);
+            this.checkedListBox1.Location = new System.Drawing.Point(538, 99);
             this.checkedListBox1.Name = "checkedListBox1";
             this.checkedListBox1.Size = new System.Drawing.Size(352, 225);
-            this.checkedListBox1.TabIndex = 85;
+            this.checkedListBox1.TabIndex = 97;
             this.checkedListBox1.Visible = false;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(405, 62);
+            this.label1.Location = new System.Drawing.Point(436, 30);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(90, 17);
-            this.label1.TabIndex = 84;
+            this.label1.TabIndex = 96;
             this.label1.Text = "Add machine";
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(189, 76);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(102, 17);
-            this.label4.TabIndex = 80;
-            this.label4.Text = "Model number:";
-            // 
-            // txtModelNumber
-            // 
-            this.txtModelNumber.Location = new System.Drawing.Point(193, 94);
-            this.txtModelNumber.Name = "txtModelNumber";
-            this.txtModelNumber.Size = new System.Drawing.Size(128, 22);
-            this.txtModelNumber.TabIndex = 3;
             // 
             // TilføjMaskine
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(884, 664);
+            this.ClientSize = new System.Drawing.Size(948, 659);
             this.Controls.Add(this.groupBox4);
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.groupBox2);
@@ -558,7 +558,6 @@
             this.Controls.Add(this.label12);
             this.Controls.Add(this.checkedListBox1);
             this.Controls.Add(this.label1);
-            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "TilføjMaskine";
             this.Text = "TilføjMaskine";
             this.groupBox4.ResumeLayout(false);
@@ -610,6 +609,8 @@
         private System.Windows.Forms.TextBox txtMastBuildingHeight;
         private System.Windows.Forms.Label label18;
         private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.TextBox txtModelNumber;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox txtChassisNumber;
         private System.Windows.Forms.Label label3;
@@ -624,7 +625,5 @@
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.CheckedListBox checkedListBox1;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.TextBox txtModelNumber;
     }
 }
