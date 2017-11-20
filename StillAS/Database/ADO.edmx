@@ -21,13 +21,11 @@
           <Property Name="BeskedTilVærksted" Type="varchar" MaxLength="50" />
           <Property Name="BeskedTilFølgeSeddel" Type="varchar" MaxLength="50" />
         </EntityType>
-        <!--Errors Found During Generation:
-warning 6002: The table/view 'stillas.dbo.BookingLinje' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
         <EntityType Name="BookingLinje">
           <Key>
-            <PropertyRef Name="DemoNummer" />
-            <PropertyRef Name="BookingID" />
+            <PropertyRef Name="ID" />
           </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="DemoNummer" Type="varchar" MaxLength="50" Nullable="false" />
           <Property Name="BookingID" Type="int" Nullable="false" />
         </EntityType>
@@ -88,14 +86,16 @@ warning 6002: The table/view 'stillas.dbo.BookingLinje' does not have a primary 
           <Property Name="BatteriNummer" Type="varchar" MaxLength="30" />
           <Property Name="LaderType" Type="varchar" MaxLength="30" />
           <Property Name="LaderNummer" Type="varchar" MaxLength="30" />
+          <Property Name="Weight" Type="decimal" Precision="18" Scale="0" />
+          <Property Name="Height" Type="decimal" Precision="18" Scale="0" />
+          <Property Name="Length" Type="decimal" Precision="18" Scale="0" />
+          <Property Name="Width" Type="decimal" Precision="18" Scale="0" />
         </EntityType>
-        <!--Errors Found During Generation:
-warning 6002: The table/view 'stillas.dbo.MaskineKonfiguration' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
         <EntityType Name="MaskineKonfiguration">
           <Key>
-            <PropertyRef Name="DemoNummer" />
-            <PropertyRef Name="Konfiguration" />
+            <PropertyRef Name="ID" />
           </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="DemoNummer" Type="varchar" MaxLength="50" Nullable="false" />
           <Property Name="Konfiguration" Type="varchar" MaxLength="50" Nullable="false" />
         </EntityType>
@@ -183,7 +183,7 @@ warning 6002: The table/view 'stillas.dbo.MaskineKonfiguration' does not have a 
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__BookingLi__Booki__25518C17">
+        <Association Name="FK__BookingLi__Booki__3E1D39E1">
           <End Role="Booking" Type="Self.Booking" Multiplicity="1" />
           <End Role="BookingLinje" Type="Self.BookingLinje" Multiplicity="*" />
           <ReferentialConstraint>
@@ -195,7 +195,7 @@ warning 6002: The table/view 'stillas.dbo.MaskineKonfiguration' does not have a 
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__BookingLi__DemoN__245D67DE">
+        <Association Name="FK__BookingLi__DemoN__3D2915A8">
           <End Role="Maskine" Type="Self.Maskine" Multiplicity="1" />
           <End Role="BookingLinje" Type="Self.BookingLinje" Multiplicity="*" />
           <ReferentialConstraint>
@@ -231,7 +231,7 @@ warning 6002: The table/view 'stillas.dbo.MaskineKonfiguration' does not have a 
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__Maskine__DemonAn__0C85DE4D">
+        <Association Name="FK__Maskine__DemonAn__367C1819">
           <End Role="DemoAnsvarlig" Type="Self.DemoAnsvarlig" Multiplicity="0..1" />
           <End Role="Maskine" Type="Self.Maskine" Multiplicity="*" />
           <ReferentialConstraint>
@@ -243,7 +243,7 @@ warning 6002: The table/view 'stillas.dbo.MaskineKonfiguration' does not have a 
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__Maskine__ModelNa__0B91BA14">
+        <Association Name="FK__Maskine__ModelNa__3587F3E0">
           <End Role="ModelNavn" Type="Self.ModelNavn" Multiplicity="0..1" />
           <End Role="Maskine" Type="Self.Maskine" Multiplicity="*" />
           <ReferentialConstraint>
@@ -255,7 +255,7 @@ warning 6002: The table/view 'stillas.dbo.MaskineKonfiguration' does not have a 
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__MaskineKo__DemoN__2180FB33">
+        <Association Name="FK__MaskineKo__DemoN__395884C4">
           <End Role="Maskine" Type="Self.Maskine" Multiplicity="1" />
           <End Role="MaskineKonfiguration" Type="Self.MaskineKonfiguration" Multiplicity="*" />
           <ReferentialConstraint>
@@ -267,7 +267,7 @@ warning 6002: The table/view 'stillas.dbo.MaskineKonfiguration' does not have a 
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__MaskineKo__Konfi__22751F6C">
+        <Association Name="FK__MaskineKo__Konfi__3A4CA8FD">
           <End Role="Konfiguration" Type="Self.Konfiguration" Multiplicity="1" />
           <End Role="MaskineKonfiguration" Type="Self.MaskineKonfiguration" Multiplicity="*" />
           <ReferentialConstraint>
@@ -317,27 +317,17 @@ warning 6002: The table/view 'stillas.dbo.MaskineKonfiguration' does not have a 
         </Association>
         <EntityContainer Name="stillasModelStoreContainer">
           <EntitySet Name="Booking" EntityType="Self.Booking" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="BookingLinje" EntityType="Self.BookingLinje" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Bruger" EntityType="Self.Bruger" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="DemoAnsvarlig" EntityType="Self.DemoAnsvarlig" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Konfiguration" EntityType="Self.Konfiguration" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Kunde" EntityType="Self.Kunde" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Maskine" EntityType="Self.Maskine" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="MaskineKonfiguration" EntityType="Self.MaskineKonfiguration" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="ModelNavn" EntityType="Self.ModelNavn" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Sælger" EntityType="Self.Sælger" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Transportør" EntityType="Self.Transportør" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Værksted" EntityType="Self.Værksted" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="BookingLinje" EntityType="Self.BookingLinje" store:Type="Tables" store:Schema="dbo">
-            <DefiningQuery>SELECT 
-    [BookingLinje].[DemoNummer] AS [DemoNummer], 
-    [BookingLinje].[BookingID] AS [BookingID]
-    FROM [dbo].[BookingLinje] AS [BookingLinje]</DefiningQuery>
-          </EntitySet>
-          <EntitySet Name="MaskineKonfiguration" EntityType="Self.MaskineKonfiguration" store:Type="Tables" store:Schema="dbo">
-            <DefiningQuery>SELECT 
-    [MaskineKonfiguration].[DemoNummer] AS [DemoNummer], 
-    [MaskineKonfiguration].[Konfiguration] AS [Konfiguration]
-    FROM [dbo].[MaskineKonfiguration] AS [MaskineKonfiguration]</DefiningQuery>
-          </EntitySet>
           <AssociationSet Name="FK__Booking__DemoAns__1BC821DD" Association="Self.FK__Booking__DemoAns__1BC821DD">
             <End Role="DemoAnsvarlig" EntitySet="DemoAnsvarlig" />
             <End Role="Booking" EntitySet="Booking" />
@@ -358,11 +348,11 @@ warning 6002: The table/view 'stillas.dbo.MaskineKonfiguration' does not have a 
             <End Role="Værksted" EntitySet="Værksted" />
             <End Role="Booking" EntitySet="Booking" />
           </AssociationSet>
-          <AssociationSet Name="FK__BookingLi__Booki__25518C17" Association="Self.FK__BookingLi__Booki__25518C17">
+          <AssociationSet Name="FK__BookingLi__Booki__3E1D39E1" Association="Self.FK__BookingLi__Booki__3E1D39E1">
             <End Role="Booking" EntitySet="Booking" />
             <End Role="BookingLinje" EntitySet="BookingLinje" />
           </AssociationSet>
-          <AssociationSet Name="FK__BookingLi__DemoN__245D67DE" Association="Self.FK__BookingLi__DemoN__245D67DE">
+          <AssociationSet Name="FK__BookingLi__DemoN__3D2915A8" Association="Self.FK__BookingLi__DemoN__3D2915A8">
             <End Role="Maskine" EntitySet="Maskine" />
             <End Role="BookingLinje" EntitySet="BookingLinje" />
           </AssociationSet>
@@ -374,19 +364,19 @@ warning 6002: The table/view 'stillas.dbo.MaskineKonfiguration' does not have a 
             <End Role="DemoAnsvarlig" EntitySet="DemoAnsvarlig" />
             <End Role="Konfiguration" EntitySet="Konfiguration" />
           </AssociationSet>
-          <AssociationSet Name="FK__Maskine__DemonAn__0C85DE4D" Association="Self.FK__Maskine__DemonAn__0C85DE4D">
+          <AssociationSet Name="FK__Maskine__DemonAn__367C1819" Association="Self.FK__Maskine__DemonAn__367C1819">
             <End Role="DemoAnsvarlig" EntitySet="DemoAnsvarlig" />
             <End Role="Maskine" EntitySet="Maskine" />
           </AssociationSet>
-          <AssociationSet Name="FK__Maskine__ModelNa__0B91BA14" Association="Self.FK__Maskine__ModelNa__0B91BA14">
+          <AssociationSet Name="FK__Maskine__ModelNa__3587F3E0" Association="Self.FK__Maskine__ModelNa__3587F3E0">
             <End Role="ModelNavn" EntitySet="ModelNavn" />
             <End Role="Maskine" EntitySet="Maskine" />
           </AssociationSet>
-          <AssociationSet Name="FK__MaskineKo__DemoN__2180FB33" Association="Self.FK__MaskineKo__DemoN__2180FB33">
+          <AssociationSet Name="FK__MaskineKo__DemoN__395884C4" Association="Self.FK__MaskineKo__DemoN__395884C4">
             <End Role="Maskine" EntitySet="Maskine" />
             <End Role="MaskineKonfiguration" EntitySet="MaskineKonfiguration" />
           </AssociationSet>
-          <AssociationSet Name="FK__MaskineKo__Konfi__22751F6C" Association="Self.FK__MaskineKo__Konfi__22751F6C">
+          <AssociationSet Name="FK__MaskineKo__Konfi__3A4CA8FD" Association="Self.FK__MaskineKo__Konfi__3A4CA8FD">
             <End Role="Konfiguration" EntitySet="Konfiguration" />
             <End Role="MaskineKonfiguration" EntitySet="MaskineKonfiguration" />
           </AssociationSet>
@@ -428,7 +418,17 @@ warning 6002: The table/view 'stillas.dbo.MaskineKonfiguration' does not have a 
           <NavigationProperty Name="Sælger" Relationship="Self.FK__Booking__SælgerI__19DFD96B" FromRole="Booking" ToRole="Sælger" />
           <NavigationProperty Name="Transportør" Relationship="Self.FK__Booking__Transpo__1CBC4616" FromRole="Booking" ToRole="Transportør" />
           <NavigationProperty Name="Værksted" Relationship="Self.FK__Booking__Værkste__1AD3FDA4" FromRole="Booking" ToRole="Værksted" />
-          <NavigationProperty Name="Maskines" Relationship="Self.BookingLinje" FromRole="Booking" ToRole="Maskine" />
+          <NavigationProperty Name="BookingLinjes" Relationship="Self.FK__BookingLi__Booki__3E1D39E1" FromRole="Booking" ToRole="BookingLinje" />
+        </EntityType>
+        <EntityType Name="BookingLinje">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="DemoNummer" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="BookingID" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Booking" Relationship="Self.FK__BookingLi__Booki__3E1D39E1" FromRole="BookingLinje" ToRole="Booking" />
+          <NavigationProperty Name="Maskine" Relationship="Self.FK__BookingLi__DemoN__3D2915A8" FromRole="BookingLinje" ToRole="Maskine" />
         </EntityType>
         <EntityType Name="Bruger">
           <Key>
@@ -451,7 +451,7 @@ warning 6002: The table/view 'stillas.dbo.MaskineKonfiguration' does not have a 
           <NavigationProperty Name="Bookings" Relationship="Self.FK__Booking__DemoAns__1BC821DD" FromRole="DemoAnsvarlig" ToRole="Booking" />
           <NavigationProperty Name="Bruger" Relationship="Self.FK__DemoAnsvarli__ID__7B5B524B" FromRole="DemoAnsvarlig" ToRole="Bruger" />
           <NavigationProperty Name="Konfigurations" Relationship="Self.FK__Konfigura__DemoA__06CD04F7" FromRole="DemoAnsvarlig" ToRole="Konfiguration" />
-          <NavigationProperty Name="Maskines" Relationship="Self.FK__Maskine__DemonAn__0C85DE4D" FromRole="DemoAnsvarlig" ToRole="Maskine" />
+          <NavigationProperty Name="Maskines" Relationship="Self.FK__Maskine__DemonAn__367C1819" FromRole="DemoAnsvarlig" ToRole="Maskine" />
         </EntityType>
         <EntityType Name="Konfiguration">
           <Key>
@@ -460,7 +460,7 @@ warning 6002: The table/view 'stillas.dbo.MaskineKonfiguration' does not have a 
           <Property Name="KonfigurationsNavn" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="DemoAnsvarligID" Type="Int32" />
           <NavigationProperty Name="DemoAnsvarlig" Relationship="Self.FK__Konfigura__DemoA__06CD04F7" FromRole="Konfiguration" ToRole="DemoAnsvarlig" />
-          <NavigationProperty Name="Maskines" Relationship="Self.MaskineKonfiguration" FromRole="Konfiguration" ToRole="Maskine" />
+          <NavigationProperty Name="MaskineKonfigurations" Relationship="Self.FK__MaskineKo__Konfi__3A4CA8FD" FromRole="Konfiguration" ToRole="MaskineKonfiguration" />
         </EntityType>
         <EntityType Name="Kunde">
           <Key>
@@ -498,17 +498,31 @@ warning 6002: The table/view 'stillas.dbo.MaskineKonfiguration' does not have a 
           <Property Name="BatteriNummer" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
           <Property Name="LaderType" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
           <Property Name="LaderNummer" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
-          <NavigationProperty Name="DemoAnsvarlig" Relationship="Self.FK__Maskine__DemonAn__0C85DE4D" FromRole="Maskine" ToRole="DemoAnsvarlig" />
-          <NavigationProperty Name="ModelNavn1" Relationship="Self.FK__Maskine__ModelNa__0B91BA14" FromRole="Maskine" ToRole="ModelNavn" />
-          <NavigationProperty Name="Bookings" Relationship="Self.BookingLinje" FromRole="Maskine" ToRole="Booking" />
-          <NavigationProperty Name="Konfigurations" Relationship="Self.MaskineKonfiguration" FromRole="Maskine" ToRole="Konfiguration" />
+          <Property Name="Weight" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="Height" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="Length" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="Width" Type="Decimal" Precision="18" Scale="0" />
+          <NavigationProperty Name="BookingLinjes" Relationship="Self.FK__BookingLi__DemoN__3D2915A8" FromRole="Maskine" ToRole="BookingLinje" />
+          <NavigationProperty Name="DemoAnsvarlig" Relationship="Self.FK__Maskine__DemonAn__367C1819" FromRole="Maskine" ToRole="DemoAnsvarlig" />
+          <NavigationProperty Name="ModelNavn1" Relationship="Self.FK__Maskine__ModelNa__3587F3E0" FromRole="Maskine" ToRole="ModelNavn" />
+          <NavigationProperty Name="MaskineKonfigurations" Relationship="Self.FK__MaskineKo__DemoN__395884C4" FromRole="Maskine" ToRole="MaskineKonfiguration" />
+        </EntityType>
+        <EntityType Name="MaskineKonfiguration">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="DemoNummer" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Konfiguration" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <NavigationProperty Name="Konfiguration1" Relationship="Self.FK__MaskineKo__Konfi__3A4CA8FD" FromRole="MaskineKonfiguration" ToRole="Konfiguration" />
+          <NavigationProperty Name="Maskine" Relationship="Self.FK__MaskineKo__DemoN__395884C4" FromRole="MaskineKonfiguration" ToRole="Maskine" />
         </EntityType>
         <EntityType Name="ModelNavn">
           <Key>
             <PropertyRef Name="Modelnavn1" />
           </Key>
           <Property Name="Modelnavn1" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
-          <NavigationProperty Name="Maskines" Relationship="Self.FK__Maskine__ModelNa__0B91BA14" FromRole="ModelNavn" ToRole="Maskine" />
+          <NavigationProperty Name="Maskines" Relationship="Self.FK__Maskine__ModelNa__3587F3E0" FromRole="ModelNavn" ToRole="Maskine" />
         </EntityType>
         <EntityType Name="Sælger">
           <Key>
@@ -594,6 +608,30 @@ warning 6002: The table/view 'stillas.dbo.MaskineKonfiguration' does not have a 
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <Association Name="FK__BookingLi__Booki__3E1D39E1">
+          <End Role="Booking" Type="Self.Booking" Multiplicity="1" />
+          <End Role="BookingLinje" Type="Self.BookingLinje" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Booking">
+              <PropertyRef Name="BookingID" />
+            </Principal>
+            <Dependent Role="BookingLinje">
+              <PropertyRef Name="BookingID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__BookingLi__DemoN__3D2915A8">
+          <End Role="Maskine" Type="Self.Maskine" Multiplicity="1" />
+          <End Role="BookingLinje" Type="Self.BookingLinje" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Maskine">
+              <PropertyRef Name="DemoNummer" />
+            </Principal>
+            <Dependent Role="BookingLinje">
+              <PropertyRef Name="DemoNummer" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         <Association Name="FK__DemoAnsvarli__ID__7B5B524B">
           <End Role="Bruger" Type="Self.Bruger" Multiplicity="1" />
           <End Role="DemoAnsvarlig" Type="Self.DemoAnsvarlig" Multiplicity="0..1" />
@@ -654,7 +692,7 @@ warning 6002: The table/view 'stillas.dbo.MaskineKonfiguration' does not have a 
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__Maskine__DemonAn__0C85DE4D">
+        <Association Name="FK__Maskine__DemonAn__367C1819">
           <End Role="DemoAnsvarlig" Type="Self.DemoAnsvarlig" Multiplicity="0..1" />
           <End Role="Maskine" Type="Self.Maskine" Multiplicity="*" />
           <ReferentialConstraint>
@@ -666,7 +704,19 @@ warning 6002: The table/view 'stillas.dbo.MaskineKonfiguration' does not have a 
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__Maskine__ModelNa__0B91BA14">
+        <Association Name="FK__MaskineKo__Konfi__3A4CA8FD">
+          <End Role="Konfiguration" Type="Self.Konfiguration" Multiplicity="1" />
+          <End Role="MaskineKonfiguration" Type="Self.MaskineKonfiguration" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Konfiguration">
+              <PropertyRef Name="KonfigurationsNavn" />
+            </Principal>
+            <Dependent Role="MaskineKonfiguration">
+              <PropertyRef Name="Konfiguration" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Maskine__ModelNa__3587F3E0">
           <End Role="ModelNavn" Type="Self.ModelNavn" Multiplicity="0..1" />
           <End Role="Maskine" Type="Self.Maskine" Multiplicity="*" />
           <ReferentialConstraint>
@@ -678,21 +728,27 @@ warning 6002: The table/view 'stillas.dbo.MaskineKonfiguration' does not have a 
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="BookingLinje">
-          <End Role="Booking" Type="Self.Booking" Multiplicity="*" />
-          <End Role="Maskine" Type="Self.Maskine" Multiplicity="*" />
-        </Association>
-        <Association Name="MaskineKonfiguration">
-          <End Role="Maskine" Type="Self.Maskine" Multiplicity="*" />
-          <End Role="Konfiguration" Type="Self.Konfiguration" Multiplicity="*" />
+        <Association Name="FK__MaskineKo__DemoN__395884C4">
+          <End Role="Maskine" Type="Self.Maskine" Multiplicity="1" />
+          <End Role="MaskineKonfiguration" Type="Self.MaskineKonfiguration" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Maskine">
+              <PropertyRef Name="DemoNummer" />
+            </Principal>
+            <Dependent Role="MaskineKonfiguration">
+              <PropertyRef Name="DemoNummer" />
+            </Dependent>
+          </ReferentialConstraint>
         </Association>
         <EntityContainer Name="stillasEntities" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="Bookings" EntityType="Self.Booking" />
+          <EntitySet Name="BookingLinjes" EntityType="Self.BookingLinje" />
           <EntitySet Name="Brugers" EntityType="Self.Bruger" />
           <EntitySet Name="DemoAnsvarligs" EntityType="Self.DemoAnsvarlig" />
           <EntitySet Name="Konfigurations" EntityType="Self.Konfiguration" />
           <EntitySet Name="Kundes" EntityType="Self.Kunde" />
           <EntitySet Name="Maskines" EntityType="Self.Maskine" />
+          <EntitySet Name="MaskineKonfigurations" EntityType="Self.MaskineKonfiguration" />
           <EntitySet Name="ModelNavns" EntityType="Self.ModelNavn" />
           <EntitySet Name="Sælger" EntityType="Self.Sælger" />
           <EntitySet Name="Transportør" EntityType="Self.Transportør" />
@@ -717,6 +773,14 @@ warning 6002: The table/view 'stillas.dbo.MaskineKonfiguration' does not have a 
             <End Role="Værksted" EntitySet="Værksted" />
             <End Role="Booking" EntitySet="Bookings" />
           </AssociationSet>
+          <AssociationSet Name="FK__BookingLi__Booki__3E1D39E1" Association="Self.FK__BookingLi__Booki__3E1D39E1">
+            <End Role="Booking" EntitySet="Bookings" />
+            <End Role="BookingLinje" EntitySet="BookingLinjes" />
+          </AssociationSet>
+          <AssociationSet Name="FK__BookingLi__DemoN__3D2915A8" Association="Self.FK__BookingLi__DemoN__3D2915A8">
+            <End Role="Maskine" EntitySet="Maskines" />
+            <End Role="BookingLinje" EntitySet="BookingLinjes" />
+          </AssociationSet>
           <AssociationSet Name="FK__DemoAnsvarli__ID__7B5B524B" Association="Self.FK__DemoAnsvarli__ID__7B5B524B">
             <End Role="Bruger" EntitySet="Brugers" />
             <End Role="DemoAnsvarlig" EntitySet="DemoAnsvarligs" />
@@ -737,21 +801,21 @@ warning 6002: The table/view 'stillas.dbo.MaskineKonfiguration' does not have a 
             <End Role="DemoAnsvarlig" EntitySet="DemoAnsvarligs" />
             <End Role="Konfiguration" EntitySet="Konfigurations" />
           </AssociationSet>
-          <AssociationSet Name="FK__Maskine__DemonAn__0C85DE4D" Association="Self.FK__Maskine__DemonAn__0C85DE4D">
+          <AssociationSet Name="FK__Maskine__DemonAn__367C1819" Association="Self.FK__Maskine__DemonAn__367C1819">
             <End Role="DemoAnsvarlig" EntitySet="DemoAnsvarligs" />
             <End Role="Maskine" EntitySet="Maskines" />
           </AssociationSet>
-          <AssociationSet Name="FK__Maskine__ModelNa__0B91BA14" Association="Self.FK__Maskine__ModelNa__0B91BA14">
+          <AssociationSet Name="FK__MaskineKo__Konfi__3A4CA8FD" Association="Self.FK__MaskineKo__Konfi__3A4CA8FD">
+            <End Role="Konfiguration" EntitySet="Konfigurations" />
+            <End Role="MaskineKonfiguration" EntitySet="MaskineKonfigurations" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Maskine__ModelNa__3587F3E0" Association="Self.FK__Maskine__ModelNa__3587F3E0">
             <End Role="ModelNavn" EntitySet="ModelNavns" />
             <End Role="Maskine" EntitySet="Maskines" />
           </AssociationSet>
-          <AssociationSet Name="BookingLinje" Association="Self.BookingLinje">
-            <End Role="Booking" EntitySet="Bookings" />
+          <AssociationSet Name="FK__MaskineKo__DemoN__395884C4" Association="Self.FK__MaskineKo__DemoN__395884C4">
             <End Role="Maskine" EntitySet="Maskines" />
-          </AssociationSet>
-          <AssociationSet Name="MaskineKonfiguration" Association="Self.MaskineKonfiguration">
-            <End Role="Maskine" EntitySet="Maskines" />
-            <End Role="Konfiguration" EntitySet="Konfigurations" />
+            <End Role="MaskineKonfiguration" EntitySet="MaskineKonfigurations" />
           </AssociationSet>
         </EntityContainer>
       </Schema>
@@ -774,6 +838,15 @@ warning 6002: The table/view 'stillas.dbo.MaskineKonfiguration' does not have a 
                 <ScalarProperty Name="Leverandør" ColumnName="Leverandør" />
                 <ScalarProperty Name="BeskedTilVærksted" ColumnName="BeskedTilVærksted" />
                 <ScalarProperty Name="BeskedTilFølgeSeddel" ColumnName="BeskedTilFølgeSeddel" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="BookingLinjes">
+            <EntityTypeMapping TypeName="stillasModel.BookingLinje">
+              <MappingFragment StoreEntitySet="BookingLinje">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="DemoNummer" ColumnName="DemoNummer" />
+                <ScalarProperty Name="BookingID" ColumnName="BookingID" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
@@ -837,6 +910,19 @@ warning 6002: The table/view 'stillas.dbo.MaskineKonfiguration' does not have a 
                 <ScalarProperty Name="BatteriNummer" ColumnName="BatteriNummer" />
                 <ScalarProperty Name="LaderType" ColumnName="LaderType" />
                 <ScalarProperty Name="LaderNummer" ColumnName="LaderNummer" />
+                <ScalarProperty Name="Weight" ColumnName="Weight" />
+                <ScalarProperty Name="Height" ColumnName="Height" />
+                <ScalarProperty Name="Length" ColumnName="Length" />
+                <ScalarProperty Name="Width" ColumnName="Width" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="MaskineKonfigurations">
+            <EntityTypeMapping TypeName="stillasModel.MaskineKonfiguration">
+              <MappingFragment StoreEntitySet="MaskineKonfiguration">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="DemoNummer" ColumnName="DemoNummer" />
+                <ScalarProperty Name="Konfiguration" ColumnName="Konfiguration" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
@@ -868,22 +954,6 @@ warning 6002: The table/view 'stillas.dbo.MaskineKonfiguration' does not have a 
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <AssociationSetMapping Name="BookingLinje" TypeName="stillasModel.BookingLinje" StoreEntitySet="BookingLinje">
-            <EndProperty Name="Booking">
-              <ScalarProperty Name="BookingID" ColumnName="BookingID" />
-            </EndProperty>
-            <EndProperty Name="Maskine">
-              <ScalarProperty Name="DemoNummer" ColumnName="DemoNummer" />
-            </EndProperty>
-          </AssociationSetMapping>
-          <AssociationSetMapping Name="MaskineKonfiguration" TypeName="stillasModel.MaskineKonfiguration" StoreEntitySet="MaskineKonfiguration">
-            <EndProperty Name="Maskine">
-              <ScalarProperty Name="DemoNummer" ColumnName="DemoNummer" />
-            </EndProperty>
-            <EndProperty Name="Konfiguration">
-              <ScalarProperty Name="KonfigurationsNavn" ColumnName="Konfiguration" />
-            </EndProperty>
-          </AssociationSetMapping>
         </EntityContainerMapping>
       </Mapping>
     </edmx:Mappings>

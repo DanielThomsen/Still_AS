@@ -38,10 +38,14 @@ namespace StillAS
             string ChargerType = txtChargerType.Text;
             string ChargerNumber = txtChargerNumber.Text;
             string Controller = txtController.Text;
+            decimal Weight = Convert.ToDecimal(txtWeight.Text.Replace(',' , '.'));
+            decimal Height = Convert.ToDecimal(txtHeight.Text.Replace(',', '.'));
+            decimal Length = Convert.ToDecimal(txtLength.Text.Replace(',', '.'));
+            decimal Width = Convert.ToDecimal(txtWidth.Text.Replace(',', '.'));
             CC.CreateMachine(DemoNumber, ModelName, ModelNumber, Brand, CNumber, MastType, MastBuildingHeight, MastLiftHeight,
                              MastFreeLift, AggregatType, AggregatNumber, BatteryType, BatteryNumber, ChargerType, ChargerNumber, 
-                             Controller);
-
+                             Controller, Weight, Height, Length, Width);
+            //HUSK AT FIXE KOMMA PUNKTUM PROBLEM
         }
     }
 }

@@ -72,6 +72,9 @@
     <Compile Include="Booking.cs">
       <DependentUpon>ADO.tt</DependentUpon>
     </Compile>
+    <Compile Include="BookingLinje.cs">
+      <DependentUpon>ADO.tt</DependentUpon>
+    </Compile>
     <Compile Include="Bruger.cs">
       <DependentUpon>ADO.tt</DependentUpon>
     </Compile>
@@ -86,6 +89,9 @@
       <DependentUpon>ADO.tt</DependentUpon>
     </Compile>
     <Compile Include="Maskine.cs">
+      <DependentUpon>ADO.tt</DependentUpon>
+    </Compile>
+    <Compile Include="MaskineKonfiguration.cs">
       <DependentUpon>ADO.tt</DependentUpon>
     </Compile>
     <Compile Include="ModelNavn.cs">
@@ -111,8 +117,13 @@
     <None Include="ADO.edmx.diagram">
       <DependentUpon>ADO.edmx</DependentUpon>
     </None>
-    <None Include="App.config" />
+    <None Include="App.config">
+      <SubType>Designer</SubType>
+    </None>
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="ADO.Context.tt">
@@ -125,9 +136,6 @@
       <DependentUpon>ADO.edmx</DependentUpon>
       <LastGenOutput>ADO.cs</LastGenOutput>
     </Content>
-  </ItemGroup>
-  <ItemGroup>
-    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

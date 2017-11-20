@@ -17,8 +17,8 @@ namespace Database
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public Maskine()
         {
-            this.Bookings = new HashSet<Booking>();
-            this.Konfigurations = new HashSet<Konfiguration>();
+            this.BookingLinjes = new HashSet<BookingLinje>();
+            this.MaskineKonfigurations = new HashSet<MaskineKonfiguration>();
         }
     
         public string DemoNummer { get; set; }
@@ -38,12 +38,16 @@ namespace Database
         public string BatteriNummer { get; set; }
         public string LaderType { get; set; }
         public string LaderNummer { get; set; }
+        public Nullable<decimal> Weight { get; set; }
+        public Nullable<decimal> Height { get; set; }
+        public Nullable<decimal> Length { get; set; }
+        public Nullable<decimal> Width { get; set; }
     
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<BookingLinje> BookingLinjes { get; set; }
         public virtual DemoAnsvarlig DemoAnsvarlig { get; set; }
         public virtual ModelNavn ModelNavn1 { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Booking> Bookings { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Konfiguration> Konfigurations { get; set; }
+        public virtual ICollection<MaskineKonfiguration> MaskineKonfigurations { get; set; }
     }
 }

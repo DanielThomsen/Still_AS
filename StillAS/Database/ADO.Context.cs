@@ -26,11 +26,13 @@ namespace Database
         }
     
         public virtual DbSet<Booking> Bookings { get; set; }
+        public virtual DbSet<BookingLinje> BookingLinjes { get; set; }
         public virtual DbSet<Bruger> Brugers { get; set; }
         public virtual DbSet<DemoAnsvarlig> DemoAnsvarligs { get; set; }
         public virtual DbSet<Konfiguration> Konfigurations { get; set; }
         public virtual DbSet<Kunde> Kundes { get; set; }
         public virtual DbSet<Maskine> Maskines { get; set; }
+        public virtual DbSet<MaskineKonfiguration> MaskineKonfigurations { get; set; }
         public virtual DbSet<ModelNavn> ModelNavns { get; set; }
         public virtual DbSet<Sælger> Sælger { get; set; }
         public virtual DbSet<Transportør> Transportør { get; set; }

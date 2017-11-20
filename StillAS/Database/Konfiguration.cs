@@ -17,7 +17,7 @@ namespace Database
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public Konfiguration()
         {
-            this.Maskines = new HashSet<Maskine>();
+            this.MaskineKonfigurations = new HashSet<MaskineKonfiguration>();
         }
     
         public string KonfigurationsNavn { get; set; }
@@ -25,6 +25,6 @@ namespace Database
     
         public virtual DemoAnsvarlig DemoAnsvarlig { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Maskine> Maskines { get; set; }
+        public virtual ICollection<MaskineKonfiguration> MaskineKonfigurations { get; set; }
     }
 }

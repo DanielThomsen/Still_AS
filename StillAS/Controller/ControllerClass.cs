@@ -13,11 +13,12 @@ namespace Controller
         public void CreateMachine(string DemoNumber, string ModelName, string ModelNumber, string Brand, string CNumber,
             string MastType, int MastBuildingHeight, int MastLiftHeight, int MastFreeLift, string AggregatType,
             string AggregatNumber, string BatteryType, string BatteryNumber, string ChargerType, string ChargerNumber,
-            string Controller)
+            string Controller, decimal Weight, decimal Height, decimal Length, decimal Width)
         {
             DBR.CreateModelName(ModelName);
             DBR.CreateMachine(DemoNumber, ModelName, ModelNumber, Brand, CNumber, MastType, MastBuildingHeight, MastLiftHeight, 
-                MastFreeLift, AggregatType, AggregatNumber, BatteryType, BatteryNumber, ChargerType, ChargerNumber, Controller);
+                MastFreeLift, AggregatType, AggregatNumber, BatteryType, BatteryNumber, ChargerType, ChargerNumber, Controller,
+                Weight, Height, Length, Width);
         }
     }
 }

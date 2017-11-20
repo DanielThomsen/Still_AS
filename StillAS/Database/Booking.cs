@@ -17,7 +17,7 @@ namespace Database
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public Booking()
         {
-            this.Maskines = new HashSet<Maskine>();
+            this.BookingLinjes = new HashSet<BookingLinje>();
         }
     
         public int BookingID { get; set; }
@@ -38,6 +38,6 @@ namespace Database
         public virtual Transportør Transportør { get; set; }
         public virtual Værksted Værksted { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Maskine> Maskines { get; set; }
+        public virtual ICollection<BookingLinje> BookingLinjes { get; set; }
     }
 }
