@@ -197,7 +197,7 @@
             this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "Machines";
             this.Text = "Machines";
-            this.Load += new System.EventHandler(this.Form1_Load);
+            //this.Load += new System.EventHandler(this.Form1_Load);
             this.groupBox2.ResumeLayout(false);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
