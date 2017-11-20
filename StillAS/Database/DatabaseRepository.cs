@@ -21,7 +21,7 @@ namespace Database
             string AggregatNumber, string BatteryType, string BatteryNumber, string ChargerType, string ChargerNumber,
             string Controller, decimal Weight, decimal Height, decimal Length, decimal Width)
         {
-            var Machine = new Maskine { DemoNummer = DemoNumber, ModelNavn = ModelName, Type = ModelNumber, Fabrikant = Brand, Chassisnummer = CNumber,
+            var Machine = new Maskine { DemoNummer = DemoNumber, ModelName = ModelName, Type = ModelNumber, Fabrikant = Brand, Chassisnummer = CNumber,
                 MastType = MastType, MastByggeHøjde = MastBuildingHeight, MastLøfteHøjde = MastLiftHeight, MastFriLøft = MastFreeLift,
                 Aggregat = AggregatType, AggregarNummer = AggregatNumber, BatteriType = BatteryType, BatteriNummer = BatteryNumber,
                 LaderType = ChargerType, LaderNummer = ChargerNumber, Betjening = Controller, Weight = Weight, Height = Height,
