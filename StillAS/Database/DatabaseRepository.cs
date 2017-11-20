@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Data.Entity;
+using System.Data.SqlClient;
 
 namespace Database
 {
@@ -28,6 +29,41 @@ namespace Database
                 Length = Length, Width = Width, DemonAnsvarligID = 1};
             meContext.Maskines.Add(Machine);
             meContext.SaveChanges();
+        }
+
+        //LEA ARBEJDER HERFRA ----------------------------------
+        private SqlConnection conn;
+        public string GetConnection()
+        {
+            return "Data Source=mssql6.gear.host;Initial Catalog=stillas;User Id=stillas;Password=Sb3ZRHQ!_nAI";
+        }
+        public List<string> PopulateListboxes(List<string> modelname)
+        {
+            conn = new SqlConnection(GetConnection());
+            conn.Open();
+            try
+            {
+                string get = "select * from ModelNavn";
+                SqlCommand com = new SqlCommand(@get, conn);
+                using (SqlDataReader reader = com.ExecuteReader())
+                {
+                    while (reader.Read())
+                    {
+                        modelname.Add(reader["ModelNavn"].ToString());
+                    }
+                }               
+            }
+            catch
+            {
+
+            }
+            conn.Close();
+            return modelname;                     
+        }
+        public void UpdateListBox(string modename)
+        {
+            //conn = SqlConnection(GetConnection());
+
         }
     }
 }

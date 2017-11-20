@@ -20,5 +20,16 @@ namespace Controller
                 MastFreeLift, AggregatType, AggregatNumber, BatteryType, BatteryNumber, ChargerType, ChargerNumber, Controller,
                 Weight, Height, Length, Width);
         }
+
+        // LEA ARBEJDER HERFRA ----------
+        public List<string> PopulateListbox(List<string> modelname)
+        {
+            DBR.PopulateListboxes(modelname);
+            return modelname;
+        }
+        public void UpdateNextListbox(string modelname)
+        {
+            DBR.UpdateListBox(modelname);
+        }
     }
 }
