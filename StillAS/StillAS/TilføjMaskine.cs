@@ -45,7 +45,7 @@ namespace StillAS
             CC.CreateMachine(DemoNumber, ModelName, ModelNumber, Brand, CNumber, MastType, MastBuildingHeight, MastLiftHeight,
                              MastFreeLift, AggregatType, AggregatNumber, BatteryType, BatteryNumber, ChargerType, ChargerNumber, 
                              Controller, Weight, Height, Length, Width);
-            //HUSK AT FIXE KOMMA PUNKTUM PROBLEM
+            
         }
     }
 }
