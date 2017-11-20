@@ -39,7 +39,8 @@ namespace StillAS
             string ChargerNumber = txtChargerNumber.Text;
             string Controller = txtController.Text;
             CC.CreateMachine(DemoNumber, ModelName, ModelNumber, Brand, CNumber, MastType, MastBuildingHeight, MastLiftHeight,
-                             MastFreeLift, AggregatType, AggregatNumber, BatteryType, BatteryNumber, ChargerType, ChargerNumber, Controller);
+                             MastFreeLift, AggregatType, AggregatNumber, BatteryType, BatteryNumber, ChargerType, ChargerNumber, 
+                             Controller);
 
         }
     }
