@@ -15,8 +15,7 @@ namespace Controller
             string AggregatNumber, string BatteryType, string BatteryNumber, string ChargerType, string ChargerNumber,
             string Controller, decimal Weight, decimal Height, decimal Length, decimal Width)
         {
-            DBR.CreateModelName(ModelName);
-            DBR.CreateMachine(DemoNumber, ModelName, ModelNumber, Brand, CNumber, MastType, MastBuildingHeight, MastLiftHeight, 
+                DBR.CreateMachine(DemoNumber, ModelName, ModelNumber, Brand, CNumber, MastType, MastBuildingHeight, MastLiftHeight, 
                 MastFreeLift, AggregatType, AggregatNumber, BatteryType, BatteryNumber, ChargerType, ChargerNumber, Controller,
                 Weight, Height, Length, Width);
         }

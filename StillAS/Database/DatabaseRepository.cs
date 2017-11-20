@@ -10,9 +10,9 @@ namespace Database
     public class DatabaseRepository
     {
         stillasEntities meContext = new stillasEntities();
-        public void CreateModelName(string ModelName)
+        public void CreateModelName(string ModelName1)
         {
-            var ModelN = new ModelNavn { Modelnavn1 = ModelName };
+            var ModelN = new ModelNavn { Modelnavn1 = ModelName1 };
             meContext.ModelNavns.Add(ModelN);
             meContext.SaveChanges();
         }
