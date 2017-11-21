@@ -44,7 +44,7 @@ namespace StillAS
 
         private void btnRemoveMachine_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("Go' Möjn");
+            
         }
     }
 }
