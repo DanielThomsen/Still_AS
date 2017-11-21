@@ -33,6 +33,7 @@ namespace Database
 
         //LEA ARBEJDER HERFRA ----------------------------------
         private SqlConnection conn;
+        private string get;
         public string GetConnection()
         {
             return "Data Source=mssql6.gear.host;Initial Catalog=stillas;User Id=stillas;Password=Sb3ZRHQ!_nAI";
@@ -43,7 +44,7 @@ namespace Database
             conn.Open();
             try
             {
-                string get = "select * from ModelNavn";
+                get = "select * from ModelNavn";
                 SqlCommand com = new SqlCommand(@get, conn);
                 using (SqlDataReader reader = com.ExecuteReader())
                 {
@@ -57,13 +58,56 @@ namespace Database
             {
 
             }
+            modelname.Sort();
             conn.Close();
             return modelname;                     
         }
-        public void UpdateListBox(string modename)
+        public List<string> UpdateSecondListBox(string modelname, List<string> modelnumber)
         {
-            //conn = SqlConnection(GetConnection());
+            conn = new SqlConnection(GetConnection());
+            conn.Open();
+            try
+            {
+                get = "select Maskine.Type from Maskine join ModelNavn on Maskine.ModelName = ModelNavn.Modelnavn where ModelName = '" + modelname + "'";
+                SqlCommand com = new SqlCommand(@get, conn);
+                using (SqlDataReader reader = com.ExecuteReader())
+                {
+                    while (reader.Read())
+                    {
+                        modelnumber.Add(reader["Type"].ToString());
+                    }
+                }
+            }
+            catch
+            {
 
+            }
+            modelnumber.Sort();
+            conn.Close();
+            return modelnumber;
+        }
+        public List<string> UpdateThirdListbox(string modelnumber, List<string> demonumber)
+        {
+            conn = new SqlConnection(GetConnection());
+            conn.Open();
+            try
+            {
+                get = "select DemoNummer from Maskine where Type = '" + modelnumber + "'";
+                SqlCommand com = new SqlCommand(@get, conn);
+                using (SqlDataReader reader = com.ExecuteReader())
+                {
+                    while (reader.Read())
+                    {
+                        demonumber.Add(reader["DemoNummer"].ToString());
+                    }
+                }
+            }
+            catch
+            {
+
+            }
+            conn.Close();
+            return demonumber;
         }
     }
 }
