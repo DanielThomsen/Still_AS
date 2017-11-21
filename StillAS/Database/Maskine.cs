@@ -22,7 +22,7 @@ namespace Database
         }
     
         public string DemoNummer { get; set; }
-        public string ModelNavn { get; set; }
+        public string ModelName { get; set; }
         public Nullable<int> DemonAnsvarligID { get; set; }
         public string Type { get; set; }
         public string Fabrikant { get; set; }
@@ -46,7 +46,7 @@ namespace Database
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<BookingLinje> BookingLinjes { get; set; }
         public virtual DemoAnsvarlig DemoAnsvarlig { get; set; }
-        public virtual ModelNavn ModelNavn1 { get; set; }
+        public virtual ModelNavn ModelNavn { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<MaskineKonfiguration> MaskineKonfigurations { get; set; }
     }

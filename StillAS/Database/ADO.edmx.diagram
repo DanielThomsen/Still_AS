@@ -4,7 +4,7 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="79372ac279eb4bd9818f8fce8e291c3b" Name="Diagram1">
+      <Diagram DiagramId="2f93ed83a05f4fd4ace83039bb87ad86" Name="Diagram1">
         <EntityTypeShape EntityType="stillasModel.Booking" Width="1.5" PointX="5.25" PointY="7" IsExpanded="true" />
         <EntityTypeShape EntityType="stillasModel.BookingLinje" Width="1.5" PointX="10.5" PointY="7.625" IsExpanded="true" />
         <EntityTypeShape EntityType="stillasModel.Bruger" Width="1.5" PointX="0.75" PointY="10.875" IsExpanded="true" />
@@ -22,17 +22,17 @@
         <AssociationConnector Association="stillasModel.FK__Booking__SælgerI__19DFD96B" ManuallyRouted="false" />
         <AssociationConnector Association="stillasModel.FK__Booking__Transpo__1CBC4616" ManuallyRouted="false" />
         <AssociationConnector Association="stillasModel.FK__Booking__Værkste__1AD3FDA4" ManuallyRouted="false" />
-        <AssociationConnector Association="stillasModel.FK__BookingLi__Booki__3E1D39E1" ManuallyRouted="false" />
-        <AssociationConnector Association="stillasModel.FK__BookingLi__DemoN__3D2915A8" ManuallyRouted="false" />
+        <AssociationConnector Association="stillasModel.FK__BookingLi__Booki__55F4C372" ManuallyRouted="false" />
+        <AssociationConnector Association="stillasModel.FK__BookingLi__DemoN__55009F39" ManuallyRouted="false" />
         <AssociationConnector Association="stillasModel.FK__DemoAnsvarli__ID__7B5B524B" ManuallyRouted="false" />
         <AssociationConnector Association="stillasModel.FK__Sælger__ID__75A278F5" ManuallyRouted="false" />
         <AssociationConnector Association="stillasModel.FK__Transportør__ID__7E37BEF6" ManuallyRouted="false" />
         <AssociationConnector Association="stillasModel.FK__Værksted__ID__787EE5A0" ManuallyRouted="false" />
         <AssociationConnector Association="stillasModel.FK__Konfigura__DemoA__06CD04F7" ManuallyRouted="false" />
-        <AssociationConnector Association="stillasModel.FK__Maskine__DemonAn__367C1819" ManuallyRouted="false" />
-        <AssociationConnector Association="stillasModel.FK__MaskineKo__Konfi__3A4CA8FD" ManuallyRouted="false" />
-        <AssociationConnector Association="stillasModel.FK__Maskine__ModelNa__3587F3E0" ManuallyRouted="false" />
-        <AssociationConnector Association="stillasModel.FK__MaskineKo__DemoN__395884C4" ManuallyRouted="false" />
+        <AssociationConnector Association="stillasModel.FK__Maskine__DemonAn__4E53A1AA" ManuallyRouted="false" />
+        <AssociationConnector Association="stillasModel.FK__MaskineKo__Konfi__5224328E" ManuallyRouted="false" />
+        <AssociationConnector Association="stillasModel.FK__Maskine__ModelNa__4D5F7D71" ManuallyRouted="false" />
+        <AssociationConnector Association="stillasModel.FK__MaskineKo__DemoN__51300E55" ManuallyRouted="false" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>
