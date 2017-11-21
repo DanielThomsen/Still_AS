@@ -52,7 +52,7 @@ namespace StillAS
             }
             catch (Exception)
             {
-                MessageBox.Show("Error: Machine not removed");
+                MessageBox.Show("Error: Machine not removed"); 
             }
         }
     }
