@@ -25,7 +25,7 @@ namespace StillAS
             {
                 libModelName.Items.Add(modelname[i].ToString());
             }
-            CC.UpdateNextListbox(libModelName.SelectedItem.ToString());
+            //CC.UpdateNextListbox(libModelName.SelectedItem.ToString());
 
 
 
@@ -40,6 +40,11 @@ namespace StillAS
         {
             TilføjMaskine TM = new TilføjMaskine();
             TM.Show();
+        }
+
+        private void btnRemoveMachine_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("Go' Möjn");
         }
     }
 }
