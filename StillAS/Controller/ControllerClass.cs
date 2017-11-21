@@ -26,6 +26,12 @@ namespace Controller
             DBR.RemoveMachine(DemoNumber);
         }
 
+        public List<string> ShowMachine(string DemoNumber)
+        {
+            List<string> machineInfo = DBR.ShowMachine(DemoNumber);
+            return machineInfo;
+        }
+
         // LEA ARBEJDER HERFRA ----------
         public List<string> PopulateListbox(List<string> modelname)
         {

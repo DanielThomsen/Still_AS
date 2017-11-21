@@ -39,6 +39,34 @@ namespace Database
             meContext.SaveChanges();
         }
 
+        public List<String> ShowMachine(string DemoNumber)
+        {
+            List<string> machineList = new List<string>();
+            var machine = meContext.Maskines.Find(DemoNumber);
+            machineList.Add(machine.ModelName);
+            machineList.Add(machine.Type);
+            machineList.Add(machine.Fabrikant);
+            machineList.Add(machine.Chassisnummer);
+            machineList.Add(machine.MastType);
+            machineList.Add(machine.MastByggeHøjde+"");
+            machineList.Add(machine.MastLøfteHøjde+"");
+            machineList.Add(machine.MastFriLøft+"");
+            machineList.Add(machine.Aggregat);
+            machineList.Add(machine.AggregarNummer);
+            machineList.Add(machine.BatteriType);
+            machineList.Add(machine.BatteriNummer);
+            machineList.Add(machine.LaderType);
+            machineList.Add(machine.LaderNummer);
+            machineList.Add(machine.Betjening);
+            machineList.Add(machine.Weight+"");
+            machineList.Add(machine.Height+"");
+            machineList.Add(machine.Length+"");
+            machineList.Add(machine.Width+"");
+
+            return machineList;
+
+        }
+
         //LEA ARBEJDER HERFRA ----------------------------------
         private SqlConnection conn;
         public string GetConnection()

@@ -55,5 +55,11 @@ namespace StillAS
                 MessageBox.Show("Error: Machine not removed"); 
             }
         }
+
+        private void btnShowMachine_Click(object sender, EventArgs e)
+        {
+            TilføjMaskine TM = new TilføjMaskine(libDemoNumber.SelectedItem.ToString());
+            TM.Show();
+        }
     }
 }

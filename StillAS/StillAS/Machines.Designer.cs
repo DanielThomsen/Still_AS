@@ -51,9 +51,9 @@
             // 
             this.groupBox2.Controls.Add(this.btnAddMachine);
             this.groupBox2.Location = new System.Drawing.Point(1096, 129);
-            this.groupBox2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBox2.Margin = new System.Windows.Forms.Padding(4);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBox2.Padding = new System.Windows.Forms.Padding(4);
             this.groupBox2.Size = new System.Drawing.Size(294, 733);
             this.groupBox2.TabIndex = 26;
             this.groupBox2.TabStop = false;
@@ -62,7 +62,7 @@
             // btnAddMachine
             // 
             this.btnAddMachine.Location = new System.Drawing.Point(72, 88);
-            this.btnAddMachine.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnAddMachine.Margin = new System.Windows.Forms.Padding(4);
             this.btnAddMachine.Name = "btnAddMachine";
             this.btnAddMachine.Size = new System.Drawing.Size(152, 71);
             this.btnAddMachine.TabIndex = 9;
@@ -84,9 +84,9 @@
             this.groupBox1.Controls.Add(this.btnEditMachine);
             this.groupBox1.Controls.Add(this.btnShowMachine);
             this.groupBox1.Location = new System.Drawing.Point(30, 129);
-            this.groupBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBox1.Margin = new System.Windows.Forms.Padding(4);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBox1.Padding = new System.Windows.Forms.Padding(4);
             this.groupBox1.Size = new System.Drawing.Size(1008, 733);
             this.groupBox1.TabIndex = 25;
             this.groupBox1.TabStop = false;
@@ -107,7 +107,7 @@
             this.libDemoNumber.FormattingEnabled = true;
             this.libDemoNumber.ItemHeight = 25;
             this.libDemoNumber.Location = new System.Drawing.Point(558, 113);
-            this.libDemoNumber.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.libDemoNumber.Margin = new System.Windows.Forms.Padding(4);
             this.libDemoNumber.Name = "libDemoNumber";
             this.libDemoNumber.Size = new System.Drawing.Size(226, 554);
             this.libDemoNumber.TabIndex = 10;
@@ -145,7 +145,7 @@
             // btnShowAvailability
             // 
             this.btnShowAvailability.Location = new System.Drawing.Point(796, 579);
-            this.btnShowAvailability.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnShowAvailability.Margin = new System.Windows.Forms.Padding(4);
             this.btnShowAvailability.Name = "btnShowAvailability";
             this.btnShowAvailability.Size = new System.Drawing.Size(198, 46);
             this.btnShowAvailability.TabIndex = 8;
@@ -157,7 +157,7 @@
             this.libModelName.FormattingEnabled = true;
             this.libModelName.ItemHeight = 25;
             this.libModelName.Location = new System.Drawing.Point(34, 113);
-            this.libModelName.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.libModelName.Margin = new System.Windows.Forms.Padding(4);
             this.libModelName.Name = "libModelName";
             this.libModelName.Size = new System.Drawing.Size(226, 554);
             this.libModelName.TabIndex = 3;
@@ -165,7 +165,7 @@
             // btnRemoveMachine
             // 
             this.btnRemoveMachine.Location = new System.Drawing.Point(818, 256);
-            this.btnRemoveMachine.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnRemoveMachine.Margin = new System.Windows.Forms.Padding(4);
             this.btnRemoveMachine.Name = "btnRemoveMachine";
             this.btnRemoveMachine.Size = new System.Drawing.Size(126, 46);
             this.btnRemoveMachine.TabIndex = 7;
@@ -178,7 +178,7 @@
             this.libModelNumber.FormattingEnabled = true;
             this.libModelNumber.ItemHeight = 25;
             this.libModelNumber.Location = new System.Drawing.Point(296, 113);
-            this.libModelNumber.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.libModelNumber.Margin = new System.Windows.Forms.Padding(4);
             this.libModelNumber.Name = "libModelNumber";
             this.libModelNumber.Size = new System.Drawing.Size(226, 554);
             this.libModelNumber.TabIndex = 4;
@@ -186,7 +186,7 @@
             // btnEditMachine
             // 
             this.btnEditMachine.Location = new System.Drawing.Point(818, 185);
-            this.btnEditMachine.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnEditMachine.Margin = new System.Windows.Forms.Padding(4);
             this.btnEditMachine.Name = "btnEditMachine";
             this.btnEditMachine.Size = new System.Drawing.Size(126, 46);
             this.btnEditMachine.TabIndex = 6;
@@ -196,12 +196,13 @@
             // btnShowMachine
             // 
             this.btnShowMachine.Location = new System.Drawing.Point(818, 113);
-            this.btnShowMachine.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnShowMachine.Margin = new System.Windows.Forms.Padding(4);
             this.btnShowMachine.Name = "btnShowMachine";
             this.btnShowMachine.Size = new System.Drawing.Size(126, 46);
             this.btnShowMachine.TabIndex = 5;
             this.btnShowMachine.Text = "Show";
             this.btnShowMachine.UseVisualStyleBackColor = true;
+            this.btnShowMachine.Click += new System.EventHandler(this.btnShowMachine_Click);
             // 
             // lblMachinesHeader
             // 
@@ -222,7 +223,7 @@
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.lblMachinesHeader);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "Machines";
             this.Text = "Machines";
             this.groupBox2.ResumeLayout(false);
