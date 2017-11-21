@@ -44,7 +44,16 @@ namespace StillAS
 
         private void btnRemoveMachine_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("Go' Möjn");
+            try
+            {
+                string demoNumberSelected = libDemoNumber.SelectedItem.ToString();
+                CC.RemoveMachine(demoNumberSelected);
+                MessageBox.Show("Machine removed: Demo number:" + demoNumberSelected);
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Error: Machine not removed");
+            }
         }
     }
 }

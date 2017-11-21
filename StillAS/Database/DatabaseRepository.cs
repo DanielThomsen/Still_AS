@@ -31,6 +31,14 @@ namespace Database
             meContext.SaveChanges();
         }
 
+        // Daniels metode
+        public void RemoveMachine(string DemoNumber)
+        {
+            var machine = meContext.Maskines.Find(DemoNumber);
+            meContext.Maskines.Remove(machine);
+            meContext.SaveChanges();
+        }
+
         //LEA ARBEJDER HERFRA ----------------------------------
         private SqlConnection conn;
         public string GetConnection()

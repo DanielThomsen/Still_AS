@@ -20,6 +20,12 @@ namespace Controller
                 Weight, Height, Length, Width); 
         }
 
+        //Daniels metode: Slet maskine
+        public void RemoveMachine(string DemoNumber)
+        {
+            DBR.RemoveMachine(DemoNumber);
+        }
+
         // LEA ARBEJDER HERFRA ----------
         public List<string> PopulateListbox(List<string> modelname)
         {
