@@ -11,9 +11,9 @@ namespace Database
     public class DatabaseRepository
     {
         stillasEntities meContext = new stillasEntities();
-        public void CreateModelName(string ModelName)
+        public void CreateModelName(string ModelName1)
         {
-            var ModelN = new ModelNavn { Modelnavn1 = ModelName };
+            var ModelN = new ModelNavn { Modelnavn1 = ModelName1 };
             meContext.ModelNavns.Add(ModelN);
             meContext.SaveChanges();
         }
@@ -22,13 +22,49 @@ namespace Database
             string AggregatNumber, string BatteryType, string BatteryNumber, string ChargerType, string ChargerNumber,
             string Controller, decimal Weight, decimal Height, decimal Length, decimal Width)
         {
-            var Machine = new Maskine { DemoNummer = DemoNumber, ModelNavn = ModelName, Type = ModelNumber, Fabrikant = Brand, Chassisnummer = CNumber,
+            var Machine = new Maskine { DemoNummer = DemoNumber, ModelName = ModelName, Type = ModelNumber, Fabrikant = Brand, Chassisnummer = CNumber,
                 MastType = MastType, MastByggeHøjde = MastBuildingHeight, MastLøfteHøjde = MastLiftHeight, MastFriLøft = MastFreeLift,
                 Aggregat = AggregatType, AggregarNummer = AggregatNumber, BatteriType = BatteryType, BatteriNummer = BatteryNumber,
                 LaderType = ChargerType, LaderNummer = ChargerNumber, Betjening = Controller, Weight = Weight, Height = Height,
                 Length = Length, Width = Width, DemonAnsvarligID = 1};
             meContext.Maskines.Add(Machine);
             meContext.SaveChanges();
+        }
+
+        // Daniels metode
+        public void RemoveMachine(string DemoNumber)
+        {
+            var machine = meContext.Maskines.Find(DemoNumber);
+            meContext.Maskines.Remove(machine);
+            meContext.SaveChanges();
+        }
+
+        public List<String> ShowMachine(string DemoNumber)
+        {
+            List<string> machineList = new List<string>();
+            var machine = meContext.Maskines.Find(DemoNumber);
+            machineList.Add(machine.ModelName);
+            machineList.Add(machine.Type);
+            machineList.Add(machine.Fabrikant);
+            machineList.Add(machine.Chassisnummer);
+            machineList.Add(machine.MastType);
+            machineList.Add(machine.MastByggeHøjde+"");
+            machineList.Add(machine.MastLøfteHøjde+"");
+            machineList.Add(machine.MastFriLøft+"");
+            machineList.Add(machine.Aggregat);
+            machineList.Add(machine.AggregarNummer);
+            machineList.Add(machine.BatteriType);
+            machineList.Add(machine.BatteriNummer);
+            machineList.Add(machine.LaderType);
+            machineList.Add(machine.LaderNummer);
+            machineList.Add(machine.Betjening);
+            machineList.Add(machine.Weight+"");
+            machineList.Add(machine.Height+"");
+            machineList.Add(machine.Length+"");
+            machineList.Add(machine.Width+"");
+
+            return machineList;
+
         }
 
         //LEA ARBEJDER HERFRA ----------------------------------

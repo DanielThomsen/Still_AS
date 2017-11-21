@@ -70,5 +70,25 @@ namespace StillAS
                 }
             }
         }
+
+        private void btnRemoveMachine_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                string demoNumberSelected = libDemoNumber.SelectedItem.ToString();
+                CC.RemoveMachine(demoNumberSelected);
+                MessageBox.Show("Machine removed: Demo number:" + demoNumberSelected);
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Error: Machine not removed"); 
+            }
+        }
+
+        private void btnShowMachine_Click(object sender, EventArgs e)
+        {
+            TilføjMaskine TM = new TilføjMaskine(libDemoNumber.SelectedItem.ToString());
+            TM.Show();
+        }
     }
 }

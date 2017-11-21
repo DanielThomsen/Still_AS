@@ -50,21 +50,21 @@
             // groupBox2
             // 
             this.groupBox2.Controls.Add(this.btnAddMachine);
-            this.groupBox2.Location = new System.Drawing.Point(548, 67);
-            this.groupBox2.Margin = new System.Windows.Forms.Padding(2);
+            this.groupBox2.Location = new System.Drawing.Point(1096, 129);
+            this.groupBox2.Margin = new System.Windows.Forms.Padding(4);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Padding = new System.Windows.Forms.Padding(2);
-            this.groupBox2.Size = new System.Drawing.Size(147, 381);
+            this.groupBox2.Padding = new System.Windows.Forms.Padding(4);
+            this.groupBox2.Size = new System.Drawing.Size(294, 733);
             this.groupBox2.TabIndex = 26;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "New machine";
             // 
             // btnAddMachine
             // 
-            this.btnAddMachine.Location = new System.Drawing.Point(36, 46);
-            this.btnAddMachine.Margin = new System.Windows.Forms.Padding(2);
+            this.btnAddMachine.Location = new System.Drawing.Point(72, 88);
+            this.btnAddMachine.Margin = new System.Windows.Forms.Padding(4);
             this.btnAddMachine.Name = "btnAddMachine";
-            this.btnAddMachine.Size = new System.Drawing.Size(76, 37);
+            this.btnAddMachine.Size = new System.Drawing.Size(152, 71);
             this.btnAddMachine.TabIndex = 9;
             this.btnAddMachine.Text = "Add new machine";
             this.btnAddMachine.UseVisualStyleBackColor = true;
@@ -83,11 +83,11 @@
             this.groupBox1.Controls.Add(this.libModelNumber);
             this.groupBox1.Controls.Add(this.btnEditMachine);
             this.groupBox1.Controls.Add(this.btnShowMachine);
-            this.groupBox1.Location = new System.Drawing.Point(15, 67);
-            this.groupBox1.Margin = new System.Windows.Forms.Padding(2);
+            this.groupBox1.Location = new System.Drawing.Point(30, 129);
+            this.groupBox1.Margin = new System.Windows.Forms.Padding(4);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Padding = new System.Windows.Forms.Padding(2);
-            this.groupBox1.Size = new System.Drawing.Size(504, 381);
+            this.groupBox1.Padding = new System.Windows.Forms.Padding(4);
+            this.groupBox1.Size = new System.Drawing.Size(1008, 733);
             this.groupBox1.TabIndex = 25;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Existing machines";
@@ -95,58 +95,59 @@
             // lblDemoNumber
             // 
             this.lblDemoNumber.AutoSize = true;
-            this.lblDemoNumber.Location = new System.Drawing.Point(276, 38);
-            this.lblDemoNumber.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblDemoNumber.Location = new System.Drawing.Point(552, 73);
+            this.lblDemoNumber.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblDemoNumber.Name = "lblDemoNumber";
-            this.lblDemoNumber.Size = new System.Drawing.Size(76, 13);
+            this.lblDemoNumber.Size = new System.Drawing.Size(152, 25);
             this.lblDemoNumber.TabIndex = 11;
             this.lblDemoNumber.Text = "Demo number:";
             // 
             // libDemoNumber
             // 
             this.libDemoNumber.FormattingEnabled = true;
-            this.libDemoNumber.Location = new System.Drawing.Point(279, 59);
-            this.libDemoNumber.Margin = new System.Windows.Forms.Padding(2);
+            this.libDemoNumber.ItemHeight = 25;
+            this.libDemoNumber.Location = new System.Drawing.Point(558, 113);
+            this.libDemoNumber.Margin = new System.Windows.Forms.Padding(4);
             this.libDemoNumber.Name = "libDemoNumber";
-            this.libDemoNumber.Size = new System.Drawing.Size(115, 290);
+            this.libDemoNumber.Size = new System.Drawing.Size(226, 554);
             this.libDemoNumber.TabIndex = 10;
             // 
             // lblAvailability
             // 
             this.lblAvailability.AutoSize = true;
-            this.lblAvailability.Location = new System.Drawing.Point(406, 327);
-            this.lblAvailability.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblAvailability.Location = new System.Drawing.Point(812, 629);
+            this.lblAvailability.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblAvailability.Name = "lblAvailability";
-            this.lblAvailability.Size = new System.Drawing.Size(66, 13);
+            this.lblAvailability.Size = new System.Drawing.Size(129, 25);
             this.lblAvailability.TabIndex = 9;
             this.lblAvailability.Text = "\"Availability\"";
             // 
             // lblModelName
             // 
             this.lblModelName.AutoSize = true;
-            this.lblModelName.Location = new System.Drawing.Point(14, 38);
-            this.lblModelName.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblModelName.Location = new System.Drawing.Point(28, 73);
+            this.lblModelName.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblModelName.Name = "lblModelName";
-            this.lblModelName.Size = new System.Drawing.Size(68, 13);
+            this.lblModelName.Size = new System.Drawing.Size(136, 25);
             this.lblModelName.TabIndex = 1;
             this.lblModelName.Text = "Model name:";
             // 
             // lblModelNumber
             // 
             this.lblModelNumber.AutoSize = true;
-            this.lblModelNumber.Location = new System.Drawing.Point(145, 38);
-            this.lblModelNumber.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblModelNumber.Location = new System.Drawing.Point(290, 73);
+            this.lblModelNumber.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblModelNumber.Name = "lblModelNumber";
-            this.lblModelNumber.Size = new System.Drawing.Size(77, 13);
+            this.lblModelNumber.Size = new System.Drawing.Size(155, 25);
             this.lblModelNumber.TabIndex = 2;
             this.lblModelNumber.Text = "Model number:";
             // 
             // btnShowAvailability
             // 
-            this.btnShowAvailability.Location = new System.Drawing.Point(398, 301);
-            this.btnShowAvailability.Margin = new System.Windows.Forms.Padding(2);
+            this.btnShowAvailability.Location = new System.Drawing.Point(796, 579);
+            this.btnShowAvailability.Margin = new System.Windows.Forms.Padding(4);
             this.btnShowAvailability.Name = "btnShowAvailability";
-            this.btnShowAvailability.Size = new System.Drawing.Size(99, 24);
+            this.btnShowAvailability.Size = new System.Drawing.Size(198, 46);
             this.btnShowAvailability.TabIndex = 8;
             this.btnShowAvailability.Text = "Show availability";
             this.btnShowAvailability.UseVisualStyleBackColor = true;
@@ -154,73 +155,77 @@
             // libModelName
             // 
             this.libModelName.FormattingEnabled = true;
-            this.libModelName.Location = new System.Drawing.Point(17, 59);
-            this.libModelName.Margin = new System.Windows.Forms.Padding(2);
+            this.libModelName.ItemHeight = 25;
+            this.libModelName.Location = new System.Drawing.Point(34, 113);
+            this.libModelName.Margin = new System.Windows.Forms.Padding(4);
             this.libModelName.Name = "libModelName";
-            this.libModelName.Size = new System.Drawing.Size(115, 290);
+            this.libModelName.Size = new System.Drawing.Size(226, 554);
             this.libModelName.TabIndex = 3;
             this.libModelName.Click += new System.EventHandler(this.libModelName_Click);
             // 
             // btnRemoveMachine
             // 
-            this.btnRemoveMachine.Location = new System.Drawing.Point(409, 133);
-            this.btnRemoveMachine.Margin = new System.Windows.Forms.Padding(2);
+            this.btnRemoveMachine.Location = new System.Drawing.Point(818, 256);
+            this.btnRemoveMachine.Margin = new System.Windows.Forms.Padding(4);
             this.btnRemoveMachine.Name = "btnRemoveMachine";
-            this.btnRemoveMachine.Size = new System.Drawing.Size(63, 24);
+            this.btnRemoveMachine.Size = new System.Drawing.Size(126, 46);
             this.btnRemoveMachine.TabIndex = 7;
             this.btnRemoveMachine.Text = "Remove";
             this.btnRemoveMachine.UseVisualStyleBackColor = true;
+            this.btnRemoveMachine.Click += new System.EventHandler(this.btnRemoveMachine_Click);
             // 
             // libModelNumber
             // 
             this.libModelNumber.FormattingEnabled = true;
-            this.libModelNumber.Location = new System.Drawing.Point(148, 59);
-            this.libModelNumber.Margin = new System.Windows.Forms.Padding(2);
+            this.libModelNumber.ItemHeight = 25;
+            this.libModelNumber.Location = new System.Drawing.Point(296, 113);
+            this.libModelNumber.Margin = new System.Windows.Forms.Padding(4);
             this.libModelNumber.Name = "libModelNumber";
-            this.libModelNumber.Size = new System.Drawing.Size(115, 290);
+            this.libModelNumber.Size = new System.Drawing.Size(226, 554);
             this.libModelNumber.TabIndex = 4;
             this.libModelNumber.Click += new System.EventHandler(this.libModelNumber_Click);
             // 
             // btnEditMachine
             // 
-            this.btnEditMachine.Location = new System.Drawing.Point(409, 96);
-            this.btnEditMachine.Margin = new System.Windows.Forms.Padding(2);
+            this.btnEditMachine.Location = new System.Drawing.Point(818, 185);
+            this.btnEditMachine.Margin = new System.Windows.Forms.Padding(4);
             this.btnEditMachine.Name = "btnEditMachine";
-            this.btnEditMachine.Size = new System.Drawing.Size(63, 24);
+            this.btnEditMachine.Size = new System.Drawing.Size(126, 46);
             this.btnEditMachine.TabIndex = 6;
             this.btnEditMachine.Text = "Edit";
             this.btnEditMachine.UseVisualStyleBackColor = true;
             // 
             // btnShowMachine
             // 
-            this.btnShowMachine.Location = new System.Drawing.Point(409, 59);
-            this.btnShowMachine.Margin = new System.Windows.Forms.Padding(2);
+            this.btnShowMachine.Location = new System.Drawing.Point(818, 113);
+            this.btnShowMachine.Margin = new System.Windows.Forms.Padding(4);
             this.btnShowMachine.Name = "btnShowMachine";
-            this.btnShowMachine.Size = new System.Drawing.Size(63, 24);
+            this.btnShowMachine.Size = new System.Drawing.Size(126, 46);
             this.btnShowMachine.TabIndex = 5;
             this.btnShowMachine.Text = "Show";
             this.btnShowMachine.UseVisualStyleBackColor = true;
+            this.btnShowMachine.Click += new System.EventHandler(this.btnShowMachine_Click);
             // 
             // lblMachinesHeader
             // 
             this.lblMachinesHeader.AutoSize = true;
             this.lblMachinesHeader.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
-            this.lblMachinesHeader.Location = new System.Drawing.Point(337, 15);
-            this.lblMachinesHeader.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblMachinesHeader.Location = new System.Drawing.Point(674, 29);
+            this.lblMachinesHeader.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblMachinesHeader.Name = "lblMachinesHeader";
-            this.lblMachinesHeader.Size = new System.Drawing.Size(72, 18);
+            this.lblMachinesHeader.Size = new System.Drawing.Size(143, 36);
             this.lblMachinesHeader.TabIndex = 24;
             this.lblMachinesHeader.Text = "Machines";
             // 
             // Machines
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(710, 462);
+            this.ClientSize = new System.Drawing.Size(1420, 888);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.lblMachinesHeader);
-            this.Margin = new System.Windows.Forms.Padding(2);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "Machines";
             this.Text = "Machines";
             this.groupBox2.ResumeLayout(false);

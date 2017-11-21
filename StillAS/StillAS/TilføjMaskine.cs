@@ -17,6 +17,27 @@ namespace StillAS
         public TilføjMaskine()
         {
             InitializeComponent();
+
+        }
+
+        public TilføjMaskine(string demoNumber)
+        {
+            InitializeComponent();
+            List<string> machineInfo = CC.ShowMachine(demoNumber);
+            List<TextBox> textBoxList = new List<TextBox>
+            { txtModelName, txtModelNumber,
+                txtBrand, txtChassisNumber, txtMastType, txtMastBuildingHeight,
+                txtMastLiftingHeight, txtMastFreeLift, txtAggregateType,
+                txtAggregateNumber, txtBatteryType, txtBatteryNumber, txtChargerType,
+                txtChargerNumber, txtController, txtWeight, txtHeight, txtLength,
+                txtWidth };
+            txtDemoMachine.Text = demoNumber;
+            int i = 0;
+            foreach (TextBox tb in textBoxList)
+            {
+                tb.Text = machineInfo[i];
+                i++;
+            }
         }
 
         private void btnSaveMachine_Click(object sender, EventArgs e)
@@ -38,10 +59,10 @@ namespace StillAS
             string ChargerType = txtChargerType.Text;
             string ChargerNumber = txtChargerNumber.Text;
             string Controller = txtController.Text;
-            decimal Weight = Convert.ToDecimal(txtWeight.Text.Replace(',' , '.'));
-            decimal Height = Convert.ToDecimal(txtHeight.Text.Replace(',', '.'));
-            decimal Length = Convert.ToDecimal(txtLength.Text.Replace(',', '.'));
-            decimal Width = Convert.ToDecimal(txtWidth.Text.Replace(',', '.'));
+            decimal Weight = Convert.ToDecimal(txtWeight.Text.Replace('.' , ','));
+            decimal Height = Convert.ToDecimal(txtHeight.Text.Replace('.', ','));
+            decimal Length = Convert.ToDecimal(txtLength.Text.Replace('.', ','));
+            decimal Width = Convert.ToDecimal(txtWidth.Text.Replace('.', ','));
             CC.CreateMachine(DemoNumber, ModelName, ModelNumber, Brand, CNumber, MastType, MastBuildingHeight, MastLiftHeight,
                              MastFreeLift, AggregatType, AggregatNumber, BatteryType, BatteryNumber, ChargerType, ChargerNumber, 
                              Controller, Weight, Height, Length, Width);
