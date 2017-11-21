@@ -27,9 +27,15 @@ namespace Controller
             DBR.PopulateListboxes(modelname);
             return modelname;
         }
-        public void UpdateNextListbox(string modelname)
+        public List<string> UpdateSecondListbox(string modelname, List<string> modelnumber)
         {
-            DBR.UpdateListBox(modelname);
+            DBR.UpdateSecondListBox(modelname, modelnumber);
+            return modelnumber;
+        }
+        public List<string> UpdateThirdListbox(string modelnumber, List<string> demonumber)
+        {
+            DBR.UpdateThirdListbox(modelnumber, demonumber);
+            return demonumber;
         }
     }
 }

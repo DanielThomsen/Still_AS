@@ -17,29 +17,58 @@ namespace StillAS
         List<string> modelname = new List<string>();
         List<string> modelnumber = new List<string>();
         List<string> demonumber = new List<string>();
-        public Machines()
+        public Machines() // Når formen loader
         {
             InitializeComponent();
-            CC.PopulateListbox(modelname);
+            CC.PopulateListbox(modelname); // HENTER DATA FRA DATABASEN OG SENDER DET OP I EN LISTE
             for (int i = 0; i < modelname.Count; i++)
             {
-                libModelName.Items.Add(modelname[i].ToString());
+                libModelName.Items.Add(modelname[i].ToString()); // INDSÆTTER I LISTBOXEN
             }
-            CC.UpdateNextListbox(libModelName.SelectedItem.ToString());
-
-
-
-            // Selection modes, så man kan vælge mere end en ting. 
-            libModelName.SelectionMode = SelectionMode.MultiSimple;
-            libModelNumber.SelectionMode = SelectionMode.MultiSimple;
-            libDemoNumber.SelectionMode = SelectionMode.MultiSimple;
-            
         }
-
         private void btnAddMachine_Click(object sender, EventArgs e)
         {
             TilføjMaskine TM = new TilføjMaskine();
             TM.Show();
+        }
+
+        private void libModelName_Click(object sender, EventArgs e)
+        {
+            modelnumber.Clear();
+            libModelNumber.Items.Clear();
+            string modelname = libModelName.SelectedItem.ToString();
+            if (libModelName.SelectedIndex != -1)
+            {
+                CC.UpdateSecondListbox(modelname, modelnumber);
+                string count = "";
+                foreach (var item in modelnumber)
+                {
+                    if (item == count)
+                    {
+
+                    }
+                    else
+                    {
+                        libModelNumber.Items.Add(item);
+                        count = item;
+                    }
+                }
+            }
+        }
+        private void libModelNumber_Click(object sender, EventArgs e)
+        {
+            demonumber.Clear();
+            libDemoNumber.Items.Clear();
+            string modelnumber = libModelNumber.SelectedItem.ToString();
+            if (libModelNumber.SelectedIndex != -1)
+            {
+                CC.UpdateThirdListbox(modelnumber, demonumber);
+
+                for (int i = 0; i < demonumber.Count; i++)
+                {
+                    libDemoNumber.Items.Add(demonumber[i].ToString());
+                }
+            }
         }
     }
 }

@@ -159,6 +159,7 @@
             this.libModelName.Name = "libModelName";
             this.libModelName.Size = new System.Drawing.Size(115, 290);
             this.libModelName.TabIndex = 3;
+            this.libModelName.Click += new System.EventHandler(this.libModelName_Click);
             // 
             // btnRemoveMachine
             // 
@@ -178,6 +179,7 @@
             this.libModelNumber.Name = "libModelNumber";
             this.libModelNumber.Size = new System.Drawing.Size(115, 290);
             this.libModelNumber.TabIndex = 4;
+            this.libModelNumber.Click += new System.EventHandler(this.libModelNumber_Click);
             // 
             // btnEditMachine
             // 
