@@ -31,11 +31,6 @@ namespace Controller
             List<string> machineInfo = DBR.ShowMachine(DemoNumber);
             return machineInfo;
         }
-        //Krognos metode Tilføj Kunde
-        public void AddCustomer(string Name1, string Name2, string Att, string Address, int ZIP, string City, int Phone)
-        {
-            DBR.CreateCustomer(Name1, Name2, Att, Address, ZIP, City, Phone);
-        }
 
         public List<string> GetConfigurations(string demoNr)
         {
@@ -43,6 +38,11 @@ namespace Controller
             return configurations;
         }
 
+        //Krognos metode Tilføj Kunde
+        public void AddCustomer(string Name1, string Name2, string Att, string Address, int ZIP, string City, int Phone)
+        {
+            DBR.CreateCustomer(Name1, Name2, Att, Address, ZIP, City, Phone);
+        }
         // LEA ARBEJDER HERFRA ----------
         public List<string> PopulateListbox(List<string> modelname)
         {
