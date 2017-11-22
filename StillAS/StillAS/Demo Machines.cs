@@ -21,7 +21,11 @@ namespace StillAS
 
         private void Demo_Maskiner_Load(object sender, EventArgs e)
         {
-
+            List<string> Demos = CTRC.DropDownDemoLoad();
+            foreach(string X in Demos)
+            {
+                coboDemoMachines.Items.Add(X);
+            }
         }
 
         private void Demo_Maskiner_FormClosing(object sender, EventArgs e)
@@ -31,8 +35,6 @@ namespace StillAS
 
         private void btnNext_Click(object sender, EventArgs e)
         {
-            int Check = 0;
-
         }
     }
 }

@@ -11,6 +11,7 @@ namespace Database
     public class DatabaseRepository
     {
         stillasEntities meContext = new stillasEntities();
+        //[Krognos Start]
         public void CreateModelName(string ModelName1)
         {
             var ModelN = new ModelNavn { Modelnavn1 = ModelName1 };
@@ -45,6 +46,16 @@ namespace Database
                         meContext.Kundes.Add(Customer);
                         meContext.SaveChanges();
         }
+        public List<string> DropDownDemo()
+        {
+            List<string> Demos = new List<string>();
+            foreach (var X in meContext.Maskines)
+            {
+                Demos.Add(X.DemoNummer);
+            }
+            return Demos;
+        }
+        //[Krognos Slut]
 
         // Daniels metode
         public void RemoveMachine(string DemoNumber)

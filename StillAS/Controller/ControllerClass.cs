@@ -10,6 +10,7 @@ namespace Controller
     public class ControllerClass
     {
         DatabaseRepository DBR = new DatabaseRepository();
+        //[Krognos start]
         public void CreateMachine(string DemoNumber, string ModelName, string ModelNumber, string Brand, string CNumber,
             string MastType, int MastBuildingHeight, int MastLiftHeight, int MastFreeLift, string AggregatType,
             string AggregatNumber, string BatteryType, string BatteryNumber, string ChargerType, string ChargerNumber,
@@ -19,7 +20,15 @@ namespace Controller
                 MastFreeLift, AggregatType, AggregatNumber, BatteryType, BatteryNumber, ChargerType, ChargerNumber, Controller,
                 Weight, Height, Length, Width); 
         }
-
+        public void AddCustomer(string Name1, string Name2, string Att, string Address, int ZIP, string City, int Phone)
+        {
+            DBR.CreateCustomer(Name1, Name2, Att, Address, ZIP, City, Phone);
+        }
+        public List<String> DropDownDemoLoad()
+        {
+            return DBR.DropDownDemo();
+        }
+        //[Krognos slut]
         //Daniels metode: Slet maskine
         public void RemoveMachine(string DemoNumber)
         {
@@ -38,11 +47,6 @@ namespace Controller
             return configurations;
         }
 
-        //Krognos metode Tilføj Kunde
-        public void AddCustomer(string Name1, string Name2, string Att, string Address, int ZIP, string City, int Phone)
-        {
-            DBR.CreateCustomer(Name1, Name2, Att, Address, ZIP, City, Phone);
-        }
         // LEA ARBEJDER HERFRA ----------
         public List<string> PopulateListbox(List<string> modelname)
         {
