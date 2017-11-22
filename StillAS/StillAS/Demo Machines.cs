@@ -35,6 +35,10 @@ namespace StillAS
 
         private void btnNext_Click(object sender, EventArgs e)
         {
+            //foreach (string X in lbAddedToBooking.Items)
+            //{
+            //    ControllerClass.DemoMachines.Add(X);
+            //}
         }
 
         private void btnAdd_Click(object sender, EventArgs e)

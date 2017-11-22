@@ -10,6 +10,7 @@ namespace Controller
     public class ControllerClass
     {
         DatabaseRepository DBR = new DatabaseRepository();
+        public static List<string> DemoMachines = new List<string>();
         //[Krognos start]
         public void CreateMachine(string DemoNumber, string ModelName, string ModelNumber, string Brand, string CNumber,
             string MastType, int MastBuildingHeight, int MastLiftHeight, int MastFreeLift, string AggregatType,

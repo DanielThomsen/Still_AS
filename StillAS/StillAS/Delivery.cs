@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Controller;
 
 namespace StillAS
 {
@@ -15,6 +16,12 @@ namespace StillAS
         public Delivery()
         {
             InitializeComponent();
+        }
+
+        private void btnFinish_Click(object sender, EventArgs e)
+        {
+
+            ControllerClass.DemoMachines.Clear();
         }
     }
 }
