@@ -28,7 +28,7 @@ namespace StillAS
         }
         private void btnAddMachine_Click(object sender, EventArgs e)
         {
-            TilføjMaskine TM = new TilføjMaskine();
+            AddMachine TM = new AddMachine();
             TM.Show();
         }
 
@@ -87,7 +87,7 @@ namespace StillAS
 
         private void btnShowMachine_Click(object sender, EventArgs e)
         {
-            TilføjMaskine TM = new TilføjMaskine(libDemoNumber.SelectedItem.ToString());
+            AddMachine TM = new AddMachine(libDemoNumber.SelectedItem.ToString());
             TM.Show();
         }
     }

@@ -1,6 +1,6 @@
 ﻿namespace StillAS
 {
-    partial class TilføjMaskine
+    partial class AddMachine
     {
         /// <summary>
         /// Required designer variable.

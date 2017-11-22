@@ -11,16 +11,16 @@ using Controller;
 
 namespace StillAS
 {
-    public partial class TilføjMaskine : Form
+    public partial class AddMachine : Form
     {
         ControllerClass CC = new ControllerClass();        
-        public TilføjMaskine()
+        public AddMachine()
         {
             InitializeComponent();
 
         }
 
-        public TilføjMaskine(string demoNumber)
+        public AddMachine(string demoNumber)
         {
             InitializeComponent();
             List<string> machineInfo = CC.ShowMachine(demoNumber);
