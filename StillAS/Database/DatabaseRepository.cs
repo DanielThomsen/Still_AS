@@ -21,7 +21,7 @@ namespace Database
         public void CreateMachine(string DemoNumber, string ModelName, string ModelNumber, string Brand, string CNumber, 
             string MastType, int MastBuildingHeight, int MastLiftHeight, int MastFreeLift, string AggregatType,
             string AggregatNumber, string BatteryType, string BatteryNumber, string ChargerType, string ChargerNumber,
-            string Controller, decimal Weight, decimal Height, decimal Length, decimal Width)
+            string Controller, decimal Weight, decimal Height, decimal Length, decimal Width, List<string> configurationsList) // indsæt konfigurationer og maskinekonfiguration
         {
             var Machine = new Maskine { DemoNummer = DemoNumber, ModelName = ModelName, Type = ModelNumber, Fabrikant = Brand, Chassisnummer = CNumber,
                 MastType = MastType, MastByggeHøjde = MastBuildingHeight, MastLøfteHøjde = MastLiftHeight, MastFriLøft = MastFreeLift,
@@ -30,6 +30,16 @@ namespace Database
                 Length = Length, Width = Width, DemonAnsvarligID = 1};
             meContext.Maskines.Add(Machine);
             meContext.SaveChanges();
+            
+            foreach (string s in configurationsList)
+            {
+                var machineConfiguration = new MaskineKonfiguration();
+                machineConfiguration.DemoNummer = DemoNumber;
+                machineConfiguration.Konfiguration = s;
+                meContext.MaskineKonfigurations.Add(machineConfiguration);
+                meContext.SaveChanges();
+            }
+
         }
         public void CreateCustomer(string Name1, string Name2, string Att, string Address, int ZIP, string City, int Phone)
         {
