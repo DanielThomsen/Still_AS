@@ -103,6 +103,19 @@ namespace Database
             return configurationsList;
         }
 
+        public List<string> GetAllConfigurations()
+        {
+            List<string> configurationsList = new List<string>();
+            var configuration = meContext.Konfigurations;
+
+            foreach (Konfiguration k in configuration)
+            {
+                configurationsList.Add(k.KonfigurationsNavn);
+            }
+
+            return configurationsList;
+        }
+
         //LEA ARBEJDER HERFRA ----------------------------------
         private SqlConnection conn;
         private string get;

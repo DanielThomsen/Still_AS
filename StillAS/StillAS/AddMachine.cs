@@ -17,6 +17,14 @@ namespace StillAS
         public AddMachine()
         {
             InitializeComponent();
+            cbConfigurations.Visible = true;
+            libConfigurations.Visible = false;
+            List<string> configurationsList = CC.GetAllConfigurations();
+
+            foreach (string s in configurationsList)
+            {
+                cbConfigurations.Items.Add(s);
+            }
 
         }
 
