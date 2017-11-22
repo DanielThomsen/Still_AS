@@ -30,6 +30,21 @@ namespace Database
             meContext.Maskines.Add(Machine);
             meContext.SaveChanges();
         }
+        public void CreateCustomer(string Name1, string Name2, string Att, string Address, int ZIP, string City, int Phone)
+        {
+                        var Customer = new Kunde
+                        {
+                            Navn1 = Name1,
+                            Navn2 = Name2,
+                            Att = Att,
+                            Adresse = Address,
+                            Postnummer = ZIP,
+                            By = City,
+                            Telefon = Phone
+                        };
+                        meContext.Kundes.Add(Customer);
+                        meContext.SaveChanges();
+        }
 
         // Daniels metode
         public void RemoveMachine(string DemoNumber)

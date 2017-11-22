@@ -66,6 +66,7 @@
             this.btnNext.TabIndex = 15;
             this.btnNext.Text = "Next";
             this.btnNext.UseVisualStyleBackColor = true;
+            this.btnNext.Click += new System.EventHandler(this.btnNext_Click);
             // 
             // cbSelectConfigurations
             // 
@@ -135,6 +136,7 @@
             this.Controls.Add(this.lblDemoMachines);
             this.Name = "Demo_Maskiner";
             this.Text = "Demo_Machines";
+            this.Load += new System.EventHandler(this.Demo_Maskiner_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
