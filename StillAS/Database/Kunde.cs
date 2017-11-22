@@ -28,7 +28,6 @@ namespace Database
         public Nullable<int> Postnummer { get; set; }
         public string By { get; set; }
         public Nullable<int> Telefon { get; set; }
-        public Nullable<int> RampeVedLevering { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Booking> Bookings { get; set; }

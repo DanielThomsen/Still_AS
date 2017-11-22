@@ -16,7 +16,7 @@ namespace StillAS
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Customer_Information());
+            Application.Run(new Machines());
         }
     }
 }
