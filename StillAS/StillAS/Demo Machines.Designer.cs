@@ -32,18 +32,21 @@
             this.btnAdd = new System.Windows.Forms.Button();
             this.btnNext = new System.Windows.Forms.Button();
             this.cbSelectConfigurations = new System.Windows.Forms.CheckedListBox();
-            this.lblSelectConfigurations = new System.Windows.Forms.Label();
             this.lbAddedToBooking = new System.Windows.Forms.ListBox();
             this.coboDemoMachines = new System.Windows.Forms.ComboBox();
-            this.lblAddedToBooking = new System.Windows.Forms.Label();
             this.lblDemoMachines = new System.Windows.Forms.Label();
+            this.btnRemove = new System.Windows.Forms.Button();
+            this.gbMachines = new System.Windows.Forms.GroupBox();
+            this.gbConfigurations = new System.Windows.Forms.GroupBox();
+            this.gbMachines.SuspendLayout();
+            this.gbConfigurations.SuspendLayout();
             this.SuspendLayout();
             // 
             // lblSelectMachines
             // 
             this.lblSelectMachines.AutoSize = true;
             this.lblSelectMachines.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
-            this.lblSelectMachines.Location = new System.Drawing.Point(176, 18);
+            this.lblSelectMachines.Location = new System.Drawing.Point(214, 9);
             this.lblSelectMachines.Name = "lblSelectMachines";
             this.lblSelectMachines.Size = new System.Drawing.Size(149, 24);
             this.lblSelectMachines.TabIndex = 17;
@@ -57,6 +60,7 @@
             this.btnAdd.TabIndex = 16;
             this.btnAdd.Text = "Add";
             this.btnAdd.UseVisualStyleBackColor = true;
+            this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
             // 
             // btnNext
             // 
@@ -71,45 +75,28 @@
             // cbSelectConfigurations
             // 
             this.cbSelectConfigurations.FormattingEnabled = true;
-            this.cbSelectConfigurations.Location = new System.Drawing.Point(287, 151);
+            this.cbSelectConfigurations.Location = new System.Drawing.Point(6, 32);
             this.cbSelectConfigurations.Name = "cbSelectConfigurations";
             this.cbSelectConfigurations.Size = new System.Drawing.Size(200, 259);
             this.cbSelectConfigurations.TabIndex = 14;
-            // 
-            // lblSelectConfigurations
-            // 
-            this.lblSelectConfigurations.AutoSize = true;
-            this.lblSelectConfigurations.Location = new System.Drawing.Point(284, 119);
-            this.lblSelectConfigurations.Name = "lblSelectConfigurations";
-            this.lblSelectConfigurations.Size = new System.Drawing.Size(144, 17);
-            this.lblSelectConfigurations.TabIndex = 13;
-            this.lblSelectConfigurations.Text = "Select configurations:";
             // 
             // lbAddedToBooking
             // 
             this.lbAddedToBooking.FormattingEnabled = true;
             this.lbAddedToBooking.ItemHeight = 16;
-            this.lbAddedToBooking.Location = new System.Drawing.Point(15, 151);
+            this.lbAddedToBooking.Location = new System.Drawing.Point(6, 32);
             this.lbAddedToBooking.Name = "lbAddedToBooking";
             this.lbAddedToBooking.Size = new System.Drawing.Size(200, 260);
             this.lbAddedToBooking.TabIndex = 12;
+            this.lbAddedToBooking.SelectedIndexChanged += new System.EventHandler(this.lbAddedToBooking_SelectedIndexChanged);
             // 
             // coboDemoMachines
             // 
             this.coboDemoMachines.FormattingEnabled = true;
-            this.coboDemoMachines.Location = new System.Drawing.Point(15, 68);
+            this.coboDemoMachines.Location = new System.Drawing.Point(18, 67);
             this.coboDemoMachines.Name = "coboDemoMachines";
             this.coboDemoMachines.Size = new System.Drawing.Size(121, 24);
             this.coboDemoMachines.TabIndex = 11;
-            // 
-            // lblAddedToBooking
-            // 
-            this.lblAddedToBooking.AutoSize = true;
-            this.lblAddedToBooking.Location = new System.Drawing.Point(12, 119);
-            this.lblAddedToBooking.Name = "lblAddedToBooking";
-            this.lblAddedToBooking.Size = new System.Drawing.Size(123, 17);
-            this.lblAddedToBooking.TabIndex = 10;
-            this.lblAddedToBooking.Text = "Added to booking:";
             // 
             // lblDemoMachines
             // 
@@ -120,23 +107,54 @@
             this.lblDemoMachines.TabIndex = 9;
             this.lblDemoMachines.Text = "Demo Machines:";
             // 
+            // btnRemove
+            // 
+            this.btnRemove.Location = new System.Drawing.Point(212, 32);
+            this.btnRemove.Name = "btnRemove";
+            this.btnRemove.Size = new System.Drawing.Size(69, 45);
+            this.btnRemove.TabIndex = 18;
+            this.btnRemove.Text = "Remove";
+            this.btnRemove.UseVisualStyleBackColor = true;
+            this.btnRemove.Click += new System.EventHandler(this.btnRemove_Click);
+            // 
+            // gbMachines
+            // 
+            this.gbMachines.Controls.Add(this.btnRemove);
+            this.gbMachines.Controls.Add(this.lbAddedToBooking);
+            this.gbMachines.Location = new System.Drawing.Point(6, 119);
+            this.gbMachines.Name = "gbMachines";
+            this.gbMachines.Size = new System.Drawing.Size(288, 304);
+            this.gbMachines.TabIndex = 19;
+            this.gbMachines.TabStop = false;
+            this.gbMachines.Text = "Machines:";
+            // 
+            // gbConfigurations
+            // 
+            this.gbConfigurations.Controls.Add(this.cbSelectConfigurations);
+            this.gbConfigurations.Location = new System.Drawing.Point(319, 119);
+            this.gbConfigurations.Name = "gbConfigurations";
+            this.gbConfigurations.Size = new System.Drawing.Size(218, 304);
+            this.gbConfigurations.TabIndex = 20;
+            this.gbConfigurations.TabStop = false;
+            this.gbConfigurations.Text = "Configurations";
+            // 
             // Demo_Maskiner
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(499, 502);
+            this.ClientSize = new System.Drawing.Size(551, 502);
+            this.Controls.Add(this.gbConfigurations);
+            this.Controls.Add(this.gbMachines);
             this.Controls.Add(this.lblSelectMachines);
             this.Controls.Add(this.btnAdd);
             this.Controls.Add(this.btnNext);
-            this.Controls.Add(this.cbSelectConfigurations);
-            this.Controls.Add(this.lblSelectConfigurations);
-            this.Controls.Add(this.lbAddedToBooking);
             this.Controls.Add(this.coboDemoMachines);
-            this.Controls.Add(this.lblAddedToBooking);
             this.Controls.Add(this.lblDemoMachines);
             this.Name = "Demo_Maskiner";
             this.Text = "Demo_Machines";
             this.Load += new System.EventHandler(this.Demo_Maskiner_Load);
+            this.gbMachines.ResumeLayout(false);
+            this.gbConfigurations.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -148,10 +166,11 @@
         private System.Windows.Forms.Button btnAdd;
         private System.Windows.Forms.Button btnNext;
         private System.Windows.Forms.CheckedListBox cbSelectConfigurations;
-        private System.Windows.Forms.Label lblSelectConfigurations;
         private System.Windows.Forms.ListBox lbAddedToBooking;
         private System.Windows.Forms.ComboBox coboDemoMachines;
-        private System.Windows.Forms.Label lblAddedToBooking;
         private System.Windows.Forms.Label lblDemoMachines;
+        private System.Windows.Forms.Button btnRemove;
+        private System.Windows.Forms.GroupBox gbMachines;
+        private System.Windows.Forms.GroupBox gbConfigurations;
     }
 }

@@ -36,5 +36,44 @@ namespace StillAS
         private void btnNext_Click(object sender, EventArgs e)
         {
         }
+
+        private void btnAdd_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                lbAddedToBooking.Items.Add(coboDemoMachines.SelectedItem);
+                coboDemoMachines.Items.Remove(coboDemoMachines.SelectedItem);
+                if (coboDemoMachines.Items.Count == 0)
+                {
+                    coboDemoMachines.Text = string.Empty;
+                    btnAdd.Enabled = false;
+                    coboDemoMachines.Enabled = false;
+                }
+            }
+            catch
+            {
+                MessageBox.Show("Please choose a machine");
+            }
+        }
+
+        private void lbAddedToBooking_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnRemove_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                coboDemoMachines.Items.Add(lbAddedToBooking.SelectedItem);
+                coboDemoMachines.Enabled = true;
+                btnAdd.Enabled = true;
+                lbAddedToBooking.Items.Remove(lbAddedToBooking.SelectedItem);
+            }
+            catch
+            {
+                MessageBox.Show("Please select a machine to remove");
+            }
+        }
     }
 }
