@@ -36,5 +36,17 @@ namespace StillAS
         private void btnNext_Click(object sender, EventArgs e)
         {
         }
+
+        private void btnAdd_Click(object sender, EventArgs e)
+        {
+            lbAddedToBooking.Items.Add(coboDemoMachines.SelectedItem);
+            coboDemoMachines.Items.Remove(coboDemoMachines.SelectedItem);
+            if (coboDemoMachines.Items.Count == 0)
+            {
+                coboDemoMachines.Text = string.Empty;
+                btnAdd.Enabled = false;
+                coboDemoMachines.Enabled = false;
+            }
+        }
     }
 }
