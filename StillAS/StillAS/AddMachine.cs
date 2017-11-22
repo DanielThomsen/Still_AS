@@ -78,9 +78,16 @@ namespace StillAS
             decimal Height = Convert.ToDecimal(txtHeight.Text.Replace('.', ','));
             decimal Length = Convert.ToDecimal(txtLength.Text.Replace('.', ','));
             decimal Width = Convert.ToDecimal(txtWidth.Text.Replace('.', ','));
+
+            List<string> configurationsList = new List<string>();
+            foreach (object itemChecked in cbConfigurations.CheckedItems)
+            {
+                configurationsList.Add(itemChecked + "");
+            }
+
             CC.CreateMachine(DemoNumber, ModelName, ModelNumber, Brand, CNumber, MastType, MastBuildingHeight, MastLiftHeight,
                              MastFreeLift, AggregatType, AggregatNumber, BatteryType, BatteryNumber, ChargerType, ChargerNumber, 
-                             Controller, Weight, Height, Length, Width);
+                             Controller, Weight, Height, Length, Width, configurationsList);
             
         }
     }

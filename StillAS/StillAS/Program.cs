@@ -16,7 +16,7 @@ namespace StillAS
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Demo_Maskiner());
+            Application.Run(new Machines());
         }
     }
 }
