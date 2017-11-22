@@ -72,11 +72,11 @@
             this.label13 = new System.Windows.Forms.Label();
             this.txtModelName = new System.Windows.Forms.TextBox();
             this.label14 = new System.Windows.Forms.Label();
-            this.listBox1 = new System.Windows.Forms.ListBox();
+            this.libConfigurations = new System.Windows.Forms.ListBox();
             this.button2 = new System.Windows.Forms.Button();
             this.btnSaveMachine = new System.Windows.Forms.Button();
             this.label12 = new System.Windows.Forms.Label();
-            this.checkedListBox1 = new System.Windows.Forms.CheckedListBox();
+            this.cbConfigurations = new System.Windows.Forms.CheckedListBox();
             this.label1 = new System.Windows.Forms.Label();
             this.groupBox4.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -520,15 +520,15 @@
             this.label14.TabIndex = 76;
             this.label14.Text = "Brand:";
             // 
-            // listBox1
+            // libConfigurations
             // 
-            this.listBox1.FormattingEnabled = true;
-            this.listBox1.ItemHeight = 25;
-            this.listBox1.Location = new System.Drawing.Point(854, 200);
-            this.listBox1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.listBox1.Name = "listBox1";
-            this.listBox1.Size = new System.Drawing.Size(450, 304);
-            this.listBox1.TabIndex = 99;
+            this.libConfigurations.FormattingEnabled = true;
+            this.libConfigurations.ItemHeight = 25;
+            this.libConfigurations.Location = new System.Drawing.Point(854, 200);
+            this.libConfigurations.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.libConfigurations.Name = "libConfigurations";
+            this.libConfigurations.Size = new System.Drawing.Size(450, 304);
+            this.libConfigurations.TabIndex = 99;
             // 
             // button2
             // 
@@ -561,15 +561,15 @@
             this.label12.TabIndex = 98;
             this.label12.Text = "Configurations:";
             // 
-            // checkedListBox1
+            // cbConfigurations
             // 
-            this.checkedListBox1.FormattingEnabled = true;
-            this.checkedListBox1.Location = new System.Drawing.Point(807, 155);
-            this.checkedListBox1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.checkedListBox1.Name = "checkedListBox1";
-            this.checkedListBox1.Size = new System.Drawing.Size(526, 342);
-            this.checkedListBox1.TabIndex = 97;
-            this.checkedListBox1.Visible = false;
+            this.cbConfigurations.FormattingEnabled = true;
+            this.cbConfigurations.Location = new System.Drawing.Point(807, 155);
+            this.cbConfigurations.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.cbConfigurations.Name = "cbConfigurations";
+            this.cbConfigurations.Size = new System.Drawing.Size(526, 342);
+            this.cbConfigurations.TabIndex = 97;
+            this.cbConfigurations.Visible = false;
             // 
             // label1
             // 
@@ -581,7 +581,7 @@
             this.label1.TabIndex = 96;
             this.label1.Text = "Add machine";
             // 
-            // TilføjMaskine
+            // AddMachine
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -590,14 +590,14 @@
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
-            this.Controls.Add(this.listBox1);
+            this.Controls.Add(this.libConfigurations);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.btnSaveMachine);
             this.Controls.Add(this.label12);
-            this.Controls.Add(this.checkedListBox1);
+            this.Controls.Add(this.cbConfigurations);
             this.Controls.Add(this.label1);
             this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.Name = "TilføjMaskine";
+            this.Name = "AddMachine";
             this.Text = "TilføjMaskine";
             this.groupBox4.ResumeLayout(false);
             this.groupBox4.PerformLayout();
@@ -658,11 +658,11 @@
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.TextBox txtModelName;
         private System.Windows.Forms.Label label14;
-        private System.Windows.Forms.ListBox listBox1;
+        private System.Windows.Forms.ListBox libConfigurations;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button btnSaveMachine;
         private System.Windows.Forms.Label label12;
-        private System.Windows.Forms.CheckedListBox checkedListBox1;
+        private System.Windows.Forms.CheckedListBox cbConfigurations;
         private System.Windows.Forms.Label label1;
     }
 }

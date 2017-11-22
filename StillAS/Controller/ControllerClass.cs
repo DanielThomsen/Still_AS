@@ -36,6 +36,13 @@ namespace Controller
         {
             DBR.CreateCustomer(Name1, Name2, Att, Address, ZIP, City, Phone);
         }
+
+        public List<string> GetConfigurations(string demoNr)
+        {
+            List<string> configurations = DBR.GetConfigurations(demoNr);
+            return configurations;
+        }
+
         // LEA ARBEJDER HERFRA ----------
         public List<string> PopulateListbox(List<string> modelname)
         {
