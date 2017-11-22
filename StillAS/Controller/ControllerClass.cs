@@ -32,6 +32,12 @@ namespace Controller
             return machineInfo;
         }
 
+        public List<string> GetConfigurations(string demoNr)
+        {
+            List<string> configurations = DBR.GetConfigurations(demoNr);
+            return configurations;
+        }
+
         // LEA ARBEJDER HERFRA ----------
         public List<string> PopulateListbox(List<string> modelname)
         {

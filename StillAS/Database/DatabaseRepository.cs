@@ -67,6 +67,42 @@ namespace Database
 
         }
 
+        public List<string> GetConfigurations(string demoNr)
+        {
+            List<string> configurations = new List<string>();
+
+            //foreach (var item in collection)  // For hver maskinekonfiguration hvor demonummer = demoNr
+            //{
+
+            //}
+
+            //List<MaskineKonfiguration> machineConfigurations = new List<MaskineKonfiguration>();
+
+            //machineConfigurations.Add(meContext.MaskineKonfigurations.Find({ DemoNummer = demoNr}));
+
+            //configurations.Add(machineConfiguration.Konfiguration);
+
+            //return configurations;
+
+            // Kode efter Lazy Loading:
+
+            List<string> configurationsList = new List<string>();
+            var machines = meContext.Maskines;
+
+            foreach (Maskine m in machines)
+            {
+                foreach (MaskineKonfiguration mk in m.MaskineKonfigurations)
+                {
+                    if (m.DemoNummer == demoNr)
+                    {
+                        configurationsList.Add(mk.Konfiguration);
+                    }
+                }
+            }
+
+            return configurationsList;
+        }
+
         //LEA ARBEJDER HERFRA ----------------------------------
         private SqlConnection conn;
         private string get;

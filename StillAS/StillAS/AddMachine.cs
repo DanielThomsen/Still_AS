@@ -32,11 +32,18 @@ namespace StillAS
                 txtChargerNumber, txtController, txtWeight, txtHeight, txtLength,
                 txtWidth };
             txtDemoMachine.Text = demoNumber;
+            List<string> configurations = CC.GetConfigurations(demoNumber);
+
             int i = 0;
             foreach (TextBox tb in textBoxList)
             {
                 tb.Text = machineInfo[i];
                 i++;
+            }
+
+            foreach (string s in configurations)
+            {
+                libConfigurations.Items.Add(s);
             }
         }
 
