@@ -259,7 +259,17 @@ namespace Database
         {
             List<string> customerInfo = new List<string>();
 
-            // Hent kundeoplysninger fra databasen her.
+            // Hent kundeoplysninger fra databasen her:
+            var booking = meContext.Bookings.Find(bookingID);
+            var customer = meContext.Kundes.Find(Convert.ToInt32(booking.KundeID));
+
+            customerInfo.Add(customer.Navn1);
+            customerInfo.Add(customer.Navn2);
+            customerInfo.Add(customer.Att);
+            customerInfo.Add(customer.Adresse);
+            customerInfo.Add(customer.Postnummer + "");
+            customerInfo.Add(customer.By);
+            customerInfo.Add(customer.Telefon + "");
 
             return customerInfo;
         }
@@ -268,19 +278,47 @@ namespace Database
         {
             List<string> bookingInfo = new List<string>();
 
-            // Hent kundeoplysninger fra databasen her.
+            // Hent bookingoplysninger fra databasen her:
+            var booking = meContext.Bookings.Find(bookingID);
+
+            bookingInfo.Add(booking.LeveringsDato+"");
+            bookingInfo.Add(booking.AfhentningsDato+"");
+            bookingInfo.Add(booking.Leverandør);
+            bookingInfo.Add(booking.BeskedTilVærksted);
+            bookingInfo.Add(booking.BeskedTilFølgeSeddel);
+            bookingInfo.Add(booking.RampeVedLevering+"");
 
             return bookingInfo;
         }
 
         public List<string> GetMachines(int bookingID)
         {
-            List<string> machines = new List<string>();
+            //List<string> machines = new List<string>();
 
-            // Hent kundeoplysninger fra databasen her.
+            // Hent maskineoplysninger fra databasen her:
+            //var booking = meContext.Bookings.Find(bookingID);
+            //var bookingLinje = meContext.BookingLinjes.Find(booking);
 
-            return machines;
+            //return machines;
+
+            List<string> machinesList = new List<string>();
+            var booking = meContext.Bookings;
+
+            foreach (Booking b in booking)
+            {
+                foreach (BookingLinje bl in b.BookingLinjes)
+                {
+                    if (b.BookingID == bookingID)
+                    {
+                        machinesList.Add(bl.Maskine.DemoNummer);
+                    }
+                }
+            }
+
+            return machinesList;
         }
+
+        
 
         //LEA ARBEJDER HERFRA ----------------------------------
         private SqlConnection conn;
