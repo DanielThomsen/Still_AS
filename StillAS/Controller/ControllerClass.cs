@@ -25,15 +25,25 @@ namespace Controller
         {
             DBR.CreateCustomer(Name1, Name2, Att, Address, ZIP, City, Phone);
         }
+        public void CreateBooking(string date1, string date2, string Transportør, string MessageForWorkshop, string DeliverNote,
+            int Ramp)
+        {
+            DBR.CreateBooking(date1, date2, Transportør, MessageForWorkshop, DeliverNote, Ramp);
+        }
         public List<String> DropDownDemoLoad()
         {
             return DBR.DropDownDemo();
         }
-        public int GetCustomerID()
+        public void CreateBookingLine()
         {
-            int ID = DatabaseRepository.CustomerID;
-            return ID;
+            DBR.CreateBookingLine(DemoMachines);
+            DemoMachines.Clear();
         }
+       // public int GetCustomerID()
+        //{
+        //    int ID = DatabaseRepository.CustomerID;
+        //    return ID;
+        //}
         //[Krognos slut]
         //Daniels metode: Slet maskine
         public void RemoveMachine(string DemoNumber)

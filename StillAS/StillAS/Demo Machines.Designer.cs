@@ -30,7 +30,7 @@
         {
             this.lblSelectMachines = new System.Windows.Forms.Label();
             this.btnAdd = new System.Windows.Forms.Button();
-            this.btnNext = new System.Windows.Forms.Button();
+            this.btnFinish = new System.Windows.Forms.Button();
             this.cbSelectConfigurations = new System.Windows.Forms.CheckedListBox();
             this.lbAddedToBooking = new System.Windows.Forms.ListBox();
             this.coboDemoMachines = new System.Windows.Forms.ComboBox();
@@ -62,15 +62,15 @@
             this.btnAdd.UseVisualStyleBackColor = true;
             this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
             // 
-            // btnNext
+            // btnFinish
             // 
-            this.btnNext.Location = new System.Drawing.Point(15, 442);
-            this.btnNext.Name = "btnNext";
-            this.btnNext.Size = new System.Drawing.Size(101, 42);
-            this.btnNext.TabIndex = 15;
-            this.btnNext.Text = "Next";
-            this.btnNext.UseVisualStyleBackColor = true;
-            this.btnNext.Click += new System.EventHandler(this.btnNext_Click);
+            this.btnFinish.Location = new System.Drawing.Point(15, 442);
+            this.btnFinish.Name = "btnFinish";
+            this.btnFinish.Size = new System.Drawing.Size(101, 42);
+            this.btnFinish.TabIndex = 15;
+            this.btnFinish.Text = "Finish";
+            this.btnFinish.UseVisualStyleBackColor = true;
+            this.btnFinish.Click += new System.EventHandler(this.btnNext_Click);
             // 
             // cbSelectConfigurations
             // 
@@ -147,7 +147,7 @@
             this.Controls.Add(this.gbMachines);
             this.Controls.Add(this.lblSelectMachines);
             this.Controls.Add(this.btnAdd);
-            this.Controls.Add(this.btnNext);
+            this.Controls.Add(this.btnFinish);
             this.Controls.Add(this.coboDemoMachines);
             this.Controls.Add(this.lblDemoMachines);
             this.Name = "Demo_Maskiner";
@@ -164,7 +164,7 @@
 
         private System.Windows.Forms.Label lblSelectMachines;
         private System.Windows.Forms.Button btnAdd;
-        private System.Windows.Forms.Button btnNext;
+        private System.Windows.Forms.Button btnFinish;
         private System.Windows.Forms.CheckedListBox cbSelectConfigurations;
         private System.Windows.Forms.ListBox lbAddedToBooking;
         private System.Windows.Forms.ComboBox coboDemoMachines;

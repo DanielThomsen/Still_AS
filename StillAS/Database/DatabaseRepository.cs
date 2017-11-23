@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Data.Entity;
 using System.Data.SqlClient;
+using System.Globalization;
 
 namespace Database
 {
@@ -46,9 +47,10 @@ namespace Database
         }
         public void CreateCustomer(string Name1, string Name2, string Att, string Address, int ZIP, string City, int Phone)
         {
+            CreateCustomerID();
             var Customer = new Kunde
                         {
-                            KundeID = CreateCustomerID(),
+                            KundeID = CustomerID,
                             Navn1 = Name1,
                             Navn2 = Name2,
                             Att = Att,
@@ -60,7 +62,7 @@ namespace Database
                         meContext.Kundes.Add(Customer);
                         meContext.SaveChanges();
         }
-        public int CreateCustomerID()
+        public void CreateCustomerID()
         {
             conn = new SqlConnection(GetConnection());
             conn.Open();
@@ -79,9 +81,47 @@ namespace Database
             }
             CustomerID = Convert.ToInt32(ID) + 1;
             conn.Close();
-            return CustomerID;
         }
-        public int CreateBookingID()
+        public void CreateBooking(string date1, string date2, string Transporter, string MessageForWorkshop, string DeliveryNote,
+            int Ramp)
+        {
+            CreateBookingID();
+            DateTime dt1 = DateTime.ParseExact(date1, "dd-MM-yyyy", CultureInfo.InvariantCulture);
+            DateTime dt2 = DateTime.ParseExact(date1, "dd-MM-yyyy", CultureInfo.InvariantCulture);
+            int KundeID = CustomerID;
+            int BookingsID = BookingID;
+            int DemoAnsvarligID = 1;
+            int SælgerID = 2;
+            int VærkstedID = 3;
+            int TransportørID = 4;
+            string LeveringsDato = dt1.ToString("yyyy-MM-dd");
+            string AfhentningsDato = dt2.ToString("yyyy-MM-dd");
+            string Leverandør = Transporter;
+            string BeskedTilVærksted = MessageForWorkshop;
+            string BeskedTilFølgeSeddel = DeliveryNote;
+            int RampeVedLevering = Ramp;
+
+            conn = new SqlConnection(GetConnection());
+            conn.Open();
+            SqlCommand Com = new SqlCommand("insert into Booking values(" +
+                BookingsID + ", " +
+                KundeID + ", " +
+                SælgerID + ", " +
+                VærkstedID + ", " +
+                DemoAnsvarligID + ", " +
+                TransportørID + ", '" +
+                LeveringsDato + "', '" +
+                AfhentningsDato + "', '" +
+                Leverandør + "', '" +
+                BeskedTilVærksted + "', '" +
+                BeskedTilFølgeSeddel + "', " +
+                RampeVedLevering + ")"
+                );
+            Com.Connection = conn;
+            Com.ExecuteNonQuery();
+            conn.Close();
+        }
+        public void CreateBookingID()
         {
             conn = new SqlConnection(GetConnection());
             conn.Open();
@@ -100,7 +140,17 @@ namespace Database
             }
             BookingID = Convert.ToInt32(ID) + 1;
             conn.Close();
-            return BookingID;
+        }
+        public void CreateBookingLine(List<string> Machine)
+        {
+            foreach(string X in Machine)
+            {
+                var Bookingline = new BookingLinje();
+                Bookingline.BookingID = BookingID;
+                Bookingline.DemoNummer = X;
+                meContext.BookingLinjes.Add(Bookingline);
+                meContext.SaveChanges();
+            }
         }
         public List<string> DropDownDemo()
         {
