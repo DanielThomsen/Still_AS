@@ -30,7 +30,8 @@ namespace Controller
             return DBR.DropDownDemo();
         }
         //[Krognos slut]
-        //Daniels metode: Slet maskine
+
+        //Daniels metoder:
         public void RemoveMachine(string DemoNumber)
         {
             DBR.RemoveMachine(DemoNumber);
@@ -52,6 +53,11 @@ namespace Controller
         {
             List<string> configurations = DBR.GetAllConfigurations();
             return configurations;
+        }
+
+        public void RemoveBooking(int bookingID)
+        {
+            DBR.RemoveBooking(bookingID);
         }
 
         // LEA ARBEJDER HERFRA ----------
