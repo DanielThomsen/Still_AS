@@ -91,11 +91,18 @@ namespace Database
         }
         //[Krognos Slut]
 
-        // Daniels metode
+        // Daniels metoder
         public void RemoveMachine(string DemoNumber)
         {
             var machine = meContext.Maskines.Find(DemoNumber);
             meContext.Maskines.Remove(machine);
+            meContext.SaveChanges();
+        }
+
+        public void RemoveBooking(int bookingID)
+        {
+            var booking = meContext.Bookings.Find(bookingID);
+            meContext.Bookings.Remove(booking);
             meContext.SaveChanges();
         }
 
