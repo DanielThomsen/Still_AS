@@ -183,6 +183,33 @@ namespace Database
             return configurationsList;
         }
 
+        public List<string> GetCustomer(int bookingID)
+        {
+            List<string> customerInfo = new List<string>();
+
+            // Hent kundeoplysninger fra databasen her.
+
+            return customerInfo;
+        }
+
+        public List<string> GetBooking(int bookingID)
+        {
+            List<string> bookingInfo = new List<string>();
+
+            // Hent kundeoplysninger fra databasen her.
+
+            return bookingInfo;
+        }
+
+        public List<string> GetMachines(int bookingID)
+        {
+            List<string> machines = new List<string>();
+
+            // Hent kundeoplysninger fra databasen her.
+
+            return machines;
+        }
+
         //LEA ARBEJDER HERFRA ----------------------------------
         private SqlConnection conn;
         private string get;

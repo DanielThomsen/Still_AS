@@ -60,6 +60,25 @@ namespace Controller
             DBR.RemoveBooking(bookingID);
         }
 
+        public List<string> GetCustomer(int bookingID)
+        {
+            List<string> customerInfo = DBR.GetCustomer(bookingID);
+            return customerInfo;
+        }
+
+        public List<string> GetBooking(int bookingID)
+        {
+            List<string> bookingInfo = DBR.GetBooking(bookingID);
+            return bookingInfo;
+        }
+
+        public List<string> GetMachines(int bookingID)
+        {
+            List<string> machines = DBR.GetMachines(bookingID);
+            return machines;
+        }
+
+
         // LEA ARBEJDER HERFRA ----------
         public List<string> PopulateListbox(List<string> modelname)
         {

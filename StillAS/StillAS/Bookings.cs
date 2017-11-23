@@ -32,5 +32,21 @@ namespace StillAS
                 MessageBox.Show("Error: Machine not removed");
             }
         }
+
+        private void btnShow_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                int bookingIDSelected = Convert.ToInt32(libBookingID.SelectedItem);
+                //Show_Machine SM = new Show_Machine(bookingIDSelected);
+                //SM.Show();
+                MessageBox.Show("Form skal åbnes her. Så vises alt om bookingen.");
+
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Error: Machine not removed");
+            }
+        }
     }
 }
