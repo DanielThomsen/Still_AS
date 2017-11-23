@@ -11,7 +11,9 @@ namespace Database
     public class DatabaseRepository
     {
         stillasEntities meContext = new stillasEntities();
+
         //[Krognos Start]
+        public static int CustomerID;
         public void CreateModelName(string ModelName1)
         {
             var ModelN = new ModelNavn { Modelnavn1 = ModelName1 };
@@ -43,8 +45,9 @@ namespace Database
         }
         public void CreateCustomer(string Name1, string Name2, string Att, string Address, int ZIP, string City, int Phone)
         {
-                        var Customer = new Kunde
+            var Customer = new Kunde
                         {
+                            KundeID = CreateCustomerID(),
                             Navn1 = Name1,
                             Navn2 = Name2,
                             Att = Att,
@@ -55,6 +58,27 @@ namespace Database
                         };
                         meContext.Kundes.Add(Customer);
                         meContext.SaveChanges();
+        }
+        public int CreateCustomerID()
+        {
+            conn = new SqlConnection(GetConnection());
+            conn.Open();
+            string ID = "";
+            string count = "select * from Kunde order by KundeID desc";
+            SqlCommand ReadCom = new SqlCommand(count, conn);
+            SqlDataReader myReader = null;
+            myReader = ReadCom.ExecuteReader();
+            if (myReader.Read())
+            {
+                ID = myReader["KundeID"].ToString();
+            }
+            if (ID == "")
+            {
+                ID = "0";
+            }
+            CustomerID = Convert.ToInt32(ID) + 1;
+            conn.Close();
+            return CustomerID;
         }
         public List<string> DropDownDemo()
         {
