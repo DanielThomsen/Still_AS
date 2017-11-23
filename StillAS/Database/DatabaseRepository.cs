@@ -14,6 +14,7 @@ namespace Database
 
         //[Krognos Start]
         public static int CustomerID;
+        public static int BookingID;
         public void CreateModelName(string ModelName1)
         {
             var ModelN = new ModelNavn { Modelnavn1 = ModelName1 };
@@ -79,6 +80,27 @@ namespace Database
             CustomerID = Convert.ToInt32(ID) + 1;
             conn.Close();
             return CustomerID;
+        }
+        public int CreateBookingID()
+        {
+            conn = new SqlConnection(GetConnection());
+            conn.Open();
+            string ID = "";
+            string count = "select * from Booking order by BookingID desc";
+            SqlCommand ReadCom = new SqlCommand(count, conn);
+            SqlDataReader myReader = null;
+            myReader = ReadCom.ExecuteReader();
+            if (myReader.Read())
+            {
+                ID = myReader["BookingID"].ToString();
+            }
+            if (ID == "")
+            {
+                ID = "0";
+            }
+            BookingID = Convert.ToInt32(ID) + 1;
+            conn.Close();
+            return BookingID;
         }
         public List<string> DropDownDemo()
         {

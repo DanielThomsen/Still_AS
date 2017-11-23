@@ -29,6 +29,11 @@ namespace Controller
         {
             return DBR.DropDownDemo();
         }
+        public int GetCustomerID()
+        {
+            int ID = DatabaseRepository.CustomerID;
+            return ID;
+        }
         //[Krognos slut]
         //Daniels metode: Slet maskine
         public void RemoveMachine(string DemoNumber)
