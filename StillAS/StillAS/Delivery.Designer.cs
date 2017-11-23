@@ -28,31 +28,31 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.btnFinish = new System.Windows.Forms.Button();
+            this.btnNext = new System.Windows.Forms.Button();
             this.rbRampNo = new System.Windows.Forms.RadioButton();
             this.rbRampYes = new System.Windows.Forms.RadioButton();
             this.tbDeliveryNote = new System.Windows.Forms.TextBox();
             this.tbMessageToWorkshop = new System.Windows.Forms.TextBox();
             this.tbTransporter = new System.Windows.Forms.TextBox();
-            this.tbRetrievalDate = new System.Windows.Forms.TextBox();
-            this.tbDeliveryDate = new System.Windows.Forms.TextBox();
             this.lblLoadingPlatform = new System.Windows.Forms.Label();
             this.lblDeliveryNote = new System.Windows.Forms.Label();
             this.lblMessageToWorkshop = new System.Windows.Forms.Label();
             this.lblTransporter = new System.Windows.Forms.Label();
             this.lblRetrievalDate = new System.Windows.Forms.Label();
             this.lblDeliveryDate = new System.Windows.Forms.Label();
+            this.dtpDeliveryDate = new System.Windows.Forms.DateTimePicker();
+            this.dtpRetrievalDate = new System.Windows.Forms.DateTimePicker();
             this.SuspendLayout();
             // 
-            // btnFinish
+            // btnNext
             // 
-            this.btnFinish.Location = new System.Drawing.Point(137, 374);
-            this.btnFinish.Name = "btnFinish";
-            this.btnFinish.Size = new System.Drawing.Size(89, 38);
-            this.btnFinish.TabIndex = 27;
-            this.btnFinish.Text = "Finish";
-            this.btnFinish.UseVisualStyleBackColor = true;
-            this.btnFinish.Click += new System.EventHandler(this.btnFinish_Click);
+            this.btnNext.Location = new System.Drawing.Point(137, 374);
+            this.btnNext.Name = "btnNext";
+            this.btnNext.Size = new System.Drawing.Size(89, 38);
+            this.btnNext.TabIndex = 27;
+            this.btnNext.Text = "Next";
+            this.btnNext.UseVisualStyleBackColor = true;
+            this.btnNext.Click += new System.EventHandler(this.btnFinish_Click);
             // 
             // rbRampNo
             // 
@@ -98,20 +98,6 @@
             this.tbTransporter.Name = "tbTransporter";
             this.tbTransporter.Size = new System.Drawing.Size(100, 22);
             this.tbTransporter.TabIndex = 22;
-            // 
-            // tbRetrievalDate
-            // 
-            this.tbRetrievalDate.Location = new System.Drawing.Point(173, 61);
-            this.tbRetrievalDate.Name = "tbRetrievalDate";
-            this.tbRetrievalDate.Size = new System.Drawing.Size(100, 22);
-            this.tbRetrievalDate.TabIndex = 21;
-            // 
-            // tbDeliveryDate
-            // 
-            this.tbDeliveryDate.Location = new System.Drawing.Point(173, 15);
-            this.tbDeliveryDate.Name = "tbDeliveryDate";
-            this.tbDeliveryDate.Size = new System.Drawing.Size(100, 22);
-            this.tbDeliveryDate.TabIndex = 20;
             // 
             // lblLoadingPlatform
             // 
@@ -167,19 +153,33 @@
             this.lblDeliveryDate.TabIndex = 14;
             this.lblDeliveryDate.Text = "Delivery date:";
             // 
+            // dtpDeliveryDate
+            // 
+            this.dtpDeliveryDate.Location = new System.Drawing.Point(173, 18);
+            this.dtpDeliveryDate.Name = "dtpDeliveryDate";
+            this.dtpDeliveryDate.Size = new System.Drawing.Size(167, 22);
+            this.dtpDeliveryDate.TabIndex = 28;
+            // 
+            // dtpRetrievalDate
+            // 
+            this.dtpRetrievalDate.Location = new System.Drawing.Point(173, 56);
+            this.dtpRetrievalDate.Name = "dtpRetrievalDate";
+            this.dtpRetrievalDate.Size = new System.Drawing.Size(167, 22);
+            this.dtpRetrievalDate.TabIndex = 29;
+            // 
             // Delivery
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(355, 426);
-            this.Controls.Add(this.btnFinish);
+            this.Controls.Add(this.dtpRetrievalDate);
+            this.Controls.Add(this.dtpDeliveryDate);
+            this.Controls.Add(this.btnNext);
             this.Controls.Add(this.rbRampNo);
             this.Controls.Add(this.rbRampYes);
             this.Controls.Add(this.tbDeliveryNote);
             this.Controls.Add(this.tbMessageToWorkshop);
             this.Controls.Add(this.tbTransporter);
-            this.Controls.Add(this.tbRetrievalDate);
-            this.Controls.Add(this.tbDeliveryDate);
             this.Controls.Add(this.lblLoadingPlatform);
             this.Controls.Add(this.lblDeliveryNote);
             this.Controls.Add(this.lblMessageToWorkshop);
@@ -195,19 +195,19 @@
 
         #endregion
 
-        private System.Windows.Forms.Button btnFinish;
+        private System.Windows.Forms.Button btnNext;
         private System.Windows.Forms.RadioButton rbRampNo;
         private System.Windows.Forms.RadioButton rbRampYes;
         private System.Windows.Forms.TextBox tbDeliveryNote;
         private System.Windows.Forms.TextBox tbMessageToWorkshop;
         private System.Windows.Forms.TextBox tbTransporter;
-        private System.Windows.Forms.TextBox tbRetrievalDate;
-        private System.Windows.Forms.TextBox tbDeliveryDate;
         private System.Windows.Forms.Label lblLoadingPlatform;
         private System.Windows.Forms.Label lblDeliveryNote;
         private System.Windows.Forms.Label lblMessageToWorkshop;
         private System.Windows.Forms.Label lblTransporter;
         private System.Windows.Forms.Label lblRetrievalDate;
         private System.Windows.Forms.Label lblDeliveryDate;
+        private System.Windows.Forms.DateTimePicker dtpDeliveryDate;
+        private System.Windows.Forms.DateTimePicker dtpRetrievalDate;
     }
 }

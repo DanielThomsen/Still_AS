@@ -29,8 +29,8 @@ namespace StillAS
             string City = txtCity.Text;
             int Phone = Convert.ToInt32(txtPhone.Text);
             CTRC.AddCustomer(Name1, Name2, Att, Address, ZIP, City, Phone);
-            Demo_Maskiner DM = new Demo_Maskiner();
-            DM.Show();
+            Delivery Del = new Delivery();
+            Del.Show();
         }
     }
 }
