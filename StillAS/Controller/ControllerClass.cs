@@ -110,5 +110,16 @@ namespace Controller
             DBR.UpdateThirdListbox(modelnumber, demonumber);
             return demonumber;
         }
+        // EditMachine
+        public string UpdateInformation(string DemoNumber, string ModelName, string ModelNumber, string Brand, string CNumber,
+            string MastType, int MastBuildingHeight, int MastLiftHeight, int MastFreeLift, string AggregatType,
+            string AggregatNumber, string BatteryType, string BatteryNumber, string ChargerType, string ChargerNumber,
+            string Controller, decimal Weight, decimal Height, decimal Length, decimal Width, string oldDemoNumber, string messagebox)
+        {
+            DBR.UpdatedInformation(DemoNumber, ModelName, ModelNumber, Brand, CNumber, MastType, MastBuildingHeight, MastLiftHeight,
+                             MastFreeLift, AggregatType, AggregatNumber, BatteryType, BatteryNumber, ChargerType, ChargerNumber,
+                             Controller, Weight, Height, Length, Width, oldDemoNumber, messagebox);
+            return messagebox;
+        }
     }
 }

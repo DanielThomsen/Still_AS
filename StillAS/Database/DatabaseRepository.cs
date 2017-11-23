@@ -22,7 +22,7 @@ namespace Database
             meContext.ModelNavns.Add(ModelN);
             meContext.SaveChanges();
         }
-        public void CreateMachine(string DemoNumber, string ModelName, string ModelNumber, string Brand, string CNumber, 
+        public void CreateMachine(string DemoNumber, string ModelName, string ModelNumber, string Brand, string CNumber,
             string MastType, int MastBuildingHeight, int MastLiftHeight, int MastFreeLift, string AggregatType,
             string AggregatNumber, string BatteryType, string BatteryNumber, string ChargerType, string ChargerNumber,
             string Controller, decimal Weight, decimal Height, decimal Length, decimal Width, List<string> configurationsList) // indsæt konfigurationer og maskinekonfiguration
@@ -31,7 +31,7 @@ namespace Database
                 MastType = MastType, MastByggeHøjde = MastBuildingHeight, MastLøfteHøjde = MastLiftHeight, MastFriLøft = MastFreeLift,
                 Aggregat = AggregatType, AggregarNummer = AggregatNumber, BatteriType = BatteryType, BatteriNummer = BatteryNumber,
                 LaderType = ChargerType, LaderNummer = ChargerNumber, Betjening = Controller, Weight = Weight, Height = Height,
-                Length = Length, Width = Width, DemonAnsvarligID = 1};
+                Length = Length, Width = Width, DemonAnsvarligID = 1 };
             meContext.Maskines.Add(Machine);
             meContext.SaveChanges();
             
@@ -187,9 +187,9 @@ namespace Database
             machineList.Add(machine.Fabrikant);
             machineList.Add(machine.Chassisnummer);
             machineList.Add(machine.MastType);
-            machineList.Add(machine.MastByggeHøjde+"");
-            machineList.Add(machine.MastLøfteHøjde+"");
-            machineList.Add(machine.MastFriLøft+"");
+            machineList.Add(machine.MastByggeHøjde + "");
+            machineList.Add(machine.MastLøfteHøjde + "");
+            machineList.Add(machine.MastFriLøft + "");
             machineList.Add(machine.Aggregat);
             machineList.Add(machine.AggregarNummer);
             machineList.Add(machine.BatteriType);
@@ -197,10 +197,10 @@ namespace Database
             machineList.Add(machine.LaderType);
             machineList.Add(machine.LaderNummer);
             machineList.Add(machine.Betjening);
-            machineList.Add(machine.Weight+"");
-            machineList.Add(machine.Height+"");
-            machineList.Add(machine.Length+"");
-            machineList.Add(machine.Width+"");
+            machineList.Add(machine.Weight + "");
+            machineList.Add(machine.Height + "");
+            machineList.Add(machine.Length + "");
+            machineList.Add(machine.Width + "");
 
             return machineList;
 
@@ -282,7 +282,8 @@ namespace Database
             return machines;
         }
 
-        //LEA ARBEJDER HERFRA ----------------------------------
+        // LEA ARBEJDER HERFRA ---------------------------------- >
+        // Machines Listboxe
         private SqlConnection conn;
         private string get;
         public string GetConnection()
@@ -303,7 +304,7 @@ namespace Database
                     {
                         modelname.Add(reader["ModelNavn"].ToString());
                     }
-                }               
+                }
             }
             catch
             {
@@ -311,7 +312,7 @@ namespace Database
             }
             modelname.Sort();
             conn.Close();
-            return modelname;                     
+            return modelname;
         }
         public List<string> UpdateSecondListBox(string modelname, List<string> modelnumber)
         {
@@ -359,6 +360,92 @@ namespace Database
             }
             conn.Close();
             return demonumber;
+        }
+        // Edit Machines
+        public string UpdatedInformation(string newDemoNumber, string ModelName, string ModelNumber, string Brand, string CNumber,
+            string MastType, int MastBuildingHeight, int MastLiftHeight, int MastFreeLift, string AggregatType,
+            string AggregatNumber, string BatteryType, string BatteryNumber, string ChargerType, string ChargerNumber,
+            string Controller, decimal Weight, decimal Height, decimal Length, decimal Width, string oldDemoNumber, string messagebox)
+        {
+            try
+            {
+                using (SqlConnection conn = new SqlConnection(GetConnection()))
+                {
+                    conn.Open();
+                    using (SqlCommand cmd =
+                        new SqlCommand("UPDATE Maskine SET DemoNummer=@NewDemoNummer, ModelName=@ModelName, " +
+                        "DemonAnsvarligID=@DemoAnsvarlig, Type=@Type, Fabrikant=@Brand, Chassisnummer=@CNumber, " +
+                        "MastType=@MastType, MastByggeHøjde=@MastBuldingHeight, MastLøfteHøjde=@MastLiftHeigt, " +
+                        "MastFriLøft=@MastFreeLift, Betjening=@Controller, Aggregat=@AggregatType, " +
+                        "AggregarNummer=@AggregatNumber, BatteriType=@BatteryType, BatteriNummer=@BatteryNumber, " +
+                        "LaderType=@ChargerType, LaderNummer=@ChargerNumber, Weight=@Weight, Height=@Height, Length=@Length, " +
+                        "Width=@Width WHERE DemoNummer=@oldDemoNumber", conn))
+                    {
+                        cmd.Parameters.AddWithValue("@NewDemoNummer", newDemoNumber);
+                        cmd.Parameters.AddWithValue("@ModelName", ModelName);
+                        cmd.Parameters.AddWithValue("@DemoAnsvarlig", 1);
+
+                        cmd.Parameters.AddWithValue("@Type", ModelNumber);
+                        cmd.Parameters.AddWithValue("@Brand", Brand);
+                        cmd.Parameters.AddWithValue("@CNumber", CNumber);
+
+                        cmd.Parameters.AddWithValue("@MastType", MastType);
+                        cmd.Parameters.AddWithValue("@MastBuldingHeight", MastBuildingHeight);
+                        cmd.Parameters.AddWithValue("@MastLiftHeigt", MastLiftHeight);
+                       
+
+                        cmd.Parameters.AddWithValue("@MastFreeLift", MastFreeLift);
+                        cmd.Parameters.AddWithValue("@Controller", Controller);
+                        cmd.Parameters.AddWithValue("@AggregatType", AggregatType);
+
+                        cmd.Parameters.AddWithValue("@AggregatNumber", AggregatNumber);
+                        cmd.Parameters.AddWithValue("@BatteryType", BatteryType);
+                        cmd.Parameters.AddWithValue("@BatteryNumber", BatteryNumber);
+
+                        cmd.Parameters.AddWithValue("@ChargerType", ChargerType);
+                        cmd.Parameters.AddWithValue("@ChargerNumber", ChargerNumber);
+                        cmd.Parameters.AddWithValue("@Weight", Weight);
+
+                        cmd.Parameters.AddWithValue("@Height", Height);
+                        cmd.Parameters.AddWithValue("@Length", Length);
+                        cmd.Parameters.AddWithValue("@Width", Width);
+
+                        cmd.Parameters.AddWithValue("@oldDemoNumber", oldDemoNumber);
+
+                        cmd.ExecuteNonQuery();
+                    }
+                }
+            }
+            catch (SqlException ex)
+            {
+                messagebox = ex.Message;
+            }
+            return messagebox;
+            //conn = new SqlConnection(GetConnection());
+            //conn.Open();
+            //try
+            //{           
+            //    get = "UPDATE Maskine SET DemoNummer = '" + newDemoNumber + "', ModelName = '" + ModelName + "', "
+            //        + "DemonAnsvarligID = " + 1 + ", "
+            //        + "Type = '" + ModelNumber + "', Fabrikant = '" + Brand + "', Chassisnummer = '" + CNumber + "', "
+            //        + "MastType = '" + MastType + "', MastByggeHøjde = " + MastBuildingHeight + ", "
+            //        + "MastLøfteHøjde = " + MastLiftHeight + ", MastFriLøft = " + MastFreeLift + ", "
+            //        + "Betjening = '" + Controller + "', Aggregat = '" + AggregatType + "', "
+            //        + "AggregarNummer = '" + AggregatNumber + "', BatteriType = '" + BatteryType + "', "
+            //        + "BatteriNummer = '" + BatteryNumber + "', LaderType = '" + ChargerType + "', "
+            //        + "LaderNummer = '" + ChargerNumber + "', Weight = " + Weight + ", Height = " + Height + ", "
+            //        + "Length = " + Length + ", Width = " + Width + " WHERE DemoNummer = '" + oldDemoNumber + "'";
+            //    SqlCommand com = new SqlCommand(@get, conn);
+            //    com.Connection = conn;
+            //    com.ExecuteNonQuery();
+            //    messagebox = get;
+            //}
+            //catch (Exception ex)
+            //{
+
+            //}
+            //conn.Close();
+            //return messagebox;
         }
     }
 }

@@ -14,9 +14,9 @@ namespace StillAS
     public partial class Machines : Form
     {
         ControllerClass CC = new ControllerClass();
-        List<string> modelname = new List<string>();
-        List<string> modelnumber = new List<string>();
-        List<string> demonumber = new List<string>();
+        protected List<string> modelname = new List<string>();
+        protected List<string> modelnumber = new List<string>();
+        protected List<string> demonumber = new List<string>();
         public Machines() // Når formen loader
         {
             InitializeComponent();
