@@ -27,7 +27,7 @@ namespace StillAS
             }
             btnSaveMachine.Visible = false;
 
-    }
+      }
 
         public AddMachine(string demoNumber)
         {
@@ -89,7 +89,7 @@ namespace StillAS
 
             CC.CreateMachine(DemoNumber, ModelName, ModelNumber, Brand, CNumber, MastType, MastBuildingHeight, MastLiftHeight,
                              MastFreeLift, AggregatType, AggregatNumber, BatteryType, BatteryNumber, ChargerType, ChargerNumber,
-                             Controller, Weight, Height, Length, Width);
+                             Controller, Weight, Height, Length, Width, configurationsList);
         }
         // Lea arbejder herfra ---- >
         public string oldDemoNumber;
@@ -139,8 +139,7 @@ namespace StillAS
                              Controller, Weight, Height, Length, Width, oldDemoNumber, messagebox);
             MessageBox.Show(hent);
 
-                             MastFreeLift, AggregatType, AggregatNumber, BatteryType, BatteryNumber, ChargerType, ChargerNumber, 
-                             Controller, Weight, Height, Length, Width, configurationsList);
+                             
             
         }
 
