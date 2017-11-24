@@ -93,6 +93,12 @@
     <Compile Include="AddMachine.Designer.cs">
       <DependentUpon>AddMachine.cs</DependentUpon>
     </Compile>
+    <Compile Include="ShowBooking.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ShowBooking.Designer.cs">
+      <DependentUpon>ShowBooking.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="Bookings.resx">
       <DependentUpon>Bookings.cs</DependentUpon>
     </EmbeddedResource>
@@ -119,6 +125,9 @@
     </Compile>
     <EmbeddedResource Include="AddMachine.resx">
       <DependentUpon>AddMachine.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ShowBooking.resx">
+      <DependentUpon>ShowBooking.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
