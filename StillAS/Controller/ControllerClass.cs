@@ -204,5 +204,9 @@ namespace Controller
                              Controller, Weight, Height, Length, Width, oldDemoNumber, messagebox);
             return messagebox;
         }
+        //public void BeginTransaction()
+        //{
+        //    DBR.BeginTransaction();
+        //}
     }
 }

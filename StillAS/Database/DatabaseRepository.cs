@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using System.Data.Entity;
 using System.Data.SqlClient;
 using System.Globalization;
+using System.Data;
 
 namespace Database
 {
@@ -318,10 +319,18 @@ namespace Database
 
             return machinesList;
         }
+        public int GetCustomerID(int bookingID)
+        {
+            var booking = meContext.Bookings.Find(bookingID);
+            var customer = meContext.Kundes.Find(Convert.ToInt32(booking.KundeID));
+
+            return customer.KundeID;
+        }
 
         // LEA ARBEJDER HERFRA ---------------------------------- >
         // Machines Listboxe
         private SqlConnection conn;
+        private SqlTransaction transaction = null;
         private string get;
         public string GetConnection()
         {
@@ -458,31 +467,33 @@ namespace Database
                 messagebox = ex.Message;
             }
             return messagebox;
-            //conn = new SqlConnection(GetConnection());
-            //conn.Open();
-            //try
-            //{           
-            //    get = "UPDATE Maskine SET DemoNummer = '" + newDemoNumber + "', ModelName = '" + ModelName + "', "
-            //        + "DemonAnsvarligID = " + 1 + ", "
-            //        + "Type = '" + ModelNumber + "', Fabrikant = '" + Brand + "', Chassisnummer = '" + CNumber + "', "
-            //        + "MastType = '" + MastType + "', MastByggeHøjde = " + MastBuildingHeight + ", "
-            //        + "MastLøfteHøjde = " + MastLiftHeight + ", MastFriLøft = " + MastFreeLift + ", "
-            //        + "Betjening = '" + Controller + "', Aggregat = '" + AggregatType + "', "
-            //        + "AggregarNummer = '" + AggregatNumber + "', BatteriType = '" + BatteryType + "', "
-            //        + "BatteriNummer = '" + BatteryNumber + "', LaderType = '" + ChargerType + "', "
-            //        + "LaderNummer = '" + ChargerNumber + "', Weight = " + Weight + ", Height = " + Height + ", "
-            //        + "Length = " + Length + ", Width = " + Width + " WHERE DemoNummer = '" + oldDemoNumber + "'";
-            //    SqlCommand com = new SqlCommand(@get, conn);
-            //    com.Connection = conn;
-            //    com.ExecuteNonQuery();
-            //    messagebox = get;
-            //}
-            //catch (Exception ex)
-            //{
-
-            //}
-            //conn.Close();
-            //return messagebox;
         }
+        // Edit Bookings
+        //public void BeginTransaction()
+        //{
+        //    SqlConnection conn = new SqlConnection(GetConnection());
+        //    conn.Open();
+        //    transaction = conn.BeginTransaction(IsolationLevel.RepeatableRead);
+        //}
+        //public void UpdateBookings()
+        //{
+        //    int CustomerID = GetCustomerID();
+        //    try
+        //    {
+        //        using (SqlCommand updateCustomer =
+        //            new SqlCommand("UPDATE Kunde SET Navn1=@Name1, Navn2=@Name2, Att=@ATT, Adresse=@Address, " +
+        //            "Postnummer=@ZipCodeBy = @City, Telefon = @Phone where KundeID = @CustomerID", conn))                   
+        //        {
+        //            updateCustomer.Transaction = transaction;
+        //            updateCustomer.Parameters.AddWithValue("@Name1", newDemoNumber);
+        //            updateCustomer.Parameters.AddWithValue("@ModelName", ModelName);
+        //            updateCustomer.Parameters.AddWithValue("@CustomerID", CustomerID);
+        //        }
+        //    }
+        //    catch
+        //    {
+
+        //    }
+        //}
     }
 }
