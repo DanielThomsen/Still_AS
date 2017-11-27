@@ -323,18 +323,19 @@ namespace Database
 
         public List<string> GetBookingID(string adress)
         {
-            //List<string> adressList = new List<string>();
-            //var adresses = meContext.Kundes;
+            //List<string> configurationsList = new List<string>();
+            //var machines = meContext.Maskines;
 
-            //foreach (Kunde k in adresses)
+            //foreach (Maskine m in machines)
             //{
-            //    if (k.Navn1 == customerName)
+            //    foreach (MaskineKonfiguration mk in m.MaskineKonfigurations)
             //    {
-            //        adressList.Add(k.Adresse);
+            //        if (m.DemoNummer == demoNr)
+            //        {
+            //            configurationsList.Add(mk.Konfiguration);
+            //        }
             //    }
             //}
-
-            //return adressList;
 
             List<string> bookingList = new List<string>();
             var bookings = meContext.Bookings;
@@ -342,6 +343,10 @@ namespace Database
             foreach (Booking b in bookings)
             {
                 // Hent alle bookingID'er hvor kundens adresse = adress
+                if (b.Kunde.Adresse == adress)
+                {
+                    bookingList.Add(b.BookingID.ToString());
+                }
             }
 
             return bookingList;

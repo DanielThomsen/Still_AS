@@ -86,17 +86,26 @@ namespace StillAS
 
         private void libCity_Click(object sender, EventArgs e)
         {
-            libBookingID.Items.Clear();
-
-            List<string> bookingIDs = new List<string>();
-            string adress = libCity.SelectedItem.ToString();
-
-            bookingIDs = CC.GetBookingID(adress);
-
-            foreach (string s in bookingIDs)
+            try
             {
-                libBookingID.Items.Add(s);
+                libBookingID.Items.Clear();
+
+                List<string> bookingIDs = new List<string>();
+                string adress = libCity.SelectedItem.ToString();
+
+                bookingIDs = CC.GetBookingID(adress);
+
+                foreach (string s in bookingIDs)
+                {
+                    libBookingID.Items.Add(s);
+                }
             }
+            catch (Exception)
+            {
+
+                MessageBox.Show("Error: There is no bookings linked to this customer");
+            }
+            
         }
     }
 }
