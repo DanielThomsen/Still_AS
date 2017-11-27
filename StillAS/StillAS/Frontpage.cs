@@ -16,5 +16,17 @@ namespace StillAS
         {
             InitializeComponent();
         }
+
+        private void btnMachines_Click(object sender, EventArgs e)
+        {
+            Machines M = new Machines();
+            M.Show();
+        }
+
+        private void btnBookings_Click(object sender, EventArgs e)
+        {
+            Bookings B = new Bookings();
+            B.Show();
+        }
     }
 }

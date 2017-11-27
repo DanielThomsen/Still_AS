@@ -40,6 +40,7 @@ namespace StillAS
                 ControllerClass.DemoMachines.Add(X);
             }
             CTRC.CreateBookingLine();
+            this.Visible = false;
         }
 
         private void btnAdd_Click(object sender, EventArgs e)

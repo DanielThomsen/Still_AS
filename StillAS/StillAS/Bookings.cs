@@ -49,5 +49,11 @@ namespace StillAS
                 MessageBox.Show("Error: Machine not found");
             }
         }
+
+        private void btnAddBooking_Click(object sender, EventArgs e)
+        {
+            Customer_Information CI = new Customer_Information();
+            CI.Show();
+        }
     }
 }
