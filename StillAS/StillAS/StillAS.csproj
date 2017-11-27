@@ -79,6 +79,12 @@
     <Compile Include="Demo Machines.Designer.cs">
       <DependentUpon>Demo Machines.cs</DependentUpon>
     </Compile>
+    <Compile Include="Frontpage.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frontpage.Designer.cs">
+      <DependentUpon>Frontpage.cs</DependentUpon>
+    </Compile>
     <Compile Include="Machines.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -110,6 +116,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Demo Machines.resx">
       <DependentUpon>Demo Machines.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frontpage.resx">
+      <DependentUpon>Frontpage.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Machines.resx">
       <DependentUpon>Machines.cs</DependentUpon>
