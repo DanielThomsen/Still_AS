@@ -44,6 +44,8 @@ namespace Controller
         //    int ID = DatabaseRepository.CustomerID;
         //    return ID;
         //}
+
+            // SKal til Model
         public string TimeNow()
         {
             int Hour = DateTime.Now.Hour;
@@ -84,6 +86,7 @@ namespace Controller
             }
             return time;
         }
+        //Skal til model
         public string TimeNY()
         {
             DateTime DT = DateTime.Now.AddHours(-6);
