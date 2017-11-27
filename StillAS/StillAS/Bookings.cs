@@ -17,6 +17,13 @@ namespace StillAS
         public Bookings()
         {
             InitializeComponent();
+
+            List<string> customers = CC.GetAllCustomers();
+            foreach (string s in customers)
+            {
+                libCustomerName.Items.Add(s);
+            }
+
         }
 
         private void btnRemove_Click(object sender, EventArgs e)
@@ -50,10 +57,61 @@ namespace StillAS
             }
         }
 
+        private void libCustomerName_Click(object sender, EventArgs e)
+        {
+            //libBookingConfigurations.Items.Clear();
+
+            //List<string> configurations = new List<string>();
+            //string machine = libBookingMachines.SelectedItem.ToString();
+
+            //configurations = CC.GetConfigurations(machine);
+
+            //foreach (string s in configurations)
+            //{
+            //    libBookingConfigurations.Items.Add(s);
+            //}
+
+            libCity.Items.Clear();
+
+            List<string> addresses = new List<string>();
+            string customer = libCustomerName.SelectedItem.ToString();
+
+            addresses = CC.GetAdresses(customer);
+
+            foreach (string s in addresses)
+            {
+                libCity.Items.Add(s);
+            }
+        }
+
         private void btnAddBooking_Click(object sender, EventArgs e)
         {
             Customer_Information CI = new Customer_Information();
             CI.Show();
+        }
+
+        private void libCity_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                libBookingID.Items.Clear();
+
+                List<string> bookingIDs = new List<string>();
+                string adress = libCity.SelectedItem.ToString();
+
+                bookingIDs = CC.GetBookingID(adress);
+
+                foreach (string s in bookingIDs)
+                {
+                    libBookingID.Items.Add(s);
+                }
+            }
+            catch (Exception)
+            {
+
+                MessageBox.Show("Error: There is no bookings linked to this customer");
+            }
+            
         }
     }
 }

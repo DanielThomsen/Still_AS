@@ -275,6 +275,35 @@ namespace Database
             return customerInfo;
         }
 
+        public List<string> GetAllCustomers()
+        {
+            List<string> customersList = new List<string>();
+            var customers = meContext.Kundes;
+
+            foreach (Kunde k in customers)
+            {
+                customersList.Add(k.Navn1);
+            }
+
+            return customersList;
+        }
+
+        public List<string> GetAdresses(string customerName)
+        {
+            List<string> adressList = new List<string>();
+            var adresses = meContext.Kundes;
+
+            foreach (Kunde k in adresses)
+            {
+                if (k.Navn1 == customerName)
+                {
+                    adressList.Add(k.Adresse);
+                }
+            }
+
+            return adressList;
+        }
+
         public List<string> GetBooking(int bookingID)
         {
             List<string> bookingInfo = new List<string>();
@@ -291,6 +320,37 @@ namespace Database
             bookingInfo.Add(booking.RampeVedLevering+"");
 
             return bookingInfo;
+        }
+
+        public List<string> GetBookingID(string adress)
+        {
+            //List<string> configurationsList = new List<string>();
+            //var machines = meContext.Maskines;
+
+            //foreach (Maskine m in machines)
+            //{
+            //    foreach (MaskineKonfiguration mk in m.MaskineKonfigurations)
+            //    {
+            //        if (m.DemoNummer == demoNr)
+            //        {
+            //            configurationsList.Add(mk.Konfiguration);
+            //        }
+            //    }
+            //}
+
+            List<string> bookingList = new List<string>();
+            var bookings = meContext.Bookings;
+
+            foreach (Booking b in bookings)
+            {
+                // Hent alle bookingID'er hvor kundens adresse = adress
+                if (b.Kunde.Adresse == adress)
+                {
+                    bookingList.Add(b.BookingID.ToString());
+                }
+            }
+
+            return bookingList;
         }
 
         public List<string> GetMachines(int bookingID)

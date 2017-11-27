@@ -153,6 +153,24 @@ namespace Controller
             return configurations;
         }
 
+        public List<string> GetAllCustomers()
+        {
+            List<string> customers = DBR.GetAllCustomers();
+            return customers;
+        }
+
+        public List<string> GetAdresses(string customerName)
+        {
+            List<string> adresses = DBR.GetAdresses(customerName);
+            return adresses;
+        }
+
+        public List<string> GetBookingID(string adress)
+        {
+            List<string> bookingIDs = DBR.GetBookingID(adress);
+            return bookingIDs;
+        }
+
         public void RemoveBooking(int bookingID)
         {
             DBR.RemoveBooking(bookingID);
