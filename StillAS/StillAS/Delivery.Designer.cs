@@ -46,9 +46,10 @@
             // 
             // btnNext
             // 
-            this.btnNext.Location = new System.Drawing.Point(137, 374);
+            this.btnNext.Location = new System.Drawing.Point(206, 584);
+            this.btnNext.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btnNext.Name = "btnNext";
-            this.btnNext.Size = new System.Drawing.Size(89, 38);
+            this.btnNext.Size = new System.Drawing.Size(134, 59);
             this.btnNext.TabIndex = 27;
             this.btnNext.Text = "Next";
             this.btnNext.UseVisualStyleBackColor = true;
@@ -57,9 +58,10 @@
             // rbRampNo
             // 
             this.rbRampNo.AutoSize = true;
-            this.rbRampNo.Location = new System.Drawing.Point(262, 318);
+            this.rbRampNo.Location = new System.Drawing.Point(393, 497);
+            this.rbRampNo.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.rbRampNo.Name = "rbRampNo";
-            this.rbRampNo.Size = new System.Drawing.Size(47, 21);
+            this.rbRampNo.Size = new System.Drawing.Size(70, 29);
             this.rbRampNo.TabIndex = 26;
             this.rbRampNo.TabStop = true;
             this.rbRampNo.Text = "No";
@@ -68,9 +70,10 @@
             // rbRampYes
             // 
             this.rbRampYes.AutoSize = true;
-            this.rbRampYes.Location = new System.Drawing.Point(173, 318);
+            this.rbRampYes.Location = new System.Drawing.Point(260, 497);
+            this.rbRampYes.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.rbRampYes.Name = "rbRampYes";
-            this.rbRampYes.Size = new System.Drawing.Size(53, 21);
+            this.rbRampYes.Size = new System.Drawing.Size(81, 29);
             this.rbRampYes.TabIndex = 25;
             this.rbRampYes.TabStop = true;
             this.rbRampYes.Text = "Yes";
@@ -78,100 +81,111 @@
             // 
             // tbDeliveryNote
             // 
-            this.tbDeliveryNote.Location = new System.Drawing.Point(173, 227);
+            this.tbDeliveryNote.Location = new System.Drawing.Point(260, 355);
+            this.tbDeliveryNote.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.tbDeliveryNote.Multiline = true;
             this.tbDeliveryNote.Name = "tbDeliveryNote";
-            this.tbDeliveryNote.Size = new System.Drawing.Size(167, 67);
+            this.tbDeliveryNote.Size = new System.Drawing.Size(248, 102);
             this.tbDeliveryNote.TabIndex = 24;
             // 
             // tbMessageToWorkshop
             // 
-            this.tbMessageToWorkshop.Location = new System.Drawing.Point(173, 143);
+            this.tbMessageToWorkshop.Location = new System.Drawing.Point(260, 223);
+            this.tbMessageToWorkshop.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.tbMessageToWorkshop.Multiline = true;
             this.tbMessageToWorkshop.Name = "tbMessageToWorkshop";
-            this.tbMessageToWorkshop.Size = new System.Drawing.Size(167, 67);
+            this.tbMessageToWorkshop.Size = new System.Drawing.Size(248, 102);
             this.tbMessageToWorkshop.TabIndex = 23;
             // 
             // tbTransporter
             // 
-            this.tbTransporter.Location = new System.Drawing.Point(173, 100);
+            this.tbTransporter.Location = new System.Drawing.Point(260, 156);
+            this.tbTransporter.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.tbTransporter.Name = "tbTransporter";
-            this.tbTransporter.Size = new System.Drawing.Size(100, 22);
+            this.tbTransporter.Size = new System.Drawing.Size(148, 31);
             this.tbTransporter.TabIndex = 22;
             // 
             // lblLoadingPlatform
             // 
             this.lblLoadingPlatform.AutoSize = true;
-            this.lblLoadingPlatform.Location = new System.Drawing.Point(15, 320);
+            this.lblLoadingPlatform.Location = new System.Drawing.Point(22, 500);
+            this.lblLoadingPlatform.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblLoadingPlatform.Name = "lblLoadingPlatform";
-            this.lblLoadingPlatform.Size = new System.Drawing.Size(118, 17);
+            this.lblLoadingPlatform.Size = new System.Drawing.Size(178, 25);
             this.lblLoadingPlatform.TabIndex = 19;
             this.lblLoadingPlatform.Text = "Loading platform:";
             // 
             // lblDeliveryNote
             // 
             this.lblDeliveryNote.AutoSize = true;
-            this.lblDeliveryNote.Location = new System.Drawing.Point(15, 230);
+            this.lblDeliveryNote.Location = new System.Drawing.Point(22, 359);
+            this.lblDeliveryNote.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblDeliveryNote.Name = "lblDeliveryNote";
-            this.lblDeliveryNote.Size = new System.Drawing.Size(95, 17);
+            this.lblDeliveryNote.Size = new System.Drawing.Size(144, 25);
             this.lblDeliveryNote.TabIndex = 18;
             this.lblDeliveryNote.Text = "Delivery note:";
             // 
             // lblMessageToWorkshop
             // 
             this.lblMessageToWorkshop.AutoSize = true;
-            this.lblMessageToWorkshop.Location = new System.Drawing.Point(15, 146);
+            this.lblMessageToWorkshop.Location = new System.Drawing.Point(22, 228);
+            this.lblMessageToWorkshop.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblMessageToWorkshop.Name = "lblMessageToWorkshop";
-            this.lblMessageToWorkshop.Size = new System.Drawing.Size(149, 17);
+            this.lblMessageToWorkshop.Size = new System.Drawing.Size(228, 25);
             this.lblMessageToWorkshop.TabIndex = 17;
             this.lblMessageToWorkshop.Text = "Message to workshop:";
             // 
             // lblTransporter
             // 
             this.lblTransporter.AutoSize = true;
-            this.lblTransporter.Location = new System.Drawing.Point(15, 103);
+            this.lblTransporter.Location = new System.Drawing.Point(22, 161);
+            this.lblTransporter.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblTransporter.Name = "lblTransporter";
-            this.lblTransporter.Size = new System.Drawing.Size(87, 17);
+            this.lblTransporter.Size = new System.Drawing.Size(83, 25);
             this.lblTransporter.TabIndex = 16;
-            this.lblTransporter.Text = "Transporter:";
+            this.lblTransporter.Text = "Carrier:";
             // 
             // lblRetrievalDate
             // 
             this.lblRetrievalDate.AutoSize = true;
-            this.lblRetrievalDate.Location = new System.Drawing.Point(15, 61);
+            this.lblRetrievalDate.Location = new System.Drawing.Point(22, 95);
+            this.lblRetrievalDate.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblRetrievalDate.Name = "lblRetrievalDate";
-            this.lblRetrievalDate.Size = new System.Drawing.Size(100, 17);
+            this.lblRetrievalDate.Size = new System.Drawing.Size(151, 25);
             this.lblRetrievalDate.TabIndex = 15;
             this.lblRetrievalDate.Text = "Retrieval date:";
             // 
             // lblDeliveryDate
             // 
             this.lblDeliveryDate.AutoSize = true;
-            this.lblDeliveryDate.Location = new System.Drawing.Point(15, 18);
+            this.lblDeliveryDate.Location = new System.Drawing.Point(22, 28);
+            this.lblDeliveryDate.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblDeliveryDate.Name = "lblDeliveryDate";
-            this.lblDeliveryDate.Size = new System.Drawing.Size(95, 17);
+            this.lblDeliveryDate.Size = new System.Drawing.Size(144, 25);
             this.lblDeliveryDate.TabIndex = 14;
             this.lblDeliveryDate.Text = "Delivery date:";
             // 
             // dtpDeliveryDate
             // 
-            this.dtpDeliveryDate.Location = new System.Drawing.Point(173, 18);
+            this.dtpDeliveryDate.Location = new System.Drawing.Point(260, 28);
+            this.dtpDeliveryDate.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.dtpDeliveryDate.Name = "dtpDeliveryDate";
-            this.dtpDeliveryDate.Size = new System.Drawing.Size(167, 22);
+            this.dtpDeliveryDate.Size = new System.Drawing.Size(248, 31);
             this.dtpDeliveryDate.TabIndex = 28;
             // 
             // dtpRetrievalDate
             // 
-            this.dtpRetrievalDate.Location = new System.Drawing.Point(173, 56);
+            this.dtpRetrievalDate.Location = new System.Drawing.Point(260, 88);
+            this.dtpRetrievalDate.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.dtpRetrievalDate.Name = "dtpRetrievalDate";
-            this.dtpRetrievalDate.Size = new System.Drawing.Size(167, 22);
+            this.dtpRetrievalDate.Size = new System.Drawing.Size(248, 31);
             this.dtpRetrievalDate.TabIndex = 29;
             // 
             // Delivery
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(355, 426);
+            this.ClientSize = new System.Drawing.Size(532, 666);
             this.Controls.Add(this.dtpRetrievalDate);
             this.Controls.Add(this.dtpDeliveryDate);
             this.Controls.Add(this.btnNext);
@@ -186,6 +200,7 @@
             this.Controls.Add(this.lblTransporter);
             this.Controls.Add(this.lblRetrievalDate);
             this.Controls.Add(this.lblDeliveryDate);
+            this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Name = "Delivery";
             this.Text = "Delivery";
             this.ResumeLayout(false);
