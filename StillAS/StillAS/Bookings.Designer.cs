@@ -110,6 +110,7 @@
             this.libCity.Name = "libCity";
             this.libCity.Size = new System.Drawing.Size(226, 554);
             this.libCity.TabIndex = 9;
+            this.libCity.Click += new System.EventHandler(this.libCity_Click);
             // 
             // libCustomerName
             // 
@@ -120,6 +121,7 @@
             this.libCustomerName.Name = "libCustomerName";
             this.libCustomerName.Size = new System.Drawing.Size(226, 554);
             this.libCustomerName.TabIndex = 8;
+            this.libCustomerName.Click += new System.EventHandler(this.libCustomerName_Click);
             // 
             // Bookings
             // 
