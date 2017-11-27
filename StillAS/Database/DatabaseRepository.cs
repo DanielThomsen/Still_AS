@@ -17,6 +17,7 @@ namespace Database
         //[Krognos Start]
         public static int CustomerID;
         public static int BookingID;
+        public static int AccessLevel = 3;
         public void CreateModelName(string ModelName1)
         {
             var ModelN = new ModelNavn { Modelnavn1 = ModelName1 };
@@ -161,6 +162,10 @@ namespace Database
                 Demos.Add(X.DemoNummer);
             }
             return Demos;
+        }
+        public int GetAccessLevel()
+        {
+            return AccessLevel;
         }
         //[Krognos Slut]
 

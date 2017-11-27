@@ -90,5 +90,21 @@ namespace StillAS
             AddMachine TM = new AddMachine(libDemoNumber.SelectedItem.ToString());
             TM.Show();
         }
+
+        private void Machines_Load(object sender, EventArgs e)
+        {
+            if (CC.AccessLevel() == 2)
+            {
+
+            }
+            else if (CC.AccessLevel() == 3)
+            {
+
+            }
+            else if (CC.AccessLevel() == 4)
+            {
+             
+            }
+        }
     }
 }

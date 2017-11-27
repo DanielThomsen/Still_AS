@@ -44,7 +44,10 @@ namespace Controller
         //    int ID = DatabaseRepository.CustomerID;
         //    return ID;
         //}
-
+        public int AccessLevel()
+        {
+            return DBR.GetAccessLevel();
+        }
             // SKal til Model
         public string TimeNow()
         {

@@ -48,7 +48,7 @@
             // btnMachines
             // 
             this.btnMachines.Location = new System.Drawing.Point(319, 126);
-            this.btnMachines.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnMachines.Margin = new System.Windows.Forms.Padding(4);
             this.btnMachines.Name = "btnMachines";
             this.btnMachines.Size = new System.Drawing.Size(133, 62);
             this.btnMachines.TabIndex = 1;
@@ -59,7 +59,7 @@
             // btnBookings
             // 
             this.btnBookings.Location = new System.Drawing.Point(319, 196);
-            this.btnBookings.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnBookings.Margin = new System.Windows.Forms.Padding(4);
             this.btnBookings.Name = "btnBookings";
             this.btnBookings.Size = new System.Drawing.Size(133, 62);
             this.btnBookings.TabIndex = 2;
@@ -69,9 +69,8 @@
             // 
             // btnManageUsers
             // 
-            this.btnManageUsers.Enabled = false;
             this.btnManageUsers.Location = new System.Drawing.Point(319, 266);
-            this.btnManageUsers.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnManageUsers.Margin = new System.Windows.Forms.Padding(4);
             this.btnManageUsers.Name = "btnManageUsers";
             this.btnManageUsers.Size = new System.Drawing.Size(133, 62);
             this.btnManageUsers.TabIndex = 3;
@@ -87,9 +86,10 @@
             this.Controls.Add(this.btnBookings);
             this.Controls.Add(this.btnMachines);
             this.Controls.Add(this.lblTitle);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "Frontpage";
             this.Text = "Frontpage";
+            this.Load += new System.EventHandler(this.Frontpage_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
