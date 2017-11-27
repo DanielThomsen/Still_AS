@@ -67,6 +67,8 @@
             this.txtName2 = new System.Windows.Forms.TextBox();
             this.txtName1 = new System.Windows.Forms.TextBox();
             this.lblName1 = new System.Windows.Forms.Label();
+            this.btnSaveBooking = new System.Windows.Forms.Button();
+            this.btnCancel = new System.Windows.Forms.Button();
             this.groupBox3.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox1.SuspendLayout();
@@ -74,18 +76,18 @@
             // 
             // btnEditBooking
             // 
-            this.btnEditBooking.Location = new System.Drawing.Point(500, 461);
+            this.btnEditBooking.Location = new System.Drawing.Point(513, 456);
             this.btnEditBooking.Name = "btnEditBooking";
-            this.btnEditBooking.Size = new System.Drawing.Size(75, 30);
+            this.btnEditBooking.Size = new System.Drawing.Size(75, 35);
             this.btnEditBooking.TabIndex = 11;
             this.btnEditBooking.Text = "Edit booking";
             this.btnEditBooking.UseVisualStyleBackColor = true;
             // 
             // btnBackToBooking
             // 
-            this.btnBackToBooking.Location = new System.Drawing.Point(594, 461);
+            this.btnBackToBooking.Location = new System.Drawing.Point(594, 456);
             this.btnBackToBooking.Name = "btnBackToBooking";
-            this.btnBackToBooking.Size = new System.Drawing.Size(109, 30);
+            this.btnBackToBooking.Size = new System.Drawing.Size(109, 35);
             this.btnBackToBooking.TabIndex = 10;
             this.btnBackToBooking.Text = "Back To Bookings";
             this.btnBackToBooking.UseVisualStyleBackColor = true;
@@ -435,11 +437,31 @@
             this.lblName1.TabIndex = 0;
             this.lblName1.Text = "Name:";
             // 
+            // btnSaveBooking
+            // 
+            this.btnSaveBooking.Location = new System.Drawing.Point(594, 456);
+            this.btnSaveBooking.Name = "btnSaveBooking";
+            this.btnSaveBooking.Size = new System.Drawing.Size(109, 35);
+            this.btnSaveBooking.TabIndex = 12;
+            this.btnSaveBooking.Text = "Save booking";
+            this.btnSaveBooking.UseVisualStyleBackColor = true;
+            // 
+            // btnCancel
+            // 
+            this.btnCancel.Location = new System.Drawing.Point(513, 456);
+            this.btnCancel.Name = "btnCancel";
+            this.btnCancel.Size = new System.Drawing.Size(75, 35);
+            this.btnCancel.TabIndex = 13;
+            this.btnCancel.Text = "Cancel";
+            this.btnCancel.UseVisualStyleBackColor = true;
+            // 
             // ShowBooking
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(744, 523);
+            this.Controls.Add(this.btnCancel);
+            this.Controls.Add(this.btnSaveBooking);
             this.Controls.Add(this.btnEditBooking);
             this.Controls.Add(this.btnBackToBooking);
             this.Controls.Add(this.groupBox3);
@@ -500,5 +522,7 @@
         private System.Windows.Forms.TextBox txtName2;
         private System.Windows.Forms.TextBox txtName1;
         private System.Windows.Forms.Label lblName1;
+        private System.Windows.Forms.Button btnSaveBooking;
+        private System.Windows.Forms.Button btnCancel;
     }
 }
