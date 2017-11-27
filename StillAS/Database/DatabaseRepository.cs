@@ -281,6 +281,7 @@ namespace Database
             // Hent bookingoplysninger fra databasen her:
             var booking = meContext.Bookings.Find(bookingID);
 
+            bookingInfo.Add(booking.SælgerID + "");
             bookingInfo.Add(booking.LeveringsDato+"");
             bookingInfo.Add(booking.AfhentningsDato+"");
             bookingInfo.Add(booking.Leverandør);
