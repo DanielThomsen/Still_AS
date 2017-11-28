@@ -204,9 +204,15 @@ namespace Controller
                              Controller, Weight, Height, Length, Width, oldDemoNumber, messagebox);
             return messagebox;
         }
-        //public void BeginTransaction()
-        //{
-        //    DBR.BeginTransaction();
-        //}
+        public void BeginTransaction()
+        {
+            DBR.BeginTransaction();
+        }
+        public void UpdateBooking(string Name1, string Name2, string ATT, string Address, string ZipCode,
+            string City, string Phone, string SalesRep, string DeliveryDate, string RetrievalDate, string Carrier,
+            string MessageToWorkshop, string DeliveryNote, string CustomerIDs)
+        {
+            DBR.UpdateBooking();
+        }
     }
 }
