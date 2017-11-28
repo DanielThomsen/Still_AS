@@ -95,15 +95,10 @@ namespace StillAS
         {
             if (CC.AccessLevel() == 2)
             {
-
-            }
-            else if (CC.AccessLevel() == 3)
-            {
-
-            }
-            else if (CC.AccessLevel() == 4)
-            {
-             
+                btnAddMachine.Visible = false;
+                btnEditMachine.Visible = false;
+                btnRemoveMachine.Visible = false;
+                groupBox2.Visible = false;
             }
         }
     }

@@ -55,5 +55,26 @@ namespace StillAS
             Customer_Information CI = new Customer_Information();
             CI.Show();
         }
+
+        private void Bookings_Load(object sender, EventArgs e)
+        {
+            if (CC.AccessLevel() == 2)
+            {
+                btnRemove.Visible = false;
+                btnEdit.Visible = false;
+            }
+            else if (CC.AccessLevel() == 3)
+            {
+                btnAddBooking.Visible = false;
+                btnRemove.Visible = false;
+                btnEdit.Visible = false;
+            }
+            else if (CC.AccessLevel() == 4)
+            {
+                btnAddBooking.Visible = false;
+                btnRemove.Visible = false;
+                btnEdit.Visible = false;
+            }
+        }
     }
 }
