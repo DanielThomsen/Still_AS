@@ -44,7 +44,10 @@ namespace Controller
         //    int ID = DatabaseRepository.CustomerID;
         //    return ID;
         //}
-
+        public int AccessLevel()
+        {
+            return DBR.GetAccessLevel();
+        }
             // SKal til Model
         public string TimeNow()
         {
@@ -225,6 +228,12 @@ namespace Controller
         //public void BeginTransaction()
         //{
         //    DBR.BeginTransaction();
+        //}
+        //public void UpdateBooking(string Name1, string Name2, string ATT, string Address, string ZipCode,
+        //    string City, string Phone, string SalesRep, string DeliveryDate, string RetrievalDate, string Carrier,
+        //    string MessageToWorkshop, string DeliveryNote, string CustomerIDs)
+        //{
+        //    DBR.UpdateBooking();
         //}
     }
 }

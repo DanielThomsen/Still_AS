@@ -143,5 +143,14 @@ namespace StillAS
             
         }
 
+        private void AddMachine_Load(object sender, EventArgs e)
+        {
+            if (CC.AccessLevel() == 2)
+            {
+                btnEditMachine.Visible = false;
+                btnAddMachine.Visible = false;
+                btnSaveMachine.Visible = false;
+            }
+        }
     }
 }

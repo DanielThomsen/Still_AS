@@ -7,11 +7,13 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Controller;
 
 namespace StillAS
 {
     public partial class Frontpage : Form
     {
+        ControllerClass CC = new ControllerClass();
         public Frontpage()
         {
             InitializeComponent();
@@ -27,6 +29,24 @@ namespace StillAS
         {
             Bookings B = new Bookings();
             B.Show();
+        }
+
+        private void Frontpage_Load(object sender, EventArgs e)
+        {
+            if (CC.AccessLevel() == 2)
+            {
+                btnManageUsers.Visible = false;
+            }
+            else if (CC.AccessLevel() == 3)
+            {
+                btnMachines.Visible = false;
+                btnManageUsers.Visible = false;
+            }
+            else if (CC.AccessLevel() == 4)
+            {
+                btnMachines.Visible = false;
+                btnManageUsers.Visible = false;
+            }
         }
     }
 }

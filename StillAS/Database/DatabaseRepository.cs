@@ -17,6 +17,7 @@ namespace Database
         //[Krognos Start]
         public static int CustomerID;
         public static int BookingID;
+        public static int AccessLevel = 3;
         public void CreateModelName(string ModelName1)
         {
             var ModelN = new ModelNavn { Modelnavn1 = ModelName1 };
@@ -161,6 +162,10 @@ namespace Database
                 Demos.Add(X.DemoNummer);
             }
             return Demos;
+        }
+        public int GetAccessLevel()
+        {
+            return AccessLevel;
         }
         //[Krognos Slut]
 
@@ -535,18 +540,25 @@ namespace Database
         //    conn.Open();
         //    transaction = conn.BeginTransaction(IsolationLevel.RepeatableRead);
         //}
-        //public void UpdateBookings()
+        //public void UpdateBooking(string Name1, string Name2, string ATT, string Address, string ZipCode, 
+        //    string City, string Phone, string SalesRep, string DeliveryDate, string RetrievalDate, string Carrier, 
+        //    string MessageToWorkshop, string DeliveryNote, string CustomerIDs)
         //{
-        //    int CustomerID = GetCustomerID();
         //    try
         //    {
+        //        CustomerID = Convert.ToInt32(CustomerIDs);
         //        using (SqlCommand updateCustomer =
         //            new SqlCommand("UPDATE Kunde SET Navn1=@Name1, Navn2=@Name2, Att=@ATT, Adresse=@Address, " +
-        //            "Postnummer=@ZipCodeBy = @City, Telefon = @Phone where KundeID = @CustomerID", conn))                   
+        //            "Postnummer=@ZipCode, By=@City, Telefon=@Phone where KundeID=@CustomerID", conn))
         //        {
         //            updateCustomer.Transaction = transaction;
-        //            updateCustomer.Parameters.AddWithValue("@Name1", newDemoNumber);
-        //            updateCustomer.Parameters.AddWithValue("@ModelName", ModelName);
+        //            updateCustomer.Parameters.AddWithValue("@Name1", Name1);
+        //            updateCustomer.Parameters.AddWithValue("@Name2", Name2);
+        //            updateCustomer.Parameters.AddWithValue("@ATT", ATT);
+        //            updateCustomer.Parameters.AddWithValue("@Address", Address);
+        //            updateCustomer.Parameters.AddWithValue("@ZipCode", Name2);
+        //            updateCustomer.Parameters.AddWithValue("@City", City);
+        //            updateCustomer.Parameters.AddWithValue("@Phone", Phone);
         //            updateCustomer.Parameters.AddWithValue("@CustomerID", CustomerID);
         //        }
         //    }

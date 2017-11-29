@@ -614,6 +614,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(952, 642);
             this.Controls.Add(this.libConfig);
+            this.ClientSize = new System.Drawing.Size(952, 642);
             this.Controls.Add(this.btnAddMachine);
             this.Controls.Add(this.groupBox4);
             this.Controls.Add(this.groupBox3);
@@ -628,6 +629,7 @@
             this.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
             this.Name = "AddMachine";
             this.Text = "TilføjMaskine";
+            this.Load += new System.EventHandler(this.AddMachine_Load);
             this.groupBox4.ResumeLayout(false);
             this.groupBox4.PerformLayout();
             this.groupBox3.ResumeLayout(false);
