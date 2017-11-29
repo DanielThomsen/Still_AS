@@ -392,6 +392,17 @@ namespace Database
             return customer.KundeID;
         }
 
+        
+
+        class BookingData
+        {
+            DateTime deliveryDate;
+            DateTime retrivalDate;
+            string modelName;
+            string modelNumber;
+            string demoNumber;
+        }
+
         // LEA ARBEJDER HERFRA ---------------------------------- >
         // Machines Listboxe
         private SqlConnection conn;
