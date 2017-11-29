@@ -141,17 +141,6 @@ namespace StillAS
         {
             this.Visible = false;
         }
-        //    ControllerClass CC = new ControllerClass();
-        //    public ShowBooking()
-        //    {
-        //        InitializeComponent();
-        //        btnSaveBooking.Visible = false;
-        //        btnCancel.Visible = false;
-        //        List<TextBox> textBoxList = new List<TextBox>
-        //        {
-        //            txtName1, txtName2, txtATT, txtAdresss, txtZipCode, txtCity, txtPhone,
-        //            txtSalesRep, txtDeliveryDate, txtRetrievalDate, txtCarrier, txtMessageToWorkshop,
-        //            txtDeliveryNote
 
         private void btnEditBooking_Click(object sender, EventArgs e)
         {
@@ -177,26 +166,7 @@ namespace StillAS
         private void btnCancel_Click(object sender, EventArgs e)
         {
             // Rollback metode her
-        }
-        //        };
-        //        foreach (TextBox t in textBoxList)
-        //        {
-        //            t.ReadOnly = true;
-        //        }
-        //    }
-
-        //    private void btnEditBooking_Click(object sender, EventArgs e)
-        //    {
-        //        lblShowBooking.Text = "Edit booking";
-        //        btnBackToBooking.Visible = false;
-        //        btnSaveBooking.Visible = true;
-        //        btnEditBooking.Visible = false;
-        //        btnCancel.Visible = true;
-        //        List<TextBox> textBoxList = new List<TextBox>
-        //        {
-        //            txtName1, txtName2, txtATT, txtAdresss, txtZipCode, txtCity, txtPhone,
-        //            txtSalesRep, txtDeliveryDate, txtRetrievalDate, txtCarrier, txtMessageToWorkshop,
-        //            txtDeliveryNote
+        }      
 
         private void btnSaveBooking_Click(object sender, EventArgs e)
         {
@@ -217,12 +187,6 @@ namespace StillAS
             //string CustomerIDs
             //CC.UpdateBooking();
         }
-        //        };
-        //        CC.BeginTransaction();
-        //        foreach (TextBox t in textBoxList)
-        //        {
-        //            t.ReadOnly = false;
-        //        }            
-        //    }
+        
     }
 }
