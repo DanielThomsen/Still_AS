@@ -117,23 +117,23 @@ namespace StillAS
 
         private void btnEditBooking_Click(object sender, EventArgs e)
         {
-            lblShowBooking.Text = "Edit booking";
-            btnBackToBooking.Visible = false;
-            btnSaveBooking.Visible = true;
-            btnEditBooking.Visible = false;
-            btnCancel.Visible = true;
-            List<TextBox> textBoxList = new List<TextBox>
-            {
-                txtName1, txtName2, txtATT, txtAdresss, txtZipCode, txtCity, txtPhone,
-                txtSalesRep, txtDeliveryDate, txtRetrievalDate, txtCarrier, txtMessageToWorkshop,
-                txtDeliveryNote
+            //lblShowBooking.Text = "Edit booking";
+            //btnBackToBooking.Visible = false;
+            //btnSaveBooking.Visible = true;
+            //btnEditBooking.Visible = false;
+            //btnCancel.Visible = true;
+            //List<TextBox> textBoxList = new List<TextBox>
+            //{
+            //    txtName1, txtName2, txtATT, txtAdresss, txtZipCode, txtCity, txtPhone,
+            //    txtSalesRep, txtDeliveryDate, txtRetrievalDate, txtCarrier, txtMessageToWorkshop,
+            //    txtDeliveryNote
 
-            };
-            CC.BeginTransaction();
-            foreach (TextBox t in textBoxList)
-            {
-                t.ReadOnly = false;
-            }
+            //};
+            //CC.BeginTransaction();
+            //foreach (TextBox t in textBoxList)
+            //{
+            //    t.ReadOnly = false;
+            //}
         }
 
         private void btnCancel_Click(object sender, EventArgs e)
@@ -148,22 +148,22 @@ namespace StillAS
 
         private void btnSaveBooking_Click(object sender, EventArgs e)
         {
-            // Update metode her + commit
-            string Name1 = txtName1.Text;
-            string Name2 = txtName2.Text;
-            string ATT = txtATT.Text;
-            string Address = txtAdresss.Text;
-            string ZipCode = txtZipCode.Text;
-            string City = txtCity.Text;
-            string Phone, 
-            string SalesRep, 
-            string DeliveryDate, 
-            string RetrievalDate, 
-            string Carrier,
-            string MessageToWorkshop, 
-            string DeliveryNote, 
-            string CustomerIDs
-            CC.UpdateBooking();
+            //// Update metode her + commit
+            //string Name1 = txtName1.Text;
+            //string Name2 = txtName2.Text;
+            //string ATT = txtATT.Text;
+            //string Address = txtAdresss.Text;
+            //string ZipCode = txtZipCode.Text;
+            //string City = txtCity.Text;
+            //string Phone,
+            //string SalesRep,
+            //string DeliveryDate,
+            //string RetrievalDate,
+            //string Carrier,
+            //string MessageToWorkshop,
+            //string DeliveryNote,
+            //string CustomerIDs
+            //CC.UpdateBooking();
         }
     }
 }

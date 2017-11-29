@@ -469,38 +469,38 @@ namespace Database
             return messagebox;
         }
         // Edit Bookings
-        public void BeginTransaction()
-        {
-            SqlConnection conn = new SqlConnection(GetConnection());
-            conn.Open();
-            transaction = conn.BeginTransaction(IsolationLevel.RepeatableRead);
-        }
-        public void UpdateBooking(string Name1, string Name2, string ATT, string Address, string ZipCode, 
-            string City, string Phone, string SalesRep, string DeliveryDate, string RetrievalDate, string Carrier, 
-            string MessageToWorkshop, string DeliveryNote, string CustomerIDs)
-        {
-            try
-            {
-                CustomerID = Convert.ToInt32(CustomerIDs);
-                using (SqlCommand updateCustomer =
-                    new SqlCommand("UPDATE Kunde SET Navn1=@Name1, Navn2=@Name2, Att=@ATT, Adresse=@Address, " +
-                    "Postnummer=@ZipCode, By=@City, Telefon=@Phone where KundeID=@CustomerID", conn))
-                {
-                    updateCustomer.Transaction = transaction;
-                    updateCustomer.Parameters.AddWithValue("@Name1", Name1);
-                    updateCustomer.Parameters.AddWithValue("@Name2", Name2);
-                    updateCustomer.Parameters.AddWithValue("@ATT", ATT);
-                    updateCustomer.Parameters.AddWithValue("@Address", Address);
-                    updateCustomer.Parameters.AddWithValue("@ZipCode", Name2);
-                    updateCustomer.Parameters.AddWithValue("@City", City);
-                    updateCustomer.Parameters.AddWithValue("@Phone", Phone);
-                    updateCustomer.Parameters.AddWithValue("@CustomerID", CustomerID);
-                }
-            }
-            catch
-            {
+        //public void BeginTransaction()
+        //{
+        //    SqlConnection conn = new SqlConnection(GetConnection());
+        //    conn.Open();
+        //    transaction = conn.BeginTransaction(IsolationLevel.RepeatableRead);
+        //}
+        //public void UpdateBooking(string Name1, string Name2, string ATT, string Address, string ZipCode, 
+        //    string City, string Phone, string SalesRep, string DeliveryDate, string RetrievalDate, string Carrier, 
+        //    string MessageToWorkshop, string DeliveryNote, string CustomerIDs)
+        //{
+        //    try
+        //    {
+        //        CustomerID = Convert.ToInt32(CustomerIDs);
+        //        using (SqlCommand updateCustomer =
+        //            new SqlCommand("UPDATE Kunde SET Navn1=@Name1, Navn2=@Name2, Att=@ATT, Adresse=@Address, " +
+        //            "Postnummer=@ZipCode, By=@City, Telefon=@Phone where KundeID=@CustomerID", conn))
+        //        {
+        //            updateCustomer.Transaction = transaction;
+        //            updateCustomer.Parameters.AddWithValue("@Name1", Name1);
+        //            updateCustomer.Parameters.AddWithValue("@Name2", Name2);
+        //            updateCustomer.Parameters.AddWithValue("@ATT", ATT);
+        //            updateCustomer.Parameters.AddWithValue("@Address", Address);
+        //            updateCustomer.Parameters.AddWithValue("@ZipCode", Name2);
+        //            updateCustomer.Parameters.AddWithValue("@City", City);
+        //            updateCustomer.Parameters.AddWithValue("@Phone", Phone);
+        //            updateCustomer.Parameters.AddWithValue("@CustomerID", CustomerID);
+        //        }
+        //    }
+        //    catch
+        //    {
 
-            }
-        }
+        //    }
+        //}
     }
 }
