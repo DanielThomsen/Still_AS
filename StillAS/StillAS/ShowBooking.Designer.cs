@@ -37,7 +37,7 @@
             this.lblDeliveryNote = new System.Windows.Forms.Label();
             this.lblMessageToWorkshop = new System.Windows.Forms.Label();
             this.lblCarrier = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
+            this.lblRetrievalDate = new System.Windows.Forms.Label();
             this.lblDeliveryDate = new System.Windows.Forms.Label();
             this.lblSalesRep = new System.Windows.Forms.Label();
             this.txtDeliveryNote = new System.Windows.Forms.TextBox();
@@ -103,7 +103,7 @@
             this.groupBox3.Controls.Add(this.lblDeliveryNote);
             this.groupBox3.Controls.Add(this.lblMessageToWorkshop);
             this.groupBox3.Controls.Add(this.lblCarrier);
-            this.groupBox3.Controls.Add(this.label2);
+            this.groupBox3.Controls.Add(this.lblRetrievalDate);
             this.groupBox3.Controls.Add(this.lblDeliveryDate);
             this.groupBox3.Controls.Add(this.lblSalesRep);
             this.groupBox3.Controls.Add(this.txtDeliveryNote);
@@ -185,15 +185,14 @@
             this.lblCarrier.TabIndex = 9;
             this.lblCarrier.Text = "Carrier:";
             // 
-            // label2
+            // lblRetrievalDate
             // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(12, 78);
-            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(100, 17);
-            this.label2.TabIndex = 8;
-            this.label2.Text = "Retrievel date:";
+            this.lblRetrievalDate.AutoSize = true;
+            this.lblRetrievalDate.Location = new System.Drawing.Point(9, 63);
+            this.lblRetrievalDate.Name = "lblRetrievalDate";
+            this.lblRetrievalDate.Size = new System.Drawing.Size(76, 13);
+            this.lblRetrievalDate.TabIndex = 8;
+            this.lblRetrievalDate.Text = "Retrievel date:";
             // 
             // lblDeliveryDate
             // 
@@ -485,13 +484,14 @@
             // 
             // btnSaveBooking
             // 
-            this.btnSaveBooking.Location = new System.Drawing.Point(804, 507);
-            this.btnSaveBooking.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnSaveBooking.Location = new System.Drawing.Point(603, 412);
+            this.btnSaveBooking.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnSaveBooking.Name = "btnSaveBooking";
             this.btnSaveBooking.Size = new System.Drawing.Size(133, 62);
             this.btnSaveBooking.TabIndex = 12;
             this.btnSaveBooking.Text = "Save booking";
             this.btnSaveBooking.UseVisualStyleBackColor = true;
+            this.btnSaveBooking.Click += new System.EventHandler(this.btnSaveBooking_Click);
             // 
             // btnCancel
             // 
@@ -502,6 +502,7 @@
             this.btnCancel.TabIndex = 13;
             this.btnCancel.Text = "Cancel";
             this.btnCancel.UseVisualStyleBackColor = true;
+            this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
             // 
             // ShowBooking
             // 
@@ -542,7 +543,7 @@
         private System.Windows.Forms.Label lblDeliveryNote;
         private System.Windows.Forms.Label lblMessageToWorkshop;
         private System.Windows.Forms.Label lblCarrier;
-        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label lblRetrievalDate;
         private System.Windows.Forms.Label lblDeliveryDate;
         private System.Windows.Forms.Label lblSalesRep;
         private System.Windows.Forms.TextBox txtDeliveryNote;

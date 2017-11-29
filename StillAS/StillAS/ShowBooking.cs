@@ -17,6 +17,19 @@ namespace StillAS
         public ShowBooking()
         {
             InitializeComponent();
+            btnSaveBooking.Visible = false;
+            btnCancel.Visible = false;
+            List<TextBox> textBoxList = new List<TextBox>
+            {
+                txtName1, txtName2, txtATT, txtAdresss, txtZipCode, txtCity, txtPhone,
+                txtSalesRep, txtDeliveryDate, txtRetrievalDate, txtCarrier, txtMessageToWorkshop,
+                txtDeliveryNote
+
+            };
+            foreach (TextBox t in textBoxList)
+            {
+                t.ReadOnly = true;
+            }
         }
 
         public ShowBooking(int bookingID)
@@ -140,6 +153,31 @@ namespace StillAS
         //            txtSalesRep, txtDeliveryDate, txtRetrievalDate, txtCarrier, txtMessageToWorkshop,
         //            txtDeliveryNote
 
+        private void btnEditBooking_Click(object sender, EventArgs e)
+        {
+            //lblShowBooking.Text = "Edit booking";
+            //btnBackToBooking.Visible = false;
+            //btnSaveBooking.Visible = true;
+            //btnEditBooking.Visible = false;
+            //btnCancel.Visible = true;
+            //List<TextBox> textBoxList = new List<TextBox>
+            //{
+            //    txtName1, txtName2, txtATT, txtAdresss, txtZipCode, txtCity, txtPhone,
+            //    txtSalesRep, txtDeliveryDate, txtRetrievalDate, txtCarrier, txtMessageToWorkshop,
+            //    txtDeliveryNote
+
+            //};
+            //CC.BeginTransaction();
+            //foreach (TextBox t in textBoxList)
+            //{
+            //    t.ReadOnly = false;
+            //}
+        }
+
+        private void btnCancel_Click(object sender, EventArgs e)
+        {
+            // Rollback metode her
+        }
         //        };
         //        foreach (TextBox t in textBoxList)
         //        {
@@ -160,6 +198,25 @@ namespace StillAS
         //            txtSalesRep, txtDeliveryDate, txtRetrievalDate, txtCarrier, txtMessageToWorkshop,
         //            txtDeliveryNote
 
+        private void btnSaveBooking_Click(object sender, EventArgs e)
+        {
+            //// Update metode her + commit
+            //string Name1 = txtName1.Text;
+            //string Name2 = txtName2.Text;
+            //string ATT = txtATT.Text;
+            //string Address = txtAdresss.Text;
+            //string ZipCode = txtZipCode.Text;
+            //string City = txtCity.Text;
+            //string Phone,
+            //string SalesRep,
+            //string DeliveryDate,
+            //string RetrievalDate,
+            //string Carrier,
+            //string MessageToWorkshop,
+            //string DeliveryNote,
+            //string CustomerIDs
+            //CC.UpdateBooking();
+        }
         //        };
         //        CC.BeginTransaction();
         //        foreach (TextBox t in textBoxList)
