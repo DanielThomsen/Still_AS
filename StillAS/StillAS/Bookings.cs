@@ -142,5 +142,11 @@ namespace StillAS
                 btnEdit.Visible = false;
             }
         }
+
+        private void btnShowBookingsOverview_Click(object sender, EventArgs e)
+        {
+            BookingsOverview bo = new BookingsOverview();
+            bo.Show();
+        }
     }
 }

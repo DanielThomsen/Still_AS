@@ -123,8 +123,16 @@
     <Compile Include="ShowBooking.Designer.cs">
       <DependentUpon>ShowBooking.cs</DependentUpon>
     </Compile>
+    <Compile Include="stillasDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>stillasDataSet.xsd</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="Bookings.resx">
       <DependentUpon>Bookings.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="BookingsOverview.resx">
+      <DependentUpon>BookingsOverview.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Clocks.resx">
       <DependentUpon>Clocks.cs</DependentUpon>
@@ -172,6 +180,17 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <None Include="stillasDataSet.xsc">
+      <DependentUpon>stillasDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="stillasDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>stillasDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="stillasDataSet.xss">
+      <DependentUpon>stillasDataSet.xsd</DependentUpon>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
