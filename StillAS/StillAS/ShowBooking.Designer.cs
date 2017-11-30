@@ -82,11 +82,12 @@
             this.btnEditBooking.TabIndex = 11;
             this.btnEditBooking.Text = "Edit booking";
             this.btnEditBooking.UseVisualStyleBackColor = true;
+            this.btnEditBooking.Click += new System.EventHandler(this.btnEditBooking_Click_1);
             // 
             // btnBackToBooking
             // 
             this.btnBackToBooking.Location = new System.Drawing.Point(603, 412);
-            this.btnBackToBooking.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnBackToBooking.Margin = new System.Windows.Forms.Padding(2);
             this.btnBackToBooking.Name = "btnBackToBooking";
             this.btnBackToBooking.Size = new System.Drawing.Size(100, 50);
             this.btnBackToBooking.TabIndex = 10;
@@ -454,8 +455,8 @@
             // 
             // btnCancel
             // 
-            this.btnCancel.Location = new System.Drawing.Point(524, 412);
-            this.btnCancel.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnCancel.Location = new System.Drawing.Point(523, 412);
+            this.btnCancel.Margin = new System.Windows.Forms.Padding(2);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(75, 50);
             this.btnCancel.TabIndex = 13;
@@ -468,6 +469,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(744, 516);
+            this.ControlBox = false;
             this.Controls.Add(this.btnCancel);
             this.Controls.Add(this.btnSaveBooking);
             this.Controls.Add(this.btnEditBooking);

@@ -89,7 +89,7 @@ namespace Database
         {
             CreateBookingID();
             DateTime dt1 = DateTime.ParseExact(date1, "dd-MM-yyyy", CultureInfo.InvariantCulture);
-            DateTime dt2 = DateTime.ParseExact(date1, "dd-MM-yyyy", CultureInfo.InvariantCulture);
+            DateTime dt2 = DateTime.ParseExact(date2, "dd-MM-yyyy", CultureInfo.InvariantCulture);
             int KundeID = CustomerID;
             int BookingsID = BookingID;
             int DemoAnsvarligID = 1;
@@ -551,19 +551,22 @@ namespace Database
             conn.Open();
             transaction = conn.BeginTransaction(IsolationLevel.RepeatableRead);
         }
+        public void RollBackTransaction()
+        {
+            transaction.Rollback();
+            conn.Close();
+        }
         public void UpdateBooking(string name1, string name2, string att, string address, string zipCode,
             string city, string phone, string salesRep, string deliveryDate, string retrievalDate, string carrier,
             string messageToWorkshop, string deliveryNote, string loadingPlatform, int bookingIDs)
         {
-            try
-            {
                 var booking = meContext.Bookings.Find(bookingIDs);
                 var customer = meContext.Kundes.Find(Convert.ToInt32(booking.KundeID));
 
                 CustomerID = customer.KundeID;
                 using (SqlCommand updateCustomer =
                     new SqlCommand("UPDATE Kunde SET Navn1=@Name1, Navn2=@Name2, Att=@ATT, Adresse=@Address, " +
-                    "Postnummer=@ZipCode, By=@City, Telefon=@Phone where KundeID=@CustomerID", conn))
+                    "Postnummer=@ZipCode, [By]=@City, Telefon=@Phone where KundeID=@CustomerID", conn))
                 {
                     updateCustomer.Parameters.AddWithValue("@Name1", name1);
                     updateCustomer.Parameters.AddWithValue("@Name2", name2);
@@ -581,9 +584,14 @@ namespace Database
                    "AfhentningsDato=@retrievalDate, Leverandør=@carrier, BeskedTilVærksted=@messageToWorkshop, " +
                    "BeskedTilFølgeSeddel=@deliveryNote, RampeVedLevering=@loadingPlatform where BookingID=@bookingID", conn))
                 {
-                    updateDeliveryInformation.Parameters.AddWithValue("@salesRep", salesRep);
-                    updateDeliveryInformation.Parameters.AddWithValue("@deliveryDate", deliveryDate);
-                    updateDeliveryInformation.Parameters.AddWithValue("@retrivalDate", retrievalDate);
+                DateTime dt1 = DateTime.ParseExact(deliveryDate, "dd-MM-yyyy", CultureInfo.InvariantCulture);
+                DateTime dt2 = DateTime.ParseExact(retrievalDate, "dd-MM-yyyy", CultureInfo.InvariantCulture);
+                string delivery = dt1.ToString("yyyy-MM-dd");
+                string retrievel = dt2.ToString("yyyy-MM-dd");
+
+                updateDeliveryInformation.Parameters.AddWithValue("@salesRep", salesRep);
+                    updateDeliveryInformation.Parameters.AddWithValue("@deliveryDate", delivery);
+                    updateDeliveryInformation.Parameters.AddWithValue("@retrievalDate", retrievel);
                     updateDeliveryInformation.Parameters.AddWithValue("@carrier", carrier);
                     updateDeliveryInformation.Parameters.AddWithValue("@messageToWorkshop", messageToWorkshop);
                     updateDeliveryInformation.Parameters.AddWithValue("@deliveryNote", deliveryNote);
@@ -592,11 +600,10 @@ namespace Database
                     updateDeliveryInformation.Transaction = transaction;
                     updateDeliveryInformation.ExecuteNonQuery();
                 }
-            }
-            catch
-            {
-
-            }
+                
+            transaction.Commit();
+    
+            conn.Close();
         }
     }
 }

@@ -77,10 +77,18 @@ namespace StillAS
             string customer = libCustomerName.SelectedItem.ToString();
 
             addresses = CC.GetAdresses(customer);
-
+            string city = "";
             foreach (string s in addresses)
             {
-                libCity.Items.Add(s);
+                if (s == city)
+                {
+
+                }
+                else
+                {
+                    libCity.Items.Add(s); // adresse, eller by?
+                    city = s;
+                }
             }
         }
 
