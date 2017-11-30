@@ -48,5 +48,11 @@ namespace StillAS
                 btnManageUsers.Visible = false;
             }
         }
+
+        private void btnUr_Click(object sender, EventArgs e)
+        {
+            Clocks c = new Clocks();
+            c.Show();
+        }
     }
 }

@@ -15,6 +15,8 @@ namespace StillAS
     public partial class Clocks : Form
     {
         ControllerClass CC = new ControllerClass();
+        Thread Now;
+        Thread NY;
         public delegate void TickTockNow();
         public delegate void TickTockNY();
         
@@ -25,8 +27,10 @@ namespace StillAS
 
         private void Clocks_Load(object sender, EventArgs e)
         {
-            Thread Now = new Thread(TickNow);
-            Thread NY = new Thread(TickNY);
+            Now = new Thread(TickNow);
+            NY = new Thread(TickNY);
+            Now.IsBackground = true;
+            NY.IsBackground = true;
             Now.Start();
             NY.Start();
         }
@@ -40,23 +44,38 @@ namespace StillAS
         }
         private void TickNow()
         {
-            while(true)
+            try
             {
-                Thread.Sleep(1000);
-                lblNow.Invoke(new TickTockNow(this.UpdateNow));
+                while (true)
+                {
+                    lblNow.Invoke(new TickTockNow(this.UpdateNow));
+                    Thread.Sleep(1000);
+                }
+            }
+            catch
+            {
+
             }
         }
         private void TickNY()
         {
-            while (true)
+            try
             {
-                Thread.Sleep(1000);
-                lblNY.Invoke(new TickTockNY(this.UpdateNY));
+                while (true)
+                {
+                    lblNY.Invoke(new TickTockNY(this.UpdateNY));
+                    Thread.Sleep(1000);
+                }
+            }
+            catch
+            {
+
             }
         }
-        private void Timer()
+        private void btnExitProgram_Click(object sender, EventArgs e)
         {
-             
+            Now.Abort();
+            NY.Abort();
         }
     }
 }

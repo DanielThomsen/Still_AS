@@ -32,6 +32,7 @@
             this.btnMachines = new System.Windows.Forms.Button();
             this.btnBookings = new System.Windows.Forms.Button();
             this.btnManageUsers = new System.Windows.Forms.Button();
+            this.btnUr = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // lblTitle
@@ -77,11 +78,22 @@
             this.btnManageUsers.Text = "Manage Users";
             this.btnManageUsers.UseVisualStyleBackColor = true;
             // 
+            // btnUr
+            // 
+            this.btnUr.Location = new System.Drawing.Point(691, 12);
+            this.btnUr.Name = "btnUr";
+            this.btnUr.Size = new System.Drawing.Size(62, 54);
+            this.btnUr.TabIndex = 4;
+            this.btnUr.Text = "Ur";
+            this.btnUr.UseVisualStyleBackColor = true;
+            this.btnUr.Click += new System.EventHandler(this.btnUr_Click);
+            // 
             // Frontpage
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(765, 457);
+            this.Controls.Add(this.btnUr);
             this.Controls.Add(this.btnManageUsers);
             this.Controls.Add(this.btnBookings);
             this.Controls.Add(this.btnMachines);
@@ -101,5 +113,6 @@
         private System.Windows.Forms.Button btnMachines;
         private System.Windows.Forms.Button btnBookings;
         private System.Windows.Forms.Button btnManageUsers;
+        private System.Windows.Forms.Button btnUr;
     }
 }
