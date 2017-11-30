@@ -89,7 +89,7 @@ namespace Database
         {
             CreateBookingID();
             DateTime dt1 = DateTime.ParseExact(date1, "dd-MM-yyyy", CultureInfo.InvariantCulture);
-            DateTime dt2 = DateTime.ParseExact(date1, "dd-MM-yyyy", CultureInfo.InvariantCulture);
+            DateTime dt2 = DateTime.ParseExact(date2, "dd-MM-yyyy", CultureInfo.InvariantCulture);
             int KundeID = CustomerID;
             int BookingsID = BookingID;
             int DemoAnsvarligID = 1;
@@ -167,6 +167,34 @@ namespace Database
         {
             return AccessLevel;
         }
+        public int LoginValidation(string ID1, string ID2)
+        {
+            int Validation;
+            conn = new SqlConnection(GetConnection());
+            conn.Open();
+            string User = "";
+            string Password = "";
+            string count = "select * from Bruger where Adgangskode = '" + ID2 + "'";
+            SqlCommand ReadCom = new SqlCommand(count, conn);
+            SqlDataReader myReader = null;
+            myReader = ReadCom.ExecuteReader();
+            if (myReader.Read())
+            {
+                User = myReader["Navn"].ToString();
+                Password = myReader["Adgangskode"].ToString();
+                AccessLevel = Convert.ToInt32(myReader["AccessLevel"]);
+            }
+            if (User == ID1 && Password == ID2)
+            {
+                Validation = 0;
+            }
+            else
+            {
+                Validation = 1;
+            }
+            conn.Close();
+            return Validation;
+        } //Subject to Change
         //[Krognos Slut]
 
         // Daniels metoder

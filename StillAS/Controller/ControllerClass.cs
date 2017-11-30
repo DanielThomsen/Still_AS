@@ -48,6 +48,10 @@ namespace Controller
         {
             return DBR.GetAccessLevel();
         }
+        public int Validation(string ID1, string ID2)
+        {
+            return DBR.LoginValidation(ID1, ID2);
+        }
             // SKal til Model
         public string TimeNow()
         {

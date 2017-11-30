@@ -141,6 +141,9 @@
     <EmbeddedResource Include="Frontpage.resx">
       <DependentUpon>Frontpage.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="LoginScreen.resx">
+      <DependentUpon>LoginScreen.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Machines.resx">
       <DependentUpon>Machines.cs</DependentUpon>
     </EmbeddedResource>
