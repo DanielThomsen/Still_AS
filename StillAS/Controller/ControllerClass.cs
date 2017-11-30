@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Database;
+using System.Data;
 
 namespace Controller
 {
@@ -196,6 +197,19 @@ namespace Controller
             List<string> machines = DBR.GetMachines(bookingID);
             return machines;
         }
+
+        //public List<List<string>> GetAllBookings()
+        //{
+        //    List<List<string>> bookings = DBR.GetAllBookings();
+        //    return bookings;
+        //}
+
+        public DataTable GetAllBookings()
+        {
+            DataTable dt = DBR.GetAllBookings();
+            return dt;
+        }
+
 
 
         // LEA ARBEJDER HERFRA ----------

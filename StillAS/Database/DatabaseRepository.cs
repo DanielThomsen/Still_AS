@@ -7,6 +7,7 @@ using System.Data.Entity;
 using System.Data.SqlClient;
 using System.Globalization;
 using System.Data;
+using System.IO;
 
 namespace Database
 {
@@ -17,7 +18,7 @@ namespace Database
         //[Krognos Start]
         public static int CustomerID;
         public static int BookingID;
-        public static int AccessLevel = 3;
+        public static int AccessLevel = 1;
         public void CreateModelName(string ModelName1)
         {
             var ModelN = new ModelNavn { Modelnavn1 = ModelName1 };
@@ -392,15 +393,73 @@ namespace Database
             return customer.KundeID;
         }
 
-        
+        //public List<List<string>> GetAllBookings()
+        //{
+        //    var booking = meContext.Bookings;
+        //    var bookingLine = meContext.BookingLinjes;
+        //    var machine = meContext.Maskines;
 
-        class BookingData
+        //    List<List<string>> bookings = new List<List<string>>();
+        //    //List<string> data = new List<string>();
+
+        //    foreach (BookingLinje bl in bookingLine)
+        //    {
+        //        //BookingData bd = new BookingData();
+        //        List<string> data = new List<string>();
+        //        //bd.deliveryDate = bl.Booking.LeveringsDato.ToString();
+        //        //bd.retrivalDate = bl.Booking.AfhentningsDato.ToString();
+        //        //bd.modelName = bl.Maskine.ModelName;
+        //        //bd.modelNumber = bl.Maskine.Type;
+        //        //bd.demoNumber = bl.DemoNummer;
+
+        //        data[0] = bl.Booking.LeveringsDato.ToString();
+        //        data[1] = bl.Booking.AfhentningsDato.ToString();
+        //        data[2] = bl.Maskine.ModelName;
+        //        data[3] = bl.Maskine.Type;
+        //        data[4] = bl.DemoNummer;
+
+        //        bookings.Add(data);
+        //    }
+
+        //    return bookings;
+        //}
+
+        public DataTable GetAllBookings()
         {
-            DateTime deliveryDate;
-            DateTime retrivalDate;
-            string modelName;
-            string modelNumber;
-            string demoNumber;
+            //SqlDataAdapter da = new SqlDataAdapter("select * from Booking", GetConnection());
+
+            //DataSet ds = new DataSet();
+            //da.Fill(ds);
+
+            //return ds;
+
+
+
+            DataTable dtBookings = new DataTable();
+
+            string connString = GetConnection();
+
+            using (SqlConnection con = new SqlConnection(connString))
+            {
+                using (SqlCommand cmd = new SqlCommand("select b.bookingid, leveringsdato, afhentningsdato, m.modelname, m.type, m.DemoNummer from booking b join BookingLinje bl on b.bookingid = bl.bookingid join Maskine m on bl.demonummer = m.demonummer", con))
+                {
+                    con.Open();
+                    var dataReader = cmd.ExecuteReader();
+
+                    dtBookings.Load(dataReader);
+                }
+            }
+
+            return dtBookings;
+        }
+
+        public class BookingData
+        {
+            public /*DateTime*/ string deliveryDate;
+            public /*DateTime*/ string retrivalDate;
+            public string modelName;
+            public string modelNumber;
+            public string demoNumber;
         }
 
         // LEA ARBEJDER HERFRA ---------------------------------- >
@@ -408,6 +467,9 @@ namespace Database
         private SqlConnection conn;
         private SqlTransaction transaction = null;
         private string get;
+
+        public object Properties { get; private set; }
+
         public string GetConnection()
         {
             return "Data Source=mssql6.gear.host;Initial Catalog=stillas;User Id=stillas;Password=Sb3ZRHQ!_nAI";
