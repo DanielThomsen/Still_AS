@@ -81,5 +81,10 @@ namespace StillAS
                 MessageBox.Show("Please select a machine to remove");
             }
         }
+
+        private void txtName1_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

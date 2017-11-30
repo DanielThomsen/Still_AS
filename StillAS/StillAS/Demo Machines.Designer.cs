@@ -485,6 +485,7 @@
             this.txtName1.Name = "txtName1";
             this.txtName1.Size = new System.Drawing.Size(203, 22);
             this.txtName1.TabIndex = 1;
+            this.txtName1.TextChanged += new System.EventHandler(this.txtName1_TextChanged);
             // 
             // lblName1
             // 
