@@ -17,7 +17,7 @@ namespace Database
         //[Krognos Start]
         public static int CustomerID;
         public static int BookingID;
-        public static int AccessLevel = 3;
+        public static int AccessLevel = 1;
         public void CreateModelName(string ModelName1)
         {
             var ModelN = new ModelNavn { Modelnavn1 = ModelName1 };
@@ -412,24 +412,24 @@ namespace Database
 
             return machinesList;
         }
-        public int GetCustomerID(int bookingID)
-        {
-            var booking = meContext.Bookings.Find(bookingID);
-            var customer = meContext.Kundes.Find(Convert.ToInt32(booking.KundeID));
+        //public int GetCustomerID(int bookingID)
+        //{
+        //    var booking = meContext.Bookings.Find(bookingID);
+        //    var customer = meContext.Kundes.Find(Convert.ToInt32(booking.KundeID));
 
-            return customer.KundeID;
-        }
+        //    return customer.KundeID;
+        //}
 
         
 
-        class BookingData
-        {
-            DateTime deliveryDate;
-            DateTime retrivalDate;
-            string modelName;
-            string modelNumber;
-            string demoNumber;
-        }
+        //class BookingData
+        //{
+        //    DateTime deliveryDate;
+        //    DateTime retrivalDate;
+        //    string modelName;
+        //    string modelNumber;
+        //    string demoNumber;
+        //}
 
         // LEA ARBEJDER HERFRA ---------------------------------- >
         // Machines Listboxe
@@ -573,38 +573,65 @@ namespace Database
             return messagebox;
         }
         // Edit Bookings
-        //public void BeginTransaction()
-        //{
-        //    SqlConnection conn = new SqlConnection(GetConnection());
-        //    conn.Open();
-        //    transaction = conn.BeginTransaction(IsolationLevel.RepeatableRead);
-        //}
-        //public void UpdateBooking(string Name1, string Name2, string ATT, string Address, string ZipCode, 
-        //    string City, string Phone, string SalesRep, string DeliveryDate, string RetrievalDate, string Carrier, 
-        //    string MessageToWorkshop, string DeliveryNote, string CustomerIDs)
-        //{
-        //    try
-        //    {
-        //        CustomerID = Convert.ToInt32(CustomerIDs);
-        //        using (SqlCommand updateCustomer =
-        //            new SqlCommand("UPDATE Kunde SET Navn1=@Name1, Navn2=@Name2, Att=@ATT, Adresse=@Address, " +
-        //            "Postnummer=@ZipCode, By=@City, Telefon=@Phone where KundeID=@CustomerID", conn))
-        //        {
-        //            updateCustomer.Transaction = transaction;
-        //            updateCustomer.Parameters.AddWithValue("@Name1", Name1);
-        //            updateCustomer.Parameters.AddWithValue("@Name2", Name2);
-        //            updateCustomer.Parameters.AddWithValue("@ATT", ATT);
-        //            updateCustomer.Parameters.AddWithValue("@Address", Address);
-        //            updateCustomer.Parameters.AddWithValue("@ZipCode", Name2);
-        //            updateCustomer.Parameters.AddWithValue("@City", City);
-        //            updateCustomer.Parameters.AddWithValue("@Phone", Phone);
-        //            updateCustomer.Parameters.AddWithValue("@CustomerID", CustomerID);
-        //        }
-        //    }
-        //    catch
-        //    {
+        public void BeginTransaction()
+        {
+            conn = new SqlConnection(GetConnection());
+            conn.Open();
+            transaction = conn.BeginTransaction(IsolationLevel.RepeatableRead);
+        }
+        public void RollBackTransaction()
+        {
+            transaction.Rollback();
+            conn.Close();
+        }
+        public void UpdateBooking(string name1, string name2, string att, string address, string zipCode,
+            string city, string phone, string salesRep, string deliveryDate, string retrievalDate, string carrier,
+            string messageToWorkshop, string deliveryNote, string loadingPlatform, int bookingIDs)
+        {
+                var booking = meContext.Bookings.Find(bookingIDs);
+                var customer = meContext.Kundes.Find(Convert.ToInt32(booking.KundeID));
 
-        //    }
-        //}
+                CustomerID = customer.KundeID;
+                using (SqlCommand updateCustomer =
+                    new SqlCommand("UPDATE Kunde SET Navn1=@Name1, Navn2=@Name2, Att=@ATT, Adresse=@Address, " +
+                    "Postnummer=@ZipCode, [By]=@City, Telefon=@Phone where KundeID=@CustomerID", conn))
+                {
+                    updateCustomer.Parameters.AddWithValue("@Name1", name1);
+                    updateCustomer.Parameters.AddWithValue("@Name2", name2);
+                    updateCustomer.Parameters.AddWithValue("@ATT", att);
+                    updateCustomer.Parameters.AddWithValue("@Address", address);
+                    updateCustomer.Parameters.AddWithValue("@ZipCode", zipCode);
+                    updateCustomer.Parameters.AddWithValue("@City", city);
+                    updateCustomer.Parameters.AddWithValue("@Phone", phone);
+                    updateCustomer.Parameters.AddWithValue("@CustomerID", CustomerID);
+                    updateCustomer.Transaction = transaction;
+                    updateCustomer.ExecuteNonQuery();
+                }
+                using (SqlCommand updateDeliveryInformation =
+                   new SqlCommand("UPDATE Booking SET SælgerID=@salesRep, LeveringsDato=@deliveryDate, " +
+                   "AfhentningsDato=@retrievalDate, Leverandør=@carrier, BeskedTilVærksted=@messageToWorkshop, " +
+                   "BeskedTilFølgeSeddel=@deliveryNote, RampeVedLevering=@loadingPlatform where BookingID=@bookingID", conn))
+                {
+                DateTime dt1 = DateTime.ParseExact(deliveryDate, "dd-MM-yyyy", CultureInfo.InvariantCulture);
+                DateTime dt2 = DateTime.ParseExact(retrievalDate, "dd-MM-yyyy", CultureInfo.InvariantCulture);
+                string delivery = dt1.ToString("yyyy-MM-dd");
+                string retrievel = dt2.ToString("yyyy-MM-dd");
+
+                updateDeliveryInformation.Parameters.AddWithValue("@salesRep", salesRep);
+                    updateDeliveryInformation.Parameters.AddWithValue("@deliveryDate", delivery);
+                    updateDeliveryInformation.Parameters.AddWithValue("@retrievalDate", retrievel);
+                    updateDeliveryInformation.Parameters.AddWithValue("@carrier", carrier);
+                    updateDeliveryInformation.Parameters.AddWithValue("@messageToWorkshop", messageToWorkshop);
+                    updateDeliveryInformation.Parameters.AddWithValue("@deliveryNote", deliveryNote);
+                    updateDeliveryInformation.Parameters.AddWithValue("@loadingPlatform", loadingPlatform);
+                    updateDeliveryInformation.Parameters.AddWithValue("@bookingID", bookingIDs);
+                    updateDeliveryInformation.Transaction = transaction;
+                    updateDeliveryInformation.ExecuteNonQuery();
+                }
+                
+            transaction.Commit();
+    
+            conn.Close();
+        }
     }
 }

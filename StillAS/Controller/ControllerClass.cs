@@ -218,7 +218,7 @@ namespace Controller
             DBR.UpdateThirdListbox(modelnumber, demonumber);
             return demonumber;
         }
-        // EditMachine
+        // EditMachine -----
         public string UpdateInformation(string DemoNumber, string ModelName, string ModelNumber, string Brand, string CNumber,
             string MastType, int MastBuildingHeight, int MastLiftHeight, int MastFreeLift, string AggregatType,
             string AggregatNumber, string BatteryType, string BatteryNumber, string ChargerType, string ChargerNumber,
@@ -229,15 +229,23 @@ namespace Controller
                              Controller, Weight, Height, Length, Width, oldDemoNumber, messagebox);
             return messagebox;
         }
-        //public void BeginTransaction()
-        //{
-        //    DBR.BeginTransaction();
-        //}
-        //public void UpdateBooking(string Name1, string Name2, string ATT, string Address, string ZipCode,
-        //    string City, string Phone, string SalesRep, string DeliveryDate, string RetrievalDate, string Carrier,
-        //    string MessageToWorkshop, string DeliveryNote, string CustomerIDs)
-        //{
-        //    DBR.UpdateBooking();
-        //}
+        // Edit Booking -----
+        public void BeginTransaction()
+        {
+            DBR.BeginTransaction();
+        }
+        public void RollBackTransaction()
+        {
+            DBR.RollBackTransaction();
+        }
+        public void UpdateBooking(string name1, string name2, string att, string address, string zipCode,
+            string city, string phone, string salesRep, string deliveryDate, string retrievalDate, string carrier,
+            string messageToWorkshop, string deliveryNote, string loadingPlatform, int bookingID)
+        {
+            DBR.UpdateBooking(name1, name2, att, address, zipCode, city, phone,
+                salesRep, deliveryDate, retrievalDate, carrier, messageToWorkshop, 
+                deliveryNote, loadingPlatform, bookingID);
+        }
+
     }
 }

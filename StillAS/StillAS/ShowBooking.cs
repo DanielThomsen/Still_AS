@@ -14,9 +14,12 @@ namespace StillAS
     public partial class ShowBooking : Form
     {
         ControllerClass CC = new ControllerClass();
-        public ShowBooking()
+        static int BookingIDs;
+      
+        public ShowBooking(int bookingID)
         {
             InitializeComponent();
+            // Leas lille del, der skal være der
             btnSaveBooking.Visible = false;
             btnCancel.Visible = false;
             List<TextBox> textBoxList = new List<TextBox>
@@ -30,12 +33,6 @@ namespace StillAS
             {
                 t.ReadOnly = true;
             }
-        }
-
-        public ShowBooking(int bookingID)
-        {
-            InitializeComponent();
-
             // Vis alle kundeoplysninger:
             List<string> customers = CC.GetCustomer(bookingID);
             List<TextBox> customerTextboxes = new List<TextBox>() { txtName1, txtName2, txtATT, txtAdresss, txtZipCode, txtCity, txtPhone};
@@ -98,6 +95,8 @@ namespace StillAS
             // så de kan indsættes i listboxen der opdateres alt efter hvilken maskine der vælges
 
             //MessageBox.Show("Form skal åbnes her. Så vises alt om bookingen.");
+            BookingIDs = bookingID;
+
         }
 
         private void libBookingMachines_Click(object sender, EventArgs e)
@@ -141,52 +140,82 @@ namespace StillAS
         {
             this.Visible = false;
         }
-
-        private void btnEditBooking_Click(object sender, EventArgs e)
-        {
-            //lblShowBooking.Text = "Edit booking";
-            //btnBackToBooking.Visible = false;
-            //btnSaveBooking.Visible = true;
-            //btnEditBooking.Visible = false;
-            //btnCancel.Visible = true;
-            //List<TextBox> textBoxList = new List<TextBox>
-            //{
-            //    txtName1, txtName2, txtATT, txtAdresss, txtZipCode, txtCity, txtPhone,
-            //    txtSalesRep, txtDeliveryDate, txtRetrievalDate, txtCarrier, txtMessageToWorkshop,
-            //    txtDeliveryNote
-
-            //};
-            //CC.BeginTransaction();
-            //foreach (TextBox t in textBoxList)
-            //{
-            //    t.ReadOnly = false;
-            //}
-        }
-
         private void btnCancel_Click(object sender, EventArgs e)
         {
-            // Rollback metode her
+            CC.RollBackTransaction();
+            List<TextBox> textBoxList = new List<TextBox>
+            {
+                txtName1, txtName2, txtATT, txtAdresss, txtZipCode, txtCity, txtPhone,
+                txtSalesRep, txtDeliveryDate, txtRetrievalDate, txtCarrier, txtMessageToWorkshop,
+                txtDeliveryNote
+
+            };
+            foreach (TextBox t in textBoxList)
+            {
+                t.ReadOnly = true;
+            }
         }      
 
         private void btnSaveBooking_Click(object sender, EventArgs e)
         {
-            //// Update metode her + commit
-            //string Name1 = txtName1.Text;
-            //string Name2 = txtName2.Text;
-            //string ATT = txtATT.Text;
-            //string Address = txtAdresss.Text;
-            //string ZipCode = txtZipCode.Text;
-            //string City = txtCity.Text;
-            //string Phone,
-            //string SalesRep,
-            //string DeliveryDate,
-            //string RetrievalDate,
-            //string Carrier,
-            //string MessageToWorkshop,
-            //string DeliveryNote,
-            //string CustomerIDs
-            //CC.UpdateBooking();
+            // Update metode her + commit
+            string name1 = txtName1.Text;
+            string name2 = txtName2.Text;
+            string att = txtATT.Text;
+            string address = txtAdresss.Text;
+            string zipCode = txtZipCode.Text;
+            string city = txtCity.Text;
+            string phone = txtPhone.Text;
+            string salesRep = txtSalesRep.Text;
+            string dDate = txtDeliveryDate.Text;
+            string rDate = txtRetrievalDate.Text;
+            string deliveryDate = dDate.Substring(0, 10);
+            string retrievalDate = rDate.Substring(0, 10);
+            string carrier = txtCarrier.Text;
+            string messageToWorkshop = txtMessageToWorkshop.Text;
+            string deliveryNote = txtDeliveryNote.Text;
+            string loadingPlatform;
+            if (rbtnYes.Checked == true)
+            {
+                loadingPlatform = "1";
+            }
+
+            else
+            {
+                loadingPlatform = "0";
+            }
+            int bookingID = BookingIDs;
+            try
+            {
+            CC.UpdateBooking(name1, name2, att, address, zipCode, city, phone, 
+                salesRep, deliveryDate, retrievalDate, carrier, messageToWorkshop, 
+                deliveryNote, loadingPlatform, bookingID);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
-        
+
+        private void btnEditBooking_Click_1(object sender, EventArgs e)
+        {
+            CC.BeginTransaction();
+            lblShowBooking.Text = "Edit booking";
+            btnBackToBooking.Visible = false;
+            btnSaveBooking.Visible = true;
+            btnEditBooking.Visible = false;
+            btnCancel.Visible = true;
+            List<TextBox> textBoxList = new List<TextBox>
+            {
+                txtName1, txtName2, txtATT, txtAdresss, txtZipCode, txtCity, txtPhone,
+                txtSalesRep, txtDeliveryDate, txtRetrievalDate, txtCarrier, txtMessageToWorkshop,
+                txtDeliveryNote
+
+            };
+            foreach (TextBox t in textBoxList)
+            {
+                t.ReadOnly = false;
+            }
+        }
     }
 }
