@@ -260,6 +260,14 @@ namespace Controller
                 salesRep, deliveryDate, retrievalDate, carrier, messageToWorkshop, 
                 deliveryNote, loadingPlatform, bookingID);
         }
-
+        // ------------------ USER MANAGEMENT --------------------
+        public DataTable GetAllUsers()
+        {
+            return DBR.GetAllUsers();
+        }
+        public void AddUser(string username, string name, string password, string accessLevel)
+        {
+            DBR.AddUser(username, name, password, accessLevel);
+        }
     }
 }

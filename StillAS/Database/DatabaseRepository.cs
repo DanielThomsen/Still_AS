@@ -690,5 +690,45 @@ namespace Database
     
             conn.Close();
         }
+
+        public DataTable dat = new DataTable();
+        public DataTable GetAllUsers()
+        {
+            dat.Clear();
+            conn = new SqlConnection(GetConnection());
+            conn.Open();
+            try
+            {
+                string selectUsers = "select * from Bruger"; // Komando alt afhænging af, hvad man vil.
+                SqlDataAdapter sda = new SqlDataAdapter(selectUsers, conn);
+                sda.Fill(dat);
+            }
+            catch (Exception ex)
+            {
+
+            }
+            finally
+            {
+                conn.Close();
+            }
+            return dat;
+        }
+        public void AddUser(string username, string name, string password, string accessLevel)
+        {
+            conn = new SqlConnection(GetConnection());
+            conn.Open();
+            try
+            {
+                SqlCommand insertUser = new SqlCommand("insert into Bruger (Username, Navn, Adgangskode, AccessLevel) " +
+                    "values ('" + username + "', '" + name + "', '" + password + "', '" + accessLevel + "')");
+                insertUser.Connection = conn;
+                insertUser.ExecuteNonQuery();
+            }
+            catch
+            {
+           
+            }
+            conn.Close();
+        }
     }
 }

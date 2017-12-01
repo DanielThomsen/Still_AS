@@ -39,19 +39,17 @@
             // 
             this.lblTitle.AutoSize = true;
             this.lblTitle.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F);
-            this.lblTitle.Location = new System.Drawing.Point(312, 11);
-            this.lblTitle.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblTitle.Location = new System.Drawing.Point(234, 9);
             this.lblTitle.Name = "lblTitle";
-            this.lblTitle.Size = new System.Drawing.Size(127, 29);
+            this.lblTitle.Size = new System.Drawing.Size(105, 25);
             this.lblTitle.TabIndex = 0;
             this.lblTitle.Text = "STILL A/S";
             // 
             // btnMachines
             // 
-            this.btnMachines.Location = new System.Drawing.Point(319, 126);
-            this.btnMachines.Margin = new System.Windows.Forms.Padding(4);
+            this.btnMachines.Location = new System.Drawing.Point(239, 102);
             this.btnMachines.Name = "btnMachines";
-            this.btnMachines.Size = new System.Drawing.Size(133, 62);
+            this.btnMachines.Size = new System.Drawing.Size(100, 50);
             this.btnMachines.TabIndex = 1;
             this.btnMachines.Text = "Machines";
             this.btnMachines.UseVisualStyleBackColor = true;
@@ -59,10 +57,9 @@
             // 
             // btnBookings
             // 
-            this.btnBookings.Location = new System.Drawing.Point(319, 196);
-            this.btnBookings.Margin = new System.Windows.Forms.Padding(4);
+            this.btnBookings.Location = new System.Drawing.Point(239, 159);
             this.btnBookings.Name = "btnBookings";
-            this.btnBookings.Size = new System.Drawing.Size(133, 62);
+            this.btnBookings.Size = new System.Drawing.Size(100, 50);
             this.btnBookings.TabIndex = 2;
             this.btnBookings.Text = "Bookings";
             this.btnBookings.UseVisualStyleBackColor = true;
@@ -70,19 +67,20 @@
             // 
             // btnManageUsers
             // 
-            this.btnManageUsers.Location = new System.Drawing.Point(319, 266);
-            this.btnManageUsers.Margin = new System.Windows.Forms.Padding(4);
+            this.btnManageUsers.Location = new System.Drawing.Point(239, 216);
             this.btnManageUsers.Name = "btnManageUsers";
-            this.btnManageUsers.Size = new System.Drawing.Size(133, 62);
+            this.btnManageUsers.Size = new System.Drawing.Size(100, 50);
             this.btnManageUsers.TabIndex = 3;
             this.btnManageUsers.Text = "Manage Users";
             this.btnManageUsers.UseVisualStyleBackColor = true;
+            this.btnManageUsers.Click += new System.EventHandler(this.btnManageUsers_Click);
             // 
             // btnUr
             // 
-            this.btnUr.Location = new System.Drawing.Point(691, 12);
+            this.btnUr.Location = new System.Drawing.Point(518, 10);
+            this.btnUr.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnUr.Name = "btnUr";
-            this.btnUr.Size = new System.Drawing.Size(62, 54);
+            this.btnUr.Size = new System.Drawing.Size(46, 44);
             this.btnUr.TabIndex = 4;
             this.btnUr.Text = "Ur";
             this.btnUr.UseVisualStyleBackColor = true;
@@ -90,15 +88,14 @@
             // 
             // Frontpage
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(765, 457);
+            this.ClientSize = new System.Drawing.Size(574, 371);
             this.Controls.Add(this.btnUr);
             this.Controls.Add(this.btnManageUsers);
             this.Controls.Add(this.btnBookings);
             this.Controls.Add(this.btnMachines);
             this.Controls.Add(this.lblTitle);
-            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "Frontpage";
             this.Text = "Frontpage";
             this.Load += new System.EventHandler(this.Frontpage_Load);
