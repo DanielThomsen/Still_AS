@@ -39,6 +39,32 @@ namespace StillAS
             {
                 ControllerClass.DemoMachines.Add(X);
             }
+            string Name1 = txtName1.Text;
+            string Name2 = txtName2.Text;
+            string Att = txtATT.Text;
+            string Address = txtAdresss.Text;
+            int ZIP = Convert.ToInt32(txtZipCode.Text);
+            string City = txtCity.Text;
+            int Phone = Convert.ToInt32(txtPhone.Text);
+            int Selected;
+
+            if (rbtnYes.Checked == true)
+            {
+                Selected = 0;
+            }
+
+            else
+            {
+                Selected = 1;
+            }
+
+            string Date1 = dtpDeliveryDate.Value.ToShortDateString();
+            string Date2 = dtpRetrievalDate.Value.ToShortDateString();
+            string Transporter = txtCarrier.Text;
+            string Message1 = txtMessageToWorkshop.Text;
+            string Message2 = txtDeliveryNote.Text;
+            CTRC.AddCustomer(Name1, Name2, Att, Address, ZIP, City, Phone);
+            CTRC.CreateBooking(Date1, Date2, Transporter, Message1, Message2, Selected);
             CTRC.CreateBookingLine();
             this.Visible = false;
         }
