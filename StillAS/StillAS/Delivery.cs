@@ -36,15 +36,7 @@ namespace StillAS
             string Transporter = tbTransporter.Text;
             string Message1 = tbMessageToWorkshop.Text;
             string Message2 = tbDeliveryNote.Text;
-            try
-            {
             CC.CreateBooking(Date1, Date2, Transporter, Message1, Message2, Selected);
-
-            }
-            catch
-            {
-                MessageBox.Show(Date1.ToString() + Date2.ToString());
-            }
             Demo_Maskiner DM = new Demo_Maskiner();
             DM.Show();
         }

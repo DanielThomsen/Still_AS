@@ -21,9 +21,7 @@ namespace Database
         }
     
         public string KonfigurationsNavn { get; set; }
-        public Nullable<int> DemoAnsvarligID { get; set; }
     
-        public virtual DemoAnsvarlig DemoAnsvarlig { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<MaskineKonfiguration> MaskineKonfigurations { get; set; }
     }

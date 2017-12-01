@@ -19,6 +19,7 @@ namespace Database
         public static int CustomerID;
         public static int BookingID;
         public static int AccessLevel = 1;
+        public static string Bruger = "julemand";
         public void CreateModelName(string ModelName1)
         {
             var ModelN = new ModelNavn { Modelnavn1 = ModelName1 };
@@ -34,7 +35,7 @@ namespace Database
                 MastType = MastType, MastByggeHøjde = MastBuildingHeight, MastLøfteHøjde = MastLiftHeight, MastFriLøft = MastFreeLift,
                 Aggregat = AggregatType, AggregarNummer = AggregatNumber, BatteriType = BatteryType, BatteriNummer = BatteryNumber,
                 LaderType = ChargerType, LaderNummer = ChargerNumber, Betjening = Controller, Weight = Weight, Height = Height,
-                Length = Length, Width = Width, DemonAnsvarligID = 1 };
+                Length = Length, Width = Width};
             meContext.Maskines.Add(Machine);
             meContext.SaveChanges();
             
@@ -93,10 +94,7 @@ namespace Database
             DateTime dt2 = DateTime.ParseExact(date2, "dd-MM-yyyy", CultureInfo.InvariantCulture);
             int KundeID = CustomerID;
             int BookingsID = BookingID;
-            int DemoAnsvarligID = 1;
-            int SælgerID = 2;
-            int VærkstedID = 3;
-            int TransportørID = 4;
+            string Username = Bruger;
             string LeveringsDato = dt1.ToString("yyyy-MM-dd");
             string AfhentningsDato = dt2.ToString("yyyy-MM-dd");
             string Leverandør = Transporter;
@@ -108,11 +106,8 @@ namespace Database
             conn.Open();
             SqlCommand Com = new SqlCommand("insert into Booking values(" +
                 BookingsID + ", " +
-                KundeID + ", " +
-                SælgerID + ", " +
-                VærkstedID + ", " +
-                DemoAnsvarligID + ", " +
-                TransportørID + ", '" +
+                KundeID + ", '" +
+                Username + "', '" +
                 LeveringsDato + "', '" +
                 AfhentningsDato + "', '" +
                 Leverandør + "', '" +
@@ -170,6 +165,7 @@ namespace Database
         }
         public int LoginValidation(string ID1, string ID2)
         {
+            Bruger = ID1;
             int Validation;
             conn = new SqlConnection(GetConnection());
             conn.Open();
@@ -181,7 +177,7 @@ namespace Database
             myReader = ReadCom.ExecuteReader();
             if (myReader.Read())
             {
-                User = myReader["Navn"].ToString();
+                User = myReader["Username"].ToString();
                 Password = myReader["Adgangskode"].ToString();
                 AccessLevel = Convert.ToInt32(myReader["AccessLevel"]);
             }
@@ -345,7 +341,7 @@ namespace Database
             // Hent bookingoplysninger fra databasen her:
             var booking = meContext.Bookings.Find(bookingID);
 
-            bookingInfo.Add(booking.SælgerID + "");
+            bookingInfo.Add(booking.Bruger + "");
             bookingInfo.Add(booking.LeveringsDato+"");
             bookingInfo.Add(booking.AfhentningsDato+"");
             bookingInfo.Add(booking.Leverandør);
