@@ -214,7 +214,11 @@ namespace Controller
             return dt;
         }
 
-
+        public DataTable GetBookingsByDate(DateTime date)
+        {
+            DataTable dt = DBR.GetBookingsByDate(date);
+            return dt;
+        }
 
         // LEA ARBEJDER HERFRA ----------
         public List<string> PopulateListbox(List<string> modelname)
