@@ -18,7 +18,6 @@ namespace StillAS
         {
             InitializeComponent();
         }
-
         private void btnLogin_Click(object sender, EventArgs e)
         {
             int Check = CC.Validation(tbUsername.Text, tbPassword.Text);
@@ -30,7 +29,7 @@ namespace StillAS
             }   
             else
             {
-                MessageBox.Show("Wrong Password or Username. Please try again");
+                MessageBox.Show("Wrong Username or Password. Please try again");
             }
         }
     }

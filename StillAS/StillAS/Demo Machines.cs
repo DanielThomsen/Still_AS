@@ -79,7 +79,7 @@ namespace StillAS
                 {
                     coboDemoMachines.Text = string.Empty;
                     btnAdd.Enabled = false;
-                    coboDemoMachines.Enabled = false;
+                    coboDemoMachines.Enabled = false; 
                 }
             }
             catch
