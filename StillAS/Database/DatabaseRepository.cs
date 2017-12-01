@@ -477,6 +477,34 @@ namespace Database
             return dtBookings;
         }
 
+        public DataTable GetBookingsByDate(DateTime date)
+        {
+            string connString = GetConnection();
+            DataTable dtBookings = new DataTable();
+            DateTime updatedDate = date;
+            
+
+            for (int i = 0; i < 7; i++)
+            {
+                string newDate = updatedDate.ToString("yyyy-MM-dd h:mm tt");
+                newDate.Substring(0, 10);
+                updatedDate = updatedDate.AddDays(1);
+
+                using (SqlConnection con = new SqlConnection(connString))
+                {
+                    using (SqlCommand cmd = new SqlCommand("select b.bookingid, leveringsdato, afhentningsdato, m.modelname, m.type, m.DemoNummer from booking b join BookingLinje bl on b.bookingid = bl.bookingid join Maskine m on bl.demonummer = m.demonummer where LeveringsDato = '" + newDate + "'", con))
+                    {
+                        con.Open();
+                        var dataReader = cmd.ExecuteReader();
+
+                        dtBookings.Load(dataReader);
+                    }
+                }
+            }
+
+            return dtBookings;
+        }
+
         public class BookingData
         {
             public /*DateTime*/ string deliveryDate;
