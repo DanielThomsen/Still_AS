@@ -14,14 +14,18 @@ namespace Database
     
     public partial class Bruger
     {
-        public int ID { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
+        public Bruger()
+        {
+            this.Bookings = new HashSet<Booking>();
+        }
+    
+        public string Username { get; set; }
         public string Navn { get; set; }
         public string Adgangskode { get; set; }
-        public string AccessLevel { get; set; }
+        public Nullable<int> AccessLevel { get; set; }
     
-        public virtual DemoAnsvarlig DemoAnsvarlig { get; set; }
-        public virtual Sælger Sælger { get; set; }
-        public virtual Transportør Transportør { get; set; }
-        public virtual Værksted Værksted { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<Booking> Bookings { get; set; }
     }
 }

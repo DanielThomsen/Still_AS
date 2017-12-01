@@ -16,7 +16,7 @@ namespace StillAS
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Frontpage());
+            Application.Run(new Bookings());
         }
     }
 }

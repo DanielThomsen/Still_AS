@@ -27,6 +27,7 @@ namespace Database
         public string Adresse { get; set; }
         public Nullable<int> Postnummer { get; set; }
         public string By { get; set; }
+        public string Land { get; set; }
         public Nullable<int> Telefon { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
