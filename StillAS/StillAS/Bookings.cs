@@ -94,8 +94,8 @@ namespace StillAS
 
         private void btnAddBooking_Click(object sender, EventArgs e)
         {
-            Customer_Information CI = new Customer_Information();
-            CI.Show();
+            Demo_Maskiner DM = new Demo_Maskiner();
+            DM.Show();
         }
 
         private void libCity_Click(object sender, EventArgs e)
@@ -147,6 +147,11 @@ namespace StillAS
         {
             BookingsOverview bo = new BookingsOverview();
             bo.Show();
+        }
+
+        private void btnEdit_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
