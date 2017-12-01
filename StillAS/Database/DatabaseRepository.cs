@@ -586,16 +586,15 @@ namespace Database
                     conn.Open();
                     using (SqlCommand cmd =
                         new SqlCommand("UPDATE Maskine SET DemoNummer=@NewDemoNummer, ModelName=@ModelName, " +
-                        "DemonAnsvarligID=@DemoAnsvarlig, Type=@Type, Fabrikant=@Brand, Chassisnummer=@CNumber, " +
-                        "MastType=@MastType, MastByggeHøjde=@MastBuldingHeight, MastLøfteHøjde=@MastLiftHeigt, " +
+                        "Type=@Type, Fabrikant=@Brand, Chassisnummer=@CNumber,MastType=@MastType, " +
+                        "MastByggeHøjde=@MastBuldingHeight, MastLøfteHøjde=@MastLiftHeigt, " +
                         "MastFriLøft=@MastFreeLift, Betjening=@Controller, Aggregat=@AggregatType, " +
                         "AggregarNummer=@AggregatNumber, BatteriType=@BatteryType, BatteriNummer=@BatteryNumber, " +
-                        "LaderType=@ChargerType, LaderNummer=@ChargerNumber, Weight=@Weight, Height=@Height, Length=@Length, " +
-                        "Width=@Width WHERE DemoNummer=@oldDemoNumber", conn))
+                        "LaderType=@ChargerType, LaderNummer=@ChargerNumber, Weight=@Weight, Height=@Height, " +
+                        "Length=@Length, Width=@Width WHERE DemoNummer=@oldDemoNumber", conn))
                     {
                         cmd.Parameters.AddWithValue("@NewDemoNummer", newDemoNumber);
                         cmd.Parameters.AddWithValue("@ModelName", ModelName);
-                        cmd.Parameters.AddWithValue("@DemoAnsvarlig", 1);
 
                         cmd.Parameters.AddWithValue("@Type", ModelNumber);
                         cmd.Parameters.AddWithValue("@Brand", Brand);
