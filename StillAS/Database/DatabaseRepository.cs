@@ -171,7 +171,7 @@ namespace Database
             conn.Open();
             string User = "";
             string Password = "";
-            string count = "select * from Bruger where Adgangskode = '" + ID2 + "'";
+            string count = "select * from Bruger where Username = '" + ID1 + "'";
             SqlCommand ReadCom = new SqlCommand(count, conn);
             SqlDataReader myReader = null;
             myReader = ReadCom.ExecuteReader();
