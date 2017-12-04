@@ -63,7 +63,8 @@ namespace StillAS
 
         private void btnShowBookingsByDate_Click(object sender, EventArgs e)
         {
-
+            //MessageBox.Show(dtpDate.Value.Date.ToString("yyyy-MM-dd h:mm tt"));
+            gvBookings.DataSource = CC.GetBookingsByDate(dtpDate.Value.Date);
         }
 
         private void gvBookings_CellContentClick(object sender, DataGridViewCellEventArgs e)
