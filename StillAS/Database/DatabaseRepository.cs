@@ -273,18 +273,21 @@ namespace Database
             return configurationsList;
         }
 
-        public List<string> GetAllConfigurations()
-        {
-            List<string> configurationsList = new List<string>();
-            var configuration = meContext.Konfigurations;
+        // DETTE ER UDKOMMENRERET AF LEA, FORDI VI ÆNDREDE I DATABASEN, SÅ DET SKAL HEDDE MASKINEKONFIGURATIONS
+        // ISTEDET FOR KONFIGURATIONS
 
-            foreach (Konfiguration k in configuration)
-            {
-                configurationsList.Add(k.KonfigurationsNavn);
-            }
+        //public List<string> GetAllConfigurations()
+        //{
+        //    List<string> configurationsList = new List<string>();
+        //    var configuration = meContext.MaskineKonfigurations;
 
-            return configurationsList;
-        }
+        //    foreach (MaskineKonfiguration k in configuration)
+        //    {
+        //        configurationsList.Add(k.KonfigurationsNavn);
+        //    }
+
+        //    return configurationsList;
+        //}
 
         public List<string> GetCustomer(int bookingID)
         {

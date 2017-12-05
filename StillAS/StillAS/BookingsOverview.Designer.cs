@@ -55,9 +55,10 @@
             // 
             // btnShowAllBookings
             // 
-            this.btnShowAllBookings.Location = new System.Drawing.Point(23, 45);
+            this.btnShowAllBookings.Location = new System.Drawing.Point(12, 23);
+            this.btnShowAllBookings.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnShowAllBookings.Name = "btnShowAllBookings";
-            this.btnShowAllBookings.Size = new System.Drawing.Size(174, 48);
+            this.btnShowAllBookings.Size = new System.Drawing.Size(87, 25);
             this.btnShowAllBookings.TabIndex = 0;
             this.btnShowAllBookings.Text = "Show bookings";
             this.btnShowAllBookings.UseVisualStyleBackColor = true;
@@ -66,10 +67,11 @@
             // gvBookings
             // 
             this.gvBookings.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.gvBookings.Location = new System.Drawing.Point(63, 238);
+            this.gvBookings.Location = new System.Drawing.Point(32, 124);
+            this.gvBookings.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.gvBookings.Name = "gvBookings";
             this.gvBookings.RowTemplate.Height = 33;
-            this.gvBookings.Size = new System.Drawing.Size(1421, 645);
+            this.gvBookings.Size = new System.Drawing.Size(710, 335);
             this.gvBookings.TabIndex = 1;
             this.gvBookings.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.gvBookings_CellContentClick);
             // 
@@ -85,42 +87,47 @@
             // 
             // dtpDate
             // 
-            this.dtpDate.Location = new System.Drawing.Point(20, 45);
+            this.dtpDate.Location = new System.Drawing.Point(10, 23);
+            this.dtpDate.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.dtpDate.Name = "dtpDate";
-            this.dtpDate.Size = new System.Drawing.Size(262, 31);
+            this.dtpDate.Size = new System.Drawing.Size(133, 20);
             this.dtpDate.TabIndex = 2;
             this.dtpDate.ValueChanged += new System.EventHandler(this.dtpDate_ValueChanged);
             // 
             // cbModelName
             // 
             this.cbModelName.FormattingEnabled = true;
-            this.cbModelName.Location = new System.Drawing.Point(21, 42);
+            this.cbModelName.Location = new System.Drawing.Point(10, 22);
+            this.cbModelName.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.cbModelName.Name = "cbModelName";
-            this.cbModelName.Size = new System.Drawing.Size(121, 33);
+            this.cbModelName.Size = new System.Drawing.Size(62, 21);
             this.cbModelName.TabIndex = 3;
             // 
             // cbModelNr
             // 
             this.cbModelNr.FormattingEnabled = true;
-            this.cbModelNr.Location = new System.Drawing.Point(164, 42);
+            this.cbModelNr.Location = new System.Drawing.Point(82, 22);
+            this.cbModelNr.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.cbModelNr.Name = "cbModelNr";
-            this.cbModelNr.Size = new System.Drawing.Size(121, 33);
+            this.cbModelNr.Size = new System.Drawing.Size(62, 21);
             this.cbModelNr.TabIndex = 4;
             // 
             // btnShowBookingsByModel
             // 
-            this.btnShowBookingsByModel.Location = new System.Drawing.Point(311, 42);
+            this.btnShowBookingsByModel.Location = new System.Drawing.Point(156, 22);
+            this.btnShowBookingsByModel.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnShowBookingsByModel.Name = "btnShowBookingsByModel";
-            this.btnShowBookingsByModel.Size = new System.Drawing.Size(174, 48);
+            this.btnShowBookingsByModel.Size = new System.Drawing.Size(87, 25);
             this.btnShowBookingsByModel.TabIndex = 5;
             this.btnShowBookingsByModel.Text = "Show bookings";
             this.btnShowBookingsByModel.UseVisualStyleBackColor = true;
             // 
             // btnShowBookingsByDate
             // 
-            this.btnShowBookingsByDate.Location = new System.Drawing.Point(301, 45);
+            this.btnShowBookingsByDate.Location = new System.Drawing.Point(150, 23);
+            this.btnShowBookingsByDate.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnShowBookingsByDate.Name = "btnShowBookingsByDate";
-            this.btnShowBookingsByDate.Size = new System.Drawing.Size(173, 48);
+            this.btnShowBookingsByDate.Size = new System.Drawing.Size(86, 25);
             this.btnShowBookingsByDate.TabIndex = 6;
             this.btnShowBookingsByDate.Text = "Show bookings";
             this.btnShowBookingsByDate.UseVisualStyleBackColor = true;
@@ -129,9 +136,11 @@
             // groupBox1
             // 
             this.groupBox1.Controls.Add(this.btnShowAllBookings);
-            this.groupBox1.Location = new System.Drawing.Point(63, 67);
+            this.groupBox1.Location = new System.Drawing.Point(32, 35);
+            this.groupBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(218, 112);
+            this.groupBox1.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupBox1.Size = new System.Drawing.Size(109, 58);
             this.groupBox1.TabIndex = 7;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Show all bookings:";
@@ -141,9 +150,11 @@
             this.groupBox2.AccessibleRole = System.Windows.Forms.AccessibleRole.ScrollBar;
             this.groupBox2.Controls.Add(this.dtpDate);
             this.groupBox2.Controls.Add(this.btnShowBookingsByDate);
-            this.groupBox2.Location = new System.Drawing.Point(384, 67);
+            this.groupBox2.Location = new System.Drawing.Point(192, 35);
+            this.groupBox2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(493, 112);
+            this.groupBox2.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupBox2.Size = new System.Drawing.Size(246, 58);
             this.groupBox2.TabIndex = 8;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Show by date:";
@@ -153,18 +164,21 @@
             this.groupBox3.Controls.Add(this.cbModelName);
             this.groupBox3.Controls.Add(this.cbModelNr);
             this.groupBox3.Controls.Add(this.btnShowBookingsByModel);
-            this.groupBox3.Location = new System.Drawing.Point(977, 67);
+            this.groupBox3.Location = new System.Drawing.Point(488, 35);
+            this.groupBox3.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(507, 112);
+            this.groupBox3.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupBox3.Size = new System.Drawing.Size(254, 58);
             this.groupBox3.TabIndex = 9;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Show by model:";
             // 
             // btnBack
             // 
-            this.btnBack.Location = new System.Drawing.Point(63, 937);
+            this.btnBack.Location = new System.Drawing.Point(32, 487);
+            this.btnBack.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnBack.Name = "btnBack";
-            this.btnBack.Size = new System.Drawing.Size(89, 48);
+            this.btnBack.Size = new System.Drawing.Size(44, 25);
             this.btnBack.TabIndex = 1;
             this.btnBack.Text = "Back";
             this.btnBack.UseVisualStyleBackColor = true;
@@ -180,15 +194,16 @@
             // 
             // BookingsOverview
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
-            this.ClientSize = new System.Drawing.Size(1553, 1025);
+            this.ClientSize = new System.Drawing.Size(771, 531);
             this.Controls.Add(this.btnBack);
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.gvBookings);
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "BookingsOverview";
             this.Text = "BookingsOverview";
             this.Load += new System.EventHandler(this.BookingsOverview_Load);
