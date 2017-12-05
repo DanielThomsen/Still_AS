@@ -19,12 +19,12 @@ namespace StillAS
             InitializeComponent();
             cbConfigurations.Visible = true;
             libConfigurations.Visible = false;
-            List<string> configurationsList = CC.GetAllConfigurations();
+            //List<string> configurationsList = CC.GetAllConfigurations();
 
-            foreach (string s in configurationsList)
-            {
-                cbConfigurations.Items.Add(s);
-            }
+            //foreach (string s in configurationsList)
+            //{
+            //    cbConfigurations.Items.Add(s);
+            //}
             btnSaveMachine.Visible = false;
 
       }

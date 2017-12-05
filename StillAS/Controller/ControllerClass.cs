@@ -85,11 +85,11 @@ namespace Controller
             return configurations;
         }
 
-        public List<string> GetAllConfigurations()
-        {
-            List<string> configurations = DBR.GetAllConfigurations();
-            return configurations;
-        }
+        //public List<string> GetAllConfigurations()
+        //{
+        //    List<string> configurations = DBR.GetAllConfigurations();
+        //    return configurations;
+        //}
 
         public List<string> GetAllCustomers()
         {
