@@ -41,7 +41,7 @@ namespace StillAS
                 txtChargerNumber, txtController, txtWeight, txtHeight, txtLength,
                 txtWidth };
             txtDemoMachine.Text = demoNumber;
-            List<string> configurations = CC.GetConfigurations(demoNumber);
+            //List<string> configurations = CC.GetConfigurations(demoNumber);
 
             txtDemoMachine.ReadOnly = true; // -- Lea
             int i = 0;
@@ -52,11 +52,10 @@ namespace StillAS
                 i++;
             }
 
-            foreach (string s in configurations)
-            {
-                libConfigurations.Items.Add(s);
-            }
-            lblAddMachineTitle.Text = "Show Machine";
+            //foreach (string s in configurations)
+            //{
+            //    libConfigurations.Items.Add(s);
+            //}
         }
         private void btnAddMachine_Click(object sender, EventArgs e)
         {
@@ -95,7 +94,6 @@ namespace StillAS
         public string oldDemoNumber;
         private void btnEditMachine_Click(object sender, EventArgs e)
         {
-            lblAddMachineTitle.Text = "Edit Machine";
             oldDemoNumber = txtDemoMachine.Text;
             btnAddMachine.Visible = false;
             btnSaveMachine.Visible = true;
