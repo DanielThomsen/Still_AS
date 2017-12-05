@@ -104,7 +104,7 @@ namespace StillAS
             List<string> demonumbers = CC.GetAllDemoNumbers();
 
 
-
+            i = 0;
             foreach (string s in demonumbers) // For hver maskine (linje)
             {
                 dt.Rows.Add(s);
@@ -124,15 +124,22 @@ namespace StillAS
                     {
                         if (st == dt.Columns[k].ToString()) // Hvis dato == column-navn
                         {
-                            MessageBox.Show("Booked date: " + st + "in column: " + k);
+                            //MessageBox.Show("Booked date: " + st + "in column: " + k);
 
-                            dt.Rows[1].SetColumnError(k, "Booked");
+                            dt.Rows[i].SetColumnError(k, "Booked");
                         }
                     }
 
                     
                 }
+
+                i++;
                 //MessageBox.Show(dt.Columns[1].ToString());
+            }
+
+            for (int l = 0; l < columnsInt; l++)
+            {
+                gvBookings.Columns[l].Width = 70;
             }
         }
     }
