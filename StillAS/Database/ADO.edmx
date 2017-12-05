@@ -18,6 +18,7 @@
           <Property Name="BeskedTilVærksted" Type="varchar" MaxLength="50" />
           <Property Name="BeskedTilFølgeSeddel" Type="varchar" MaxLength="50" />
           <Property Name="RampeVedLevering" Type="int" />
+          <Property Name="Status" Type="varchar" MaxLength="30" />
         </EntityType>
         <EntityType Name="BookingLinje">
           <Key>
@@ -35,12 +36,6 @@
           <Property Name="Navn" Type="varchar" MaxLength="50" />
           <Property Name="Adgangskode" Type="varchar" MaxLength="50" />
           <Property Name="AccessLevel" Type="int" />
-        </EntityType>
-        <EntityType Name="Konfiguration">
-          <Key>
-            <PropertyRef Name="KonfigurationsNavn" />
-          </Key>
-          <Property Name="KonfigurationsNavn" Type="varchar" MaxLength="50" Nullable="false" />
         </EntityType>
         <EntityType Name="Kunde">
           <Key>
@@ -86,8 +81,8 @@
             <PropertyRef Name="ID" />
           </Key>
           <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="DemoNummer" Type="varchar" MaxLength="50" Nullable="false" />
           <Property Name="Konfiguration" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="DemoNummer" Type="varchar" MaxLength="50" Nullable="false" />
         </EntityType>
         <EntityType Name="ModelNavn">
           <Key>
@@ -95,7 +90,7 @@
           </Key>
           <Property Name="Modelnavn" Type="varchar" MaxLength="50" Nullable="false" />
         </EntityType>
-        <Association Name="FK__Booking__KundeID__336AA144">
+        <Association Name="FK__Booking__KundeID__50FB042B">
           <End Role="Kunde" Type="Self.Kunde" Multiplicity="0..1" />
           <End Role="Booking" Type="Self.Booking" Multiplicity="*" />
           <ReferentialConstraint>
@@ -107,7 +102,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__Booking__Usernam__345EC57D">
+        <Association Name="FK__Booking__Usernam__51EF2864">
           <End Role="Bruger" Type="Self.Bruger" Multiplicity="0..1" />
           <End Role="Booking" Type="Self.Booking" Multiplicity="*" />
           <ReferentialConstraint>
@@ -119,7 +114,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__BookingLi__Booki__4959E263">
+        <Association Name="FK__BookingLi__Booki__5D60DB10">
           <End Role="Booking" Type="Self.Booking" Multiplicity="1" />
           <End Role="BookingLinje" Type="Self.BookingLinje" Multiplicity="*" />
           <ReferentialConstraint>
@@ -131,7 +126,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__BookingLi__DemoN__4865BE2A">
+        <Association Name="FK__BookingLi__DemoN__5C6CB6D7">
           <End Role="Maskine" Type="Self.Maskine" Multiplicity="1" />
           <End Role="BookingLinje" Type="Self.BookingLinje" Multiplicity="*" />
           <ReferentialConstraint>
@@ -143,7 +138,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__Maskine__ModelNa__41B8C09B">
+        <Association Name="FK__Maskine__ModelNa__56B3DD81">
           <End Role="ModelNavn" Type="Self.ModelNavn" Multiplicity="0..1" />
           <End Role="Maskine" Type="Self.Maskine" Multiplicity="*" />
           <ReferentialConstraint>
@@ -155,7 +150,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__MaskineKo__DemoN__44952D46">
+        <Association Name="FK__MaskineKo__DemoN__59904A2C">
           <End Role="Maskine" Type="Self.Maskine" Multiplicity="1" />
           <End Role="MaskineKonfiguration" Type="Self.MaskineKonfiguration" Multiplicity="*" />
           <ReferentialConstraint>
@@ -167,53 +162,36 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__MaskineKo__Konfi__4589517F">
-          <End Role="Konfiguration" Type="Self.Konfiguration" Multiplicity="1" />
-          <End Role="MaskineKonfiguration" Type="Self.MaskineKonfiguration" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Konfiguration">
-              <PropertyRef Name="KonfigurationsNavn" />
-            </Principal>
-            <Dependent Role="MaskineKonfiguration">
-              <PropertyRef Name="Konfiguration" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
         <EntityContainer Name="stillasModelStoreContainer">
           <EntitySet Name="Booking" EntityType="Self.Booking" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="BookingLinje" EntityType="Self.BookingLinje" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Bruger" EntityType="Self.Bruger" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="Konfiguration" EntityType="Self.Konfiguration" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Kunde" EntityType="Self.Kunde" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Maskine" EntityType="Self.Maskine" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="MaskineKonfiguration" EntityType="Self.MaskineKonfiguration" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="ModelNavn" EntityType="Self.ModelNavn" Schema="dbo" store:Type="Tables" />
-          <AssociationSet Name="FK__Booking__KundeID__336AA144" Association="Self.FK__Booking__KundeID__336AA144">
+          <AssociationSet Name="FK__Booking__KundeID__50FB042B" Association="Self.FK__Booking__KundeID__50FB042B">
             <End Role="Kunde" EntitySet="Kunde" />
             <End Role="Booking" EntitySet="Booking" />
           </AssociationSet>
-          <AssociationSet Name="FK__Booking__Usernam__345EC57D" Association="Self.FK__Booking__Usernam__345EC57D">
+          <AssociationSet Name="FK__Booking__Usernam__51EF2864" Association="Self.FK__Booking__Usernam__51EF2864">
             <End Role="Bruger" EntitySet="Bruger" />
             <End Role="Booking" EntitySet="Booking" />
           </AssociationSet>
-          <AssociationSet Name="FK__BookingLi__Booki__4959E263" Association="Self.FK__BookingLi__Booki__4959E263">
+          <AssociationSet Name="FK__BookingLi__Booki__5D60DB10" Association="Self.FK__BookingLi__Booki__5D60DB10">
             <End Role="Booking" EntitySet="Booking" />
             <End Role="BookingLinje" EntitySet="BookingLinje" />
           </AssociationSet>
-          <AssociationSet Name="FK__BookingLi__DemoN__4865BE2A" Association="Self.FK__BookingLi__DemoN__4865BE2A">
+          <AssociationSet Name="FK__BookingLi__DemoN__5C6CB6D7" Association="Self.FK__BookingLi__DemoN__5C6CB6D7">
             <End Role="Maskine" EntitySet="Maskine" />
             <End Role="BookingLinje" EntitySet="BookingLinje" />
           </AssociationSet>
-          <AssociationSet Name="FK__Maskine__ModelNa__41B8C09B" Association="Self.FK__Maskine__ModelNa__41B8C09B">
+          <AssociationSet Name="FK__Maskine__ModelNa__56B3DD81" Association="Self.FK__Maskine__ModelNa__56B3DD81">
             <End Role="ModelNavn" EntitySet="ModelNavn" />
             <End Role="Maskine" EntitySet="Maskine" />
           </AssociationSet>
-          <AssociationSet Name="FK__MaskineKo__DemoN__44952D46" Association="Self.FK__MaskineKo__DemoN__44952D46">
+          <AssociationSet Name="FK__MaskineKo__DemoN__59904A2C" Association="Self.FK__MaskineKo__DemoN__59904A2C">
             <End Role="Maskine" EntitySet="Maskine" />
-            <End Role="MaskineKonfiguration" EntitySet="MaskineKonfiguration" />
-          </AssociationSet>
-          <AssociationSet Name="FK__MaskineKo__Konfi__4589517F" Association="Self.FK__MaskineKo__Konfi__4589517F">
-            <End Role="Konfiguration" EntitySet="Konfiguration" />
             <End Role="MaskineKonfiguration" EntitySet="MaskineKonfiguration" />
           </AssociationSet>
         </EntityContainer>
@@ -235,9 +213,10 @@
           <Property Name="BeskedTilVærksted" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
           <Property Name="BeskedTilFølgeSeddel" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
           <Property Name="RampeVedLevering" Type="Int32" />
-          <NavigationProperty Name="Kunde" Relationship="Self.FK__Booking__KundeID__336AA144" FromRole="Booking" ToRole="Kunde" />
-          <NavigationProperty Name="Bruger" Relationship="Self.FK__Booking__Usernam__345EC57D" FromRole="Booking" ToRole="Bruger" />
-          <NavigationProperty Name="BookingLinjes" Relationship="Self.FK__BookingLi__Booki__4959E263" FromRole="Booking" ToRole="BookingLinje" />
+          <Property Name="Status" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="Kunde" Relationship="Self.FK__Booking__KundeID__50FB042B" FromRole="Booking" ToRole="Kunde" />
+          <NavigationProperty Name="Bruger" Relationship="Self.FK__Booking__Usernam__51EF2864" FromRole="Booking" ToRole="Bruger" />
+          <NavigationProperty Name="BookingLinjes" Relationship="Self.FK__BookingLi__Booki__5D60DB10" FromRole="Booking" ToRole="BookingLinje" />
         </EntityType>
         <EntityType Name="BookingLinje">
           <Key>
@@ -246,8 +225,8 @@
           <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="DemoNummer" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="BookingID" Type="Int32" Nullable="false" />
-          <NavigationProperty Name="Booking" Relationship="Self.FK__BookingLi__Booki__4959E263" FromRole="BookingLinje" ToRole="Booking" />
-          <NavigationProperty Name="Maskine" Relationship="Self.FK__BookingLi__DemoN__4865BE2A" FromRole="BookingLinje" ToRole="Maskine" />
+          <NavigationProperty Name="Booking" Relationship="Self.FK__BookingLi__Booki__5D60DB10" FromRole="BookingLinje" ToRole="Booking" />
+          <NavigationProperty Name="Maskine" Relationship="Self.FK__BookingLi__DemoN__5C6CB6D7" FromRole="BookingLinje" ToRole="Maskine" />
         </EntityType>
         <EntityType Name="Bruger">
           <Key>
@@ -257,14 +236,7 @@
           <Property Name="Navn" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
           <Property Name="Adgangskode" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
           <Property Name="AccessLevel" Type="Int32" />
-          <NavigationProperty Name="Bookings" Relationship="Self.FK__Booking__Usernam__345EC57D" FromRole="Bruger" ToRole="Booking" />
-        </EntityType>
-        <EntityType Name="Konfiguration">
-          <Key>
-            <PropertyRef Name="KonfigurationsNavn" />
-          </Key>
-          <Property Name="KonfigurationsNavn" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
-          <NavigationProperty Name="MaskineKonfigurations" Relationship="Self.FK__MaskineKo__Konfi__4589517F" FromRole="Konfiguration" ToRole="MaskineKonfiguration" />
+          <NavigationProperty Name="Bookings" Relationship="Self.FK__Booking__Usernam__51EF2864" FromRole="Bruger" ToRole="Booking" />
         </EntityType>
         <EntityType Name="Kunde">
           <Key>
@@ -279,7 +251,7 @@
           <Property Name="By" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
           <Property Name="Land" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
           <Property Name="Telefon" Type="Int32" />
-          <NavigationProperty Name="Bookings" Relationship="Self.FK__Booking__KundeID__336AA144" FromRole="Kunde" ToRole="Booking" />
+          <NavigationProperty Name="Bookings" Relationship="Self.FK__Booking__KundeID__50FB042B" FromRole="Kunde" ToRole="Booking" />
         </EntityType>
         <EntityType Name="Maskine">
           <Key>
@@ -305,28 +277,27 @@
           <Property Name="Height" Type="Decimal" Precision="18" Scale="2" />
           <Property Name="Length" Type="Decimal" Precision="18" Scale="2" />
           <Property Name="Width" Type="Decimal" Precision="18" Scale="2" />
-          <NavigationProperty Name="BookingLinjes" Relationship="Self.FK__BookingLi__DemoN__4865BE2A" FromRole="Maskine" ToRole="BookingLinje" />
-          <NavigationProperty Name="ModelNavn" Relationship="Self.FK__Maskine__ModelNa__41B8C09B" FromRole="Maskine" ToRole="ModelNavn" />
-          <NavigationProperty Name="MaskineKonfigurations" Relationship="Self.FK__MaskineKo__DemoN__44952D46" FromRole="Maskine" ToRole="MaskineKonfiguration" />
+          <NavigationProperty Name="BookingLinjes" Relationship="Self.FK__BookingLi__DemoN__5C6CB6D7" FromRole="Maskine" ToRole="BookingLinje" />
+          <NavigationProperty Name="ModelNavn" Relationship="Self.FK__Maskine__ModelNa__56B3DD81" FromRole="Maskine" ToRole="ModelNavn" />
+          <NavigationProperty Name="MaskineKonfigurations" Relationship="Self.FK__MaskineKo__DemoN__59904A2C" FromRole="Maskine" ToRole="MaskineKonfiguration" />
         </EntityType>
         <EntityType Name="MaskineKonfiguration">
           <Key>
             <PropertyRef Name="ID" />
           </Key>
           <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="DemoNummer" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="Konfiguration" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
-          <NavigationProperty Name="Konfiguration1" Relationship="Self.FK__MaskineKo__Konfi__4589517F" FromRole="MaskineKonfiguration" ToRole="Konfiguration" />
-          <NavigationProperty Name="Maskine" Relationship="Self.FK__MaskineKo__DemoN__44952D46" FromRole="MaskineKonfiguration" ToRole="Maskine" />
+          <Property Name="DemoNummer" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <NavigationProperty Name="Maskine" Relationship="Self.FK__MaskineKo__DemoN__59904A2C" FromRole="MaskineKonfiguration" ToRole="Maskine" />
         </EntityType>
         <EntityType Name="ModelNavn">
           <Key>
             <PropertyRef Name="Modelnavn1" />
           </Key>
           <Property Name="Modelnavn1" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
-          <NavigationProperty Name="Maskines" Relationship="Self.FK__Maskine__ModelNa__41B8C09B" FromRole="ModelNavn" ToRole="Maskine" />
+          <NavigationProperty Name="Maskines" Relationship="Self.FK__Maskine__ModelNa__56B3DD81" FromRole="ModelNavn" ToRole="Maskine" />
         </EntityType>
-        <Association Name="FK__Booking__KundeID__336AA144">
+        <Association Name="FK__Booking__KundeID__50FB042B">
           <End Role="Kunde" Type="Self.Kunde" Multiplicity="0..1" />
           <End Role="Booking" Type="Self.Booking" Multiplicity="*" />
           <ReferentialConstraint>
@@ -338,7 +309,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__Booking__Usernam__345EC57D">
+        <Association Name="FK__Booking__Usernam__51EF2864">
           <End Role="Bruger" Type="Self.Bruger" Multiplicity="0..1" />
           <End Role="Booking" Type="Self.Booking" Multiplicity="*" />
           <ReferentialConstraint>
@@ -350,7 +321,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__BookingLi__Booki__4959E263">
+        <Association Name="FK__BookingLi__Booki__5D60DB10">
           <End Role="Booking" Type="Self.Booking" Multiplicity="1" />
           <End Role="BookingLinje" Type="Self.BookingLinje" Multiplicity="*" />
           <ReferentialConstraint>
@@ -362,7 +333,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__BookingLi__DemoN__4865BE2A">
+        <Association Name="FK__BookingLi__DemoN__5C6CB6D7">
           <End Role="Maskine" Type="Self.Maskine" Multiplicity="1" />
           <End Role="BookingLinje" Type="Self.BookingLinje" Multiplicity="*" />
           <ReferentialConstraint>
@@ -374,19 +345,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__MaskineKo__Konfi__4589517F">
-          <End Role="Konfiguration" Type="Self.Konfiguration" Multiplicity="1" />
-          <End Role="MaskineKonfiguration" Type="Self.MaskineKonfiguration" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Konfiguration">
-              <PropertyRef Name="KonfigurationsNavn" />
-            </Principal>
-            <Dependent Role="MaskineKonfiguration">
-              <PropertyRef Name="Konfiguration" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK__Maskine__ModelNa__41B8C09B">
+        <Association Name="FK__Maskine__ModelNa__56B3DD81">
           <End Role="ModelNavn" Type="Self.ModelNavn" Multiplicity="0..1" />
           <End Role="Maskine" Type="Self.Maskine" Multiplicity="*" />
           <ReferentialConstraint>
@@ -398,7 +357,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__MaskineKo__DemoN__44952D46">
+        <Association Name="FK__MaskineKo__DemoN__59904A2C">
           <End Role="Maskine" Type="Self.Maskine" Multiplicity="1" />
           <End Role="MaskineKonfiguration" Type="Self.MaskineKonfiguration" Multiplicity="*" />
           <ReferentialConstraint>
@@ -414,36 +373,31 @@
           <EntitySet Name="Bookings" EntityType="Self.Booking" />
           <EntitySet Name="BookingLinjes" EntityType="Self.BookingLinje" />
           <EntitySet Name="Brugers" EntityType="Self.Bruger" />
-          <EntitySet Name="Konfigurations" EntityType="Self.Konfiguration" />
           <EntitySet Name="Kundes" EntityType="Self.Kunde" />
           <EntitySet Name="Maskines" EntityType="Self.Maskine" />
           <EntitySet Name="MaskineKonfigurations" EntityType="Self.MaskineKonfiguration" />
           <EntitySet Name="ModelNavns" EntityType="Self.ModelNavn" />
-          <AssociationSet Name="FK__Booking__KundeID__336AA144" Association="Self.FK__Booking__KundeID__336AA144">
+          <AssociationSet Name="FK__Booking__KundeID__50FB042B" Association="Self.FK__Booking__KundeID__50FB042B">
             <End Role="Kunde" EntitySet="Kundes" />
             <End Role="Booking" EntitySet="Bookings" />
           </AssociationSet>
-          <AssociationSet Name="FK__Booking__Usernam__345EC57D" Association="Self.FK__Booking__Usernam__345EC57D">
+          <AssociationSet Name="FK__Booking__Usernam__51EF2864" Association="Self.FK__Booking__Usernam__51EF2864">
             <End Role="Bruger" EntitySet="Brugers" />
             <End Role="Booking" EntitySet="Bookings" />
           </AssociationSet>
-          <AssociationSet Name="FK__BookingLi__Booki__4959E263" Association="Self.FK__BookingLi__Booki__4959E263">
+          <AssociationSet Name="FK__BookingLi__Booki__5D60DB10" Association="Self.FK__BookingLi__Booki__5D60DB10">
             <End Role="Booking" EntitySet="Bookings" />
             <End Role="BookingLinje" EntitySet="BookingLinjes" />
           </AssociationSet>
-          <AssociationSet Name="FK__BookingLi__DemoN__4865BE2A" Association="Self.FK__BookingLi__DemoN__4865BE2A">
+          <AssociationSet Name="FK__BookingLi__DemoN__5C6CB6D7" Association="Self.FK__BookingLi__DemoN__5C6CB6D7">
             <End Role="Maskine" EntitySet="Maskines" />
             <End Role="BookingLinje" EntitySet="BookingLinjes" />
           </AssociationSet>
-          <AssociationSet Name="FK__MaskineKo__Konfi__4589517F" Association="Self.FK__MaskineKo__Konfi__4589517F">
-            <End Role="Konfiguration" EntitySet="Konfigurations" />
-            <End Role="MaskineKonfiguration" EntitySet="MaskineKonfigurations" />
-          </AssociationSet>
-          <AssociationSet Name="FK__Maskine__ModelNa__41B8C09B" Association="Self.FK__Maskine__ModelNa__41B8C09B">
+          <AssociationSet Name="FK__Maskine__ModelNa__56B3DD81" Association="Self.FK__Maskine__ModelNa__56B3DD81">
             <End Role="ModelNavn" EntitySet="ModelNavns" />
             <End Role="Maskine" EntitySet="Maskines" />
           </AssociationSet>
-          <AssociationSet Name="FK__MaskineKo__DemoN__44952D46" Association="Self.FK__MaskineKo__DemoN__44952D46">
+          <AssociationSet Name="FK__MaskineKo__DemoN__59904A2C" Association="Self.FK__MaskineKo__DemoN__59904A2C">
             <End Role="Maskine" EntitySet="Maskines" />
             <End Role="MaskineKonfiguration" EntitySet="MaskineKonfigurations" />
           </AssociationSet>
@@ -466,6 +420,7 @@
                 <ScalarProperty Name="BeskedTilVærksted" ColumnName="BeskedTilVærksted" />
                 <ScalarProperty Name="BeskedTilFølgeSeddel" ColumnName="BeskedTilFølgeSeddel" />
                 <ScalarProperty Name="RampeVedLevering" ColumnName="RampeVedLevering" />
+                <ScalarProperty Name="Status" ColumnName="Status" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
@@ -485,13 +440,6 @@
                 <ScalarProperty Name="Navn" ColumnName="Navn" />
                 <ScalarProperty Name="Adgangskode" ColumnName="Adgangskode" />
                 <ScalarProperty Name="AccessLevel" ColumnName="AccessLevel" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="Konfigurations">
-            <EntityTypeMapping TypeName="stillasModel.Konfiguration">
-              <MappingFragment StoreEntitySet="Konfiguration">
-                <ScalarProperty Name="KonfigurationsNavn" ColumnName="KonfigurationsNavn" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
@@ -540,8 +488,8 @@
             <EntityTypeMapping TypeName="stillasModel.MaskineKonfiguration">
               <MappingFragment StoreEntitySet="MaskineKonfiguration">
                 <ScalarProperty Name="ID" ColumnName="ID" />
-                <ScalarProperty Name="DemoNummer" ColumnName="DemoNummer" />
                 <ScalarProperty Name="Konfiguration" ColumnName="Konfiguration" />
+                <ScalarProperty Name="DemoNummer" ColumnName="DemoNummer" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

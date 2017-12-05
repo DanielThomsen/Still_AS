@@ -29,6 +29,7 @@ namespace Database
         public string BeskedTilVærksted { get; set; }
         public string BeskedTilFølgeSeddel { get; set; }
         public Nullable<int> RampeVedLevering { get; set; }
+        public string Status { get; set; }
     
         public virtual Kunde Kunde { get; set; }
         public virtual Bruger Bruger { get; set; }

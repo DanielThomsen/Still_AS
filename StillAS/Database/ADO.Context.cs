@@ -28,7 +28,6 @@ namespace Database
         public virtual DbSet<Booking> Bookings { get; set; }
         public virtual DbSet<BookingLinje> BookingLinjes { get; set; }
         public virtual DbSet<Bruger> Brugers { get; set; }
-        public virtual DbSet<Konfiguration> Konfigurations { get; set; }
         public virtual DbSet<Kunde> Kundes { get; set; }
         public virtual DbSet<Maskine> Maskines { get; set; }
         public virtual DbSet<MaskineKonfiguration> MaskineKonfigurations { get; set; }

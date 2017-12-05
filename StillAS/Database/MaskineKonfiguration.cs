@@ -15,10 +15,9 @@ namespace Database
     public partial class MaskineKonfiguration
     {
         public int ID { get; set; }
-        public string DemoNummer { get; set; }
         public string Konfiguration { get; set; }
+        public string DemoNummer { get; set; }
     
-        public virtual Konfiguration Konfiguration1 { get; set; }
         public virtual Maskine Maskine { get; set; }
     }
 }

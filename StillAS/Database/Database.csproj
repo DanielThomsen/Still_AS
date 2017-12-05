@@ -79,9 +79,6 @@
       <DependentUpon>ADO.tt</DependentUpon>
     </Compile>
     <Compile Include="DatabaseRepository.cs" />
-    <Compile Include="Konfiguration.cs">
-      <DependentUpon>ADO.tt</DependentUpon>
-    </Compile>
     <Compile Include="Kunde.cs">
       <DependentUpon>ADO.tt</DependentUpon>
     </Compile>

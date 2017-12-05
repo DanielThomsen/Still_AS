@@ -4,22 +4,20 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="f9b8392b7c804c1f91e3b5d2937e6f5d" Name="Diagram1" ZoomLevel="91">
-        <EntityTypeShape EntityType="stillasModel.Booking" Width="1.5" PointX="3" PointY="13.125" IsExpanded="true" />
-        <EntityTypeShape EntityType="stillasModel.BookingLinje" Width="1.5" PointX="5.25" PointY="3.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="stillasModel.Bruger" Width="1.5" PointX="0.75" PointY="11.875" IsExpanded="true" />
-        <EntityTypeShape EntityType="stillasModel.Konfiguration" Width="1.5" PointX="3" PointY="8.875" IsExpanded="true" />
-        <EntityTypeShape EntityType="stillasModel.Kunde" Width="1.5" PointX="0.75" PointY="14.625" IsExpanded="true" />
-        <EntityTypeShape EntityType="stillasModel.Maskine" Width="1.5" PointX="3" PointY="2" IsExpanded="true" />
-        <EntityTypeShape EntityType="stillasModel.MaskineKonfiguration" Width="1.5" PointX="5.25" PointY="0.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="stillasModel.ModelNavn" Width="1.5" PointX="0.75" PointY="4" IsExpanded="true" />
-        <AssociationConnector Association="stillasModel.FK__Booking__KundeID__336AA144" ManuallyRouted="false" />
-        <AssociationConnector Association="stillasModel.FK__Booking__Usernam__345EC57D" ManuallyRouted="false" />
-        <AssociationConnector Association="stillasModel.FK__BookingLi__Booki__4959E263" ManuallyRouted="false" />
-        <AssociationConnector Association="stillasModel.FK__BookingLi__DemoN__4865BE2A" ManuallyRouted="false" />
-        <AssociationConnector Association="stillasModel.FK__MaskineKo__Konfi__4589517F" ManuallyRouted="false" />
-        <AssociationConnector Association="stillasModel.FK__Maskine__ModelNa__41B8C09B" ManuallyRouted="false" />
-        <AssociationConnector Association="stillasModel.FK__MaskineKo__DemoN__44952D46" ManuallyRouted="false" />
+      <Diagram DiagramId="87ee22c23a6543d18673a583a25555da" Name="Diagram1" ZoomLevel="91">
+        <EntityTypeShape EntityType="stillasModel.Booking" Width="1.5" PointX="3" PointY="9" IsExpanded="true" />
+        <EntityTypeShape EntityType="stillasModel.BookingLinje" Width="1.5" PointX="5.25" PointY="2.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="stillasModel.Bruger" Width="1.5" PointX="0.75" PointY="8" IsExpanded="true" />
+        <EntityTypeShape EntityType="stillasModel.Kunde" Width="1.5" PointX="0.75" PointY="10.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="stillasModel.Maskine" Width="1.5" PointX="3" PointY="1.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="stillasModel.MaskineKonfiguration" Width="1.5" PointX="5.25" PointY="5.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="stillasModel.ModelNavn" Width="1.5" PointX="0.75" PointY="3.125" IsExpanded="true" />
+        <AssociationConnector Association="stillasModel.FK__Booking__KundeID__50FB042B" ManuallyRouted="false" />
+        <AssociationConnector Association="stillasModel.FK__Booking__Usernam__51EF2864" ManuallyRouted="false" />
+        <AssociationConnector Association="stillasModel.FK__BookingLi__Booki__5D60DB10" ManuallyRouted="false" />
+        <AssociationConnector Association="stillasModel.FK__BookingLi__DemoN__5C6CB6D7" ManuallyRouted="false" />
+        <AssociationConnector Association="stillasModel.FK__Maskine__ModelNa__56B3DD81" ManuallyRouted="false" />
+        <AssociationConnector Association="stillasModel.FK__MaskineKo__DemoN__59904A2C" ManuallyRouted="false" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>
