@@ -150,6 +150,18 @@ namespace Controller
             return dt;
         }
 
+        public List<string> GetAllDemoNumbers()
+        {
+            List<string> demoNumbers = DBR.GetAllDemoNumbers();
+            return demoNumbers;
+        }
+
+        public List<string> GetBookedDates(string s)
+        {
+            List<string> bookedDates = DBR.GetBookedDates(s);
+            return bookedDates;
+        }
+
         // LEA ARBEJDER HERFRA ----------
         public List<string> PopulateListbox(List<string> modelname)
         {

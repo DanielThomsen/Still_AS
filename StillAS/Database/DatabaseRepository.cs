@@ -341,7 +341,7 @@ namespace Database
             // Hent bookingoplysninger fra databasen her:
             var booking = meContext.Bookings.Find(bookingID);
 
-            bookingInfo.Add(booking.Bruger + "");
+            bookingInfo.Add(booking.Username + "");
             bookingInfo.Add(booking.LeveringsDato+"");
             bookingInfo.Add(booking.AfhentningsDato+"");
             bookingInfo.Add(booking.Leverandør);
@@ -512,6 +512,46 @@ namespace Database
             public string modelName;
             public string modelNumber;
             public string demoNumber;
+        }
+
+        public List<string> GetAllDemoNumbers()
+        {
+            List<string> demoNumbers = new List<string>();
+            var machine = meContext.Maskines;
+
+            foreach (Maskine m in machine)
+            {
+                demoNumbers.Add(m.DemoNummer);
+            }
+
+            return demoNumbers;
+        }
+
+        public List<string> GetBookedDates(string s)
+        {
+            List<string> bookedDates = new List<string>();
+
+            var bookingLinjer = meContext.BookingLinjes;
+
+            foreach (BookingLinje bl in bookingLinjer)
+            {
+                if (bl.DemoNummer == s)
+                {
+                    DateTime date1 = bl.Booking.LeveringsDato.Value;
+                    DateTime date2 = bl.Booking.AfhentningsDato.Value.AddDays(1);
+
+                    double daysCount = (date2 - date1).TotalDays;
+
+                    for (int i = 0; i < daysCount; i++)
+                    {
+                     
+                        string dateString = date1.AddDays(i).ToString().Substring(0, 10);
+                        bookedDates.Add(dateString);
+                    }
+                }
+            }
+
+            return bookedDates;
         }
 
         // LEA ARBEJDER HERFRA ---------------------------------- >

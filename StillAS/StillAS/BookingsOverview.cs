@@ -78,5 +78,62 @@ namespace StillAS
             //this.bookingTableAdapter.Fill(this.stillasDataSet.Booking);
 
         }
+
+        private void btnShowCalendar_Click(object sender, EventArgs e)
+        {
+            DateTime startdate = dtpStartDate.Value;
+            DateTime enddate = dtpEndDate.Value;
+
+            DataTable dt = new DataTable();
+            dt.Columns.Add("Machine", typeof(string));
+
+            double days = (enddate - startdate).TotalDays;
+
+            int i = 0;
+            while (i < days)
+            {
+                dt.Columns.Add(startdate.AddDays(i).ToString().Substring(0, 10), typeof(string));
+                i++;
+            }
+
+            gvBookings.DataSource = dt;
+
+            int columnsInt = dt.Columns.Count;
+
+
+            List<string> demonumbers = CC.GetAllDemoNumbers();
+
+
+
+            foreach (string s in demonumbers) // For hver maskine (linje)
+            {
+                dt.Rows.Add(s);
+                //for (int j = 0; j < columnsInt; j++)
+                //{
+                //    if (true)
+                //    {
+
+                //    }
+                //}
+
+                List<string> bookedDates = CC.GetBookedDates(s);
+
+                foreach (string st in bookedDates) // For hver dato på én maskine
+                {
+                    for (int k = 1; k < columnsInt; k++) // For hver column-navn
+                    {
+                        if (st == dt.Columns[k].ToString()) // Hvis dato == column-navn
+                        {
+                            MessageBox.Show("Booked date: " + st + "in column: " + k);
+
+                            dt.Rows[1].SetColumnError(k, "Booked");
+                        }
+                    }
+
+                    
+                }
+                //MessageBox.Show(dt.Columns[1].ToString());
+            }
+        }
     }
 }
