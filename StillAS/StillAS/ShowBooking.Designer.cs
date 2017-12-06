@@ -47,6 +47,7 @@
             this.txtDeliveryDate = new System.Windows.Forms.TextBox();
             this.txtSalesRep = new System.Windows.Forms.TextBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.tbConfigs = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.lblMachines = new System.Windows.Forms.Label();
             this.libBookingMachines = new System.Windows.Forms.ListBox();
@@ -68,7 +69,8 @@
             this.lblName1 = new System.Windows.Forms.Label();
             this.btnSaveBooking = new System.Windows.Forms.Button();
             this.btnCancel = new System.Windows.Forms.Button();
-            this.tbConfigs = new System.Windows.Forms.TextBox();
+            this.btnApprove = new System.Windows.Forms.Button();
+            this.btnDont = new System.Windows.Forms.Button();
             this.groupBox3.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox1.SuspendLayout();
@@ -77,7 +79,7 @@
             // btnEditBooking
             // 
             this.btnEditBooking.Location = new System.Drawing.Point(697, 507);
-            this.btnEditBooking.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnEditBooking.Margin = new System.Windows.Forms.Padding(4);
             this.btnEditBooking.Name = "btnEditBooking";
             this.btnEditBooking.Size = new System.Drawing.Size(100, 62);
             this.btnEditBooking.TabIndex = 11;
@@ -114,9 +116,9 @@
             this.groupBox3.Controls.Add(this.txtDeliveryDate);
             this.groupBox3.Controls.Add(this.txtSalesRep);
             this.groupBox3.Location = new System.Drawing.Point(16, 297);
-            this.groupBox3.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBox3.Margin = new System.Windows.Forms.Padding(4);
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBox3.Padding = new System.Windows.Forms.Padding(4);
             this.groupBox3.Size = new System.Drawing.Size(469, 330);
             this.groupBox3.TabIndex = 9;
             this.groupBox3.TabStop = false;
@@ -126,7 +128,7 @@
             // 
             this.rbtnNo.AutoSize = true;
             this.rbtnNo.Location = new System.Drawing.Point(253, 292);
-            this.rbtnNo.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.rbtnNo.Margin = new System.Windows.Forms.Padding(4);
             this.rbtnNo.Name = "rbtnNo";
             this.rbtnNo.Size = new System.Drawing.Size(47, 21);
             this.rbtnNo.TabIndex = 14;
@@ -138,7 +140,7 @@
             // 
             this.rbtnYes.AutoSize = true;
             this.rbtnYes.Location = new System.Drawing.Point(175, 292);
-            this.rbtnYes.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.rbtnYes.Margin = new System.Windows.Forms.Padding(4);
             this.rbtnYes.Name = "rbtnYes";
             this.rbtnYes.Size = new System.Drawing.Size(53, 21);
             this.rbtnYes.TabIndex = 13;
@@ -218,7 +220,7 @@
             // txtDeliveryNote
             // 
             this.txtDeliveryNote.Location = new System.Drawing.Point(245, 165);
-            this.txtDeliveryNote.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtDeliveryNote.Margin = new System.Windows.Forms.Padding(4);
             this.txtDeliveryNote.Multiline = true;
             this.txtDeliveryNote.Name = "txtDeliveryNote";
             this.txtDeliveryNote.Size = new System.Drawing.Size(203, 106);
@@ -227,7 +229,7 @@
             // txtMessageToWorkshop
             // 
             this.txtMessageToWorkshop.Location = new System.Drawing.Point(13, 165);
-            this.txtMessageToWorkshop.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtMessageToWorkshop.Margin = new System.Windows.Forms.Padding(4);
             this.txtMessageToWorkshop.Multiline = true;
             this.txtMessageToWorkshop.Name = "txtMessageToWorkshop";
             this.txtMessageToWorkshop.Size = new System.Drawing.Size(203, 106);
@@ -236,7 +238,7 @@
             // txtCarrier
             // 
             this.txtCarrier.Location = new System.Drawing.Point(245, 97);
-            this.txtCarrier.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtCarrier.Margin = new System.Windows.Forms.Padding(4);
             this.txtCarrier.Name = "txtCarrier";
             this.txtCarrier.Size = new System.Drawing.Size(203, 22);
             this.txtCarrier.TabIndex = 3;
@@ -244,7 +246,7 @@
             // txtRetrievalDate
             // 
             this.txtRetrievalDate.Location = new System.Drawing.Point(12, 97);
-            this.txtRetrievalDate.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtRetrievalDate.Margin = new System.Windows.Forms.Padding(4);
             this.txtRetrievalDate.Name = "txtRetrievalDate";
             this.txtRetrievalDate.Size = new System.Drawing.Size(199, 22);
             this.txtRetrievalDate.TabIndex = 2;
@@ -252,7 +254,7 @@
             // txtDeliveryDate
             // 
             this.txtDeliveryDate.Location = new System.Drawing.Point(245, 43);
-            this.txtDeliveryDate.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtDeliveryDate.Margin = new System.Windows.Forms.Padding(4);
             this.txtDeliveryDate.Name = "txtDeliveryDate";
             this.txtDeliveryDate.Size = new System.Drawing.Size(203, 22);
             this.txtDeliveryDate.TabIndex = 1;
@@ -260,7 +262,7 @@
             // txtSalesRep
             // 
             this.txtSalesRep.Location = new System.Drawing.Point(12, 44);
-            this.txtSalesRep.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtSalesRep.Margin = new System.Windows.Forms.Padding(4);
             this.txtSalesRep.Name = "txtSalesRep";
             this.txtSalesRep.Size = new System.Drawing.Size(199, 22);
             this.txtSalesRep.TabIndex = 0;
@@ -272,13 +274,21 @@
             this.groupBox2.Controls.Add(this.lblMachines);
             this.groupBox2.Controls.Add(this.libBookingMachines);
             this.groupBox2.Location = new System.Drawing.Point(519, 53);
-            this.groupBox2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBox2.Margin = new System.Windows.Forms.Padding(4);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBox2.Padding = new System.Windows.Forms.Padding(4);
             this.groupBox2.Size = new System.Drawing.Size(456, 400);
             this.groupBox2.TabIndex = 8;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Machines On Booking";
+            // 
+            // tbConfigs
+            // 
+            this.tbConfigs.Location = new System.Drawing.Point(244, 54);
+            this.tbConfigs.Multiline = true;
+            this.tbConfigs.Name = "tbConfigs";
+            this.tbConfigs.Size = new System.Drawing.Size(181, 308);
+            this.tbConfigs.TabIndex = 4;
             // 
             // label1
             // 
@@ -289,16 +299,6 @@
             this.label1.Size = new System.Drawing.Size(99, 17);
             this.label1.TabIndex = 3;
             this.label1.Text = "Configurations";
-            // 
-            // libBookingConfigurations
-            // 
-            //this.libBookingConfigurations.FormattingEnabled = true;
-            //this.libBookingConfigurations.ItemHeight = 25;
-            //this.libBookingConfigurations.Location = new System.Drawing.Point(368, 85);
-            //this.libBookingConfigurations.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
-            //this.libBookingConfigurations.Name = "libBookingConfigurations";
-            //this.libBookingConfigurations.Size = new System.Drawing.Size(276, 479);
-            //this.libBookingConfigurations.TabIndex = 2;
             // 
             // lblMachines
             // 
@@ -315,7 +315,7 @@
             this.libBookingMachines.FormattingEnabled = true;
             this.libBookingMachines.ItemHeight = 16;
             this.libBookingMachines.Location = new System.Drawing.Point(24, 54);
-            this.libBookingMachines.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.libBookingMachines.Margin = new System.Windows.Forms.Padding(4);
             this.libBookingMachines.Name = "libBookingMachines";
             this.libBookingMachines.Size = new System.Drawing.Size(185, 308);
             this.libBookingMachines.TabIndex = 0;
@@ -349,9 +349,9 @@
             this.groupBox1.Controls.Add(this.txtName1);
             this.groupBox1.Controls.Add(this.lblName1);
             this.groupBox1.Location = new System.Drawing.Point(16, 53);
-            this.groupBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBox1.Margin = new System.Windows.Forms.Padding(4);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBox1.Padding = new System.Windows.Forms.Padding(4);
             this.groupBox1.Size = new System.Drawing.Size(469, 236);
             this.groupBox1.TabIndex = 6;
             this.groupBox1.TabStop = false;
@@ -410,7 +410,7 @@
             // txtPhone
             // 
             this.txtPhone.Location = new System.Drawing.Point(8, 190);
-            this.txtPhone.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtPhone.Margin = new System.Windows.Forms.Padding(4);
             this.txtPhone.Name = "txtPhone";
             this.txtPhone.Size = new System.Drawing.Size(203, 22);
             this.txtPhone.TabIndex = 8;
@@ -418,7 +418,7 @@
             // txtCity
             // 
             this.txtCity.Location = new System.Drawing.Point(245, 142);
-            this.txtCity.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtCity.Margin = new System.Windows.Forms.Padding(4);
             this.txtCity.Name = "txtCity";
             this.txtCity.Size = new System.Drawing.Size(203, 22);
             this.txtCity.TabIndex = 7;
@@ -426,7 +426,7 @@
             // txtZipCode
             // 
             this.txtZipCode.Location = new System.Drawing.Point(8, 142);
-            this.txtZipCode.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtZipCode.Margin = new System.Windows.Forms.Padding(4);
             this.txtZipCode.Name = "txtZipCode";
             this.txtZipCode.Size = new System.Drawing.Size(203, 22);
             this.txtZipCode.TabIndex = 6;
@@ -434,7 +434,7 @@
             // txtAdresss
             // 
             this.txtAdresss.Location = new System.Drawing.Point(245, 94);
-            this.txtAdresss.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtAdresss.Margin = new System.Windows.Forms.Padding(4);
             this.txtAdresss.Name = "txtAdresss";
             this.txtAdresss.Size = new System.Drawing.Size(203, 22);
             this.txtAdresss.TabIndex = 5;
@@ -442,7 +442,7 @@
             // txtATT
             // 
             this.txtATT.Location = new System.Drawing.Point(8, 94);
-            this.txtATT.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtATT.Margin = new System.Windows.Forms.Padding(4);
             this.txtATT.Name = "txtATT";
             this.txtATT.Size = new System.Drawing.Size(203, 22);
             this.txtATT.TabIndex = 4;
@@ -460,7 +460,7 @@
             // txtName2
             // 
             this.txtName2.Location = new System.Drawing.Point(245, 44);
-            this.txtName2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtName2.Margin = new System.Windows.Forms.Padding(4);
             this.txtName2.Name = "txtName2";
             this.txtName2.Size = new System.Drawing.Size(203, 22);
             this.txtName2.TabIndex = 2;
@@ -468,7 +468,7 @@
             // txtName1
             // 
             this.txtName1.Location = new System.Drawing.Point(8, 44);
-            this.txtName1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtName1.Margin = new System.Windows.Forms.Padding(4);
             this.txtName1.Name = "txtName1";
             this.txtName1.Size = new System.Drawing.Size(203, 22);
             this.txtName1.TabIndex = 1;
@@ -505,13 +505,23 @@
             this.btnCancel.UseVisualStyleBackColor = true;
             this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
             // 
-            // tbConfigs
+            // btnApprove
             // 
-            this.tbConfigs.Location = new System.Drawing.Point(244, 54);
-            this.tbConfigs.Multiline = true;
-            this.tbConfigs.Name = "tbConfigs";
-            this.tbConfigs.Size = new System.Drawing.Size(181, 308);
-            this.tbConfigs.TabIndex = 4;
+            this.btnApprove.Location = new System.Drawing.Point(12, 12);
+            this.btnApprove.Name = "btnApprove";
+            this.btnApprove.Size = new System.Drawing.Size(75, 34);
+            this.btnApprove.TabIndex = 14;
+            this.btnApprove.Text = "Approve";
+            this.btnApprove.UseVisualStyleBackColor = true;
+            // 
+            // btnDont
+            // 
+            this.btnDont.Location = new System.Drawing.Point(99, 12);
+            this.btnDont.Name = "btnDont";
+            this.btnDont.Size = new System.Drawing.Size(133, 34);
+            this.btnDont.TabIndex = 15;
+            this.btnDont.Text = "Don\'t Approve";
+            this.btnDont.UseVisualStyleBackColor = true;
             // 
             // ShowBooking
             // 
@@ -519,6 +529,8 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(992, 635);
             this.ControlBox = false;
+            this.Controls.Add(this.btnDont);
+            this.Controls.Add(this.btnApprove);
             this.Controls.Add(this.btnCancel);
             this.Controls.Add(this.btnSaveBooking);
             this.Controls.Add(this.btnEditBooking);
@@ -527,7 +539,7 @@
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.lblShowBooking);
             this.Controls.Add(this.groupBox1);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "ShowBooking";
             this.Text = "ShowBooking";
             this.Load += new System.EventHandler(this.ShowBooking_Load);
@@ -585,5 +597,7 @@
         private System.Windows.Forms.Button btnSaveBooking;
         private System.Windows.Forms.Button btnCancel;
         private System.Windows.Forms.TextBox tbConfigs;
+        private System.Windows.Forms.Button btnApprove;
+        private System.Windows.Forms.Button btnDont;
     }
 }
