@@ -65,6 +65,23 @@ namespace Controller
         {
             return MC.ClockNY();
         }
+        public List<string> GetWaiting()
+        {
+            return DBR.GetWaiting();
+        }
+        public void SetBookingID(int ID)
+        {
+            DBR.SetBookingID(ID);
+        }
+        public void SetApproval(int Decision)
+        {
+            DBR.Approval(Decision);
+        }
+        public int UpdateNews(int InBox)
+        {
+            int Current = DBR.UpdateWaits(InBox);
+            return Current;
+        }
         //[Krognos slut]
 
         //Daniels metoder:

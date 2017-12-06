@@ -153,5 +153,10 @@ namespace StillAS
         {
 
         }
+
+        private void libCustomerName_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

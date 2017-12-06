@@ -37,34 +37,36 @@
             // 
             this.btnUpdate.Location = new System.Drawing.Point(12, 12);
             this.btnUpdate.Name = "btnUpdate";
-            this.btnUpdate.Size = new System.Drawing.Size(75, 23);
+            this.btnUpdate.Size = new System.Drawing.Size(75, 30);
             this.btnUpdate.TabIndex = 0;
             this.btnUpdate.Text = "Update";
             this.btnUpdate.UseVisualStyleBackColor = true;
+            this.btnUpdate.Click += new System.EventHandler(this.btnUpdate_Click);
             // 
             // lbBookings
             // 
             this.lbBookings.FormattingEnabled = true;
             this.lbBookings.ItemHeight = 16;
-            this.lbBookings.Location = new System.Drawing.Point(12, 77);
+            this.lbBookings.Location = new System.Drawing.Point(12, 48);
             this.lbBookings.Name = "lbBookings";
-            this.lbBookings.Size = new System.Drawing.Size(120, 84);
+            this.lbBookings.Size = new System.Drawing.Size(167, 340);
             this.lbBookings.TabIndex = 1;
             // 
             // btnShow
             // 
-            this.btnShow.Location = new System.Drawing.Point(243, 118);
+            this.btnShow.Location = new System.Drawing.Point(185, 48);
             this.btnShow.Name = "btnShow";
-            this.btnShow.Size = new System.Drawing.Size(75, 23);
+            this.btnShow.Size = new System.Drawing.Size(75, 38);
             this.btnShow.TabIndex = 2;
             this.btnShow.Text = "Show";
             this.btnShow.UseVisualStyleBackColor = true;
+            this.btnShow.Click += new System.EventHandler(this.btnShow_Click);
             // 
             // WorkshopBookings
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(441, 444);
+            this.ClientSize = new System.Drawing.Size(272, 405);
             this.Controls.Add(this.btnShow);
             this.Controls.Add(this.lbBookings);
             this.Controls.Add(this.btnUpdate);

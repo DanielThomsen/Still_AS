@@ -124,11 +124,12 @@
             this.libCustomerName.Size = new System.Drawing.Size(152, 356);
             this.libCustomerName.TabIndex = 8;
             this.libCustomerName.Click += new System.EventHandler(this.libCustomerName_Click);
+            this.libCustomerName.SelectedIndexChanged += new System.EventHandler(this.libCustomerName_SelectedIndexChanged);
             // 
             // btnShowBookingsOverview
             // 
             this.btnShowBookingsOverview.Location = new System.Drawing.Point(620, 394);
-            this.btnShowBookingsOverview.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnShowBookingsOverview.Margin = new System.Windows.Forms.Padding(2);
             this.btnShowBookingsOverview.Name = "btnShowBookingsOverview";
             this.btnShowBookingsOverview.Size = new System.Drawing.Size(75, 56);
             this.btnShowBookingsOverview.TabIndex = 16;

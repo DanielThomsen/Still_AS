@@ -27,8 +27,16 @@ namespace StillAS
 
         private void btnBookings_Click(object sender, EventArgs e)
         {
-            Bookings B = new Bookings();
-            B.Show();
+            if (CC.AccessLevel() == 3)
+            {
+                WorkshopBookings WB = new WorkshopBookings();
+                WB.Show();
+            }
+            else
+            {
+                Bookings B = new Bookings();
+                B.Show();
+            }
         }
 
         private void Frontpage_Load(object sender, EventArgs e)

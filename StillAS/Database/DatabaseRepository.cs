@@ -95,6 +95,7 @@ namespace Database
             int KundeID = CustomerID;
             int BookingsID = BookingID;
             string Username = Bruger;
+            string Salesman = "Paul";
             string LeveringsDato = dt1.ToString("yyyy-MM-dd");
             string AfhentningsDato = dt2.ToString("yyyy-MM-dd");
             string Leverandør = Transporter;
@@ -109,6 +110,7 @@ namespace Database
                 BookingsID + ", " +
                 KundeID + ", '" +
                 Username + "', '" +
+                Salesman + "', '" +
                 LeveringsDato + "', '" +
                 AfhentningsDato + "', '" +
                 Leverandør + "', '" +
@@ -168,6 +170,21 @@ namespace Database
         {
             return AccessLevel;
         }
+        public List<string> GetWaiting()
+        { 
+            List<string> bookingList = new List<string>();
+            var bookings = meContext.Bookings;
+
+            foreach (Booking b in bookings)
+            {
+                if (b.Status == "Venter")
+                {
+                    bookingList.Add(b.BookingID.ToString());
+                }
+            }
+
+            return bookingList;
+        }
         public int LoginValidation(string ID1, string ID2)
         {
             Bruger = ID1;
@@ -197,6 +214,39 @@ namespace Database
             conn.Close();
             return Validation;
         } //Subject to Change
+        public void SetBookingID(int ID)
+        {
+            BookingID = ID;
+        }
+        public void Approval(int Decision)
+        {
+            if (Decision == 0)
+            {
+                meContext.Bookings.Find(BookingID).Status = "Approved";
+            }
+            else
+            {
+                meContext.Bookings.Find(BookingID).Status = "Not Approved";
+            }
+            meContext.SaveChanges();
+        }
+        public int UpdateWaits(int InList)
+        {
+            int Holder = 0;
+            int Current;
+            foreach (Booking X in meContext.Bookings)
+            {
+                if (X.Status == "Venter")
+                {
+                    Holder++;
+                }
+            }
+            if (Holder > InList)
+            {
+                Current = Holder;
+            }
+            return Holder;
+        }
         //[Krognos Slut]
 
         // Daniels metoder

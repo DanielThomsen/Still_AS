@@ -181,7 +181,7 @@
             // lblCarrier
             // 
             this.lblCarrier.AutoSize = true;
-            this.lblCarrier.Location = new System.Drawing.Point(245, 78);
+            this.lblCarrier.Location = new System.Drawing.Point(245, 25);
             this.lblCarrier.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblCarrier.Name = "lblCarrier";
             this.lblCarrier.Size = new System.Drawing.Size(55, 17);
@@ -191,7 +191,7 @@
             // lblRetrievalDate
             // 
             this.lblRetrievalDate.AutoSize = true;
-            this.lblRetrievalDate.Location = new System.Drawing.Point(8, 78);
+            this.lblRetrievalDate.Location = new System.Drawing.Point(242, 87);
             this.lblRetrievalDate.Name = "lblRetrievalDate";
             this.lblRetrievalDate.Size = new System.Drawing.Size(100, 17);
             this.lblRetrievalDate.TabIndex = 8;
@@ -200,7 +200,7 @@
             // lblDeliveryDate
             // 
             this.lblDeliveryDate.AutoSize = true;
-            this.lblDeliveryDate.Location = new System.Drawing.Point(241, 25);
+            this.lblDeliveryDate.Location = new System.Drawing.Point(10, 87);
             this.lblDeliveryDate.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblDeliveryDate.Name = "lblDeliveryDate";
             this.lblDeliveryDate.Size = new System.Drawing.Size(95, 17);
@@ -237,15 +237,15 @@
             // 
             // txtCarrier
             // 
-            this.txtCarrier.Location = new System.Drawing.Point(245, 97);
+            this.txtCarrier.Location = new System.Drawing.Point(245, 44);
             this.txtCarrier.Margin = new System.Windows.Forms.Padding(4);
             this.txtCarrier.Name = "txtCarrier";
-            this.txtCarrier.Size = new System.Drawing.Size(203, 22);
+            this.txtCarrier.Size = new System.Drawing.Size(200, 22);
             this.txtCarrier.TabIndex = 3;
             // 
             // txtRetrievalDate
             // 
-            this.txtRetrievalDate.Location = new System.Drawing.Point(12, 97);
+            this.txtRetrievalDate.Location = new System.Drawing.Point(246, 106);
             this.txtRetrievalDate.Margin = new System.Windows.Forms.Padding(4);
             this.txtRetrievalDate.Name = "txtRetrievalDate";
             this.txtRetrievalDate.Size = new System.Drawing.Size(199, 22);
@@ -253,10 +253,10 @@
             // 
             // txtDeliveryDate
             // 
-            this.txtDeliveryDate.Location = new System.Drawing.Point(245, 43);
+            this.txtDeliveryDate.Location = new System.Drawing.Point(14, 105);
             this.txtDeliveryDate.Margin = new System.Windows.Forms.Padding(4);
             this.txtDeliveryDate.Name = "txtDeliveryDate";
-            this.txtDeliveryDate.Size = new System.Drawing.Size(203, 22);
+            this.txtDeliveryDate.Size = new System.Drawing.Size(197, 22);
             this.txtDeliveryDate.TabIndex = 1;
             // 
             // txtSalesRep
@@ -485,7 +485,7 @@
             // 
             // btnSaveBooking
             // 
-            this.btnSaveBooking.Location = new System.Drawing.Point(804, 507);
+            this.btnSaveBooking.Location = new System.Drawing.Point(803, 506);
             this.btnSaveBooking.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnSaveBooking.Name = "btnSaveBooking";
             this.btnSaveBooking.Size = new System.Drawing.Size(133, 62);
@@ -507,21 +507,23 @@
             // 
             // btnApprove
             // 
-            this.btnApprove.Location = new System.Drawing.Point(12, 12);
+            this.btnApprove.Location = new System.Drawing.Point(589, 487);
             this.btnApprove.Name = "btnApprove";
-            this.btnApprove.Size = new System.Drawing.Size(75, 34);
+            this.btnApprove.Size = new System.Drawing.Size(119, 82);
             this.btnApprove.TabIndex = 14;
             this.btnApprove.Text = "Approve";
             this.btnApprove.UseVisualStyleBackColor = true;
+            this.btnApprove.Click += new System.EventHandler(this.btnApprove_Click);
             // 
             // btnDont
             // 
-            this.btnDont.Location = new System.Drawing.Point(99, 12);
+            this.btnDont.Location = new System.Drawing.Point(763, 487);
             this.btnDont.Name = "btnDont";
-            this.btnDont.Size = new System.Drawing.Size(133, 34);
+            this.btnDont.Size = new System.Drawing.Size(119, 82);
             this.btnDont.TabIndex = 15;
             this.btnDont.Text = "Don\'t Approve";
             this.btnDont.UseVisualStyleBackColor = true;
+            this.btnDont.Click += new System.EventHandler(this.btnDont_Click);
             // 
             // ShowBooking
             // 

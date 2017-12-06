@@ -117,17 +117,25 @@ namespace StillAS
 
         private void ShowBooking_Load(object sender, EventArgs e)
         {
+            if (CC.AccessLevel() == 1)
+            {
+                btnApprove.Visible = false;
+                btnDont.Visible = false;
+            }
             if (CC.AccessLevel() == 2)
             {
                 btnEditBooking.Visible = false;
                 btnSaveBooking.Visible = false;
                 btnCancel.Visible = false;
+                btnApprove.Visible = false;
+                btnDont.Visible = false;
             }
             else if (CC.AccessLevel() == 3)
             {
                 btnEditBooking.Visible = false;
                 btnSaveBooking.Visible = false;
                 btnCancel.Visible = false;
+                btnBackToBooking.Visible = false;
             }
             else if (CC.AccessLevel() == 4)
             {
@@ -217,6 +225,16 @@ namespace StillAS
             {
                 t.ReadOnly = false;
             }
+        }
+
+        private void btnApprove_Click(object sender, EventArgs e)
+        {
+            CC.SetApproval(0);
+        }
+
+        private void btnDont_Click(object sender, EventArgs e)
+        {
+            CC.SetApproval(1);
         }
     }
 }
