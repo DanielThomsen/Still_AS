@@ -562,6 +562,70 @@ namespace Database
             return bookedDates;
         }
 
+        public List<string> GetDemoNumbersByModel(string s)
+        {
+            List<string> demoNumbers = new List<string>();
+
+            var machines = meContext.Maskines;
+
+            foreach (Maskine m in machines)
+            {
+                if (m.ModelName == s)
+                {
+                    demoNumbers.Add(m.DemoNummer);
+                }
+            }
+
+            return demoNumbers;
+        }
+
+        public List<string> GetDemoNumbersByModelAndNumber(string model, string number)
+        {
+            List<string> demoNumbers = new List<string>();
+
+            var machines = meContext.Maskines;
+
+            foreach (Maskine m in machines)
+            {
+                if (m.ModelName == model && m.Type == number)
+                {
+                    demoNumbers.Add(m.DemoNummer);
+                }
+            }
+
+            return demoNumbers;
+        }
+
+        public List<string> GetAllModels()
+        {
+            List<string> models = new List<string>();
+
+            var model = meContext.ModelNavns;
+            foreach (ModelNavn mn in model)
+            {
+                models.Add(mn.Modelnavn1);
+            }
+
+            return models;
+        }
+
+        public List<string> GetModelNumbers(string s)
+        {
+            List<string> modelNumbers = new List<string>();
+
+            var machines = meContext.Maskines;
+
+            foreach (Maskine m in machines)
+            {
+                if (m.ModelName == s)
+                {
+                    modelNumbers.Add(m.Type);
+                }
+            }
+
+            return modelNumbers;
+        }
+
         // LEA ARBEJDER HERFRA ---------------------------------- >
         // Machines Listboxe
         private SqlConnection conn;
