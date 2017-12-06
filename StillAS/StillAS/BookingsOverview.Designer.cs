@@ -44,6 +44,10 @@
             this.btnBack = new System.Windows.Forms.Button();
             this.bookingBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.bookingTableAdapter = new StillAS.stillasDataSetTableAdapters.BookingTableAdapter();
+            this.btnShowCalendar = new System.Windows.Forms.Button();
+            this.dtpEndDate = new System.Windows.Forms.DateTimePicker();
+            this.dtpStartDate = new System.Windows.Forms.DateTimePicker();
+            this.groupBox4 = new System.Windows.Forms.GroupBox();
             ((System.ComponentModel.ISupportInitialize)(this.gvBookings)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.stillasDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.stillasDataSetBindingSource)).BeginInit();
@@ -51,6 +55,7 @@
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.bookingBindingSource)).BeginInit();
+            this.groupBox4.SuspendLayout();
             this.SuspendLayout();
             // 
             // btnShowAllBookings
@@ -192,6 +197,42 @@
             // 
             this.bookingTableAdapter.ClearBeforeFill = true;
             // 
+            // btnShowCalendar
+            // 
+            this.btnShowCalendar.Location = new System.Drawing.Point(549, 40);
+            this.btnShowCalendar.Name = "btnShowCalendar";
+            this.btnShowCalendar.Size = new System.Drawing.Size(96, 41);
+            this.btnShowCalendar.TabIndex = 12;
+            this.btnShowCalendar.Text = "Show";
+            this.btnShowCalendar.UseVisualStyleBackColor = true;
+            this.btnShowCalendar.Click += new System.EventHandler(this.btnShowCalendar_Click);
+            // 
+            // dtpEndDate
+            // 
+            this.dtpEndDate.Location = new System.Drawing.Point(300, 43);
+            this.dtpEndDate.Name = "dtpEndDate";
+            this.dtpEndDate.Size = new System.Drawing.Size(228, 31);
+            this.dtpEndDate.TabIndex = 11;
+            // 
+            // dtpStartDate
+            // 
+            this.dtpStartDate.Location = new System.Drawing.Point(19, 43);
+            this.dtpStartDate.Name = "dtpStartDate";
+            this.dtpStartDate.Size = new System.Drawing.Size(262, 31);
+            this.dtpStartDate.TabIndex = 10;
+            // 
+            // groupBox4
+            // 
+            this.groupBox4.Controls.Add(this.dtpStartDate);
+            this.groupBox4.Controls.Add(this.btnShowCalendar);
+            this.groupBox4.Controls.Add(this.dtpEndDate);
+            this.groupBox4.Location = new System.Drawing.Point(384, 207);
+            this.groupBox4.Name = "groupBox4";
+            this.groupBox4.Size = new System.Drawing.Size(684, 100);
+            this.groupBox4.TabIndex = 13;
+            this.groupBox4.TabStop = false;
+            this.groupBox4.Text = "Calender for machines";
+            // 
             // BookingsOverview
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -214,6 +255,7 @@
             this.groupBox2.ResumeLayout(false);
             this.groupBox3.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.bookingBindingSource)).EndInit();
+            this.groupBox4.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -235,5 +277,9 @@
         private System.Windows.Forms.Button btnBack;
         private System.Windows.Forms.BindingSource bookingBindingSource;
         private stillasDataSetTableAdapters.BookingTableAdapter bookingTableAdapter;
+        private System.Windows.Forms.Button btnShowCalendar;
+        private System.Windows.Forms.DateTimePicker dtpEndDate;
+        private System.Windows.Forms.DateTimePicker dtpStartDate;
+        private System.Windows.Forms.GroupBox groupBox4;
     }
 }

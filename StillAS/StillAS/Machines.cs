@@ -101,5 +101,10 @@ namespace StillAS
                 groupBox2.Visible = false;
             }
         }
+
+        private void btnEditMachine_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
