@@ -292,13 +292,13 @@
             // 
             // libBookingConfigurations
             // 
-            this.libBookingConfigurations.FormattingEnabled = true;
-            this.libBookingConfigurations.ItemHeight = 25;
-            this.libBookingConfigurations.Location = new System.Drawing.Point(368, 85);
-            this.libBookingConfigurations.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
-            this.libBookingConfigurations.Name = "libBookingConfigurations";
-            this.libBookingConfigurations.Size = new System.Drawing.Size(276, 479);
-            this.libBookingConfigurations.TabIndex = 2;
+            //this.libBookingConfigurations.FormattingEnabled = true;
+            //this.libBookingConfigurations.ItemHeight = 25;
+            //this.libBookingConfigurations.Location = new System.Drawing.Point(368, 85);
+            //this.libBookingConfigurations.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            //this.libBookingConfigurations.Name = "libBookingConfigurations";
+            //this.libBookingConfigurations.Size = new System.Drawing.Size(276, 479);
+            //this.libBookingConfigurations.TabIndex = 2;
             // 
             // lblMachines
             // 
