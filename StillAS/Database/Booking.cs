@@ -23,6 +23,7 @@ namespace Database
         public int BookingID { get; set; }
         public Nullable<int> KundeID { get; set; }
         public string Username { get; set; }
+        public string Navn { get; set; }
         public Nullable<System.DateTime> LeveringsDato { get; set; }
         public Nullable<System.DateTime> AfhentningsDato { get; set; }
         public string Leverandør { get; set; }
@@ -32,6 +33,7 @@ namespace Database
         public string Status { get; set; }
     
         public virtual Kunde Kunde { get; set; }
+        public virtual Sælger Sælger { get; set; }
         public virtual Bruger Bruger { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<BookingLinje> BookingLinjes { get; set; }

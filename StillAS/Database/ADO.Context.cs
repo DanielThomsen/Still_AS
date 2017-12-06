@@ -31,5 +31,6 @@ namespace Database
         public virtual DbSet<Kunde> Kundes { get; set; }
         public virtual DbSet<Maskine> Maskines { get; set; }
         public virtual DbSet<ModelNavn> ModelNavns { get; set; }
+        public virtual DbSet<Sælger> Sælger { get; set; }
     }
 }
