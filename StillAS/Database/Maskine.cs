@@ -18,7 +18,6 @@ namespace Database
         public Maskine()
         {
             this.BookingLinjes = new HashSet<BookingLinje>();
-            this.MaskineKonfigurations = new HashSet<MaskineKonfiguration>();
         }
     
         public string DemoNummer { get; set; }
@@ -45,7 +44,5 @@ namespace Database
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<BookingLinje> BookingLinjes { get; set; }
         public virtual ModelNavn ModelNavn { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<MaskineKonfiguration> MaskineKonfigurations { get; set; }
     }
 }

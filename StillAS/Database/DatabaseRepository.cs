@@ -39,14 +39,14 @@ namespace Database
             meContext.Maskines.Add(Machine);
             meContext.SaveChanges();
             
-            foreach (string s in configurationsList)
-            {
-                var machineConfiguration = new MaskineKonfiguration();
-                machineConfiguration.DemoNummer = DemoNumber;
-                machineConfiguration.Konfiguration = s;
-                meContext.MaskineKonfigurations.Add(machineConfiguration);
-                meContext.SaveChanges();
-            }
+            //foreach (string s in configurationsList)
+            //{
+            //    var machineConfiguration = new MaskineKonfiguration();
+            //    machineConfiguration.DemoNummer = DemoNumber;
+            //    machineConfiguration.Konfiguration = s;
+            //    meContext.MaskineKonfigurations.Add(machineConfiguration);
+            //    meContext.SaveChanges();
+            //}
 
         }
         public void CreateCustomer(string Name1, string Name2, string Att, string Address, int ZIP, string City, int Phone)
@@ -251,11 +251,11 @@ namespace Database
 
             
 
-            MaskineKonfiguration machineConfigurations = new MaskineKonfiguration();
+            //MaskineKonfiguration machineConfigurations = new MaskineKonfiguration();
 
-            machineConfigurations = meContext.MaskineKonfigurations.Find(demoNr);
+            //machineConfigurations = meContext.MaskineKonfigurations.Find(demoNr);
 
-            configurations = machineConfigurations.Konfiguration;
+            //configurations = machineConfigurations.Konfiguration;
 
             return configurations;
 

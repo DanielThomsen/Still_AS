@@ -85,9 +85,6 @@
     <Compile Include="Maskine.cs">
       <DependentUpon>ADO.tt</DependentUpon>
     </Compile>
-    <Compile Include="MaskineKonfiguration.cs">
-      <DependentUpon>ADO.tt</DependentUpon>
-    </Compile>
     <Compile Include="ModelNavn.cs">
       <DependentUpon>ADO.tt</DependentUpon>
     </Compile>

@@ -17,6 +17,7 @@ namespace Database
         public int ID { get; set; }
         public string DemoNummer { get; set; }
         public int BookingID { get; set; }
+        public string KonfigurationTekst { get; set; }
     
         public virtual Booking Booking { get; set; }
         public virtual Maskine Maskine { get; set; }
