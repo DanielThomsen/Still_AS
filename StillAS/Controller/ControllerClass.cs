@@ -79,9 +79,9 @@ namespace Controller
             return machineInfo;
         }
 
-        public List<string> GetConfigurations(string demoNr)
+        public string GetConfigurations(string demoNr)
         {
-            List<string> configurations = DBR.GetConfigurations(demoNr);
+            string configurations = DBR.GetConfigurations(demoNr);
             return configurations;
         }
 

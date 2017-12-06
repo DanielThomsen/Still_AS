@@ -101,17 +101,18 @@ namespace StillAS
 
         private void libBookingMachines_Click(object sender, EventArgs e)
         {
-            libBookingConfigurations.Items.Clear();
+          //  libBookingConfigurations.Items.Clear();
 
-            List<string> configurations = new List<string>();
+            string configurations = "";
             string machine = libBookingMachines.SelectedItem.ToString();
 
             configurations = CC.GetConfigurations(machine);
 
-            foreach (string s in configurations)
-            {
-                libBookingConfigurations.Items.Add(s);
-            }
+            tbConfigs.Text = configurations;
+          //  foreach (string s in configurations)
+          //  {
+          ////      libBookingConfigurations.Items.Add(s);
+          //  }
         }
 
         private void ShowBooking_Load(object sender, EventArgs e)

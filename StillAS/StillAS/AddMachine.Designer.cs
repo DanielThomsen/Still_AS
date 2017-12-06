@@ -77,11 +77,9 @@
             this.libConfigurations = new System.Windows.Forms.ListBox();
             this.btnSaveMachine = new System.Windows.Forms.Button();
             this.label12 = new System.Windows.Forms.Label();
-            this.lblAddMachineTitle = new System.Windows.Forms.Label();
             this.btnAddMachine = new System.Windows.Forms.Button();
             this.cbConfigurations = new System.Windows.Forms.CheckedListBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.libConfig = new System.Windows.Forms.ListBox();
             this.groupBox4.SuspendLayout();
             this.groupBox3.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -561,19 +559,10 @@
             this.label12.TabIndex = 98;
             this.label12.Text = "Configurations:";
             // 
-            // lblAddMachineTitle
-            // 
-            this.lblAddMachineTitle.AutoSize = true;
-            this.lblAddMachineTitle.Location = new System.Drawing.Point(436, 30);
-            this.lblAddMachineTitle.Name = "lblAddMachineTitle";
-            this.lblAddMachineTitle.Size = new System.Drawing.Size(90, 17);
-            this.lblAddMachineTitle.TabIndex = 96;
-            this.lblAddMachineTitle.Text = "Add machine";
-            // 
             // btnAddMachine
             // 
             this.btnAddMachine.Location = new System.Drawing.Point(725, 574);
-            this.btnAddMachine.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnAddMachine.Margin = new System.Windows.Forms.Padding(4);
             this.btnAddMachine.Name = "btnAddMachine";
             this.btnAddMachine.Size = new System.Drawing.Size(133, 43);
             this.btnAddMachine.TabIndex = 104;
@@ -599,21 +588,10 @@
             this.label1.Size = new System.Drawing.Size(133, 28);
             this.label1.TabIndex = 105;
             // 
-            // libConfig
-            // 
-            this.libConfig.FormattingEnabled = true;
-            this.libConfig.ItemHeight = 16;
-            this.libConfig.Location = new System.Drawing.Point(439, 56);
-            this.libConfig.Name = "libConfig";
-            this.libConfig.Size = new System.Drawing.Size(200, 228);
-            this.libConfig.TabIndex = 106;
-            // 
             // AddMachine
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(952, 642);
-            this.Controls.Add(this.libConfig);
             this.ClientSize = new System.Drawing.Size(952, 642);
             this.Controls.Add(this.btnAddMachine);
             this.Controls.Add(this.groupBox4);
@@ -623,7 +601,6 @@
             this.Controls.Add(this.btnEditMachine);
             this.Controls.Add(this.libConfigurations);
             this.Controls.Add(this.btnSaveMachine);
-            this.Controls.Add(this.lblAddMachineTitle);
             this.Controls.Add(this.cbConfigurations);
             this.Controls.Add(this.label1);
             this.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
@@ -639,7 +616,6 @@
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
@@ -698,9 +674,6 @@
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.CheckedListBox cbConfigurations;
         private System.Windows.Forms.Label label1;
-        //private System.Windows.Forms.CheckedListBox checkedListBox1;
-        private System.Windows.Forms.Label lblAddMachineTitle;
         private System.Windows.Forms.Button btnAddMachine;
-        private System.Windows.Forms.ListBox libConfig;
     }
 }

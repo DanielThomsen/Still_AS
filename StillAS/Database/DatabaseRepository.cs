@@ -101,6 +101,7 @@ namespace Database
             string BeskedTilVærksted = MessageForWorkshop;
             string BeskedTilFølgeSeddel = DeliveryNote;
             int RampeVedLevering = Ramp;
+            string Status = "Venter";
 
             conn = new SqlConnection(GetConnection());
             conn.Open();
@@ -113,7 +114,8 @@ namespace Database
                 Leverandør + "', '" +
                 BeskedTilVærksted + "', '" +
                 BeskedTilFølgeSeddel + "', " +
-                RampeVedLevering + ")"
+                RampeVedLevering + ", '" + 
+                Status + "')"
                 );
             Com.Connection = conn;
             Com.ExecuteNonQuery();
@@ -143,11 +145,14 @@ namespace Database
         {
             foreach(string X in Machine)
             {
-                var Bookingline = new BookingLinje();
-                Bookingline.BookingID = BookingID;
-                Bookingline.DemoNummer = X;
-                meContext.BookingLinjes.Add(Bookingline);
-                meContext.SaveChanges();
+                //MaskineKonfiguration M = new MaskineKonfiguration();
+                //M.DemoNummer = X;
+                //M.Konfiguration
+                ////var Bookingline = new BookingLinje();
+                //Bookingline.BookingID = BookingID;
+                //Bookingline.DemoNummer = X;
+                //meContext.BookingLinjes.Add(Bookingline);
+                //meContext.SaveChanges();
             }
         }
         public List<string> DropDownDemo()
@@ -237,40 +242,40 @@ namespace Database
 
         }
 
-        public List<string> GetConfigurations(string demoNr)
+        public string GetConfigurations(string demoNr)
         {
-            List<string> configurations = new List<string>();
+            string configurations = "";
 
-            //foreach (var item in collection)  // For hver maskinekonfiguration hvor demonummer = demoNr
+            // For hver maskinekonfiguration hvor demonummer = demoNr
+            
+
+            
+
+            MaskineKonfiguration machineConfigurations = new MaskineKonfiguration();
+
+            machineConfigurations = meContext.MaskineKonfigurations.Find(demoNr);
+
+            configurations = machineConfigurations.Konfiguration;
+
+            return configurations;
+
+            //Kode efter Lazy Loading:
+
+            //List<string> configurationsList = new List<string>();
+            //var machines = meContext.Maskines;
+
+            //foreach (Maskine m in machines)
             //{
-
+            //    foreach (MaskineKonfiguration mk in m.MaskineKonfigurations)
+            //    {
+            //        if (m.DemoNummer == demoNr)
+            //        {
+            //            configurationsList.Add(mk.Konfiguration);
+            //        }
+            //    }
             //}
 
-            //List<MaskineKonfiguration> machineConfigurations = new List<MaskineKonfiguration>();
-
-            //machineConfigurations.Add(meContext.MaskineKonfigurations.Find({ DemoNummer = demoNr}));
-
-            //configurations.Add(machineConfiguration.Konfiguration);
-
-            //return configurations;
-
-            // Kode efter Lazy Loading:
-
-            List<string> configurationsList = new List<string>();
-            var machines = meContext.Maskines;
-
-            foreach (Maskine m in machines)
-            {
-                foreach (MaskineKonfiguration mk in m.MaskineKonfigurations)
-                {
-                    if (m.DemoNummer == demoNr)
-                    {
-                        configurationsList.Add(mk.Konfiguration);
-                    }
-                }
-            }
-
-            return configurationsList;
+         //   return configurationsList;
         }
 
         // DETTE ER UDKOMMENRERET AF LEA, FORDI VI ÆNDREDE I DATABASEN, SÅ DET SKAL HEDDE MASKINEKONFIGURATIONS
