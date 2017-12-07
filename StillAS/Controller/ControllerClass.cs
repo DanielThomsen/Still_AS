@@ -249,6 +249,14 @@ namespace Controller
                 salesRep, deliveryDate, retrievalDate, carrier, messageToWorkshop, 
                 deliveryNote, loadingPlatform, bookingID);
         }
-
+        // ADD MODELNAME på Machines form
+        public void AddModelName(string modelname)
+        {
+            DBR.AddModelName(modelname);
+        }
+        public void RemoveModelName(string modelname)
+        {
+            DBR.RemoveModelName(modelname);
+        }
     }
 }

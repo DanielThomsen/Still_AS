@@ -835,7 +835,7 @@ namespace Database
             string city, string phone, string salesRep, string deliveryDate, string retrievalDate, string carrier,
             string messageToWorkshop, string deliveryNote, string loadingPlatform, int bookingIDs)
         {
-                var booking = meContext.Bookings.Find(bookingIDs);
+                var booking = meContext.Bookings.Find(bookingIDs); // Lige lidt random Entity Framework
                 var customer = meContext.Kundes.Find(Convert.ToInt32(booking.KundeID));
 
                 CustomerID = customer.KundeID;
@@ -878,6 +878,39 @@ namespace Database
                 
             transaction.Commit();
     
+            conn.Close();
+        }
+        // ADD MODELNAME på Machines forside
+        public void AddModelName(string modelname)
+        {
+            conn = new SqlConnection(GetConnection());
+            conn.Open();
+            try
+            {
+                string insertModelName = "insert into ModelNavn(Modelnavn) values ('" + modelname + "')";
+                SqlCommand com = new SqlCommand(@insertModelName, conn);
+                com.ExecuteNonQuery();
+            }
+            catch
+            {
+
+            }
+            conn.Close();
+        }
+        public void RemoveModelName(string modelname)
+        {
+            conn = new SqlConnection(GetConnection());
+            conn.Open();
+            try
+            {
+                string deleteModelName = "delete from ModelNavn where Modelnavn = '" + modelname + "'";
+                SqlCommand com = new SqlCommand(@deleteModelName, conn);
+                com.ExecuteNonQuery();
+            }
+            catch
+            {
+
+            }
             conn.Close();
         }
     }
