@@ -106,14 +106,26 @@ namespace StillAS
 
         private void btnAdd_Click(object sender, EventArgs e)
         {
-            //AddModelName AMN = new AddModelName();
-            //AMN.Show();
-            //CC.AddModelName(libModelName.SelectedItem.ToString()); ---- Skal flyttes til ny form
+            AddModelName AMN = new AddModelName();
+            AMN.Show();
         }
 
         private void btnRemove_Click(object sender, EventArgs e)
         {
             CC.RemoveModelName(libModelName.SelectedItem.ToString());
+        }
+
+        private void btnRefresh_Click(object sender, EventArgs e)
+        {
+            modelname.Clear();
+            libModelName.Items.Clear();
+            libModelNumber.Items.Clear();
+            libDemoNumber.Items.Clear();
+            CC.PopulateListbox(modelname); // HENTER DATA FRA DATABASEN OG SENDER DET OP I EN LISTE
+            for (int i = 0; i < modelname.Count; i++)
+            {
+                libModelName.Items.Add(modelname[i].ToString()); // INDSÆTTER I LISTBOXEN
+            }
         }
     }
 }

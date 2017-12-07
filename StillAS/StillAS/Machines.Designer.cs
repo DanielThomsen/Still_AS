@@ -45,6 +45,7 @@
             this.btnEditMachine = new System.Windows.Forms.Button();
             this.btnShowMachine = new System.Windows.Forms.Button();
             this.lblMachinesHeader = new System.Windows.Forms.Label();
+            this.btnRefresh = new System.Windows.Forms.Button();
             this.groupBox2.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
@@ -74,6 +75,7 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.btnRefresh);
             this.groupBox1.Controls.Add(this.btnRemove);
             this.groupBox1.Controls.Add(this.btnAdd);
             this.groupBox1.Controls.Add(this.lblDemoNumber);
@@ -240,6 +242,16 @@
             this.lblMachinesHeader.TabIndex = 24;
             this.lblMachinesHeader.Text = "Machines";
             // 
+            // btnRefresh
+            // 
+            this.btnRefresh.Location = new System.Drawing.Point(409, 172);
+            this.btnRefresh.Name = "btnRefresh";
+            this.btnRefresh.Size = new System.Drawing.Size(63, 23);
+            this.btnRefresh.TabIndex = 14;
+            this.btnRefresh.Text = "Refresh";
+            this.btnRefresh.UseVisualStyleBackColor = true;
+            this.btnRefresh.Click += new System.EventHandler(this.btnRefresh_Click);
+            // 
             // Machines
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -279,6 +291,7 @@
         private System.Windows.Forms.Label lblMachinesHeader;
         private System.Windows.Forms.Button btnRemove;
         private System.Windows.Forms.Button btnAdd;
+        private System.Windows.Forms.Button btnRefresh;
     }
 }
 
