@@ -52,6 +52,8 @@
             this.dtpStart = new System.Windows.Forms.DateTimePicker();
             this.btnShowAllMachines = new System.Windows.Forms.Button();
             this.dtpEnd = new System.Windows.Forms.DateTimePicker();
+            this.cbModel = new System.Windows.Forms.ComboBox();
+            this.cbType = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.gvBookings)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.stillasDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.stillasDataSetBindingSource)).BeginInit();
@@ -237,12 +239,14 @@
             // 
             // groupBox5
             // 
+            this.groupBox5.Controls.Add(this.cbType);
+            this.groupBox5.Controls.Add(this.cbModel);
             this.groupBox5.Controls.Add(this.dtpStart);
             this.groupBox5.Controls.Add(this.btnShowAllMachines);
             this.groupBox5.Controls.Add(this.dtpEnd);
             this.groupBox5.Location = new System.Drawing.Point(384, 212);
             this.groupBox5.Name = "groupBox5";
-            this.groupBox5.Size = new System.Drawing.Size(684, 119);
+            this.groupBox5.Size = new System.Drawing.Size(954, 119);
             this.groupBox5.TabIndex = 14;
             this.groupBox5.TabStop = false;
             this.groupBox5.Text = "Calender for machines";
@@ -256,7 +260,7 @@
             // 
             // btnShowAllMachines
             // 
-            this.btnShowAllMachines.Location = new System.Drawing.Point(549, 45);
+            this.btnShowAllMachines.Location = new System.Drawing.Point(836, 43);
             this.btnShowAllMachines.Name = "btnShowAllMachines";
             this.btnShowAllMachines.Size = new System.Drawing.Size(112, 49);
             this.btnShowAllMachines.TabIndex = 11;
@@ -269,6 +273,23 @@
             this.dtpEnd.Name = "dtpEnd";
             this.dtpEnd.Size = new System.Drawing.Size(228, 31);
             this.dtpEnd.TabIndex = 11;
+            // 
+            // cbModel
+            // 
+            this.cbModel.FormattingEnabled = true;
+            this.cbModel.Location = new System.Drawing.Point(548, 43);
+            this.cbModel.Name = "cbModel";
+            this.cbModel.Size = new System.Drawing.Size(121, 33);
+            this.cbModel.TabIndex = 15;
+            this.cbModel.SelectedIndexChanged += new System.EventHandler(this.cbModel_SelectedIndexChanged);
+            // 
+            // cbType
+            // 
+            this.cbType.FormattingEnabled = true;
+            this.cbType.Location = new System.Drawing.Point(689, 43);
+            this.cbType.Name = "cbType";
+            this.cbType.Size = new System.Drawing.Size(117, 33);
+            this.cbType.TabIndex = 16;
             // 
             // BookingsOverview
             // 
@@ -324,5 +345,7 @@
         private System.Windows.Forms.DateTimePicker dtpStart;
         private System.Windows.Forms.Button btnShowAllMachines;
         private System.Windows.Forms.DateTimePicker dtpEnd;
+        private System.Windows.Forms.ComboBox cbModel;
+        private System.Windows.Forms.ComboBox cbType;
     }
 }

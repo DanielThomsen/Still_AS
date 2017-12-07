@@ -179,6 +179,32 @@ namespace Controller
             return bookedDates;
         }
 
+        public List<string> GetDemoNumbersByModel(string s)
+        {
+            List<string> demoNumbers = DBR.GetDemoNumbersByModel(s);
+            return demoNumbers;
+        }
+
+        public List<string> GetDemoNumbersByModelAndNumber(string model, string number)
+        {
+            List<string> demoNumbers = DBR.GetDemoNumbersByModelAndNumber(model, number);
+            return demoNumbers;
+        }
+
+        public List<string> GetAllModels()
+        {
+            List<string> models = DBR.GetAllModels();
+            return models;
+        }
+
+        public List<string> GetModelNumbers(string s)
+        {
+            List<string> modelNumbers = DBR.GetModelNumbers(s);
+            return modelNumbers;
+        }
+
+
+
         // LEA ARBEJDER HERFRA ----------
         public List<string> PopulateListbox(List<string> modelname)
         {
