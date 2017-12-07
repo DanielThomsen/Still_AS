@@ -9,10 +9,36 @@ using System.Data;
 
 namespace Controller
 {
+    public class DatabaseFactory
+    {
+        // Singleton pga. dette:
+        private static DatabaseFactory df;
+
+        public static DatabaseFactory Df
+        {
+            get
+            {
+                if (df == null)
+                {
+                    df = new DatabaseFactory();
+                }
+                return df;
+            }
+        }
+
+
+        public static IDatabase SelectDatabase()
+        {
+            // Her vil der kunne vælges hvilken databaser der bruges. Da der kun er én database i øjeblikket er det bare den der retuneres.
+            return new DatabaseRepository();
+        }
+    }
     public class ControllerClass
     {
         ModelClass MC = new ModelClass();
-        DatabaseRepository DBR = new DatabaseRepository();
+        //DatabaseRepository DBR = new DatabaseRepository();
+        IDatabase DBR = DatabaseFactory.SelectDatabase();
+
         public static List<string> DemoMachines = new List<string>();
         //[Krognos start]
         public void CreateMachine(string DemoNumber, string ModelName, string ModelNumber, string Brand, string CNumber,

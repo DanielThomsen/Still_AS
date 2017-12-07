@@ -11,7 +11,103 @@ using System.IO;
 
 namespace Database
 {
-    public class DatabaseRepository
+    public interface IDatabase
+    {
+        void CreateModelName(string ModelName1);
+
+        void CreateMachine(string DemoNumber, string ModelName, string ModelNumber, string Brand, string CNumber,
+                    string MastType, int MastBuildingHeight, int MastLiftHeight, int MastFreeLift, string AggregatType,
+                    string AggregatNumber, string BatteryType, string BatteryNumber, string ChargerType, string ChargerNumber,
+                    string Controller, decimal Weight, decimal Height, decimal Length, decimal Width, List<string> configurationsList);
+
+        void CreateCustomer(string Name1, string Name2, string Att, string Address, int ZIP, string City, int Phone);
+
+        void CreateCustomerID();
+
+        void CreateBooking(string date1, string date2, string Transporter, string MessageForWorkshop, string DeliveryNote,
+                    int Ramp);
+
+        void CreateBookingID();
+
+        void CreateBookingLine(List<string> Machine);
+
+        List<string> DropDownDemo();
+
+        int GetAccessLevel();
+
+        List<string> GetWaiting();
+
+        int LoginValidation(string ID1, string ID2);
+
+        void SetBookingID(int ID);
+
+        void Approval(int Decision);
+
+        int UpdateWaits(int InList);
+
+        void RemoveMachine(string DemoNumber);
+
+        void RemoveBooking(int bookingID);
+
+        List<String> ShowMachine(string DemoNumber);
+
+        string GetConfigurations(string demoNr);
+
+        List<string> GetCustomer(int bookingID);
+
+        List<string> GetAllCustomers();
+
+        List<string> GetAdresses(string customerName);
+
+        List<string> GetBooking(int bookingID);
+
+        List<string> GetBookingID(string adress);
+
+        List<string> GetMachines(int bookingID);
+
+        DataTable GetAllBookings();
+
+        DataTable GetBookingsByDate(DateTime date);
+
+        List<string> GetAllDemoNumbers();
+
+        List<string> GetBookedDates(string s);
+
+        List<string> GetDemoNumbersByModel(string s);
+
+        List<string> GetDemoNumbersByModelAndNumber(string model, string number);
+
+        List<string> GetAllModels();
+
+        List<string> GetModelNumbers(string s);
+
+        string GetConnection();
+
+        List<string> PopulateListboxes(List<string> modelname);
+
+        List<string> UpdateSecondListBox(string modelname, List<string> modelnumber);
+
+        List<string> UpdateThirdListbox(string modelnumber, List<string> demonumber);
+
+        string UpdatedInformation(string newDemoNumber, string ModelName, string ModelNumber, string Brand, string CNumber,
+                    string MastType, int MastBuildingHeight, int MastLiftHeight, int MastFreeLift, string AggregatType,
+                    string AggregatNumber, string BatteryType, string BatteryNumber, string ChargerType, string ChargerNumber,
+                    string Controller, decimal Weight, decimal Height, decimal Length, decimal Width, string oldDemoNumber, string messagebox);
+
+        void BeginTransaction();
+
+        void RollBackTransaction();
+
+        void UpdateBooking(string name1, string name2, string att, string address, string zipCode,
+                    string city, string phone, string salesRep, string deliveryDate, string retrievalDate, string carrier,
+                    string messageToWorkshop, string deliveryNote, string loadingPlatform, int bookingIDs);
+
+        void AddModelName(string modelname);
+
+        void RemoveModelName(string modelname);
+
+    }
+    public class DatabaseRepository : IDatabase
     {
         stillasEntities meContext = new stillasEntities();
 
