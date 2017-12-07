@@ -99,12 +99,21 @@ namespace StillAS
                 btnEditMachine.Visible = false;
                 btnRemoveMachine.Visible = false;
                 groupBox2.Visible = false;
+                btnAdd.Visible = false;
+                btnRemove.Visible = false;
             }
         }
 
-        private void btnEditMachine_Click(object sender, EventArgs e)
+        private void btnAdd_Click(object sender, EventArgs e)
         {
+            //AddModelName AMN = new AddModelName();
+            //AMN.Show();
+            //CC.AddModelName(libModelName.SelectedItem.ToString()); ---- Skal flyttes til ny form
+        }
 
+        private void btnRemove_Click(object sender, EventArgs e)
+        {
+            CC.RemoveModelName(libModelName.SelectedItem.ToString());
         }
     }
 }
