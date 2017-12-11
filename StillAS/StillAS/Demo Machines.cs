@@ -88,11 +88,6 @@ namespace StillAS
             }
         }
 
-        private void lbAddedToBooking_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
-
         private void btnRemove_Click(object sender, EventArgs e)
         {
             try
@@ -108,9 +103,5 @@ namespace StillAS
             }
         }
 
-        private void txtName1_TextChanged(object sender, EventArgs e)
-        {
-
-        }
     }
 }
