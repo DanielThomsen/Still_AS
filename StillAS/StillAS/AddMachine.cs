@@ -26,20 +26,22 @@ namespace StillAS
             //    cbConfigurations.Items.Add(s);
             //}
             btnSaveMachine.Visible = false;
-
-      }
+            btnEditMachine.Visible = false;
+        }
 
         public AddMachine(string demoNumber)
         {
             InitializeComponent();
             List<string> machineInfo = CC.ShowMachine(demoNumber);
             List<TextBox> textBoxList = new List<TextBox>
-            { txtModelName, txtModelNumber,
+            { txtModelNumber,
                 txtBrand, txtChassisNumber, txtMastType, txtMastBuildingHeight,
                 txtMastLiftingHeight, txtMastFreeLift, txtAggregateType,
                 txtAggregateNumber, txtBatteryType, txtBatteryNumber, txtChargerType,
                 txtChargerNumber, txtController, txtWeight, txtHeight, txtLength,
                 txtWidth };
+            cbModelName.Enabled = false;
+            cbModelName.Text = CC.GetModelName(demoNumber);
             txtDemoMachine.Text = demoNumber;
             //List<string> configurations = CC.GetConfigurations(demoNumber);
 
@@ -56,11 +58,14 @@ namespace StillAS
             //{
             //    libConfigurations.Items.Add(s);
             //}
+            btnAddMachine.Visible = false;
+            btnSaveMachine.Visible = false;
+            btnEditMachine.Visible = true;
         }
         private void btnAddMachine_Click(object sender, EventArgs e)
         {
             string DemoNumber = txtDemoMachine.Text;
-            string ModelName = txtModelName.Text;
+            string ModelName = cbModelName.Text;
             string ModelNumber = txtModelNumber.Text;
             string Brand = txtBrand.Text;
             string CNumber = txtChassisNumber.Text;
@@ -98,7 +103,7 @@ namespace StillAS
             btnAddMachine.Visible = false;
             btnSaveMachine.Visible = true;
             List<TextBox> textBoxList = new List<TextBox>
-            { txtDemoMachine, txtModelName, txtModelNumber,
+            { txtDemoMachine, txtModelNumber,
                 txtBrand, txtChassisNumber, txtMastType, txtMastBuildingHeight,
                 txtMastLiftingHeight, txtMastFreeLift, txtAggregateType,
                 txtAggregateNumber, txtBatteryType, txtBatteryNumber, txtChargerType,
@@ -108,12 +113,14 @@ namespace StillAS
             {
                 tb.ReadOnly = false;
             }
+            cbModelName.Enabled = true;
+            btnEditMachine.Visible = false;
+            btnSaveMachine.Visible = true;
         }
         private void btnSaveMachine_Click(object sender, EventArgs e)
         {
-            string messagebox = "";
             string DemoNumber = txtDemoMachine.Text;
-            string ModelName = txtModelName.Text;
+            string ModelName = cbModelName.Text;
             string ModelNumber = txtModelNumber.Text;
             string Brand = txtBrand.Text;
             string CNumber = txtChassisNumber.Text;
@@ -132,17 +139,34 @@ namespace StillAS
             decimal Height = Convert.ToDecimal(txtHeight.Text.Replace('.', ','));
             decimal Length = Convert.ToDecimal(txtLength.Text.Replace('.', ','));
             decimal Width = Convert.ToDecimal(txtWidth.Text.Replace('.', ','));
-            string hent = CC.UpdateInformation(DemoNumber, ModelName, ModelNumber, Brand, CNumber, MastType, MastBuildingHeight, MastLiftHeight,
+            CC.UpdateInformation(DemoNumber, ModelName, ModelNumber, Brand, CNumber, MastType, MastBuildingHeight, MastLiftHeight,
                              MastFreeLift, AggregatType, AggregatNumber, BatteryType, BatteryNumber, ChargerType, ChargerNumber,
-                             Controller, Weight, Height, Length, Width, oldDemoNumber, messagebox);
-            MessageBox.Show(hent);
-
-                             
-            
+                             Controller, Weight, Height, Length, Width, oldDemoNumber);
+            List<TextBox> textBoxList = new List<TextBox>
+            { txtDemoMachine, txtModelNumber,
+                txtBrand, txtChassisNumber, txtMastType, txtMastBuildingHeight,
+                txtMastLiftingHeight, txtMastFreeLift, txtAggregateType,
+                txtAggregateNumber, txtBatteryType, txtBatteryNumber, txtChargerType,
+                txtChargerNumber, txtController, txtWeight, txtHeight, txtLength,
+                txtWidth };
+            foreach (TextBox tb in textBoxList)
+            {
+                tb.ReadOnly = true;
+            }
+            cbModelName.Enabled = false;
+            btnSaveMachine.Visible = false;
+            btnEditMachine.Visible = true;
         }
 
         private void AddMachine_Load(object sender, EventArgs e)
         {
+            List<string> cb = new List<string>();
+            cb = CC.PopulateListbox(cb);
+            foreach (string X in cb)
+            {
+                cbModelName.Items.Add(X);
+            }
+            
             if (CC.AccessLevel() == 2)
             {
                 btnEditMachine.Visible = false;

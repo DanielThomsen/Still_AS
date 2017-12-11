@@ -34,6 +34,7 @@ namespace Database
         List<string> DropDownDemo();
 
         int GetAccessLevel();
+        string GetModelName(string Demo);
 
         List<string> GetWaiting();
 
@@ -89,10 +90,10 @@ namespace Database
 
         List<string> UpdateThirdListbox(string modelnumber, List<string> demonumber);
 
-        string UpdatedInformation(string newDemoNumber, string ModelName, string ModelNumber, string Brand, string CNumber,
+        void UpdatedInformation(string newDemoNumber, string ModelName, string ModelNumber, string Brand, string CNumber,
                     string MastType, int MastBuildingHeight, int MastLiftHeight, int MastFreeLift, string AggregatType,
                     string AggregatNumber, string BatteryType, string BatteryNumber, string ChargerType, string ChargerNumber,
-                    string Controller, decimal Weight, decimal Height, decimal Length, decimal Width, string oldDemoNumber, string messagebox);
+                    string Controller, decimal Weight, decimal Height, decimal Length, decimal Width, string oldDemoNumber);
 
         void BeginTransaction();
 
@@ -114,8 +115,8 @@ namespace Database
         //[Krognos Start]
         public static int CustomerID;
         public static int BookingID;
-        public static int AccessLevel = 1;
-        public static string Bruger = "julemand";
+        public static int AccessLevel;
+        public static string Bruger;
         public void CreateModelName(string ModelName1)
         {
             var ModelN = new ModelNavn { Modelnavn1 = ModelName1 };
@@ -261,6 +262,11 @@ namespace Database
         {
             return AccessLevel;
         }
+        public string GetModelName(string Demo)
+        {
+            string ModelName = meContext.Maskines.Find(Demo).ModelName;
+            return ModelName;
+        }
         public List<string> GetWaiting()
         { 
             List<string> bookingList = new List<string>();
@@ -293,6 +299,10 @@ namespace Database
                 User = myReader["Username"].ToString();
                 Password = myReader["Adgangskode"].ToString();
                 AccessLevel = Convert.ToInt32(myReader["AccessLevel"]);
+            }
+            if (User == "")
+            {
+                User = "0";
             }
             if (User == ID1 && Password == ID2)
             {
@@ -359,7 +369,6 @@ namespace Database
         {
             List<string> machineList = new List<string>();
             var machine = meContext.Maskines.Find(DemoNumber);
-            machineList.Add(machine.ModelName);
             machineList.Add(machine.Type);
             machineList.Add(machine.Fabrikant);
             machineList.Add(machine.Chassisnummer);
@@ -851,10 +860,10 @@ namespace Database
             return demonumber;
         }
         // Edit Machines
-        public string UpdatedInformation(string newDemoNumber, string ModelName, string ModelNumber, string Brand, string CNumber,
+        public void UpdatedInformation(string newDemoNumber, string ModelName, string ModelNumber, string Brand, string CNumber,
             string MastType, int MastBuildingHeight, int MastLiftHeight, int MastFreeLift, string AggregatType,
             string AggregatNumber, string BatteryType, string BatteryNumber, string ChargerType, string ChargerNumber,
-            string Controller, decimal Weight, decimal Height, decimal Length, decimal Width, string oldDemoNumber, string messagebox)
+            string Controller, decimal Weight, decimal Height, decimal Length, decimal Width, string oldDemoNumber)
         {
             try
             {
@@ -904,11 +913,9 @@ namespace Database
                     }
                 }
             }
-            catch (SqlException ex)
+            catch 
             {
-                messagebox = ex.Message;
             }
-            return messagebox;
         }
         // Edit Bookings
         public void BeginTransaction()

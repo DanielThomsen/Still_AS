@@ -70,7 +70,6 @@
             this.txtBrand = new System.Windows.Forms.TextBox();
             this.txtDemoMachine = new System.Windows.Forms.TextBox();
             this.lblChassisNumber = new System.Windows.Forms.Label();
-            this.txtModelName = new System.Windows.Forms.TextBox();
             this.lblBrand = new System.Windows.Forms.Label();
             this.btnEditMachine = new System.Windows.Forms.Button();
             this.label14 = new System.Windows.Forms.Label();
@@ -80,6 +79,7 @@
             this.btnAddMachine = new System.Windows.Forms.Button();
             this.cbConfigurations = new System.Windows.Forms.CheckedListBox();
             this.label1 = new System.Windows.Forms.Label();
+            this.cbModelName = new System.Windows.Forms.ComboBox();
             this.groupBox4.SuspendLayout();
             this.groupBox3.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -406,6 +406,7 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.cbModelName);
             this.groupBox1.Controls.Add(this.lblModelNumber);
             this.groupBox1.Controls.Add(this.txtModelNumber);
             this.groupBox1.Controls.Add(this.lblDemoMachine);
@@ -414,7 +415,6 @@
             this.groupBox1.Controls.Add(this.txtBrand);
             this.groupBox1.Controls.Add(this.txtDemoMachine);
             this.groupBox1.Controls.Add(this.lblChassisNumber);
-            this.groupBox1.Controls.Add(this.txtModelName);
             this.groupBox1.Controls.Add(this.lblBrand);
             this.groupBox1.Location = new System.Drawing.Point(59, 30);
             this.groupBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
@@ -492,14 +492,6 @@
             this.lblChassisNumber.Size = new System.Drawing.Size(113, 17);
             this.lblChassisNumber.TabIndex = 77;
             this.lblChassisNumber.Text = "Chassis number:";
-            // 
-            // txtModelName
-            // 
-            this.txtModelName.Location = new System.Drawing.Point(29, 94);
-            this.txtModelName.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.txtModelName.Name = "txtModelName";
-            this.txtModelName.Size = new System.Drawing.Size(128, 22);
-            this.txtModelName.TabIndex = 2;
             // 
             // lblBrand
             // 
@@ -588,6 +580,14 @@
             this.label1.Size = new System.Drawing.Size(133, 28);
             this.label1.TabIndex = 105;
             // 
+            // cbModelName
+            // 
+            this.cbModelName.FormattingEnabled = true;
+            this.cbModelName.Location = new System.Drawing.Point(27, 94);
+            this.cbModelName.Name = "cbModelName";
+            this.cbModelName.Size = new System.Drawing.Size(130, 24);
+            this.cbModelName.TabIndex = 81;
+            // 
             // AddMachine
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -663,7 +663,6 @@
         private System.Windows.Forms.TextBox txtBrand;
         private System.Windows.Forms.TextBox txtDemoMachine;
         private System.Windows.Forms.Label lblChassisNumber;
-        private System.Windows.Forms.TextBox txtModelName;
         private System.Windows.Forms.Label lblBrand;
         // private System.Windows.Forms.ListBox listBox1;
         private System.Windows.Forms.Button btnEditMachine;
@@ -675,5 +674,6 @@
         private System.Windows.Forms.CheckedListBox cbConfigurations;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button btnAddMachine;
+        private System.Windows.Forms.ComboBox cbModelName;
     }
 }

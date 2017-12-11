@@ -37,6 +37,9 @@
             this.libCity = new System.Windows.Forms.ListBox();
             this.libCustomerName = new System.Windows.Forms.ListBox();
             this.btnShowBookingsOverview = new System.Windows.Forms.Button();
+            this.lblCustomerName = new System.Windows.Forms.Label();
+            this.lblCity = new System.Windows.Forms.Label();
+            this.lblBookingID = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // lblBookings
@@ -137,11 +140,41 @@
             this.btnShowBookingsOverview.UseVisualStyleBackColor = true;
             this.btnShowBookingsOverview.Click += new System.EventHandler(this.btnShowBookingsOverview_Click);
             // 
+            // lblCustomerName
+            // 
+            this.lblCustomerName.AutoSize = true;
+            this.lblCustomerName.Location = new System.Drawing.Point(44, 75);
+            this.lblCustomerName.Name = "lblCustomerName";
+            this.lblCustomerName.Size = new System.Drawing.Size(109, 17);
+            this.lblCustomerName.TabIndex = 17;
+            this.lblCustomerName.Text = "Customer Name";
+            // 
+            // lblCity
+            // 
+            this.lblCity.AutoSize = true;
+            this.lblCity.Location = new System.Drawing.Point(224, 75);
+            this.lblCity.Name = "lblCity";
+            this.lblCity.Size = new System.Drawing.Size(31, 17);
+            this.lblCity.TabIndex = 18;
+            this.lblCity.Text = "City";
+            // 
+            // lblBookingID
+            // 
+            this.lblBookingID.AutoSize = true;
+            this.lblBookingID.Location = new System.Drawing.Point(405, 75);
+            this.lblBookingID.Name = "lblBookingID";
+            this.lblBookingID.Size = new System.Drawing.Size(76, 17);
+            this.lblBookingID.TabIndex = 19;
+            this.lblBookingID.Text = "Booking ID";
+            // 
             // Bookings
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(743, 476);
+            this.Controls.Add(this.lblBookingID);
+            this.Controls.Add(this.lblCity);
+            this.Controls.Add(this.lblCustomerName);
             this.Controls.Add(this.btnShowBookingsOverview);
             this.Controls.Add(this.lblBookings);
             this.Controls.Add(this.btnShow);
@@ -171,5 +204,8 @@
         private System.Windows.Forms.ListBox libCity;
         private System.Windows.Forms.ListBox libCustomerName;
         private System.Windows.Forms.Button btnShowBookingsOverview;
+        private System.Windows.Forms.Label lblCustomerName;
+        private System.Windows.Forms.Label lblCity;
+        private System.Windows.Forms.Label lblBookingID;
     }
 }

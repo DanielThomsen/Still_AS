@@ -88,20 +88,13 @@ namespace StillAS
         private void btnShowMachine_Click(object sender, EventArgs e)
         {
             AddMachine TM = new AddMachine(libDemoNumber.SelectedItem.ToString());
+            
             TM.Show();
         }
 
         private void Machines_Load(object sender, EventArgs e)
         {
-            if (CC.AccessLevel() == 2)
-            {
-                btnAddMachine.Visible = false;
-                btnEditMachine.Visible = false;
-                btnRemoveMachine.Visible = false;
-                groupBox2.Visible = false;
-                btnAdd.Visible = false;
-                btnRemove.Visible = false;
-            }
+
         }
 
         private void btnAdd_Click(object sender, EventArgs e)
