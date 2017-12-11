@@ -138,6 +138,7 @@ namespace Controller
         {
             List<string> customers = DBR.GetAllCustomers();
             return customers;
+
         }
 
         public List<string> GetAdresses(string customerName)

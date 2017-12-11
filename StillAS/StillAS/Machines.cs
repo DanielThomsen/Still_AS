@@ -20,11 +20,21 @@ namespace StillAS
         public Machines() // Når formen loader
         {
             InitializeComponent();
-            CC.PopulateListbox(modelname); // HENTER DATA FRA DATABASEN OG SENDER DET OP I EN LISTE
-            for (int i = 0; i < modelname.Count; i++)
+
+            try
             {
-                libModelName.Items.Add(modelname[i].ToString()); // INDSÆTTER I LISTBOXEN
+                CC.PopulateListbox(modelname); // HENTER DATA FRA DATABASEN OG SENDER DET OP I EN LISTE
+                for (int i = 0; i < modelname.Count; i++)
+                {
+                    libModelName.Items.Add(modelname[i].ToString()); // INDSÆTTER I LISTBOXEN
+                }
             }
+            catch (Exception)
+            {
+
+                MessageBox.Show("Connection error");
+            }
+
         }
         private void btnAddMachine_Click(object sender, EventArgs e)
         {
@@ -34,41 +44,68 @@ namespace StillAS
 
         private void libModelName_Click(object sender, EventArgs e)
         {
-            modelnumber.Clear();
-            libModelNumber.Items.Clear();
-            string modelname = libModelName.SelectedItem.ToString();
-            if (libModelName.SelectedIndex != -1)
+            try
             {
-                CC.UpdateSecondListbox(modelname, modelnumber);
-                string count = "";
-                foreach (var item in modelnumber)
+                modelnumber.Clear();
+                libModelNumber.Items.Clear();
+                string modelname = libModelName.SelectedItem.ToString();
+                if (libModelName.SelectedIndex != -1)
                 {
-                    if (item == count)
+                    CC.UpdateSecondListbox(modelname, modelnumber);
+                    string count = "";
+                    foreach (var item in modelnumber)
                     {
+                        if (item == count)
+                        {
 
-                    }
-                    else
-                    {
-                        libModelNumber.Items.Add(item);
-                        count = item;
+                        }
+                        else
+                        {
+                            libModelNumber.Items.Add(item);
+                            count = item;
+                        }
                     }
                 }
             }
+            catch (Exception)
+            {
+
+
+            }
+
         }
         private void libModelNumber_Click(object sender, EventArgs e)
         {
-            demonumber.Clear();
-            libDemoNumber.Items.Clear();
-            string modelnumber = libModelNumber.SelectedItem.ToString();
-            if (libModelNumber.SelectedIndex != -1)
+            try
             {
-                CC.UpdateThirdListbox(modelnumber, demonumber);
+                demonumber.Clear();
+                libDemoNumber.Items.Clear();
+                string modelnumber = libModelNumber.SelectedItem.ToString();
 
-                for (int i = 0; i < demonumber.Count; i++)
+                try
                 {
-                    libDemoNumber.Items.Add(demonumber[i].ToString());
+                    if (libModelNumber.SelectedIndex != -1)
+                    {
+                        CC.UpdateThirdListbox(modelnumber, demonumber);
+
+                        for (int i = 0; i < demonumber.Count; i++)
+                        {
+                            libDemoNumber.Items.Add(demonumber[i].ToString());
+                        }
+                    }
+                }
+                catch (Exception)
+                {
+
+                    MessageBox.Show("Connection error");
                 }
             }
+            catch (Exception)
+            {
+
+
+            }
+
         }
 
         private void btnRemoveMachine_Click(object sender, EventArgs e)
@@ -76,19 +113,38 @@ namespace StillAS
             try
             {
                 string demoNumberSelected = libDemoNumber.SelectedItem.ToString();
-                CC.RemoveMachine(demoNumberSelected);
-                MessageBox.Show("Machine removed: Demo number:" + demoNumberSelected);
+
+                try
+                {
+                    CC.RemoveMachine(demoNumberSelected);
+                    MessageBox.Show("Machine removed: Demo number:" + demoNumberSelected);
+                }
+                catch (Exception)
+                {
+
+                    MessageBox.Show("Error");
+                }
+
             }
             catch (Exception)
             {
-                MessageBox.Show("Error: Machine not removed"); 
+              
             }
         }
 
         private void btnShowMachine_Click(object sender, EventArgs e)
         {
-            AddMachine TM = new AddMachine(libDemoNumber.SelectedItem.ToString());
-            TM.Show();
+            try
+            {
+                string s = libDemoNumber.SelectedItem.ToString();
+                AddMachine TM = new AddMachine(libDemoNumber.SelectedItem.ToString());
+                TM.Show();
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Choose a machine to show it");
+
+            }
         }
 
         private void Machines_Load(object sender, EventArgs e)
@@ -112,20 +168,44 @@ namespace StillAS
 
         private void btnRemove_Click(object sender, EventArgs e)
         {
-            CC.RemoveModelName(libModelName.SelectedItem.ToString());
+            try
+            {
+                CC.RemoveModelName(libModelName.SelectedItem.ToString());
+            }
+            catch (Exception)
+            {
+
+                MessageBox.Show("Error");
+            }
+            
         }
 
         private void btnRefresh_Click(object sender, EventArgs e)
         {
-            modelname.Clear();
-            libModelName.Items.Clear();
-            libModelNumber.Items.Clear();
-            libDemoNumber.Items.Clear();
-            CC.PopulateListbox(modelname); // HENTER DATA FRA DATABASEN OG SENDER DET OP I EN LISTE
-            for (int i = 0; i < modelname.Count; i++)
+            try
             {
-                libModelName.Items.Add(modelname[i].ToString()); // INDSÆTTER I LISTBOXEN
+                modelname.Clear();
+                libModelName.Items.Clear();
+                libModelNumber.Items.Clear();
+                libDemoNumber.Items.Clear();
+                CC.PopulateListbox(modelname); // HENTER DATA FRA DATABASEN OG SENDER DET OP I EN LISTE
+                for (int i = 0; i < modelname.Count; i++)
+                {
+                    libModelName.Items.Add(modelname[i].ToString()); // INDSÆTTER I LISTBOXEN
+                }
             }
+            catch (Exception)
+            {
+
+                MessageBox.Show("Connection error");
+            }
+
+
+        }
+
+        private void btnShowAvailability_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

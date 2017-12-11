@@ -21,8 +21,16 @@ namespace StillAS
 
         private void btnAdd_Click(object sender, EventArgs e)
         {
-            CC.AddModelName(txtModelname.Text);
-            this.Close();
+            if (txtModelname.Text != "")
+            {
+                CC.AddModelName(txtModelname.Text);
+                this.Close();
+            }
+
+            else
+            {
+                MessageBox.Show("Write the model name you want to add and then press the 'Add' button");
+            }
         }
     }
 }
