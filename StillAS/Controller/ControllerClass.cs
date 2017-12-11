@@ -63,9 +63,9 @@ namespace Controller
         {
             return DBR.DropDownDemo();
         }
-        public void CreateBookingLine()
+        public void CreateBookingLine(string Konfigs)
         {
-            DBR.CreateBookingLine(DemoMachines);
+            DBR.CreateBookingLine(DemoMachines, Konfigs);
             DemoMachines.Clear();
         }
        // public int GetCustomerID()

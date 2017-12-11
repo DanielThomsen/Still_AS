@@ -63,9 +63,10 @@ namespace StillAS
             string Transporter = txtCarrier.Text;
             string Message1 = txtMessageToWorkshop.Text;
             string Message2 = txtDeliveryNote.Text;
+            string Konfig = txtKonfig.Text;
             CTRC.AddCustomer(Name1, Name2, Att, Address, ZIP, City, Phone);
             CTRC.CreateBooking(Date1, Date2, Transporter, Message1, Message2, Selected);
-            CTRC.CreateBookingLine();
+            CTRC.CreateBookingLine(Konfig);
             this.Visible = false;
         }
 

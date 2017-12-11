@@ -29,7 +29,7 @@ namespace Database
 
         void CreateBookingID();
 
-        void CreateBookingLine(List<string> Machine);
+        void CreateBookingLine(List<string> Machine, string Konfig);
 
         List<string> DropDownDemo();
 
@@ -239,18 +239,13 @@ namespace Database
             BookingID = Convert.ToInt32(ID) + 1;
             conn.Close();
         }
-        public void CreateBookingLine(List<string> Machine)
+        public void CreateBookingLine(List<string> Machine, string Konfig)
         {
             foreach(string X in Machine)
             {
-                //MaskineKonfiguration M = new MaskineKonfiguration();
-                //M.DemoNummer = X;
-                //M.Konfiguration
-                ////var Bookingline = new BookingLinje();
-                //Bookingline.BookingID = BookingID;
-                //Bookingline.DemoNummer = X;
-                //meContext.BookingLinjes.Add(Bookingline);
-                //meContext.SaveChanges();
+                var BookingLinje = new BookingLinje { BookingID = BookingID, DemoNummer = X, KonfigurationTekst = Konfig };
+                meContext.BookingLinjes.Add(BookingLinje);
+                meContext.SaveChanges();
             }
         }
         public List<string> DropDownDemo()

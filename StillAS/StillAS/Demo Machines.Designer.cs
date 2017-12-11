@@ -31,7 +31,6 @@
             this.lblAddBooking = new System.Windows.Forms.Label();
             this.btnAdd = new System.Windows.Forms.Button();
             this.btnFinish = new System.Windows.Forms.Button();
-            this.cbSelectConfigurations = new System.Windows.Forms.CheckedListBox();
             this.lbAddedToBooking = new System.Windows.Forms.ListBox();
             this.coboDemoMachines = new System.Windows.Forms.ComboBox();
             this.btnRemove = new System.Windows.Forms.Button();
@@ -39,6 +38,8 @@
             this.gbConfigurations = new System.Windows.Forms.GroupBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.dtpRetrievalDate = new System.Windows.Forms.DateTimePicker();
+            this.dtpDeliveryDate = new System.Windows.Forms.DateTimePicker();
             this.rbtnNo = new System.Windows.Forms.RadioButton();
             this.rbtnYes = new System.Windows.Forms.RadioButton();
             this.lblLoadingPlatform = new System.Windows.Forms.Label();
@@ -67,8 +68,7 @@
             this.txtName2 = new System.Windows.Forms.TextBox();
             this.txtName1 = new System.Windows.Forms.TextBox();
             this.lblName1 = new System.Windows.Forms.Label();
-            this.dtpDeliveryDate = new System.Windows.Forms.DateTimePicker();
-            this.dtpRetrievalDate = new System.Windows.Forms.DateTimePicker();
+            this.txtKonfig = new System.Windows.Forms.TextBox();
             this.gbMachines.SuspendLayout();
             this.gbConfigurations.SuspendLayout();
             this.groupBox1.SuspendLayout();
@@ -105,14 +105,6 @@
             this.btnFinish.Text = "Done";
             this.btnFinish.UseVisualStyleBackColor = true;
             this.btnFinish.Click += new System.EventHandler(this.btnNext_Click);
-            // 
-            // cbSelectConfigurations
-            // 
-            this.cbSelectConfigurations.FormattingEnabled = true;
-            this.cbSelectConfigurations.Location = new System.Drawing.Point(6, 32);
-            this.cbSelectConfigurations.Name = "cbSelectConfigurations";
-            this.cbSelectConfigurations.Size = new System.Drawing.Size(200, 378);
-            this.cbSelectConfigurations.TabIndex = 14;
             // 
             // lbAddedToBooking
             // 
@@ -155,7 +147,7 @@
             // 
             // gbConfigurations
             // 
-            this.gbConfigurations.Controls.Add(this.cbSelectConfigurations);
+            this.gbConfigurations.Controls.Add(this.txtKonfig);
             this.gbConfigurations.Location = new System.Drawing.Point(319, 91);
             this.gbConfigurations.Name = "gbConfigurations";
             this.gbConfigurations.Size = new System.Drawing.Size(218, 427);
@@ -201,6 +193,20 @@
             this.groupBox3.TabIndex = 23;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Booking Information";
+            // 
+            // dtpRetrievalDate
+            // 
+            this.dtpRetrievalDate.Location = new System.Drawing.Point(245, 102);
+            this.dtpRetrievalDate.Name = "dtpRetrievalDate";
+            this.dtpRetrievalDate.Size = new System.Drawing.Size(200, 22);
+            this.dtpRetrievalDate.TabIndex = 16;
+            // 
+            // dtpDeliveryDate
+            // 
+            this.dtpDeliveryDate.Location = new System.Drawing.Point(8, 102);
+            this.dtpDeliveryDate.Name = "dtpDeliveryDate";
+            this.dtpDeliveryDate.Size = new System.Drawing.Size(200, 22);
+            this.dtpDeliveryDate.TabIndex = 15;
             // 
             // rbtnNo
             // 
@@ -481,19 +487,13 @@
             this.lblName1.TabIndex = 0;
             this.lblName1.Text = "Name:";
             // 
-            // dtpDeliveryDate
+            // txtKonfig
             // 
-            this.dtpDeliveryDate.Location = new System.Drawing.Point(8, 102);
-            this.dtpDeliveryDate.Name = "dtpDeliveryDate";
-            this.dtpDeliveryDate.Size = new System.Drawing.Size(200, 22);
-            this.dtpDeliveryDate.TabIndex = 15;
-            // 
-            // dtpRetrievalDate
-            // 
-            this.dtpRetrievalDate.Location = new System.Drawing.Point(245, 102);
-            this.dtpRetrievalDate.Name = "dtpRetrievalDate";
-            this.dtpRetrievalDate.Size = new System.Drawing.Size(200, 22);
-            this.dtpRetrievalDate.TabIndex = 16;
+            this.txtKonfig.Location = new System.Drawing.Point(7, 32);
+            this.txtKonfig.Multiline = true;
+            this.txtKonfig.Name = "txtKonfig";
+            this.txtKonfig.Size = new System.Drawing.Size(199, 389);
+            this.txtKonfig.TabIndex = 0;
             // 
             // Demo_Maskiner
             // 
@@ -510,6 +510,7 @@
             this.Load += new System.EventHandler(this.Demo_Maskiner_Load);
             this.gbMachines.ResumeLayout(false);
             this.gbConfigurations.ResumeLayout(false);
+            this.gbConfigurations.PerformLayout();
             this.groupBox1.ResumeLayout(false);
             this.groupBox3.ResumeLayout(false);
             this.groupBox3.PerformLayout();
@@ -525,7 +526,6 @@
         private System.Windows.Forms.Label lblAddBooking;
         private System.Windows.Forms.Button btnAdd;
         private System.Windows.Forms.Button btnFinish;
-        private System.Windows.Forms.CheckedListBox cbSelectConfigurations;
         private System.Windows.Forms.ListBox lbAddedToBooking;
         private System.Windows.Forms.ComboBox coboDemoMachines;
         private System.Windows.Forms.Button btnRemove;
@@ -563,5 +563,6 @@
         private System.Windows.Forms.Label lblName1;
         private System.Windows.Forms.DateTimePicker dtpRetrievalDate;
         private System.Windows.Forms.DateTimePicker dtpDeliveryDate;
+        private System.Windows.Forms.TextBox txtKonfig;
     }
 }
