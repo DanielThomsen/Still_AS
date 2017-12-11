@@ -111,6 +111,15 @@ namespace Database
     {
         stillasEntities meContext = new stillasEntities();
 
+        public DatabaseRepository()
+        {
+            
+        }
+        public DatabaseRepository(stillasEntities se)
+        {
+            meContext = se;
+        }
+
         //[Krognos Start]
         public static int CustomerID;
         public static int BookingID;
