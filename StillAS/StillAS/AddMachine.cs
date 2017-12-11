@@ -13,7 +13,7 @@ namespace StillAS
 {
     public partial class AddMachine : Form
     {
-        ControllerClass CC = new ControllerClass();        
+        ControllerClass CC = new ControllerClass();
         public AddMachine()
         {
             InitializeComponent();
@@ -94,6 +94,20 @@ namespace StillAS
             CC.CreateMachine(DemoNumber, ModelName, ModelNumber, Brand, CNumber, MastType, MastBuildingHeight, MastLiftHeight,
                              MastFreeLift, AggregatType, AggregatNumber, BatteryType, BatteryNumber, ChargerType, ChargerNumber,
                              Controller, Weight, Height, Length, Width, configurationsList);
+
+            List<TextBox> textBoxList = new List<TextBox>
+            { txtModelNumber, txtBrand, txtChassisNumber, txtMastType, txtMastBuildingHeight,
+                txtMastLiftingHeight, txtMastFreeLift, txtAggregateType,
+                txtAggregateNumber, txtBatteryType, txtBatteryNumber, txtChargerType,
+                txtChargerNumber, txtController, txtWeight, txtHeight, txtLength,
+                txtWidth };
+            foreach (TextBox t in textBoxList)
+            {
+                if (String.IsNullOrEmpty(t.Text && cbModelname.Text))
+                {
+                    MessageBox.Show("Please fill all empty boxes");
+                }
+            }
         }
         // Lea arbejder herfra ---- >
         public string oldDemoNumber;
@@ -158,6 +172,22 @@ namespace StillAS
             btnEditMachine.Visible = true;
         }
 
+                             Controller, Weight, Height, Length, Width, oldDemoNumber, messagebox);
+            MessageBox.Show(hent);
+            List<TextBox> textBoxList = new List<TextBox>
+            { txtModelNumber, txtBrand, txtChassisNumber, txtMastType, txtMastBuildingHeight,
+                txtMastLiftingHeight, txtMastFreeLift, txtAggregateType,
+                txtAggregateNumber, txtBatteryType, txtBatteryNumber, txtChargerType,
+                txtChargerNumber, txtController, txtWeight, txtHeight, txtLength,
+                txtWidth };
+            foreach (TextBox t in textBoxList)
+            {
+                if (String.IsNullOrEmpty(t.Text && cbModelname.Text))
+                {
+                    MessageBox.Show("Please fill all empty boxes");
+                }
+            }
+        }
         private void AddMachine_Load(object sender, EventArgs e)
         {
             List<string> cb = new List<string>();
@@ -172,6 +202,90 @@ namespace StillAS
                 btnEditMachine.Visible = false;
                 btnAddMachine.Visible = false;
                 btnSaveMachine.Visible = false;
+            }
+        }
+
+        private void txtMastBuildingHeight_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void txtMastLiftingHeight_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void txtMastFreeLift_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void txtWeight_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            char c = e.KeyChar;
+
+            if (c == 46 && txtWeight.Text.IndexOf('.') != -1)
+            {
+                e.Handled = true;
+                return;
+            }
+            if (!Char.IsDigit(c) && c != 8 && c != 46)
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void txtHeight_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            char c = e.KeyChar;
+
+            if (c == 46 && txtHeight.Text.IndexOf('.') != -1)
+            {
+                e.Handled = true;
+                return;
+            }
+            if (!Char.IsDigit(c) && c != 8 && c != 46)
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void txtLength_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            char c = e.KeyChar;
+
+            if (c == 46 && txtLength.Text.IndexOf('.') != -1)
+            {
+                e.Handled = true;
+                return;
+            }
+            if (!Char.IsDigit(c) && c != 8 && c != 46)
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void txtWidth_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            char c = e.KeyChar;
+
+            if (c == 46 && txtWidth.Text.IndexOf('.') != -1)
+            {
+                e.Handled = true;
+                return;
+            }
+            if (!Char.IsDigit(c) && c != 8 && c != 46)
+            {
+                e.Handled = true;
             }
         }
     }
