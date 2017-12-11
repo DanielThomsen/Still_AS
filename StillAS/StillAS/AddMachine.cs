@@ -90,24 +90,27 @@ namespace StillAS
             {
                 configurationsList.Add(itemChecked + "");
             }
-
-            CC.CreateMachine(DemoNumber, ModelName, ModelNumber, Brand, CNumber, MastType, MastBuildingHeight, MastLiftHeight,
-                             MastFreeLift, AggregatType, AggregatNumber, BatteryType, BatteryNumber, ChargerType, ChargerNumber,
-                             Controller, Weight, Height, Length, Width, configurationsList);
-
             List<TextBox> textBoxList = new List<TextBox>
-            { txtModelNumber, txtBrand, txtChassisNumber, txtMastType, txtMastBuildingHeight,
+            { txtDemoMachine, txtModelNumber,
+                txtBrand, txtChassisNumber, txtMastType, txtMastBuildingHeight,
                 txtMastLiftingHeight, txtMastFreeLift, txtAggregateType,
                 txtAggregateNumber, txtBatteryType, txtBatteryNumber, txtChargerType,
                 txtChargerNumber, txtController, txtWeight, txtHeight, txtLength,
                 txtWidth };
             foreach (TextBox t in textBoxList)
             {
-                if (String.IsNullOrEmpty(t.Text && cbModelname.Text))
-                {
+                if (String.IsNullOrEmpty(t.Text))
+                {                    
                     MessageBox.Show("Please fill all empty boxes");
-                }
+                }               
             }
+            if (String.IsNullOrEmpty(ModelName))
+            {
+                MessageBox.Show("Please fill all empty boxes");
+            }
+            CC.CreateMachine(DemoNumber, ModelName, ModelNumber, Brand, CNumber, MastType, MastBuildingHeight, MastLiftHeight,
+                             MastFreeLift, AggregatType, AggregatNumber, BatteryType, BatteryNumber, ChargerType, ChargerNumber,
+                             Controller, Weight, Height, Length, Width, configurationsList);            
         }
         // Lea arbejder herfra ---- >
         public string oldDemoNumber;
@@ -153,6 +156,25 @@ namespace StillAS
             decimal Height = Convert.ToDecimal(txtHeight.Text.Replace('.', ','));
             decimal Length = Convert.ToDecimal(txtLength.Text.Replace('.', ','));
             decimal Width = Convert.ToDecimal(txtWidth.Text.Replace('.', ','));
+
+            List<TextBox> textBoxList1 = new List<TextBox>
+            { txtDemoMachine, txtModelNumber,
+                txtBrand, txtChassisNumber, txtMastType, txtMastBuildingHeight,
+                txtMastLiftingHeight, txtMastFreeLift, txtAggregateType,
+                txtAggregateNumber, txtBatteryType, txtBatteryNumber, txtChargerType,
+                txtChargerNumber, txtController, txtWeight, txtHeight, txtLength,
+                txtWidth };
+            foreach (TextBox t in textBoxList1)
+            {
+                if (String.IsNullOrEmpty(t.Text))
+                {
+                    MessageBox.Show("Please fill all empty boxes");
+                }
+            }
+            if (String.IsNullOrEmpty(ModelName))
+            {
+                MessageBox.Show("Please fill all empty boxes");
+            }
             CC.UpdateInformation(DemoNumber, ModelName, ModelNumber, Brand, CNumber, MastType, MastBuildingHeight, MastLiftHeight,
                              MastFreeLift, AggregatType, AggregatNumber, BatteryType, BatteryNumber, ChargerType, ChargerNumber,
                              Controller, Weight, Height, Length, Width, oldDemoNumber);
@@ -170,23 +192,7 @@ namespace StillAS
             cbModelName.Enabled = false;
             btnSaveMachine.Visible = false;
             btnEditMachine.Visible = true;
-        }
-
-                             Controller, Weight, Height, Length, Width, oldDemoNumber, messagebox);
-            MessageBox.Show(hent);
-            List<TextBox> textBoxList = new List<TextBox>
-            { txtModelNumber, txtBrand, txtChassisNumber, txtMastType, txtMastBuildingHeight,
-                txtMastLiftingHeight, txtMastFreeLift, txtAggregateType,
-                txtAggregateNumber, txtBatteryType, txtBatteryNumber, txtChargerType,
-                txtChargerNumber, txtController, txtWeight, txtHeight, txtLength,
-                txtWidth };
-            foreach (TextBox t in textBoxList)
-            {
-                if (String.IsNullOrEmpty(t.Text && cbModelname.Text))
-                {
-                    MessageBox.Show("Please fill all empty boxes");
-                }
-            }
+        
         }
         private void AddMachine_Load(object sender, EventArgs e)
         {

@@ -114,7 +114,6 @@
             this.lbAddedToBooking.Name = "lbAddedToBooking";
             this.lbAddedToBooking.Size = new System.Drawing.Size(200, 388);
             this.lbAddedToBooking.TabIndex = 12;
-            this.lbAddedToBooking.SelectedIndexChanged += new System.EventHandler(this.lbAddedToBooking_SelectedIndexChanged);
             // 
             // coboDemoMachines
             // 
@@ -475,7 +474,6 @@
             this.txtName1.Name = "txtName1";
             this.txtName1.Size = new System.Drawing.Size(203, 22);
             this.txtName1.TabIndex = 1;
-            this.txtName1.TextChanged += new System.EventHandler(this.txtName1_TextChanged);
             // 
             // lblName1
             // 

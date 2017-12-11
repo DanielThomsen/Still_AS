@@ -62,6 +62,7 @@
             this.txtMastBuildingHeight = new System.Windows.Forms.TextBox();
             this.lblMastLiftingHeight = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.cbModelName = new System.Windows.Forms.ComboBox();
             this.lblModelNumber = new System.Windows.Forms.Label();
             this.txtModelNumber = new System.Windows.Forms.TextBox();
             this.lblDemoMachine = new System.Windows.Forms.Label();
@@ -79,7 +80,6 @@
             this.btnAddMachine = new System.Windows.Forms.Button();
             this.cbConfigurations = new System.Windows.Forms.CheckedListBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.cbModelName = new System.Windows.Forms.ComboBox();
             this.groupBox4.SuspendLayout();
             this.groupBox3.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -447,6 +447,14 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Machine";
             // 
+            // cbModelName
+            // 
+            this.cbModelName.FormattingEnabled = true;
+            this.cbModelName.Location = new System.Drawing.Point(23, 76);
+            this.cbModelName.Name = "cbModelName";
+            this.cbModelName.Size = new System.Drawing.Size(95, 21);
+            this.cbModelName.TabIndex = 81;
+            // 
             // lblModelNumber
             // 
             this.lblModelNumber.AutoSize = true;
@@ -603,14 +611,6 @@
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(100, 23);
             this.label1.TabIndex = 105;
-            // 
-            // cbModelName
-            // 
-            this.cbModelName.FormattingEnabled = true;
-            this.cbModelName.Location = new System.Drawing.Point(27, 94);
-            this.cbModelName.Name = "cbModelName";
-            this.cbModelName.Size = new System.Drawing.Size(130, 24);
-            this.cbModelName.TabIndex = 81;
             // 
             // AddMachine
             // 
