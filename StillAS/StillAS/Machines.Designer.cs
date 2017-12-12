@@ -196,6 +196,7 @@
             this.libModelNumber.Size = new System.Drawing.Size(152, 356);
             this.libModelNumber.TabIndex = 4;
             this.libModelNumber.Click += new System.EventHandler(this.libModelNumber_Click);
+            this.libModelNumber.SelectedIndexChanged += new System.EventHandler(this.libModelNumber_SelectedIndexChanged);
             // 
             // btnShowMachine
             // 

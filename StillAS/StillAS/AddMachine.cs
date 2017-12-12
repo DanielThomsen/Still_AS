@@ -64,53 +64,66 @@ namespace StillAS
         }
         private void btnAddMachine_Click(object sender, EventArgs e)
         {
-            string DemoNumber = txtDemoMachine.Text;
-            string ModelName = cbModelName.Text;
-            string ModelNumber = txtModelNumber.Text;
-            string Brand = txtBrand.Text;
-            string CNumber = txtChassisNumber.Text;
-            string MastType = txtMastType.Text;
-            int MastBuildingHeight = Convert.ToInt32(txtMastBuildingHeight.Text);
-            int MastLiftHeight = Convert.ToInt32(txtMastLiftingHeight.Text);
-            int MastFreeLift = Convert.ToInt32(txtMastFreeLift.Text);
-            string AggregatType = txtAggregateType.Text;
-            string AggregatNumber = txtAggregateNumber.Text;
-            string BatteryType = txtBatteryType.Text;
-            string BatteryNumber = txtBatteryNumber.Text;
-            string ChargerType = txtChargerType.Text;
-            string ChargerNumber = txtChargerNumber.Text;
-            string Controller = txtController.Text;
-            decimal Weight = Convert.ToDecimal(txtWeight.Text.Replace('.', ','));
-            decimal Height = Convert.ToDecimal(txtHeight.Text.Replace('.', ','));
-            decimal Length = Convert.ToDecimal(txtLength.Text.Replace('.', ','));
-            decimal Width = Convert.ToDecimal(txtWidth.Text.Replace('.', ','));
-
-            List<string> configurationsList = new List<string>();
-            foreach (object itemChecked in cbConfigurations.CheckedItems)
+            try
             {
-                configurationsList.Add(itemChecked + "");
-            }
-            List<TextBox> textBoxList = new List<TextBox>
+                string DemoNumber = txtDemoMachine.Text;
+                string ModelName = cbModelName.Text;
+                string ModelNumber = txtModelNumber.Text;
+                string Brand = txtBrand.Text;
+                string CNumber = txtChassisNumber.Text;
+                string MastType = txtMastType.Text;
+                int MastBuildingHeight = Convert.ToInt32(txtMastBuildingHeight.Text);
+                int MastLiftHeight = Convert.ToInt32(txtMastLiftingHeight.Text);
+                int MastFreeLift = Convert.ToInt32(txtMastFreeLift.Text);
+                string AggregatType = txtAggregateType.Text;
+                string AggregatNumber = txtAggregateNumber.Text;
+                string BatteryType = txtBatteryType.Text;
+                string BatteryNumber = txtBatteryNumber.Text;
+                string ChargerType = txtChargerType.Text;
+                string ChargerNumber = txtChargerNumber.Text;
+                string Controller = txtController.Text;
+                decimal Weight = Convert.ToDecimal(txtWeight.Text.Replace('.', ','));
+                decimal Height = Convert.ToDecimal(txtHeight.Text.Replace('.', ','));
+                decimal Length = Convert.ToDecimal(txtLength.Text.Replace('.', ','));
+                decimal Width = Convert.ToDecimal(txtWidth.Text.Replace('.', ','));
+
+                List<string> configurationsList = new List<string>();
+                foreach (object itemChecked in cbConfigurations.CheckedItems)
+                {
+                    configurationsList.Add(itemChecked + "");
+                }
+                List<TextBox> textBoxList = new List<TextBox>
             { txtDemoMachine, txtModelNumber,
                 txtBrand, txtChassisNumber, txtMastType, txtMastBuildingHeight,
                 txtMastLiftingHeight, txtMastFreeLift, txtAggregateType,
                 txtAggregateNumber, txtBatteryType, txtBatteryNumber, txtChargerType,
                 txtChargerNumber, txtController, txtWeight, txtHeight, txtLength,
                 txtWidth };
-            foreach (TextBox t in textBoxList)
-            {
-                if (String.IsNullOrEmpty(t.Text))
-                {                    
-                    MessageBox.Show("Please fill all empty boxes");
-                }               
+                foreach (TextBox t in textBoxList)
+                {
+                    if (String.IsNullOrEmpty(t.Text))
+                    {
+                        MessageBox.Show("Please fill out all empty boxes");
+                        return;
+                    }
+                }
+                if (String.IsNullOrEmpty(ModelName))
+                {
+                    MessageBox.Show("Please fill out all empty boxes");
+                    return;
+                }
+                else
+                {
+                    CC.CreateMachine(DemoNumber, ModelName, ModelNumber, Brand, CNumber, MastType, MastBuildingHeight, MastLiftHeight,
+                                                 MastFreeLift, AggregatType, AggregatNumber, BatteryType, BatteryNumber, ChargerType, ChargerNumber,
+                                                 Controller, Weight, Height, Length, Width, configurationsList);
+                }
             }
-            if (String.IsNullOrEmpty(ModelName))
+            catch
             {
-                MessageBox.Show("Please fill all empty boxes");
-            }
-            CC.CreateMachine(DemoNumber, ModelName, ModelNumber, Brand, CNumber, MastType, MastBuildingHeight, MastLiftHeight,
-                             MastFreeLift, AggregatType, AggregatNumber, BatteryType, BatteryNumber, ChargerType, ChargerNumber,
-                             Controller, Weight, Height, Length, Width, configurationsList);            
+                MessageBox.Show("Please fill out all empty boxes");
+            }           
+                       
         }
         // Lea arbejder herfra ---- >
         public string oldDemoNumber;
@@ -169,15 +182,20 @@ namespace StillAS
                 if (String.IsNullOrEmpty(t.Text))
                 {
                     MessageBox.Show("Please fill all empty boxes");
+                    return;
                 }
             }
             if (String.IsNullOrEmpty(ModelName))
             {
                 MessageBox.Show("Please fill all empty boxes");
+                return;
             }
-            CC.UpdateInformation(DemoNumber, ModelName, ModelNumber, Brand, CNumber, MastType, MastBuildingHeight, MastLiftHeight,
-                             MastFreeLift, AggregatType, AggregatNumber, BatteryType, BatteryNumber, ChargerType, ChargerNumber,
-                             Controller, Weight, Height, Length, Width, oldDemoNumber);
+            else
+            {
+                CC.UpdateInformation(DemoNumber, ModelName, ModelNumber, Brand, CNumber, MastType, MastBuildingHeight, MastLiftHeight,
+                                            MastFreeLift, AggregatType, AggregatNumber, BatteryType, BatteryNumber, ChargerType, ChargerNumber,
+                                            Controller, Weight, Height, Length, Width, oldDemoNumber);
+            }         
             List<TextBox> textBoxList = new List<TextBox>
             { txtDemoMachine, txtModelNumber,
                 txtBrand, txtChassisNumber, txtMastType, txtMastBuildingHeight,
