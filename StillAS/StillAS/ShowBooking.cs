@@ -112,7 +112,7 @@ namespace StillAS
 
                 configurations = CC.GetConfigurations(machine);
 
-                tbConfigs.Text = configurations;
+                txtConfigs.Text = configurations;
                 //  foreach (string s in configurations)
                 //  {
                 ////      libBookingConfigurations.Items.Add(s);
