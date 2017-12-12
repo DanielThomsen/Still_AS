@@ -18,13 +18,23 @@ namespace StillAS
         {
             InitializeComponent();
 
-            List<string> customers = CC.GetAllCustomers();
-            foreach (string s in customers)
+            try
             {
-                libCustomerName.Items.Add(s);
+                List<string> customers = CC.GetAllCustomers();
+                foreach (string s in customers)
+                {
+                    libCustomerName.Items.Add(s);
+                }
+        }
+            catch (Exception)
+            {
+
+                MessageBox.Show("Connection error");
             }
 
-        }
+
+
+}
 
         private void btnRemove_Click(object sender, EventArgs e)
         {
@@ -71,31 +81,49 @@ namespace StillAS
             //    libBookingConfigurations.Items.Add(s);
             //}
 
-            libCity.Items.Clear();
-
-            List<string> addresses = new List<string>();
-            string customer = libCustomerName.SelectedItem.ToString();
-
-            addresses = CC.GetAdresses(customer);
-            string city = "";
-            foreach (string s in addresses)
+            try
             {
-                if (s == city)
-                {
+                libCity.Items.Clear();
 
-                }
-                else
+                List<string> addresses = new List<string>();
+                string customer = libCustomerName.SelectedItem.ToString();
+
+                addresses = CC.GetAdresses(customer);
+                string city = "";
+                foreach (string s in addresses)
                 {
-                    libCity.Items.Add(s); // adresse, eller by?
-                    city = s;
+                    if (s == city)
+                    {
+
+                    }
+                    else
+                    {
+                        libCity.Items.Add(s); // adresse, eller by?
+                        city = s;
+                    }
                 }
             }
+            catch (Exception)
+            {
+
+                
+            }
+            
         }
 
         private void btnAddBooking_Click(object sender, EventArgs e)
         {
-            Demo_Maskiner DM = new Demo_Maskiner();
-            DM.Show();
+            try
+            {
+                Demo_Maskiner DM = new Demo_Maskiner();
+                DM.Show();
+            }
+            catch (Exception)
+            {
+
+                MessageBox.Show("Connection error");
+            }
+           
         }
 
         private void libCity_Click(object sender, EventArgs e)
@@ -117,7 +145,7 @@ namespace StillAS
             catch (Exception)
             {
 
-                MessageBox.Show("Error: There is no bookings linked to this customer");
+                //MessageBox.Show("Error: There is no bookings linked to this customer");
             }
             
         }
@@ -157,6 +185,25 @@ namespace StillAS
         private void libCustomerName_SelectedIndexChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void btnRefresh_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                List<string> customers = CC.GetAllCustomers();
+                foreach (string s in customers)
+                {
+                    libCustomerName.Items.Add(s);
+                }
+                libCity.Items.Clear();
+                libBookingID.Items.Clear();
+            }
+            catch (Exception)
+            {
+
+                MessageBox.Show("Connection error");
+            }
         }
     }
 }

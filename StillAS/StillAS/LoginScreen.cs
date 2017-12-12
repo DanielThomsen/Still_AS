@@ -20,17 +20,26 @@ namespace StillAS
         }
         private void btnLogin_Click(object sender, EventArgs e)
         {
-            int Check = CC.Validation(tbUsername.Text, tbPassword.Text);
-            if (Check == 0)
+            try
             {
-                this.Visible = false;
-                Frontpage fp = new Frontpage();
-                fp.Show();
-            }   
-            else
-            {
-                MessageBox.Show("Wrong Username or Password. Please try again");
+                int Check = CC.Validation(tbUsername.Text, tbPassword.Text);
+                if (Check == 0)
+                {
+                    this.Visible = false;
+                    Frontpage fp = new Frontpage();
+                    fp.Show();
+                }
+                else
+                {
+                    MessageBox.Show("Wrong Username or Password. Please try again");
+                }
             }
+            catch (Exception)
+            {
+
+                MessageBox.Show("Connection error");
+            }
+            
         }
     }
 }
