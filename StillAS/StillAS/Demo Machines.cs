@@ -27,6 +27,8 @@ namespace StillAS
                 coboDemoMachines.Items.Add(X);
             }
             rbtnNo.Checked = true;
+            coboCountry.Items.Add("Denmark");
+            coboCountry.Items.Add("Sweden");
         }
 
         private void Demo_Maskiner_FormClosing(object sender, EventArgs e)
@@ -46,6 +48,7 @@ namespace StillAS
                 string Name2 = txtName2.Text;
                 string Att = txtATT.Text;
                 string Address = txtAdresss.Text;
+                string Country = coboCountry.Text;
                 int ZIP = Convert.ToInt32(txtZipCode.Text);
                 string City = txtCity.Text;
                 int Phone = Convert.ToInt32(txtPhone.Text);
@@ -101,7 +104,7 @@ namespace StillAS
                 }
                 else
                 {
-                    CTRC.AddCustomer(Name1, Name2, Att, Address, ZIP, City, Phone);
+                    CTRC.AddCustomer(Name1, Name2, Att, Address, ZIP, City, Country, Phone);
                     CTRC.CreateBooking(Date1, Date2, Transporter, Message1, Message2, Selected);
                     CTRC.CreateBookingLine(Konfig);
                     this.Visible = false;

@@ -154,6 +154,8 @@ namespace StillAS
                 btnSaveBooking.Visible = false;
                 btnCancel.Visible = false;
             }
+            coboCountry.Items.Add("Denmark");
+            coboCountry.Items.Add("Sweden");
         }
 
         private void btnBackToBooking_Click(object sender, EventArgs e)

@@ -20,7 +20,7 @@ namespace Database
                     string AggregatNumber, string BatteryType, string BatteryNumber, string ChargerType, string ChargerNumber,
                     string Controller, decimal Weight, decimal Height, decimal Length, decimal Width, List<string> configurationsList);
 
-        void CreateCustomer(string Name1, string Name2, string Att, string Address, int ZIP, string City, int Phone);
+        void CreateCustomer(string Name1, string Name2, string Att, string Address, int ZIP, string City, string Country, int Phone);
 
         void CreateCustomerID();
 
@@ -146,20 +146,21 @@ namespace Database
             //}
 
         }
-        public void CreateCustomer(string Name1, string Name2, string Att, string Address, int ZIP, string City, int Phone)
+        public void CreateCustomer(string Name1, string Name2, string Att, string Address, int ZIP, string City, string Country, int Phone)
         {
             CreateCustomerID();
             var Customer = new Kunde
-                        {
-                            KundeID = CustomerID,
-                            Navn1 = Name1,
-                            Navn2 = Name2,
-                            Att = Att,
-                            Adresse = Address,
-                            Postnummer = ZIP,
-                            By = City,
-                            Telefon = Phone
-                        };
+            {
+                KundeID = CustomerID,
+                Navn1 = Name1,
+                Navn2 = Name2,
+                Att = Att,
+                Adresse = Address,
+                Postnummer = ZIP,
+                By = City,
+                Land = Country,
+                Telefon = Phone
+        };
                         meContext.Kundes.Add(Customer);
                         meContext.SaveChanges();
         }

@@ -50,9 +50,9 @@ namespace Controller
                 MastFreeLift, AggregatType, AggregatNumber, BatteryType, BatteryNumber, ChargerType, ChargerNumber, Controller,
                 Weight, Height, Length, Width, configurationsList);
         }
-        public void AddCustomer(string Name1, string Name2, string Att, string Address, int ZIP, string City, int Phone)
+        public void AddCustomer(string Name1, string Name2, string Att, string Address, int ZIP, string City, string Country, int Phone)
         {
-            DBR.CreateCustomer(Name1, Name2, Att, Address, ZIP, City, Phone);
+            DBR.CreateCustomer(Name1, Name2, Att, Address, ZIP, City, Country, Phone);
         }
         public void CreateBooking(string date1, string date2, string Transportør, string MessageForWorkshop, string DeliverNote,
             int Ramp)
