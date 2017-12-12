@@ -108,6 +108,8 @@ namespace Database
         void RemoveModelName(string modelname);
         DataTable GetAllUsers();
         void AddUser(string name);
+        List<string> GetAllSalesRep(List<string> salesRep);
+        string GetOneSalesRep(int bookingID);
 
     }
     public class DatabaseRepository : IDatabase
@@ -1090,6 +1092,59 @@ namespace Database
 
             }
             conn.Close();
+        }
+        public List<string> GetAllSalesRep(List<string> salesRep)
+        {
+            conn = new SqlConnection(GetConnection());
+            conn.Open();
+            try
+            {
+                string selectUsers = "select * from Sælger"; // Komando alt afhænging af, hvad man vil.
+                SqlCommand com = new SqlCommand(@selectUsers, conn);
+                using (SqlDataReader reader = com.ExecuteReader())
+                {
+                    while (reader.Read())
+                    {
+                        salesRep.Add(reader["Navn"].ToString());
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+
+            }
+            finally
+            {
+                conn.Close();
+            }
+            return salesRep;
+        }
+        public string GetOneSalesRep(int bookingID)
+        {
+            string salesRep = "";
+            conn = new SqlConnection(GetConnection());
+            conn.Open();
+            try
+            {
+                string selectUser = "select Navn from Booking where BookingID = " + bookingID; // Komando alt afhænging af, hvad man vil.
+                SqlCommand com = new SqlCommand(@selectUser, conn);
+                using (SqlDataReader reader = com.ExecuteReader())
+                {
+                    while (reader.Read())
+                    {
+                        salesRep = (reader["Navn"].ToString());
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+
+            }
+            finally
+            {
+                conn.Close();
+            }
+            return salesRep;
         }
     }
 }

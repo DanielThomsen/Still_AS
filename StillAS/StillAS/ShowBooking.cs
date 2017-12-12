@@ -50,8 +50,9 @@ namespace StillAS
 
             //MessageBox.Show("Booking ID " + bookingID + ", kundeoplysninger:" + allCustomerInfoString);
 
-            // Vis alle bookingoplysninger:
+            // Vis alle bookingoplysninger:      
             List<string> booking = CC.GetBooking(bookingID);
+            coboSalesRep.Text = CC.GetOneSalesRep(bookingID);
             List<TextBox> bookingTextboxes = new List<TextBox>() {txtDeliveryDate, txtRetrievalDate, txtCarrier, txtMessageToWorkshop, txtDeliveryNote};
             //string allBookingInfoString = "";
 
@@ -279,6 +280,12 @@ namespace StillAS
             btnSaveBooking.Visible = true;
             btnEditBooking.Visible = false;
             btnCancel.Visible = true;
+            List<string> SalesRep = new List<string>();
+            CC.GetAllSalesRep(SalesRep);
+            foreach (string s in SalesRep)
+            {
+                coboSalesRep.Items.Add(s);
+            }
             List<TextBox> textBoxList = new List<TextBox>
             {
                 txtName1, txtName2, txtATT, txtAdresss, txtZipCode, txtCity, txtPhone,

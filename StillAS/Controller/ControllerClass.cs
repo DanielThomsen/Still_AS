@@ -302,5 +302,13 @@ namespace Controller
         {
             DBR.AddUser(name);
         }
+        public List<string> GetAllSalesRep(List<string> salesRep)
+        {
+            return DBR.GetAllSalesRep(salesRep);
+        }
+        public string GetOneSalesRep(int bookingID)
+        {
+            return DBR.GetOneSalesRep(bookingID);
+        }
     }
 }
