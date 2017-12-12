@@ -17,8 +17,8 @@ namespace StillAS
         public AddMachine()
         {
             InitializeComponent();
-            cbConfigurations.Visible = true;
-            libConfigurations.Visible = false;
+            //cbConfigurations.Visible = true;
+            //libConfigurations.Visible = false;
             //List<string> configurationsList = CC.GetAllConfigurations();
 
             //foreach (string s in configurationsList)
@@ -87,42 +87,41 @@ namespace StillAS
                 decimal Length = Convert.ToDecimal(txtLength.Text.Replace('.', ','));
                 decimal Width = Convert.ToDecimal(txtWidth.Text.Replace('.', ','));
 
-                List<string> configurationsList = new List<string>();
-                foreach (object itemChecked in cbConfigurations.CheckedItems)
-                {
-                    configurationsList.Add(itemChecked + "");
-                }
-                List<TextBox> textBoxList = new List<TextBox>
+            List<string> configurationsList = new List<string>();
+            //foreach (object itemChecked in cbConfigurations.CheckedItems)
+            //{
+            //    configurationsList.Add(itemChecked + "");
+            //}
+            List<TextBox> textBoxList = new List<TextBox>
             { txtDemoMachine, txtModelNumber,
                 txtBrand, txtChassisNumber, txtMastType, txtMastBuildingHeight,
                 txtMastLiftingHeight, txtMastFreeLift, txtAggregateType,
                 txtAggregateNumber, txtBatteryType, txtBatteryNumber, txtChargerType,
                 txtChargerNumber, txtController, txtWeight, txtHeight, txtLength,
                 txtWidth };
-                foreach (TextBox t in textBoxList)
-                {
-                    if (String.IsNullOrEmpty(t.Text))
-                    {
-                        MessageBox.Show("Please fill out all empty boxes");
-                        return;
-                    }
-                }
-                if (String.IsNullOrEmpty(ModelName))
-                {
-                    MessageBox.Show("Please fill out all empty boxes");
-                    return;
-                }
-                else
-                {
-                    CC.CreateMachine(DemoNumber, ModelName, ModelNumber, Brand, CNumber, MastType, MastBuildingHeight, MastLiftHeight,
-                                                 MastFreeLift, AggregatType, AggregatNumber, BatteryType, BatteryNumber, ChargerType, ChargerNumber,
-                                                 Controller, Weight, Height, Length, Width, configurationsList);
-                }
-            }
-            catch
+            foreach (TextBox t in textBoxList)
             {
-                MessageBox.Show("Please fill out all empty boxes");
-            }           
+                if (String.IsNullOrEmpty(t.Text))
+                {                    
+                    MessageBox.Show("Please fill all empty boxes");
+                }               
+            }
+            if (String.IsNullOrEmpty(ModelName))
+            {
+                MessageBox.Show("Please fill all empty boxes");
+            }
+
+            try
+            {
+                CC.CreateMachine(DemoNumber, ModelName, ModelNumber, Brand, CNumber, MastType, MastBuildingHeight, MastLiftHeight,
+                             MastFreeLift, AggregatType, AggregatNumber, BatteryType, BatteryNumber, ChargerType, ChargerNumber,
+                             Controller, Weight, Height, Length, Width, configurationsList);
+            }
+            catch (Exception)
+            {
+
+                MessageBox.Show("Connection error");
+            }
                        
         }
         // Lea arbejder herfra ---- >
@@ -190,26 +189,34 @@ namespace StillAS
                 MessageBox.Show("Please fill all empty boxes");
                 return;
             }
-            else
+
+            try
             {
+                CC.CheckConnection();
                 CC.UpdateInformation(DemoNumber, ModelName, ModelNumber, Brand, CNumber, MastType, MastBuildingHeight, MastLiftHeight,
-                                            MastFreeLift, AggregatType, AggregatNumber, BatteryType, BatteryNumber, ChargerType, ChargerNumber,
-                                            Controller, Weight, Height, Length, Width, oldDemoNumber);
-            }         
-            List<TextBox> textBoxList = new List<TextBox>
+                             MastFreeLift, AggregatType, AggregatNumber, BatteryType, BatteryNumber, ChargerType, ChargerNumber,
+                             Controller, Weight, Height, Length, Width, oldDemoNumber);
+                List<TextBox> textBoxList = new List<TextBox>
             { txtDemoMachine, txtModelNumber,
                 txtBrand, txtChassisNumber, txtMastType, txtMastBuildingHeight,
                 txtMastLiftingHeight, txtMastFreeLift, txtAggregateType,
                 txtAggregateNumber, txtBatteryType, txtBatteryNumber, txtChargerType,
                 txtChargerNumber, txtController, txtWeight, txtHeight, txtLength,
                 txtWidth };
-            foreach (TextBox tb in textBoxList)
-            {
-                tb.ReadOnly = true;
+                foreach (TextBox tb in textBoxList)
+                {
+                    tb.ReadOnly = true;
+                }
+                cbModelName.Enabled = false;
+                btnSaveMachine.Visible = false;
+                btnEditMachine.Visible = true;
             }
-            cbModelName.Enabled = false;
-            btnSaveMachine.Visible = false;
-            btnEditMachine.Visible = true;
+            catch (Exception)
+            {
+
+                MessageBox.Show("Connection error");
+            }
+            
         
         }
         private void AddMachine_Load(object sender, EventArgs e)

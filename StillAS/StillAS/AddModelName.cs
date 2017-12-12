@@ -23,8 +23,18 @@ namespace StillAS
         {
             if (txtModelname.Text != "")
             {
-                CC.AddModelName(txtModelname.Text);
-                this.Close();
+                try
+                {
+                    CC.CheckConnection();
+                    CC.AddModelName(txtModelname.Text);
+                    this.Close();
+                }
+                catch (Exception)
+                {
+
+                    MessageBox.Show("Connection error");
+                }
+                
             }
 
             else
