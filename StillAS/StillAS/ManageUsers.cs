@@ -19,5 +19,22 @@ namespace StillAS
             InitializeComponent();
             dataUsers.DataSource = CC.GetAllUsers();
         }
+
+        private void dataUsers_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex >= 0)
+            {
+                // En collection af rows, hvor Cell Click er RowIndex
+                DataGridViewRow row = this.dataUsers.Rows[e.RowIndex];
+                //populate the textbox from specific value of the coordinates of column and row.
+                txtName.Text = row.Cells[0].Value.ToString();
+            }
+        }
+
+        private void btnAdd_Click(object sender, EventArgs e)
+        {
+            string name = txtName.Text;
+            CC.AddUser(name);
+        }
     }
 }

@@ -291,5 +291,9 @@ namespace Controller
         {
             return DBR.GetAllUsers();         
         }
+        public void AddUser(string name)
+        {
+            DBR.AddUser(name);
+        }
     }
 }

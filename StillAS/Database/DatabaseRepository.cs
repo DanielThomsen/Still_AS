@@ -107,6 +107,7 @@ namespace Database
 
         void RemoveModelName(string modelname);
         DataTable GetAllUsers();
+        void AddUser(string name);
 
     }
     public class DatabaseRepository : IDatabase
@@ -1051,6 +1052,22 @@ namespace Database
             }
             return dat;
         }
+        public void AddUser(string name)
+        {
+            conn = new SqlConnection(GetConnection());
+            conn.Open();
+            try
+            {
+                SqlCommand insertUser = new SqlCommand("insert into Sælger (Navn) " +
+                    "values ('" + name + "')");
+                insertUser.Connection = conn;
+                insertUser.ExecuteNonQuery();
+            }
+            catch
+            {
 
+            }
+            conn.Close();
+        }
     }
 }
