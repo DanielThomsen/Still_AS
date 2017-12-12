@@ -7,11 +7,13 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Controller;
 
 namespace StillAS
 {
     public partial class ManageUsers : Form
     {
+        ControllerClass CC = new ControllerClass();
         public ManageUsers()
         {
             InitializeComponent();
