@@ -35,39 +35,82 @@ namespace StillAS
 
         private void btnNext_Click(object sender, EventArgs e)
         {
-            foreach (string X in lbAddedToBooking.Items)
+            try
             {
-                ControllerClass.DemoMachines.Add(X);
-            }
-            string Name1 = txtName1.Text;
-            string Name2 = txtName2.Text;
-            string Att = txtATT.Text;
-            string Address = txtAdresss.Text;
-            int ZIP = Convert.ToInt32(txtZipCode.Text);
-            string City = txtCity.Text;
-            int Phone = Convert.ToInt32(txtPhone.Text);
-            int Selected;
+                foreach (string X in lbAddedToBooking.Items)
+                {
+                    ControllerClass.DemoMachines.Add(X);
+                }
+                string Name1 = txtName1.Text;
+                string Name2 = txtName2.Text;
+                string Att = txtATT.Text;
+                string Address = txtAdresss.Text;
+                int ZIP = Convert.ToInt32(txtZipCode.Text);
+                string City = txtCity.Text;
+                int Phone = Convert.ToInt32(txtPhone.Text);
+                int Selected;
 
-            if (rbtnYes.Checked == true)
+                if (rbtnYes.Checked == true)
+                {
+                    Selected = 0;
+                }
+
+                else
+                {
+                    Selected = 1;
+                }
+
+                string Date1 = dtpDeliveryDate.Value.ToShortDateString();
+                string Date2 = dtpRetrievalDate.Value.ToShortDateString();
+                string Transporter = txtCarrier.Text;
+                string Message1 = txtMessageToWorkshop.Text;
+                string Message2 = txtDeliveryNote.Text;
+                string Konfig = txtKonfig.Text;
+                List<TextBox> textBoxList = new List<TextBox>
+            { txtName1, txtName2, txtATT, txtAdresss, txtZipCode, txtCity,
+                txtPhone, txtSalesRep, txtCarrier, txtMessageToWorkshop, txtDeliveryNote };
+
+                foreach (TextBox t in textBoxList)
+                {
+                    if (String.IsNullOrEmpty(t.Text))
+                    {
+                        MessageBox.Show("Please fill out empty boxes");
+                        return;
+                    }
+                }
+                if (String.IsNullOrEmpty(Date1))
+                {
+                    MessageBox.Show("Please fill out empty boxes");
+                    return;
+                }
+                else if (String.IsNullOrEmpty(Date2))
+                {
+                    MessageBox.Show("Please fill out empty boxes");
+                    return;
+                }
+                else if (lbAddedToBooking.Items.Count <= 0)
+                {
+                    MessageBox.Show("Please fill out empty boxes");
+                    return;
+                }
+                else if (String.IsNullOrEmpty(coboCountry.Text))
+                {
+                    MessageBox.Show("Please fill out empty boxes");
+                    return;
+                }
+                else
+                {
+                    CTRC.AddCustomer(Name1, Name2, Att, Address, ZIP, City, Phone);
+                    CTRC.CreateBooking(Date1, Date2, Transporter, Message1, Message2, Selected);
+                    CTRC.CreateBookingLine(Konfig);
+                    this.Visible = false;
+                }
+            }
+            catch
             {
-                Selected = 0;
-            }
 
-            else
-            {
-                Selected = 1;
             }
-
-            string Date1 = dtpDeliveryDate.Value.ToShortDateString();
-            string Date2 = dtpRetrievalDate.Value.ToShortDateString();
-            string Transporter = txtCarrier.Text;
-            string Message1 = txtMessageToWorkshop.Text;
-            string Message2 = txtDeliveryNote.Text;
-            string Konfig = txtKonfig.Text;
-            CTRC.AddCustomer(Name1, Name2, Att, Address, ZIP, City, Phone);
-            CTRC.CreateBooking(Date1, Date2, Transporter, Message1, Message2, Selected);
-            CTRC.CreateBookingLine(Konfig);
-            this.Visible = false;
+            
         }
 
         private void btnAdd_Click(object sender, EventArgs e)
@@ -104,5 +147,19 @@ namespace StillAS
             }
         }
 
+        private void txtZipCode_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
+            {
+                e.Handled = true;
+            }
+        }
+        private void txtPhone_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
+            {
+                e.Handled = true;
+            }
+        }
     }
 }

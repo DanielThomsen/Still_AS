@@ -920,14 +920,31 @@ namespace Database
         // Edit Bookings
         public void BeginTransaction()
         {
+            try
+            {
             conn = new SqlConnection(GetConnection());
             conn.Open();
             transaction = conn.BeginTransaction(IsolationLevel.RepeatableRead);
+            }
+            catch
+            {
+
+            }
         }
         public void RollBackTransaction()
         {
-            transaction.Rollback();
+            try
+            {
+             transaction.Rollback();
+            }
+            catch
+            {
+
+            }
+            finally
+            {
             conn.Close();
+            }
         }
         public void UpdateBooking(string name1, string name2, string att, string address, string zipCode,
             string city, string phone, string salesRep, string deliveryDate, string retrievalDate, string carrier,
