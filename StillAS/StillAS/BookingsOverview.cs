@@ -71,7 +71,15 @@ namespace StillAS
         private void btnShowBookingsByDate_Click(object sender, EventArgs e)
         {
             //MessageBox.Show(dtpDate.Value.Date.ToString("yyyy-MM-dd h:mm tt"));
-            gvBookings.DataSource = CC.GetBookingsByDate(dtpDate.Value.Date);
+            try
+            {
+                gvBookings.DataSource = CC.GetBookingsByDate(dtpDate.Value.Date);
+
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Connection error");
+            }
         }
 
         private void gvBookings_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -88,7 +96,7 @@ namespace StillAS
 
         private void btnShowAllMachines_Click(object sender, EventArgs e)
         {
-            List<string> demonumbers;
+            List<string> demonumbers = new List<string>();
 
             try
             {
@@ -120,81 +128,116 @@ namespace StillAS
             }
             catch (Exception)
             {
-                demonumbers = CC.GetAllDemoNumbers();
-            }
-          
-            DateTime startdate = dtpStart.Value;
-            DateTime enddate = dtpEnd.Value;
-
-            DataTable dt = new DataTable();
-            dt.Columns.Add("Machine", typeof(string));
-
-            double days = (enddate - startdate).TotalDays;
-
-            int i = 0;
-            while (i < days)
-            {
-                dt.Columns.Add(startdate.AddDays(i).ToString().Substring(0, 10), typeof(string));
-                i++;
-            }
-
-            gvBookings.DataSource = dt;
-
-            int columnsInt = dt.Columns.Count;
-
-
-            
-
-
-            i = 0;
-            foreach (string s in demonumbers) // For hver maskine (linje)
-            {
-                dt.Rows.Add(s);
-                //for (int j = 0; j < columnsInt; j++)
-                //{
-                //    if (true)
-                //    {
-
-                //    }
-                //}
-
-                List<string> bookedDates = CC.GetBookedDates(s);
-
-                foreach (string st in bookedDates) // For hver dato på én maskine
+                try
                 {
-                    for (int k = 1; k < columnsInt; k++) // For hver column-navn
-                    {
-                        if (st == dt.Columns[k].ToString()) // Hvis dato == column-navn
-                        {
-                            //MessageBox.Show("Booked date: " + st + "in column: " + k);
+                    demonumbers = CC.GetAllDemoNumbers();
+                }
+                catch (Exception)
+                {
+                    
+                    MessageBox.Show("Connection error");
+                }
+            }
 
-                            dt.Rows[i].SetColumnError(k, "Booked");
-                        }
-                    }
 
+            try
+            {
+                DateTime startdate = dtpStart.Value;
+                DateTime enddate = dtpEnd.Value;
 
+                DataTable dt = new DataTable();
+                dt.Columns.Add("Machine", typeof(string));
+
+                double days = (enddate - startdate).TotalDays;
+
+                int i = 0;
+                while (i < days)
+                {
+                    dt.Columns.Add(startdate.AddDays(i).ToString().Substring(0, 10), typeof(string));
+                    i++;
                 }
 
-                i++;
-                //MessageBox.Show(dt.Columns[1].ToString());
+                gvBookings.DataSource = dt;
+
+                int columnsInt = dt.Columns.Count;
+
+                i = 0;
+                foreach (string s in demonumbers) // For hver maskine (linje)
+                {
+                    dt.Rows.Add(s);
+                    //for (int j = 0; j < columnsInt; j++)
+                    //{
+                    //    if (true)
+                    //    {
+
+                    //    }
+                    //}
+
+                    List<string> bookedDates = CC.GetBookedDates(s);
+
+                    foreach (string st in bookedDates) // For hver dato på én maskine
+                    {
+                        for (int k = 1; k < columnsInt; k++) // For hver column-navn
+                        {
+                            if (st == dt.Columns[k].ToString()) // Hvis dato == column-navn
+                            {
+                                //MessageBox.Show("Booked date: " + st + "in column: " + k);
+
+                                dt.Rows[i].SetColumnError(k, "Booked");
+                            }
+                        }
+
+
+                    }
+
+                    i++;
+                    //MessageBox.Show(dt.Columns[1].ToString());
+                }
+
+                for (int l = 0; l < columnsInt; l++)
+                {
+                    gvBookings.Columns[l].Width = 70;
+                }
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Connection error");
+                
             }
 
-            for (int l = 0; l < columnsInt; l++)
-            {
-                gvBookings.Columns[l].Width = 70;
-            }
+            
         }
 
         private void cbModel_SelectedIndexChanged(object sender, EventArgs e)
         {
-            cbType.Items.Clear();
-            List<string> modelNumbers = CC.GetModelNumbers(cbModel.SelectedItem.ToString());
-            cbType.Items.Add("");
-
-            foreach (string s in modelNumbers)
+            cbType.Text = "";
+            try
             {
-                cbType.Items.Add(s);
+                cbType.Items.Clear();
+
+                if (cbModel.SelectedIndex.ToString() != "")
+                {
+                    List<string> modelNumbers = CC.GetModelNumbers(cbModel.SelectedItem.ToString());
+                    cbType.Items.Add("");
+
+                    foreach (string s in modelNumbers)
+                    {
+                        cbType.Items.Add(s);
+                    }
+                }
+                
             }
+            catch (Exception)
+            {
+
+                MessageBox.Show("Connection error");
+            }
+            
+        }
+
+        private void btnShowBookingsByModel_Click(object sender, EventArgs e)
+        {
+
         }
 
         //private void button1_Click(object sender, EventArgs e)
