@@ -47,7 +47,7 @@
             this.txtDeliveryDate = new System.Windows.Forms.TextBox();
             this.txtSalesRep = new System.Windows.Forms.TextBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.tbConfigs = new System.Windows.Forms.TextBox();
+            this.txtConfigs = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.lblMachines = new System.Windows.Forms.Label();
             this.libBookingMachines = new System.Windows.Forms.ListBox();
@@ -269,7 +269,7 @@
             // 
             // groupBox2
             // 
-            this.groupBox2.Controls.Add(this.tbConfigs);
+            this.groupBox2.Controls.Add(this.txtConfigs);
             this.groupBox2.Controls.Add(this.label1);
             this.groupBox2.Controls.Add(this.lblMachines);
             this.groupBox2.Controls.Add(this.libBookingMachines);
@@ -282,13 +282,13 @@
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Machines On Booking";
             // 
-            // tbConfigs
+            // txtConfigs
             // 
-            this.tbConfigs.Location = new System.Drawing.Point(244, 54);
-            this.tbConfigs.Multiline = true;
-            this.tbConfigs.Name = "tbConfigs";
-            this.tbConfigs.Size = new System.Drawing.Size(181, 308);
-            this.tbConfigs.TabIndex = 4;
+            this.txtConfigs.Location = new System.Drawing.Point(244, 54);
+            this.txtConfigs.Multiline = true;
+            this.txtConfigs.Name = "txtConfigs";
+            this.txtConfigs.Size = new System.Drawing.Size(181, 308);
+            this.txtConfigs.TabIndex = 4;
             // 
             // label1
             // 
@@ -598,7 +598,7 @@
         private System.Windows.Forms.Label lblName1;
         private System.Windows.Forms.Button btnSaveBooking;
         private System.Windows.Forms.Button btnCancel;
-        private System.Windows.Forms.TextBox tbConfigs;
+        private System.Windows.Forms.TextBox txtConfigs;
         private System.Windows.Forms.Button btnApprove;
         private System.Windows.Forms.Button btnDont;
     }

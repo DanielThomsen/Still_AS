@@ -26,13 +26,15 @@ namespace StillAS
             {
                 txtName1, txtName2, txtATT, txtAdresss, txtZipCode, txtCity, txtPhone,
                 txtSalesRep, txtDeliveryDate, txtRetrievalDate, txtCarrier, txtMessageToWorkshop,
-                txtDeliveryNote
+                txtDeliveryNote, txtConfigs
 
             };
             foreach (TextBox t in textBoxList)
             {
                 t.ReadOnly = true;
             }
+            rbtnNo.Enabled = false;
+            rbtnYes.Enabled = false;
             // Vis alle kundeoplysninger:
             List<string> customers = CC.GetCustomer(bookingID);
             List<TextBox> customerTextboxes = new List<TextBox>() { txtName1, txtName2, txtATT, txtAdresss, txtZipCode, txtCity, txtPhone};
@@ -101,14 +103,18 @@ namespace StillAS
 
         private void libBookingMachines_Click(object sender, EventArgs e)
         {
-          //  libBookingConfigurations.Items.Clear();
+            //  libBookingConfigurations.Items.Clear();
+            try
+            {
+                string configurations = "";
+                string machine = libBookingMachines.SelectedItem.ToString();
 
-            string configurations = "";
-            string machine = libBookingMachines.SelectedItem.ToString();
+                configurations = CC.GetConfigurations(machine);
 
-            configurations = CC.GetConfigurations(machine);
-
-            tbConfigs.Text = configurations;
+                txtConfigs.Text = configurations;
+            }
+            catch
+            { }
           //  foreach (string s in configurations)
           //  {
           ////      libBookingConfigurations.Items.Add(s);
@@ -156,13 +162,19 @@ namespace StillAS
             {
                 txtName1, txtName2, txtATT, txtAdresss, txtZipCode, txtCity, txtPhone,
                 txtSalesRep, txtDeliveryDate, txtRetrievalDate, txtCarrier, txtMessageToWorkshop,
-                txtDeliveryNote
+                txtDeliveryNote, txtConfigs
 
             };
             foreach (TextBox t in textBoxList)
             {
                 t.ReadOnly = true;
             }
+            rbtnNo.Enabled = false;
+            rbtnYes.Enabled = false;
+            btnCancel.Visible = false;
+            btnSaveBooking.Visible = false;
+            btnEditBooking.Visible = true;
+            btnBackToBooking.Visible = true;
         }      
 
         private void btnSaveBooking_Click(object sender, EventArgs e)
@@ -218,13 +230,15 @@ namespace StillAS
             {
                 txtName1, txtName2, txtATT, txtAdresss, txtZipCode, txtCity, txtPhone,
                 txtSalesRep, txtDeliveryDate, txtRetrievalDate, txtCarrier, txtMessageToWorkshop,
-                txtDeliveryNote
+                txtDeliveryNote, txtConfigs
 
             };
             foreach (TextBox t in textBoxList)
             {
                 t.ReadOnly = false;
             }
+            rbtnYes.Enabled = true;
+            rbtnNo.Enabled = true;
         }
 
         private void btnApprove_Click(object sender, EventArgs e)

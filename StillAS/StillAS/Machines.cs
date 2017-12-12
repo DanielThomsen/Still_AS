@@ -36,6 +36,7 @@ namespace StillAS
         {
             modelnumber.Clear();
             libModelNumber.Items.Clear();
+            libDemoNumber.Items.Clear();
             string modelname = libModelName.SelectedItem.ToString();
             if (libModelName.SelectedIndex != -1)
             {
@@ -119,6 +120,11 @@ namespace StillAS
             {
                 libModelName.Items.Add(modelname[i].ToString()); // INDSÆTTER I LISTBOXEN
             }
+        }
+
+        private void libModelNumber_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

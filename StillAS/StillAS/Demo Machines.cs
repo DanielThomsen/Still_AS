@@ -26,6 +26,7 @@ namespace StillAS
             {
                 coboDemoMachines.Items.Add(X);
             }
+            rbtnNo.Checked = true;
         }
 
         private void Demo_Maskiner_FormClosing(object sender, EventArgs e)

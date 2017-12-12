@@ -31,7 +31,6 @@
             this.lblBookings = new System.Windows.Forms.Label();
             this.btnShow = new System.Windows.Forms.Button();
             this.btnRemove = new System.Windows.Forms.Button();
-            this.btnEdit = new System.Windows.Forms.Button();
             this.btnAddBooking = new System.Windows.Forms.Button();
             this.libBookingID = new System.Windows.Forms.ListBox();
             this.libCity = new System.Windows.Forms.ListBox();
@@ -54,7 +53,7 @@
             // 
             // btnShow
             // 
-            this.btnShow.Location = new System.Drawing.Point(620, 161);
+            this.btnShow.Location = new System.Drawing.Point(620, 174);
             this.btnShow.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnShow.Name = "btnShow";
             this.btnShow.Size = new System.Drawing.Size(75, 42);
@@ -65,7 +64,7 @@
             // 
             // btnRemove
             // 
-            this.btnRemove.Location = new System.Drawing.Point(620, 295);
+            this.btnRemove.Location = new System.Drawing.Point(620, 250);
             this.btnRemove.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnRemove.Name = "btnRemove";
             this.btnRemove.Size = new System.Drawing.Size(75, 42);
@@ -73,17 +72,6 @@
             this.btnRemove.Text = "Remove";
             this.btnRemove.UseVisualStyleBackColor = true;
             this.btnRemove.Click += new System.EventHandler(this.btnRemove_Click);
-            // 
-            // btnEdit
-            // 
-            this.btnEdit.Location = new System.Drawing.Point(620, 228);
-            this.btnEdit.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.btnEdit.Name = "btnEdit";
-            this.btnEdit.Size = new System.Drawing.Size(75, 42);
-            this.btnEdit.TabIndex = 12;
-            this.btnEdit.Text = "Edit";
-            this.btnEdit.UseVisualStyleBackColor = true;
-            this.btnEdit.Click += new System.EventHandler(this.btnEdit_Click);
             // 
             // btnAddBooking
             // 
@@ -131,10 +119,10 @@
             // 
             // btnShowBookingsOverview
             // 
-            this.btnShowBookingsOverview.Location = new System.Drawing.Point(620, 394);
+            this.btnShowBookingsOverview.Location = new System.Drawing.Point(583, 407);
             this.btnShowBookingsOverview.Margin = new System.Windows.Forms.Padding(2);
             this.btnShowBookingsOverview.Name = "btnShowBookingsOverview";
-            this.btnShowBookingsOverview.Size = new System.Drawing.Size(75, 56);
+            this.btnShowBookingsOverview.Size = new System.Drawing.Size(112, 45);
             this.btnShowBookingsOverview.TabIndex = 16;
             this.btnShowBookingsOverview.Text = "Show Bookings Overview";
             this.btnShowBookingsOverview.UseVisualStyleBackColor = true;
@@ -171,7 +159,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(743, 476);
+            this.ClientSize = new System.Drawing.Size(736, 476);
             this.Controls.Add(this.lblBookingID);
             this.Controls.Add(this.lblCity);
             this.Controls.Add(this.lblCustomerName);
@@ -179,7 +167,6 @@
             this.Controls.Add(this.lblBookings);
             this.Controls.Add(this.btnShow);
             this.Controls.Add(this.btnRemove);
-            this.Controls.Add(this.btnEdit);
             this.Controls.Add(this.btnAddBooking);
             this.Controls.Add(this.libBookingID);
             this.Controls.Add(this.libCity);
@@ -198,7 +185,6 @@
         private System.Windows.Forms.Label lblBookings;
         private System.Windows.Forms.Button btnShow;
         private System.Windows.Forms.Button btnRemove;
-        private System.Windows.Forms.Button btnEdit;
         private System.Windows.Forms.Button btnAddBooking;
         private System.Windows.Forms.ListBox libBookingID;
         private System.Windows.Forms.ListBox libCity;
