@@ -53,8 +53,9 @@
             this.txtDeliveryNote = new System.Windows.Forms.TextBox();
             this.txtMessageToWorkshop = new System.Windows.Forms.TextBox();
             this.txtCarrier = new System.Windows.Forms.TextBox();
-            this.txtSalesRep = new System.Windows.Forms.TextBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.lblCountry = new System.Windows.Forms.Label();
+            this.coboCountry = new System.Windows.Forms.ComboBox();
             this.lblPhone = new System.Windows.Forms.Label();
             this.lblCity = new System.Windows.Forms.Label();
             this.lblZIPCode = new System.Windows.Forms.Label();
@@ -69,8 +70,7 @@
             this.txtName2 = new System.Windows.Forms.TextBox();
             this.txtName1 = new System.Windows.Forms.TextBox();
             this.lblName1 = new System.Windows.Forms.Label();
-            this.lblCountry = new System.Windows.Forms.Label();
-            this.coboCountry = new System.Windows.Forms.ComboBox();
+            this.coboSalesRep = new System.Windows.Forms.ComboBox();
             this.gbMachines.SuspendLayout();
             this.gbConfigurations.SuspendLayout();
             this.groupBox1.SuspendLayout();
@@ -191,6 +191,7 @@
             // 
             // groupBox3
             // 
+            this.groupBox3.Controls.Add(this.coboSalesRep);
             this.groupBox3.Controls.Add(this.dtpRetrievalDate);
             this.groupBox3.Controls.Add(this.dtpDeliveryDate);
             this.groupBox3.Controls.Add(this.rbtnNo);
@@ -205,7 +206,6 @@
             this.groupBox3.Controls.Add(this.txtDeliveryNote);
             this.groupBox3.Controls.Add(this.txtMessageToWorkshop);
             this.groupBox3.Controls.Add(this.txtCarrier);
-            this.groupBox3.Controls.Add(this.txtSalesRep);
             this.groupBox3.Location = new System.Drawing.Point(14, 251);
             this.groupBox3.Name = "groupBox3";
             this.groupBox3.Size = new System.Drawing.Size(352, 268);
@@ -281,7 +281,7 @@
             // lblCarrier
             // 
             this.lblCarrier.AutoSize = true;
-            this.lblCarrier.Location = new System.Drawing.Point(182, 15);
+            this.lblCarrier.Location = new System.Drawing.Point(181, 20);
             this.lblCarrier.Name = "lblCarrier";
             this.lblCarrier.Size = new System.Drawing.Size(40, 13);
             this.lblCarrier.TabIndex = 9;
@@ -325,7 +325,7 @@
             // 
             // txtMessageToWorkshop
             // 
-            this.txtMessageToWorkshop.Location = new System.Drawing.Point(10, 134);
+            this.txtMessageToWorkshop.Location = new System.Drawing.Point(6, 134);
             this.txtMessageToWorkshop.Multiline = true;
             this.txtMessageToWorkshop.Name = "txtMessageToWorkshop";
             this.txtMessageToWorkshop.Size = new System.Drawing.Size(153, 87);
@@ -337,13 +337,6 @@
             this.txtCarrier.Name = "txtCarrier";
             this.txtCarrier.Size = new System.Drawing.Size(153, 20);
             this.txtCarrier.TabIndex = 3;
-            // 
-            // txtSalesRep
-            // 
-            this.txtSalesRep.Location = new System.Drawing.Point(9, 36);
-            this.txtSalesRep.Name = "txtSalesRep";
-            this.txtSalesRep.Size = new System.Drawing.Size(150, 20);
-            this.txtSalesRep.TabIndex = 0;
             // 
             // groupBox2
             // 
@@ -369,6 +362,23 @@
             this.groupBox2.TabIndex = 22;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Customer Information";
+            // 
+            // lblCountry
+            // 
+            this.lblCountry.AutoSize = true;
+            this.lblCountry.Location = new System.Drawing.Point(7, 139);
+            this.lblCountry.Name = "lblCountry";
+            this.lblCountry.Size = new System.Drawing.Size(43, 13);
+            this.lblCountry.TabIndex = 17;
+            this.lblCountry.Text = "Country";
+            // 
+            // coboCountry
+            // 
+            this.coboCountry.FormattingEnabled = true;
+            this.coboCountry.Location = new System.Drawing.Point(7, 155);
+            this.coboCountry.Name = "coboCountry";
+            this.coboCountry.Size = new System.Drawing.Size(153, 21);
+            this.coboCountry.TabIndex = 16;
             // 
             // lblPhone
             // 
@@ -484,22 +494,13 @@
             this.lblName1.TabIndex = 0;
             this.lblName1.Text = "Name:";
             // 
-            // lblCountry
+            // coboSalesRep
             // 
-            this.lblCountry.AutoSize = true;
-            this.lblCountry.Location = new System.Drawing.Point(7, 139);
-            this.lblCountry.Name = "lblCountry";
-            this.lblCountry.Size = new System.Drawing.Size(43, 13);
-            this.lblCountry.TabIndex = 17;
-            this.lblCountry.Text = "Country";
-            // 
-            // coboCountry
-            // 
-            this.coboCountry.FormattingEnabled = true;
-            this.coboCountry.Location = new System.Drawing.Point(7, 155);
-            this.coboCountry.Name = "coboCountry";
-            this.coboCountry.Size = new System.Drawing.Size(153, 21);
-            this.coboCountry.TabIndex = 16;
+            this.coboSalesRep.FormattingEnabled = true;
+            this.coboSalesRep.Location = new System.Drawing.Point(9, 36);
+            this.coboSalesRep.Name = "coboSalesRep";
+            this.coboSalesRep.Size = new System.Drawing.Size(150, 21);
+            this.coboSalesRep.TabIndex = 17;
             // 
             // Demo_Maskiner
             // 
@@ -552,7 +553,6 @@
         private System.Windows.Forms.TextBox txtDeliveryNote;
         private System.Windows.Forms.TextBox txtMessageToWorkshop;
         private System.Windows.Forms.TextBox txtCarrier;
-        private System.Windows.Forms.TextBox txtSalesRep;
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.Label lblPhone;
         private System.Windows.Forms.Label lblCity;
@@ -573,5 +573,6 @@
         private System.Windows.Forms.TextBox txtKonfig;
         private System.Windows.Forms.Label lblCountry;
         private System.Windows.Forms.ComboBox coboCountry;
+        private System.Windows.Forms.ComboBox coboSalesRep;
     }
 }

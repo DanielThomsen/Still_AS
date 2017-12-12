@@ -45,7 +45,6 @@
             this.txtCarrier = new System.Windows.Forms.TextBox();
             this.txtRetrievalDate = new System.Windows.Forms.TextBox();
             this.txtDeliveryDate = new System.Windows.Forms.TextBox();
-            this.txtSalesRep = new System.Windows.Forms.TextBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.txtConfigs = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
@@ -73,6 +72,7 @@
             this.btnCancel = new System.Windows.Forms.Button();
             this.btnApprove = new System.Windows.Forms.Button();
             this.btnDont = new System.Windows.Forms.Button();
+            this.coboSalesRep = new System.Windows.Forms.ComboBox();
             this.groupBox3.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox1.SuspendLayout();
@@ -102,6 +102,7 @@
             // 
             // groupBox3
             // 
+            this.groupBox3.Controls.Add(this.coboSalesRep);
             this.groupBox3.Controls.Add(this.rbtnNo);
             this.groupBox3.Controls.Add(this.rbtnYes);
             this.groupBox3.Controls.Add(this.lblLoadingPlatform);
@@ -116,9 +117,7 @@
             this.groupBox3.Controls.Add(this.txtCarrier);
             this.groupBox3.Controls.Add(this.txtRetrievalDate);
             this.groupBox3.Controls.Add(this.txtDeliveryDate);
-            this.groupBox3.Controls.Add(this.txtSalesRep);
-            this.groupBox3.Location = new System.Drawing.Point(16, 297);
-            this.groupBox3.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBox3.Location = new System.Drawing.Point(12, 241);
             this.groupBox3.Name = "groupBox3";
             this.groupBox3.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.groupBox3.Size = new System.Drawing.Size(469, 330);
@@ -260,14 +259,6 @@
             this.txtDeliveryDate.Name = "txtDeliveryDate";
             this.txtDeliveryDate.Size = new System.Drawing.Size(197, 22);
             this.txtDeliveryDate.TabIndex = 1;
-            // 
-            // txtSalesRep
-            // 
-            this.txtSalesRep.Location = new System.Drawing.Point(12, 44);
-            this.txtSalesRep.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.txtSalesRep.Name = "txtSalesRep";
-            this.txtSalesRep.Size = new System.Drawing.Size(199, 22);
-            this.txtSalesRep.TabIndex = 0;
             // 
             // groupBox2
             // 
@@ -553,6 +544,14 @@
             this.btnDont.UseVisualStyleBackColor = true;
             this.btnDont.Click += new System.EventHandler(this.btnDont_Click);
             // 
+            // coboSalesRep
+            // 
+            this.coboSalesRep.FormattingEnabled = true;
+            this.coboSalesRep.Location = new System.Drawing.Point(12, 36);
+            this.coboSalesRep.Name = "coboSalesRep";
+            this.coboSalesRep.Size = new System.Drawing.Size(147, 21);
+            this.coboSalesRep.TabIndex = 15;
+            // 
             // ShowBooking
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -603,7 +602,6 @@
         private System.Windows.Forms.TextBox txtCarrier;
         private System.Windows.Forms.TextBox txtRetrievalDate;
         private System.Windows.Forms.TextBox txtDeliveryDate;
-        private System.Windows.Forms.TextBox txtSalesRep;
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label lblMachines;
@@ -631,5 +629,6 @@
         private System.Windows.Forms.Button btnDont;
         private System.Windows.Forms.Label lblCountry;
         private System.Windows.Forms.ComboBox coboCountry;
+        private System.Windows.Forms.ComboBox coboSalesRep;
     }
 }

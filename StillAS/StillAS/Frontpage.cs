@@ -62,5 +62,11 @@ namespace StillAS
             Clocks c = new Clocks();
             c.Show();
         }
+
+        private void btnManageUsers_Click(object sender, EventArgs e)
+        {
+            ManageUsers MU = new ManageUsers();
+            MU.Show();
+        }
     }
 }
