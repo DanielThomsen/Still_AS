@@ -287,5 +287,9 @@ namespace Controller
         {
             DBR.RemoveModelName(modelname);
         }
+        public DataTable GetAllUsers()
+        {
+            return DBR.GetAllUsers();         
+        }
     }
 }

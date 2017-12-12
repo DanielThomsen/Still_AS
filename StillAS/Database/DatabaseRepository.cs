@@ -106,6 +106,7 @@ namespace Database
         void AddModelName(string modelname);
 
         void RemoveModelName(string modelname);
+        DataTable GetAllUsers();
 
     }
     public class DatabaseRepository : IDatabase
@@ -1028,5 +1029,28 @@ namespace Database
             }
             conn.Close();
         }
+        public DataTable dat = new DataTable();
+        public DataTable GetAllUsers()
+        {
+            dat.Clear();
+            conn = new SqlConnection(GetConnection());
+            conn.Open();
+            try
+            {
+                string selectUsers = "select * from Sælger"; // Komando alt afhænging af, hvad man vil.
+                SqlDataAdapter sda = new SqlDataAdapter(selectUsers, conn);
+                sda.Fill(dat);
+            }
+            catch (Exception ex)
+            {
+
+            }
+            finally
+            {
+                conn.Close();
+            }
+            return dat;
+        }
+
     }
 }

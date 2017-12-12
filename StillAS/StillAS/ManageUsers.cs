@@ -17,6 +17,7 @@ namespace StillAS
         public ManageUsers()
         {
             InitializeComponent();
+            dataUsers.DataSource = CC.GetAllUsers();
         }
     }
 }
