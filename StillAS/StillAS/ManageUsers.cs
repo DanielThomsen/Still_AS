@@ -35,6 +35,9 @@ namespace StillAS
         {
             string name = txtName.Text;
             CC.AddUser(name);
+
+            dataUsers.DataSource = CC.GetAllUsers();
+            txtName.Text = string.Empty;
         }
     }
 }

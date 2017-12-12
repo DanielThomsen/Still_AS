@@ -45,7 +45,6 @@
             this.txtCarrier = new System.Windows.Forms.TextBox();
             this.txtRetrievalDate = new System.Windows.Forms.TextBox();
             this.txtDeliveryDate = new System.Windows.Forms.TextBox();
-            this.txtSalesRep = new System.Windows.Forms.TextBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.txtConfigs = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
@@ -53,6 +52,8 @@
             this.libBookingMachines = new System.Windows.Forms.ListBox();
             this.lblShowBooking = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.lblCountry = new System.Windows.Forms.Label();
+            this.coboCountry = new System.Windows.Forms.ComboBox();
             this.lblPhone = new System.Windows.Forms.Label();
             this.lblCity = new System.Windows.Forms.Label();
             this.lblZIPCode = new System.Windows.Forms.Label();
@@ -71,8 +72,7 @@
             this.btnCancel = new System.Windows.Forms.Button();
             this.btnApprove = new System.Windows.Forms.Button();
             this.btnDont = new System.Windows.Forms.Button();
-            this.coboCountry = new System.Windows.Forms.ComboBox();
-            this.lblCountry = new System.Windows.Forms.Label();
+            this.coboSalesRep = new System.Windows.Forms.ComboBox();
             this.groupBox3.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox1.SuspendLayout();
@@ -91,7 +91,7 @@
             // btnBackToBooking
             // 
             this.btnBackToBooking.Location = new System.Drawing.Point(603, 412);
-            this.btnBackToBooking.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnBackToBooking.Margin = new System.Windows.Forms.Padding(2);
             this.btnBackToBooking.Name = "btnBackToBooking";
             this.btnBackToBooking.Size = new System.Drawing.Size(100, 50);
             this.btnBackToBooking.TabIndex = 10;
@@ -101,6 +101,7 @@
             // 
             // groupBox3
             // 
+            this.groupBox3.Controls.Add(this.coboSalesRep);
             this.groupBox3.Controls.Add(this.rbtnNo);
             this.groupBox3.Controls.Add(this.rbtnYes);
             this.groupBox3.Controls.Add(this.lblLoadingPlatform);
@@ -115,7 +116,6 @@
             this.groupBox3.Controls.Add(this.txtCarrier);
             this.groupBox3.Controls.Add(this.txtRetrievalDate);
             this.groupBox3.Controls.Add(this.txtDeliveryDate);
-            this.groupBox3.Controls.Add(this.txtSalesRep);
             this.groupBox3.Location = new System.Drawing.Point(12, 241);
             this.groupBox3.Name = "groupBox3";
             this.groupBox3.Size = new System.Drawing.Size(352, 268);
@@ -203,7 +203,7 @@
             // lblSalesRep
             // 
             this.lblSalesRep.AutoSize = true;
-            this.lblSalesRep.Location = new System.Drawing.Point(6, 20);
+            this.lblSalesRep.Location = new System.Drawing.Point(9, 20);
             this.lblSalesRep.Name = "lblSalesRep";
             this.lblSalesRep.Size = new System.Drawing.Size(59, 13);
             this.lblSalesRep.TabIndex = 6;
@@ -245,13 +245,6 @@
             this.txtDeliveryDate.Name = "txtDeliveryDate";
             this.txtDeliveryDate.Size = new System.Drawing.Size(149, 20);
             this.txtDeliveryDate.TabIndex = 1;
-            // 
-            // txtSalesRep
-            // 
-            this.txtSalesRep.Location = new System.Drawing.Point(9, 36);
-            this.txtSalesRep.Name = "txtSalesRep";
-            this.txtSalesRep.Size = new System.Drawing.Size(150, 20);
-            this.txtSalesRep.TabIndex = 0;
             // 
             // groupBox2
             // 
@@ -335,6 +328,23 @@
             this.groupBox1.TabIndex = 6;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Customer Information";
+            // 
+            // lblCountry
+            // 
+            this.lblCountry.AutoSize = true;
+            this.lblCountry.Location = new System.Drawing.Point(6, 138);
+            this.lblCountry.Name = "lblCountry";
+            this.lblCountry.Size = new System.Drawing.Size(43, 13);
+            this.lblCountry.TabIndex = 15;
+            this.lblCountry.Text = "Country";
+            // 
+            // coboCountry
+            // 
+            this.coboCountry.FormattingEnabled = true;
+            this.coboCountry.Location = new System.Drawing.Point(6, 154);
+            this.coboCountry.Name = "coboCountry";
+            this.coboCountry.Size = new System.Drawing.Size(153, 21);
+            this.coboCountry.TabIndex = 14;
             // 
             // lblPhone
             // 
@@ -453,7 +463,7 @@
             // btnSaveBooking
             // 
             this.btnSaveBooking.Location = new System.Drawing.Point(602, 411);
-            this.btnSaveBooking.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnSaveBooking.Margin = new System.Windows.Forms.Padding(2);
             this.btnSaveBooking.Name = "btnSaveBooking";
             this.btnSaveBooking.Size = new System.Drawing.Size(100, 50);
             this.btnSaveBooking.TabIndex = 12;
@@ -464,7 +474,7 @@
             // btnCancel
             // 
             this.btnCancel.Location = new System.Drawing.Point(523, 412);
-            this.btnCancel.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnCancel.Margin = new System.Windows.Forms.Padding(2);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(75, 50);
             this.btnCancel.TabIndex = 13;
@@ -475,7 +485,7 @@
             // btnApprove
             // 
             this.btnApprove.Location = new System.Drawing.Point(442, 396);
-            this.btnApprove.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnApprove.Margin = new System.Windows.Forms.Padding(2);
             this.btnApprove.Name = "btnApprove";
             this.btnApprove.Size = new System.Drawing.Size(89, 67);
             this.btnApprove.TabIndex = 14;
@@ -486,7 +496,7 @@
             // btnDont
             // 
             this.btnDont.Location = new System.Drawing.Point(572, 396);
-            this.btnDont.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnDont.Margin = new System.Windows.Forms.Padding(2);
             this.btnDont.Name = "btnDont";
             this.btnDont.Size = new System.Drawing.Size(89, 67);
             this.btnDont.TabIndex = 15;
@@ -494,22 +504,13 @@
             this.btnDont.UseVisualStyleBackColor = true;
             this.btnDont.Click += new System.EventHandler(this.btnDont_Click);
             // 
-            // coboCountry
+            // coboSalesRep
             // 
-            this.coboCountry.FormattingEnabled = true;
-            this.coboCountry.Location = new System.Drawing.Point(6, 154);
-            this.coboCountry.Name = "coboCountry";
-            this.coboCountry.Size = new System.Drawing.Size(153, 21);
-            this.coboCountry.TabIndex = 14;
-            // 
-            // lblCountry
-            // 
-            this.lblCountry.AutoSize = true;
-            this.lblCountry.Location = new System.Drawing.Point(6, 138);
-            this.lblCountry.Name = "lblCountry";
-            this.lblCountry.Size = new System.Drawing.Size(43, 13);
-            this.lblCountry.TabIndex = 15;
-            this.lblCountry.Text = "Country";
+            this.coboSalesRep.FormattingEnabled = true;
+            this.coboSalesRep.Location = new System.Drawing.Point(12, 36);
+            this.coboSalesRep.Name = "coboSalesRep";
+            this.coboSalesRep.Size = new System.Drawing.Size(147, 21);
+            this.coboSalesRep.TabIndex = 15;
             // 
             // ShowBooking
             // 
@@ -560,7 +561,6 @@
         private System.Windows.Forms.TextBox txtCarrier;
         private System.Windows.Forms.TextBox txtRetrievalDate;
         private System.Windows.Forms.TextBox txtDeliveryDate;
-        private System.Windows.Forms.TextBox txtSalesRep;
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label lblMachines;
@@ -588,5 +588,6 @@
         private System.Windows.Forms.Button btnDont;
         private System.Windows.Forms.Label lblCountry;
         private System.Windows.Forms.ComboBox coboCountry;
+        private System.Windows.Forms.ComboBox coboSalesRep;
     }
 }
