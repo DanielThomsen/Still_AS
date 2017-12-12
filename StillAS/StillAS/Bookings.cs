@@ -40,30 +40,59 @@ namespace StillAS
         {
             try
             {
-                int bookingIDSelected = Convert.ToInt32(libBookingID.SelectedItem);
-                CC.RemoveBooking(bookingIDSelected);
-                MessageBox.Show("Machine removed: Booking ID:" + bookingIDSelected);
+                if (CC.CheckConnection() == false)
+                {
+                    throw new Exception();
+                }
+                
+
+                try
+                {
+                    int bookingIDSelected = Convert.ToInt32(libBookingID.SelectedItem);
+                    CC.RemoveBooking(bookingIDSelected);
+                    MessageBox.Show("Machine removed: Booking ID:" + bookingIDSelected);
+                }
+                catch (Exception)
+                {
+
+                    MessageBox.Show("Error: Machine not removed");
+                }
+                
             }
-            catch (Exception)
+            catch (Exception
+            )
             {
-                MessageBox.Show("Error: Machine not removed");
+                MessageBox.Show("Connection error");
             }
+            //catch(Exception)
+            //{
+            //    MessageBox.Show("Connection error");
+            //}
         }
 
         private void btnShow_Click(object sender, EventArgs e)
         {
             try
             {
-                int bookingIDSelected = Convert.ToInt32(libBookingID.SelectedItem);
-                ShowBooking SB = new ShowBooking(bookingIDSelected);
-                SB.Show();
+                if (CC.CheckConnection() == true)
+                {
+                    int bookingIDSelected = Convert.ToInt32(libBookingID.SelectedItem);
+                    ShowBooking SB = new ShowBooking(bookingIDSelected);
+                    SB.Show();
+                }
 
-               
-
+                else
+                {
+                    MessageBox.Show("Connection error");
+                }
             }
-            catch (Exception)
+            catch (NullReferenceException)
             {
                 MessageBox.Show("Error: Machine not found");
+            }
+            catch(Exception)
+            {
+                MessageBox.Show("Connection error");
             }
         }
 
@@ -105,7 +134,7 @@ namespace StillAS
             }
             catch (Exception)
             {
-
+                MessageBox.Show("Connection error");
                 
             }
             
@@ -115,8 +144,17 @@ namespace StillAS
         {
             try
             {
-                Demo_Maskiner DM = new Demo_Maskiner();
-                DM.Show();
+                if (CC.CheckConnection() == true)
+                {
+                    Demo_Maskiner DM = new Demo_Maskiner();
+                    DM.Show();
+                }
+
+                else
+                {
+                    MessageBox.Show("Connection error");
+                }
+                
             }
             catch (Exception)
             {
@@ -144,7 +182,7 @@ namespace StillAS
             }
             catch (Exception)
             {
-
+                MessageBox.Show("Connection error");
                 //MessageBox.Show("Error: There is no bookings linked to this customer");
             }
             
@@ -173,8 +211,25 @@ namespace StillAS
 
         private void btnShowBookingsOverview_Click(object sender, EventArgs e)
         {
-            BookingsOverview bo = new BookingsOverview();
-            bo.Show();
+            try
+            {
+                if (CC.CheckConnection() == true)
+                {
+                    BookingsOverview bo = new BookingsOverview();
+                    bo.Show();
+                }
+
+                else
+                {
+                    MessageBox.Show("Connection error");
+                }
+                
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Connection error");
+            }
+            
         }
 
         private void btnEdit_Click(object sender, EventArgs e)

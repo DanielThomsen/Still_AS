@@ -38,8 +38,20 @@ namespace StillAS
         }
         private void btnAddMachine_Click(object sender, EventArgs e)
         {
-            AddMachine TM = new AddMachine();
-            TM.Show();
+            try
+            {
+                if (CC.CheckConnection() == true)
+                {
+                    AddMachine TM = new AddMachine();
+                    TM.Show();
+                }
+            }
+            catch (Exception)
+            {
+
+                MessageBox.Show("Connection error");
+            }
+
         }
 
         private void libModelName_Click(object sender, EventArgs e)
@@ -103,7 +115,6 @@ namespace StillAS
             catch (Exception)
             {
 
-
             }
 
         }
@@ -121,14 +132,13 @@ namespace StillAS
                 }
                 catch (Exception)
                 {
-
-                    MessageBox.Show("Error");
+                    MessageBox.Show("Connection error");
                 }
 
             }
             catch (Exception)
             {
-              
+                MessageBox.Show("Machine not chosen");
             }
         }
 
@@ -136,13 +146,21 @@ namespace StillAS
         {
             try
             {
-                string s = libDemoNumber.SelectedItem.ToString();
                 AddMachine TM = new AddMachine(libDemoNumber.SelectedItem.ToString());
-                TM.Show();
+
+                if (CC.CheckConnection() == true)
+                {
+                    TM.Show();
+                }
+
+                else
+                {
+                    MessageBox.Show("Connection error");
+                }
             }
             catch (Exception)
             {
-                MessageBox.Show("Choose a machine to show it");
+                MessageBox.Show("Error: Machine not chosen");
 
             }
         }
@@ -162,14 +180,23 @@ namespace StillAS
         {
             try
             {
-                CC.RemoveModelName(libModelName.SelectedItem.ToString());
+                if (CC.CheckConnection() == true)
+                {
+                    CC.RemoveModelName(libModelName.SelectedItem.ToString());
+                }
+
+                else
+                {
+                    MessageBox.Show("Connection error");
+                }
             }
             catch (Exception)
             {
 
-                MessageBox.Show("Error");
+                MessageBox.Show("Error: Machine not chosen");
+
             }
-            
+
         }
 
         private void btnRefresh_Click(object sender, EventArgs e)

@@ -115,6 +115,12 @@ namespace Controller
         //[Krognos slut]
 
         //Daniels metoder:
+
+        public bool CheckConnection()
+        {
+            bool checker = DBR.CheckConnection();
+            return checker;
+        }
         public void RemoveMachine(string DemoNumber)
         {
             DBR.RemoveMachine(DemoNumber);

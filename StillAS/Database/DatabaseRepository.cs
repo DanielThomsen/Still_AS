@@ -45,7 +45,7 @@ namespace Database
         void Approval(int Decision);
 
         int UpdateWaits(int InList);
-
+        bool CheckConnection();
         void RemoveMachine(string DemoNumber);
 
         void RemoveBooking(int bookingID);
@@ -351,6 +351,27 @@ namespace Database
         //[Krognos Slut]
 
         // Daniels metoder
+        public bool CheckConnection()
+        {
+            var user = meContext.Brugers;
+            bool checker = true;
+
+            try
+            {
+                if (user.Count() <= 0)
+                {
+                    checker = false;
+                }
+            }
+            catch (Exception)
+            {
+
+                checker = false;
+            }
+            
+
+            return checker;
+        }
         public void RemoveMachine(string DemoNumber)
         {
             var machine = meContext.Maskines.Find(DemoNumber);
