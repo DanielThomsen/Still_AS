@@ -87,42 +87,47 @@ namespace StillAS
                 decimal Length = Convert.ToDecimal(txtLength.Text.Replace('.', ','));
                 decimal Width = Convert.ToDecimal(txtWidth.Text.Replace('.', ','));
 
-            List<string> configurationsList = new List<string>();
-            //foreach (object itemChecked in cbConfigurations.CheckedItems)
-            //{
-            //    configurationsList.Add(itemChecked + "");
-            //}
-            List<TextBox> textBoxList = new List<TextBox>
+                List<string> configurationsList = new List<string>();
+                //foreach (object itemChecked in cbConfigurations.CheckedItems)
+                //{
+                //    configurationsList.Add(itemChecked + "");
+                //}
+                List<TextBox> textBoxList = new List<TextBox>
             { txtDemoMachine, txtModelNumber,
                 txtBrand, txtChassisNumber, txtMastType, txtMastBuildingHeight,
                 txtMastLiftingHeight, txtMastFreeLift, txtAggregateType,
                 txtAggregateNumber, txtBatteryType, txtBatteryNumber, txtChargerType,
                 txtChargerNumber, txtController, txtWeight, txtHeight, txtLength,
                 txtWidth };
-            foreach (TextBox t in textBoxList)
-            {
-                if (String.IsNullOrEmpty(t.Text))
-                {                    
+                foreach (TextBox t in textBoxList)
+                {
+                    if (String.IsNullOrEmpty(t.Text))
+                    {
+                        MessageBox.Show("Please fill all empty boxes");
+                    }
+                }
+                if (String.IsNullOrEmpty(ModelName))
+                {
                     MessageBox.Show("Please fill all empty boxes");
-                }               
-            }
-            if (String.IsNullOrEmpty(ModelName))
-            {
-                MessageBox.Show("Please fill all empty boxes");
-            }
+                }
 
-            try
-            {
-                CC.CreateMachine(DemoNumber, ModelName, ModelNumber, Brand, CNumber, MastType, MastBuildingHeight, MastLiftHeight,
-                             MastFreeLift, AggregatType, AggregatNumber, BatteryType, BatteryNumber, ChargerType, ChargerNumber,
-                             Controller, Weight, Height, Length, Width, configurationsList);
+                try
+                {
+                    CC.CreateMachine(DemoNumber, ModelName, ModelNumber, Brand, CNumber, MastType, MastBuildingHeight, MastLiftHeight,
+                                 MastFreeLift, AggregatType, AggregatNumber, BatteryType, BatteryNumber, ChargerType, ChargerNumber,
+                                 Controller, Weight, Height, Length, Width, configurationsList);
+                }
+                catch (Exception)
+                {
+
+                    MessageBox.Show("Connection error");
+                }
+
             }
-            catch (Exception)
+            catch
             {
 
-                MessageBox.Show("Connection error");
             }
-                       
         }
         // Lea arbejder herfra ---- >
         public string oldDemoNumber;

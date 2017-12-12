@@ -72,7 +72,7 @@ namespace StillAS
                 string Konfig = txtKonfig.Text;
                 List<TextBox> textBoxList = new List<TextBox>
             { txtName1, txtName2, txtATT, txtAdresss, txtZipCode, txtCity,
-                txtPhone, txtSalesRep, txtCarrier, txtMessageToWorkshop, txtDeliveryNote };
+                txtPhone, txtCarrier, txtMessageToWorkshop, txtDeliveryNote };
 
                 foreach (TextBox t in textBoxList)
                 {
@@ -98,6 +98,11 @@ namespace StillAS
                     return;
                 }
                 else if (String.IsNullOrEmpty(coboCountry.Text))
+                {
+                    MessageBox.Show("Please fill out empty boxes");
+                    return;
+                }
+                else if (String.IsNullOrEmpty(coboSalesRep.Text))
                 {
                     MessageBox.Show("Please fill out empty boxes");
                     return;

@@ -25,7 +25,7 @@ namespace StillAS
             List<TextBox> textBoxList = new List<TextBox>
             {
                 txtName1, txtName2, txtATT, txtAdresss, txtZipCode, txtCity, txtPhone,
-                txtSalesRep, txtDeliveryDate, txtRetrievalDate, txtCarrier, txtMessageToWorkshop,
+                txtDeliveryDate, txtRetrievalDate, txtCarrier, txtMessageToWorkshop,
                 txtDeliveryNote, txtConfigs
 
             };
@@ -52,7 +52,7 @@ namespace StillAS
 
             // Vis alle bookingoplysninger:
             List<string> booking = CC.GetBooking(bookingID);
-            List<TextBox> bookingTextboxes = new List<TextBox>() {txtSalesRep, txtDeliveryDate, txtRetrievalDate, txtCarrier, txtMessageToWorkshop, txtDeliveryNote};
+            List<TextBox> bookingTextboxes = new List<TextBox>() {txtDeliveryDate, txtRetrievalDate, txtCarrier, txtMessageToWorkshop, txtDeliveryNote};
             //string allBookingInfoString = "";
 
             i = 0;
@@ -168,7 +168,7 @@ namespace StillAS
             List<TextBox> textBoxList = new List<TextBox>
             {
                 txtName1, txtName2, txtATT, txtAdresss, txtZipCode, txtCity, txtPhone,
-                txtSalesRep, txtDeliveryDate, txtRetrievalDate, txtCarrier, txtMessageToWorkshop,
+                txtDeliveryDate, txtRetrievalDate, txtCarrier, txtMessageToWorkshop,
                 txtDeliveryNote, txtConfigs
 
             };
@@ -195,7 +195,7 @@ namespace StillAS
                 string zipCode = txtZipCode.Text;
                 string city = txtCity.Text;
                 string phone = txtPhone.Text;
-                string salesRep = txtSalesRep.Text;
+                string salesRep = coboSalesRep.Text;
                 string dDate = txtDeliveryDate.Text;
                 string rDate = txtRetrievalDate.Text;
                 string deliveryDate = dDate.Substring(0, 10);
@@ -216,7 +216,7 @@ namespace StillAS
                 int bookingID = BookingIDs;
                 List<TextBox> textBoxList = new List<TextBox>
             { txtName1, txtName2, txtATT, txtAdresss, txtZipCode, txtCity,
-                txtPhone, txtSalesRep, txtCarrier, txtMessageToWorkshop, txtDeliveryNote };
+                txtPhone, txtCarrier, txtMessageToWorkshop, txtDeliveryNote };
                 foreach (TextBox t in textBoxList)
                 {
                     if (String.IsNullOrEmpty(t.Text))
@@ -241,6 +241,11 @@ namespace StillAS
                     return;
                 }
                 else if (String.IsNullOrEmpty(coboCountry.Text))
+                {
+                    MessageBox.Show("Please fill out empty boxes");
+                    return;
+                }
+                else if (String.IsNullOrEmpty(coboSalesRep.Text))
                 {
                     MessageBox.Show("Please fill out empty boxes");
                     return;
@@ -277,7 +282,7 @@ namespace StillAS
             List<TextBox> textBoxList = new List<TextBox>
             {
                 txtName1, txtName2, txtATT, txtAdresss, txtZipCode, txtCity, txtPhone,
-                txtSalesRep, txtDeliveryDate, txtRetrievalDate, txtCarrier, txtMessageToWorkshop,
+                txtDeliveryDate, txtRetrievalDate, txtCarrier, txtMessageToWorkshop,
                 txtDeliveryNote, txtConfigs
 
             };
