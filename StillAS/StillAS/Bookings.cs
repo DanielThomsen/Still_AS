@@ -50,12 +50,12 @@ namespace StillAS
                 {
                     int bookingIDSelected = Convert.ToInt32(libBookingID.SelectedItem);
                     CC.RemoveBooking(bookingIDSelected);
-                    MessageBox.Show("Machine removed: Booking ID:" + bookingIDSelected);
+                    MessageBox.Show("Booking removed: Booking ID:" + bookingIDSelected);
                 }
                 catch (Exception)
                 {
 
-                    MessageBox.Show("Error: Machine not removed");
+                    MessageBox.Show("Error: Booking not removed");
                 }
                 
             }
@@ -88,7 +88,7 @@ namespace StillAS
             }
             catch (NullReferenceException)
             {
-                MessageBox.Show("Error: Machine not found");
+                MessageBox.Show("Error: Booking not found");
             }
             //catch(Exception)
             //{

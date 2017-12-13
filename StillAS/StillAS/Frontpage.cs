@@ -23,6 +23,7 @@ namespace StillAS
         {
             Machines M = new Machines();
             M.Show();
+            this.Visible = false;
         }
 
         private void btnBookings_Click(object sender, EventArgs e)

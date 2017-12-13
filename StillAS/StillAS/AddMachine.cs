@@ -99,6 +99,9 @@ namespace StillAS
                     CC.CreateMachine(DemoNumber, ModelName, ModelNumber, Brand, CNumber, MastType, MastBuildingHeight, MastLiftHeight,
                                  MastFreeLift, AggregatType, AggregatNumber, BatteryType, BatteryNumber, ChargerType, ChargerNumber,
                                  Controller, Weight, Height, Length, Width, configurationsList);
+
+                    MessageBox.Show("The machine has been added");
+                    this.Visible = false;
                 }
                 catch (Exception)
                 {
