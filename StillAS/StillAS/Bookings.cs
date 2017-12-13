@@ -90,10 +90,10 @@ namespace StillAS
             {
                 MessageBox.Show("Error: Machine not found");
             }
-            catch(Exception)
-            {
-                MessageBox.Show("Connection error");
-            }
+            //catch(Exception)
+            //{
+            //    MessageBox.Show("Connection error");
+            //}
         }
 
         private void libCustomerName_Click(object sender, EventArgs e)

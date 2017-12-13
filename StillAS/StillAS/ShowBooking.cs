@@ -44,8 +44,15 @@ namespace StillAS
             foreach (string s in customers)
             {
                 //allCustomerInfoString = allCustomerInfoString + s + ", ";
+                if (s == "Denmark" || s == "Sweden")
+                {
+                    coboCountry.Text = s;
+                }
+                else
+                { 
                 customerTextboxes[i].Text = s;
                 i++;
+                }
             }
 
             //MessageBox.Show("Booking ID " + bookingID + ", kundeoplysninger:" + allCustomerInfoString);

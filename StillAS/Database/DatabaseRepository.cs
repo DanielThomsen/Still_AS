@@ -482,6 +482,7 @@ namespace Database
             customerInfo.Add(customer.Adresse);
             customerInfo.Add(customer.Postnummer + "");
             customerInfo.Add(customer.By);
+            customerInfo.Add(customer.Land);
             customerInfo.Add(customer.Telefon + "");
 
             return customerInfo;
