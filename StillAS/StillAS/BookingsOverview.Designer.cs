@@ -34,13 +34,9 @@
             this.stillasDataSet = new StillAS.stillasDataSet();
             this.stillasDataSetBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.dtpDate = new System.Windows.Forms.DateTimePicker();
-            this.cbModelName = new System.Windows.Forms.ComboBox();
-            this.cbModelNr = new System.Windows.Forms.ComboBox();
-            this.btnShowBookingsByModel = new System.Windows.Forms.Button();
             this.btnShowBookingsByDate = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.btnBack = new System.Windows.Forms.Button();
             this.bookingBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.bookingTableAdapter = new StillAS.stillasDataSetTableAdapters.BookingTableAdapter();
@@ -49,17 +45,16 @@
             this.dtpStartDate = new System.Windows.Forms.DateTimePicker();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
             this.groupBox5 = new System.Windows.Forms.GroupBox();
+            this.cbType = new System.Windows.Forms.ComboBox();
+            this.cbModel = new System.Windows.Forms.ComboBox();
             this.dtpStart = new System.Windows.Forms.DateTimePicker();
             this.btnShowAllMachines = new System.Windows.Forms.Button();
             this.dtpEnd = new System.Windows.Forms.DateTimePicker();
-            this.cbModel = new System.Windows.Forms.ComboBox();
-            this.cbType = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.gvBookings)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.stillasDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.stillasDataSetBindingSource)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
-            this.groupBox3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.bookingBindingSource)).BeginInit();
             this.groupBox4.SuspendLayout();
             this.groupBox5.SuspendLayout();
@@ -106,34 +101,6 @@
             this.dtpDate.TabIndex = 2;
             this.dtpDate.ValueChanged += new System.EventHandler(this.dtpDate_ValueChanged);
             // 
-            // cbModelName
-            // 
-            this.cbModelName.FormattingEnabled = true;
-            this.cbModelName.Location = new System.Drawing.Point(20, 42);
-            this.cbModelName.Margin = new System.Windows.Forms.Padding(4);
-            this.cbModelName.Name = "cbModelName";
-            this.cbModelName.Size = new System.Drawing.Size(120, 33);
-            this.cbModelName.TabIndex = 3;
-            // 
-            // cbModelNr
-            // 
-            this.cbModelNr.FormattingEnabled = true;
-            this.cbModelNr.Location = new System.Drawing.Point(164, 42);
-            this.cbModelNr.Margin = new System.Windows.Forms.Padding(4);
-            this.cbModelNr.Name = "cbModelNr";
-            this.cbModelNr.Size = new System.Drawing.Size(120, 33);
-            this.cbModelNr.TabIndex = 4;
-            // 
-            // btnShowBookingsByModel
-            // 
-            this.btnShowBookingsByModel.Location = new System.Drawing.Point(312, 42);
-            this.btnShowBookingsByModel.Margin = new System.Windows.Forms.Padding(4);
-            this.btnShowBookingsByModel.Name = "btnShowBookingsByModel";
-            this.btnShowBookingsByModel.Size = new System.Drawing.Size(174, 48);
-            this.btnShowBookingsByModel.TabIndex = 5;
-            this.btnShowBookingsByModel.Text = "Show bookings";
-            this.btnShowBookingsByModel.UseVisualStyleBackColor = true;
-            // 
             // btnShowBookingsByDate
             // 
             this.btnShowBookingsByDate.Location = new System.Drawing.Point(300, 44);
@@ -170,20 +137,6 @@
             this.groupBox2.TabIndex = 8;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Show by date:";
-            // 
-            // groupBox3
-            // 
-            this.groupBox3.Controls.Add(this.cbModelName);
-            this.groupBox3.Controls.Add(this.cbModelNr);
-            this.groupBox3.Controls.Add(this.btnShowBookingsByModel);
-            this.groupBox3.Location = new System.Drawing.Point(976, 67);
-            this.groupBox3.Margin = new System.Windows.Forms.Padding(4);
-            this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Padding = new System.Windows.Forms.Padding(4);
-            this.groupBox3.Size = new System.Drawing.Size(508, 112);
-            this.groupBox3.TabIndex = 9;
-            this.groupBox3.TabStop = false;
-            this.groupBox3.Text = "Show by model:";
             // 
             // btnBack
             // 
@@ -251,6 +204,23 @@
             this.groupBox5.TabStop = false;
             this.groupBox5.Text = "Calender for machines";
             // 
+            // cbType
+            // 
+            this.cbType.FormattingEnabled = true;
+            this.cbType.Location = new System.Drawing.Point(689, 43);
+            this.cbType.Name = "cbType";
+            this.cbType.Size = new System.Drawing.Size(117, 33);
+            this.cbType.TabIndex = 16;
+            // 
+            // cbModel
+            // 
+            this.cbModel.FormattingEnabled = true;
+            this.cbModel.Location = new System.Drawing.Point(548, 43);
+            this.cbModel.Name = "cbModel";
+            this.cbModel.Size = new System.Drawing.Size(121, 33);
+            this.cbModel.TabIndex = 15;
+            this.cbModel.SelectedIndexChanged += new System.EventHandler(this.cbModel_SelectedIndexChanged);
+            // 
             // dtpStart
             // 
             this.dtpStart.Location = new System.Drawing.Point(19, 43);
@@ -274,23 +244,6 @@
             this.dtpEnd.Size = new System.Drawing.Size(228, 31);
             this.dtpEnd.TabIndex = 11;
             // 
-            // cbModel
-            // 
-            this.cbModel.FormattingEnabled = true;
-            this.cbModel.Location = new System.Drawing.Point(548, 43);
-            this.cbModel.Name = "cbModel";
-            this.cbModel.Size = new System.Drawing.Size(121, 33);
-            this.cbModel.TabIndex = 15;
-            this.cbModel.SelectedIndexChanged += new System.EventHandler(this.cbModel_SelectedIndexChanged);
-            // 
-            // cbType
-            // 
-            this.cbType.FormattingEnabled = true;
-            this.cbType.Location = new System.Drawing.Point(689, 43);
-            this.cbType.Name = "cbType";
-            this.cbType.Size = new System.Drawing.Size(117, 33);
-            this.cbType.TabIndex = 16;
-            // 
             // BookingsOverview
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
@@ -299,7 +252,6 @@
             this.ClientSize = new System.Drawing.Size(1542, 1021);
             this.Controls.Add(this.groupBox5);
             this.Controls.Add(this.btnBack);
-            this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.gvBookings);
@@ -312,7 +264,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.stillasDataSetBindingSource)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox2.ResumeLayout(false);
-            this.groupBox3.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.bookingBindingSource)).EndInit();
             this.groupBox4.ResumeLayout(false);
             this.groupBox5.ResumeLayout(false);
@@ -327,13 +278,9 @@
         private System.Windows.Forms.BindingSource stillasDataSetBindingSource;
         private stillasDataSet stillasDataSet;
         private System.Windows.Forms.DateTimePicker dtpDate;
-        private System.Windows.Forms.ComboBox cbModelName;
-        private System.Windows.Forms.ComboBox cbModelNr;
-        private System.Windows.Forms.Button btnShowBookingsByModel;
         private System.Windows.Forms.Button btnShowBookingsByDate;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.GroupBox groupBox2;
-        private System.Windows.Forms.GroupBox groupBox3;
         private System.Windows.Forms.Button btnBack;
         private System.Windows.Forms.BindingSource bookingBindingSource;
         private stillasDataSetTableAdapters.BookingTableAdapter bookingTableAdapter;

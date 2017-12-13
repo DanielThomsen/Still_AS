@@ -124,11 +124,10 @@ namespace StillAS
                 }
 
             }
-            catch
-            {
 
-            }
+            catch { }
         }
+            
         // Lea arbejder herfra ---- >
         public string oldDemoNumber;
         private void btnEditMachine_Click(object sender, EventArgs e)
