@@ -123,18 +123,25 @@ namespace StillAS
         {
             try
             {
-                string demoNumberSelected = libDemoNumber.SelectedItem.ToString();
-
-                try
+                DialogResult dRes = MessageBox.Show("Are you sure you want to delete Demo Machine " + libDemoNumber.SelectedItem + "?", "Sure?", MessageBoxButtons.YesNo);
+                if (dRes == DialogResult.Yes)
                 {
-                    CC.RemoveMachine(demoNumberSelected);
-                    MessageBox.Show("Machine removed: Demo number:" + demoNumberSelected);
-                }
-                catch (Exception)
-                {
-                    MessageBox.Show("Connection error");
-                }
+                    string demoNumberSelected = libDemoNumber.SelectedItem.ToString();
 
+                    try
+                    {
+                        CC.RemoveMachine(demoNumberSelected);
+                        MessageBox.Show("Machine removed: Demo number:" + demoNumberSelected);
+                    }
+                    catch (Exception)
+                    {
+                        MessageBox.Show("Connection error");
+                    }
+                }
+                else
+                {
+
+                }
             }
             catch (Exception)
             {
@@ -180,14 +187,22 @@ namespace StillAS
         {
             try
             {
-                if (CC.CheckConnection() == true)
+                DialogResult dRes = MessageBox.Show("Are you sure you want to delete Model Name " + libModelName.SelectedItem + "?", "Sure?", MessageBoxButtons.YesNo);
+                if (dRes == DialogResult.Yes)
                 {
-                    CC.RemoveModelName(libModelName.SelectedItem.ToString());
-                }
+                    if (CC.CheckConnection() == true)
+                    {
+                        CC.RemoveModelName(libModelName.SelectedItem.ToString());
+                    }
 
-                else
+                    else
+                    {
+                        MessageBox.Show("Connection error");
+                    }
+                }
+                else if (dRes == DialogResult.No)
                 {
-                    MessageBox.Show("Connection error");
+
                 }
             }
             catch (Exception)
