@@ -13,7 +13,7 @@ namespace StillAS
 {
     public partial class Demo_Maskiner : Form
     {
-            ControllerClass CTRC = new ControllerClass();
+        ControllerClass CTRC = new ControllerClass();
         public Demo_Maskiner()
         {
             InitializeComponent();
@@ -21,7 +21,10 @@ namespace StillAS
 
         private void Demo_Maskiner_Load(object sender, EventArgs e)
         {
+            coboCountry.DropDownStyle = ComboBoxStyle.DropDownList;
+            coboSalesRep.DropDownStyle = ComboBoxStyle.DropDownList;
             List<string> Demos = CTRC.DropDownDemoLoad();
+            List<string> AllSalesRep = new List<string>();
             foreach(string X in Demos)
             {
                 coboDemoMachines.Items.Add(X);
@@ -29,6 +32,11 @@ namespace StillAS
             rbtnNo.Checked = true;
             coboCountry.Items.Add("Denmark");
             coboCountry.Items.Add("Sweden");
+            CTRC.GetAllSalesRep(AllSalesRep);
+            foreach (string s in AllSalesRep)
+            {
+                coboSalesRep.Items.Add(s);
+            }
         }
 
         private void Demo_Maskiner_FormClosing(object sender, EventArgs e)
@@ -63,7 +71,7 @@ namespace StillAS
                 {
                     Selected = 1;
                 }
-
+                string salesRep = coboSalesRep.Text;
                 string Date1 = dtpDeliveryDate.Value.ToShortDateString();
                 string Date2 = dtpRetrievalDate.Value.ToShortDateString();
                 string Transporter = txtCarrier.Text;
@@ -110,7 +118,7 @@ namespace StillAS
                 else
                 {
                     CTRC.AddCustomer(Name1, Name2, Att, Address, ZIP, City, Country, Phone);
-                    CTRC.CreateBooking(Date1, Date2, Transporter, Message1, Message2, Selected);
+                    CTRC.CreateBooking(salesRep, Date1, Date2, Transporter, Message1, Message2, Selected);
                     CTRC.CreateBookingLine(Konfig);
                     this.Visible = false;
                 }

@@ -20,6 +20,9 @@ namespace StillAS
         {
             InitializeComponent();
             // Leas lille del, der skal være der
+            dtpDeliveryDate.Visible = false;
+            dtpRetrievalDate.Visible = false;
+            coboSalesRep.Enabled = false;
             btnSaveBooking.Visible = false;
             btnCancel.Visible = false;
             List<TextBox> textBoxList = new List<TextBox>
@@ -57,8 +60,9 @@ namespace StillAS
 
             //MessageBox.Show("Booking ID " + bookingID + ", kundeoplysninger:" + allCustomerInfoString);
 
-            // Vis alle bookingoplysninger:
+            // Vis alle bookingoplysninger:      
             List<string> booking = CC.GetBooking(bookingID);
+            coboSalesRep.Text = CC.GetOneSalesRep(bookingID);
             List<TextBox> bookingTextboxes = new List<TextBox>() {txtDeliveryDate, txtRetrievalDate, txtCarrier, txtMessageToWorkshop, txtDeliveryNote};
             //string allBookingInfoString = "";
 
@@ -161,8 +165,9 @@ namespace StillAS
                 btnSaveBooking.Visible = false;
                 btnCancel.Visible = false;
             }
-            coboCountry.Items.Add("Denmark");
-            coboCountry.Items.Add("Sweden");
+            int bookingID = BookingIDs;
+            coboCountry.Enabled = false;            
+            coboCountry.Text = CC.GetCountry(bookingID);
         }
 
         private void btnBackToBooking_Click(object sender, EventArgs e)
@@ -173,7 +178,15 @@ namespace StillAS
         }
         private void btnCancel_Click(object sender, EventArgs e)
         {
-            CC.RollBackTransaction();
+            int bookingID = BookingIDs;
+            dtpDeliveryDate.Visible = false;
+            dtpRetrievalDate.Visible = false;
+            txtDeliveryDate.Visible = true;
+            txtRetrievalDate.Visible = true;
+            coboCountry.Enabled = false;
+            coboCountry.Text = CC.GetCountry(bookingID);
+            coboSalesRep.Enabled = false;
+            coboSalesRep.Text = CC.GetOneSalesRep(bookingID);
             List<TextBox> textBoxList = new List<TextBox>
             {
                 txtName1, txtName2, txtATT, txtAdresss, txtZipCode, txtCity, txtPhone,
@@ -204,6 +217,7 @@ namespace StillAS
                 string zipCode = txtZipCode.Text;
                 string city = txtCity.Text;
                 string phone = txtPhone.Text;
+                string country = coboCountry.Text;
                 string salesRep = coboSalesRep.Text;
                 string dDate = txtDeliveryDate.Text;
                 string rDate = txtRetrievalDate.Text;
@@ -263,9 +277,21 @@ namespace StillAS
                 {
                     try
                     {
-                        CC.UpdateBooking(name1, name2, att, address, zipCode, city, phone,
+                        CC.UpdateBooking(name1, name2, att, address, zipCode, city, phone, country,
                             salesRep, deliveryDate, retrievalDate, carrier, messageToWorkshop,
                             deliveryNote, loadingPlatform, bookingID);
+                        btnSaveBooking.Visible = false;
+                        btnCancel.Visible = false;
+                        btnEditBooking.Visible = true;
+                        btnBackToBooking.Visible = true;
+                        foreach (TextBox t in textBoxList)
+                        {
+                            t.ReadOnly = true;
+                        }
+                        coboCountry.Enabled = false;
+                        coboSalesRep.Enabled = false;
+                        txtDeliveryDate.ReadOnly = true;
+                        txtRetrievalDate.ReadOnly = true;
                     }
                     catch (Exception ex)
                     {
@@ -282,7 +308,35 @@ namespace StillAS
 
         private void btnEditBooking_Click_1(object sender, EventArgs e)
         {
-            CC.BeginTransaction();
+            coboCountry.Items.Clear();
+            coboSalesRep.Items.Clear();
+            txtDeliveryDate.Visible = false;
+            txtRetrievalDate.Visible = false;
+            dtpDeliveryDate.Visible = true;
+            dtpRetrievalDate.Visible = true;
+            int bookingID = BookingIDs;
+            int i = 0;
+            List<string> getDates = CC.GetDates(bookingID);
+            List<DateTimePicker> Dates = new List<DateTimePicker> { dtpDeliveryDate, dtpRetrievalDate };
+            foreach (DateTimePicker dtp in Dates)
+            {
+                dtp.Text = getDates[i];
+                i++;
+            }
+            List<string> SalesRep = new List<string>();
+            CC.GetAllSalesRep(SalesRep);
+            foreach (string s in SalesRep)
+            {
+                coboSalesRep.Items.Add(s);
+            }
+            coboSalesRep.Enabled = true;
+            coboSalesRep.DropDownStyle = ComboBoxStyle.DropDownList;
+            coboSalesRep.Text = CC.GetOneSalesRep(bookingID);
+            coboCountry.Items.Add("Denmark");
+            coboCountry.Items.Add("Sweden");
+            coboCountry.Enabled = true;
+            coboCountry.DropDownStyle = ComboBoxStyle.DropDownList;
+            coboCountry.Text = CC.GetCountry(bookingID);
             lblShowBooking.Text = "Edit booking";
             btnBackToBooking.Visible = false;
             btnSaveBooking.Visible = true;

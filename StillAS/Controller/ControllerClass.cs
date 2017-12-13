@@ -54,10 +54,10 @@ namespace Controller
         {
             DBR.CreateCustomer(Name1, Name2, Att, Address, ZIP, City, Country, Phone);
         }
-        public void CreateBooking(string date1, string date2, string Transportør, string MessageForWorkshop, string DeliverNote,
+        public void CreateBooking(string salesRep, string date1, string date2, string Transportør, string MessageForWorkshop, string DeliverNote,
             int Ramp)
         {
-            DBR.CreateBooking(date1, date2, Transportør, MessageForWorkshop, DeliverNote, Ramp);
+            DBR.CreateBooking(salesRep, date1, date2, Transportør, MessageForWorkshop, DeliverNote, Ramp);
         }
         public List<String> DropDownDemoLoad()
         {
@@ -267,19 +267,11 @@ namespace Controller
                              Controller, Weight, Height, Length, Width, oldDemoNumber);
         }
         // Edit Booking -----
-        public void BeginTransaction()
-        {
-            DBR.BeginTransaction();
-        }
-        public void RollBackTransaction()
-        {
-            DBR.RollBackTransaction();
-        }
         public void UpdateBooking(string name1, string name2, string att, string address, string zipCode,
-            string city, string phone, string salesRep, string deliveryDate, string retrievalDate, string carrier,
-            string messageToWorkshop, string deliveryNote, string loadingPlatform, int bookingID)
+            string city, string phone, string country, string salesRep, string deliveryDate, string retrievalDate, 
+            string carrier, string messageToWorkshop, string deliveryNote, string loadingPlatform, int bookingID)
         {
-            DBR.UpdateBooking(name1, name2, att, address, zipCode, city, phone,
+            DBR.UpdateBooking(name1, name2, att, address, zipCode, city, phone, country,
                 salesRep, deliveryDate, retrievalDate, carrier, messageToWorkshop, 
                 deliveryNote, loadingPlatform, bookingID);
         }
@@ -299,6 +291,22 @@ namespace Controller
         public void AddUser(string name)
         {
             DBR.AddUser(name);
+        }
+        public List<string> GetAllSalesRep(List<string> salesRep)
+        {
+            return DBR.GetAllSalesRep(salesRep);
+        }
+        public string GetOneSalesRep(int bookingID)
+        {
+            return DBR.GetOneSalesRep(bookingID);
+        }
+        public string GetCountry(int bookingID)
+        {
+            return DBR.GetCountry(bookingID);
+        }
+        public List<string> GetDates(int bookingID)
+        {
+            return DBR.GetDates(bookingID);
         }
     }
 }

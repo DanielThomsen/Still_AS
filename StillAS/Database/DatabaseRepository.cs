@@ -24,7 +24,7 @@ namespace Database
 
         void CreateCustomerID();
 
-        void CreateBooking(string date1, string date2, string Transporter, string MessageForWorkshop, string DeliveryNote,
+        void CreateBooking(string salesRep, string date1, string date2, string Transporter, string MessageForWorkshop, string DeliveryNote,
                     int Ramp);
 
         void CreateBookingID();
@@ -97,19 +97,20 @@ namespace Database
                     string AggregatNumber, string BatteryType, string BatteryNumber, string ChargerType, string ChargerNumber,
                     string Controller, decimal Weight, decimal Height, decimal Length, decimal Width, string oldDemoNumber);
 
-        void BeginTransaction();
-
-        void RollBackTransaction();
-
         void UpdateBooking(string name1, string name2, string att, string address, string zipCode,
-                    string city, string phone, string salesRep, string deliveryDate, string retrievalDate, string carrier,
-                    string messageToWorkshop, string deliveryNote, string loadingPlatform, int bookingIDs);
+                    string city, string phone, string country, string salesRep, string deliveryDate, 
+                    string retrievalDate, string carrier, string messageToWorkshop, string deliveryNote, 
+                    string loadingPlatform, int bookingIDs);
 
         void AddModelName(string modelname);
 
         void RemoveModelName(string modelname);
         DataTable GetAllUsers();
         void AddUser(string name);
+        List<string> GetAllSalesRep(List<string> salesRep);
+        string GetOneSalesRep(int bookingID);
+        string GetCountry(int bookingID);
+        List<string> GetDates(int bookingID);
 
     }
     public class DatabaseRepository : IDatabase
@@ -178,7 +179,7 @@ namespace Database
             CustomerID = Convert.ToInt32(ID) + 1;
             conn.Close();
         }
-        public void CreateBooking(string date1, string date2, string Transporter, string MessageForWorkshop, string DeliveryNote,
+        public void CreateBooking(string salesRep, string date1, string date2, string Transporter, string MessageForWorkshop, string DeliveryNote,
             int Ramp)
         {
             CreateBookingID();
@@ -187,7 +188,7 @@ namespace Database
             int KundeID = CustomerID;
             int BookingsID = BookingID;
             string Username = Bruger;
-            string Salesman = "Paul";
+            string Salesman = salesRep;
             string LeveringsDato = dt1.ToString("yyyy-MM-dd");
             string AfhentningsDato = dt2.ToString("yyyy-MM-dd");
             string Leverandør = Transporter;
@@ -523,8 +524,10 @@ namespace Database
             var booking = meContext.Bookings.Find(bookingID);
 
             //bookingInfo.Add(booking.Username + "");
-            bookingInfo.Add(booking.LeveringsDato+"");
-            bookingInfo.Add(booking.AfhentningsDato+"");
+            string dDate = booking.LeveringsDato.ToString().Substring(0, 10);
+            string rDate = booking.AfhentningsDato.ToString().Substring(0, 10);
+            bookingInfo.Add(dDate);
+            bookingInfo.Add(rDate);
             bookingInfo.Add(booking.Leverandør);
             bookingInfo.Add(booking.BeskedTilVærksted);
             bookingInfo.Add(booking.BeskedTilFølgeSeddel);
@@ -941,45 +944,20 @@ namespace Database
             }
         }
         // Edit Bookings
-        public void BeginTransaction()
-        {
-            try
-            {
-            conn = new SqlConnection(GetConnection());
-            conn.Open();
-            transaction = conn.BeginTransaction(IsolationLevel.RepeatableRead);
-            }
-            catch
-            {
 
-            }
-        }
-        public void RollBackTransaction()
-        {
-            try
-            {
-             transaction.Rollback();
-            }
-            catch
-            {
-
-            }
-            finally
-            {
-            conn.Close();
-            }
-        }
         public void UpdateBooking(string name1, string name2, string att, string address, string zipCode,
-            string city, string phone, string salesRep, string deliveryDate, string retrievalDate, string carrier,
+            string city, string phone, string country, string salesRep, string deliveryDate, string retrievalDate, string carrier,
             string messageToWorkshop, string deliveryNote, string loadingPlatform, int bookingIDs)
         {
+                conn = new SqlConnection(GetConnection());
+                conn.Open();
                 var booking = meContext.Bookings.Find(bookingIDs); // Lige lidt random Entity Framework
                 var customer = meContext.Kundes.Find(Convert.ToInt32(booking.KundeID));
 
                 CustomerID = customer.KundeID;
                 using (SqlCommand updateCustomer =
                     new SqlCommand("UPDATE Kunde SET Navn1=@Name1, Navn2=@Name2, Att=@ATT, Adresse=@Address, " +
-                    "Postnummer=@ZipCode, [By]=@City, Telefon=@Phone where KundeID=@CustomerID", conn))
+                    "Postnummer=@ZipCode, [By]=@City, Telefon=@Phone, Land=@Country where KundeID=@CustomerID", conn))
                 {
                     updateCustomer.Parameters.AddWithValue("@Name1", name1);
                     updateCustomer.Parameters.AddWithValue("@Name2", name2);
@@ -988,12 +966,12 @@ namespace Database
                     updateCustomer.Parameters.AddWithValue("@ZipCode", zipCode);
                     updateCustomer.Parameters.AddWithValue("@City", city);
                     updateCustomer.Parameters.AddWithValue("@Phone", phone);
+                    updateCustomer.Parameters.AddWithValue("@Country", country);              
                     updateCustomer.Parameters.AddWithValue("@CustomerID", CustomerID);
-                    updateCustomer.Transaction = transaction;
                     updateCustomer.ExecuteNonQuery();
                 }
                 using (SqlCommand updateDeliveryInformation =
-                   new SqlCommand("UPDATE Booking SET SælgerID=@salesRep, LeveringsDato=@deliveryDate, " +
+                   new SqlCommand("UPDATE Booking SET Navn=@salesRep, LeveringsDato=@deliveryDate, " + // Der stod SælgerID i stedet for Navn
                    "AfhentningsDato=@retrievalDate, Leverandør=@carrier, BeskedTilVærksted=@messageToWorkshop, " +
                    "BeskedTilFølgeSeddel=@deliveryNote, RampeVedLevering=@loadingPlatform where BookingID=@bookingID", conn))
                 {
@@ -1002,7 +980,7 @@ namespace Database
                 string delivery = dt1.ToString("yyyy-MM-dd");
                 string retrievel = dt2.ToString("yyyy-MM-dd");
 
-                updateDeliveryInformation.Parameters.AddWithValue("@salesRep", salesRep);
+                    updateDeliveryInformation.Parameters.AddWithValue("@salesRep", salesRep);
                     updateDeliveryInformation.Parameters.AddWithValue("@deliveryDate", delivery);
                     updateDeliveryInformation.Parameters.AddWithValue("@retrievalDate", retrievel);
                     updateDeliveryInformation.Parameters.AddWithValue("@carrier", carrier);
@@ -1010,11 +988,9 @@ namespace Database
                     updateDeliveryInformation.Parameters.AddWithValue("@deliveryNote", deliveryNote);
                     updateDeliveryInformation.Parameters.AddWithValue("@loadingPlatform", loadingPlatform);
                     updateDeliveryInformation.Parameters.AddWithValue("@bookingID", bookingIDs);
-                    updateDeliveryInformation.Transaction = transaction;
+
                     updateDeliveryInformation.ExecuteNonQuery();
-                }
-                
-            transaction.Commit();
+                }               
     
             conn.Close();
         }
@@ -1059,7 +1035,7 @@ namespace Database
             conn.Open();
             try
             {
-                string selectUsers = "select * from Sælger"; // Komando alt afhænging af, hvad man vil.
+                string selectUsers = "select * from Sælger"; // Kommando alt afhænging af, hvad man vil.
                 SqlDataAdapter sda = new SqlDataAdapter(selectUsers, conn);
                 sda.Fill(dat);
             }
@@ -1089,6 +1065,117 @@ namespace Database
 
             }
             conn.Close();
+        }
+        public List<string> GetAllSalesRep(List<string> salesRep)
+        {
+            conn = new SqlConnection(GetConnection());
+            conn.Open();
+            try
+            {
+                string selectUsers = "select * from Sælger"; // Kommando alt afhænging af, hvad man vil.
+                SqlCommand com = new SqlCommand(@selectUsers, conn);
+                using (SqlDataReader reader = com.ExecuteReader())
+                {
+                    while (reader.Read())
+                    {
+                        salesRep.Add(reader["Navn"].ToString());
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+
+            }
+            finally
+            {
+                conn.Close();
+            }
+            return salesRep;
+        }
+        public string GetOneSalesRep(int bookingID)
+        {
+            string salesRep = "";
+            conn = new SqlConnection(GetConnection());
+            conn.Open();
+            try
+            {
+                string selectUser = "select Navn from Booking where BookingID = " + bookingID; // Kommando alt afhænging af, hvad man vil.
+                SqlCommand com = new SqlCommand(@selectUser, conn);
+                using (SqlDataReader reader = com.ExecuteReader())
+                {
+                    while (reader.Read())
+                    {
+                        salesRep = (reader["Navn"].ToString());
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+
+            }
+            finally
+            {
+                conn.Close();
+            }
+            return salesRep;
+        }
+        public string GetCountry(int bookingID)
+        {
+            string country = "";
+            conn = new SqlConnection(GetConnection());
+            conn.Open();
+            try
+            {
+                string selectUser = "select Land from Kunde k " +
+                    "join booking b on k.KundeID = b.KundeID " +
+                    "where b.BookingID = " + bookingID; // Kommando alt afhænging af, hvad man vil.
+                SqlCommand com = new SqlCommand(@selectUser, conn);
+                using (SqlDataReader reader = com.ExecuteReader())
+                {
+                    while (reader.Read())
+                    {
+                        country = (reader["Land"].ToString());
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+
+            }
+            finally
+            {
+                conn.Close();
+            }
+            return country;
+        }
+        public List<string> GetDates(int bookingID)
+        {
+            List<string> Dates = new List<string>();
+            conn = new SqlConnection(GetConnection());
+            conn.Open();
+            try
+            {
+                string selectUser = "select LeveringsDato, AfhentningsDato from Booking " +
+                "where BookingID = " + bookingID; // Kommando alt afhænging af, hvad man vil.
+                SqlCommand com = new SqlCommand(@selectUser, conn);
+                using (SqlDataReader reader = com.ExecuteReader())
+                {
+                    while (reader.Read())
+                    {
+                        Dates.Add(reader["LeveringsDato"].ToString());
+                        Dates.Add(reader["AfhentningsDato"].ToString());
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+
+            }
+            finally
+            {
+                conn.Close();
+            }
+            return Dates;           
         }
     }
 }
