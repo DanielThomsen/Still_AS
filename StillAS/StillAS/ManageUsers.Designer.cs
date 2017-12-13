@@ -33,6 +33,7 @@
             this.btnAdd = new System.Windows.Forms.Button();
             this.lblName = new System.Windows.Forms.Label();
             this.txtName = new System.Windows.Forms.TextBox();
+            this.btnBackToMenu = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataUsers)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
@@ -41,7 +42,7 @@
             // 
             this.dataUsers.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataUsers.Location = new System.Drawing.Point(12, 131);
-            this.dataUsers.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.dataUsers.Margin = new System.Windows.Forms.Padding(6);
             this.dataUsers.Name = "dataUsers";
             this.dataUsers.Size = new System.Drawing.Size(532, 460);
             this.dataUsers.TabIndex = 0;
@@ -54,9 +55,9 @@
             this.groupBox1.Controls.Add(this.txtName);
             this.groupBox1.Controls.Add(this.dataUsers);
             this.groupBox1.Location = new System.Drawing.Point(24, 23);
-            this.groupBox1.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.groupBox1.Margin = new System.Windows.Forms.Padding(6);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Padding = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.groupBox1.Padding = new System.Windows.Forms.Padding(6);
             this.groupBox1.Size = new System.Drawing.Size(556, 612);
             this.groupBox1.TabIndex = 1;
             this.groupBox1.TabStop = false;
@@ -65,7 +66,7 @@
             // btnAdd
             // 
             this.btnAdd.Location = new System.Drawing.Point(280, 75);
-            this.btnAdd.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.btnAdd.Margin = new System.Windows.Forms.Padding(6);
             this.btnAdd.Name = "btnAdd";
             this.btnAdd.Size = new System.Drawing.Size(126, 44);
             this.btnAdd.TabIndex = 3;
@@ -86,19 +87,30 @@
             // txtName
             // 
             this.txtName.Location = new System.Drawing.Point(12, 81);
-            this.txtName.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.txtName.Margin = new System.Windows.Forms.Padding(6);
             this.txtName.Name = "txtName";
             this.txtName.Size = new System.Drawing.Size(252, 31);
             this.txtName.TabIndex = 1;
             this.txtName.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtName_KeyPress);
             // 
+            // btnBackToMenu
+            // 
+            this.btnBackToMenu.Location = new System.Drawing.Point(36, 669);
+            this.btnBackToMenu.Name = "btnBackToMenu";
+            this.btnBackToMenu.Size = new System.Drawing.Size(203, 41);
+            this.btnBackToMenu.TabIndex = 2;
+            this.btnBackToMenu.Text = "Back To Menu";
+            this.btnBackToMenu.UseVisualStyleBackColor = true;
+            this.btnBackToMenu.Click += new System.EventHandler(this.btnBackToMenu_Click);
+            // 
             // ManageUsers
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(606, 650);
+            this.ClientSize = new System.Drawing.Size(606, 763);
+            this.Controls.Add(this.btnBackToMenu);
             this.Controls.Add(this.groupBox1);
-            this.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.Margin = new System.Windows.Forms.Padding(6);
             this.Name = "ManageUsers";
             this.Text = "ManageUsers";
             ((System.ComponentModel.ISupportInitialize)(this.dataUsers)).EndInit();
@@ -115,5 +127,6 @@
         private System.Windows.Forms.Button btnAdd;
         private System.Windows.Forms.Label lblName;
         private System.Windows.Forms.TextBox txtName;
+        private System.Windows.Forms.Button btnBackToMenu;
     }
 }

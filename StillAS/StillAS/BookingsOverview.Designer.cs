@@ -37,7 +37,6 @@
             this.btnShowBookingsByDate = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.btnBack = new System.Windows.Forms.Button();
             this.bookingBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.bookingTableAdapter = new StillAS.stillasDataSetTableAdapters.BookingTableAdapter();
             this.btnShowCalendar = new System.Windows.Forms.Button();
@@ -137,16 +136,6 @@
             this.groupBox2.TabIndex = 8;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Show by date:";
-            // 
-            // btnBack
-            // 
-            this.btnBack.Location = new System.Drawing.Point(64, 937);
-            this.btnBack.Margin = new System.Windows.Forms.Padding(4);
-            this.btnBack.Name = "btnBack";
-            this.btnBack.Size = new System.Drawing.Size(88, 48);
-            this.btnBack.TabIndex = 1;
-            this.btnBack.Text = "Back";
-            this.btnBack.UseVisualStyleBackColor = true;
             // 
             // bookingBindingSource
             // 
@@ -251,7 +240,6 @@
             this.AutoSize = true;
             this.ClientSize = new System.Drawing.Size(1542, 1021);
             this.Controls.Add(this.groupBox5);
-            this.Controls.Add(this.btnBack);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.gvBookings);
@@ -281,7 +269,6 @@
         private System.Windows.Forms.Button btnShowBookingsByDate;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.GroupBox groupBox2;
-        private System.Windows.Forms.Button btnBack;
         private System.Windows.Forms.BindingSource bookingBindingSource;
         private stillasDataSetTableAdapters.BookingTableAdapter bookingTableAdapter;
         private System.Windows.Forms.Button btnShowCalendar;

@@ -32,11 +32,13 @@ namespace StillAS
             {
                 WorkshopBookings WB = new WorkshopBookings();
                 WB.Show();
+                this.Visible = false;
             }
             else
             {
                 Bookings B = new Bookings();
                 B.Show();
+                this.Visible = false;
             }
         }
 
@@ -72,6 +74,7 @@ namespace StillAS
                 {
                     ManageUsers MU = new ManageUsers();
                     MU.Show();
+                    this.Visible = false;
                 }
 
                 else

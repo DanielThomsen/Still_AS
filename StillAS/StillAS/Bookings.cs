@@ -79,6 +79,7 @@ namespace StillAS
                     int bookingIDSelected = Convert.ToInt32(libBookingID.SelectedItem);
                     ShowBooking SB = new ShowBooking(bookingIDSelected);
                     SB.Show();
+                    this.Visible = false;
                 }
 
                 else
@@ -259,6 +260,13 @@ namespace StillAS
 
                 MessageBox.Show("Connection error");
             }
+        }
+
+        private void btnBackToMenu_Click(object sender, EventArgs e)
+        {
+            Frontpage fp = new Frontpage();
+            fp.Show();
+            this.Visible = false;
         }
     }
 }
