@@ -18,6 +18,7 @@ namespace StillAS
         {
             InitializeComponent();
             dataUsers.DataSource = CC.GetAllUsers();
+            btnAdd.Enabled = false;
         }
 
         private void dataUsers_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -34,10 +35,35 @@ namespace StillAS
         private void btnAdd_Click(object sender, EventArgs e)
         {
             string name = txtName.Text;
-            CC.AddUser(name);
 
-            dataUsers.DataSource = CC.GetAllUsers();
-            txtName.Text = string.Empty;
+            if (name != "")
+            {
+                try
+                {
+                    CC.AddUser(name);
+
+                    dataUsers.DataSource = CC.GetAllUsers();
+                    txtName.Text = string.Empty;
+                }
+                catch (Exception)
+                {
+
+                    MessageBox.Show("Connection error");
+                }
+            }
+
+            else
+            {
+                MessageBox.Show("Write a Sales Rep name to add it");
+            }
+
+            btnAdd.Enabled = false;
+        }
+
+        private void txtName_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            //MessageBox.Show("hej");
+            btnAdd.Enabled = true;
         }
     }
 }

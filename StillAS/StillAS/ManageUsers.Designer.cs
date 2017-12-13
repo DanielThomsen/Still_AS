@@ -40,9 +40,10 @@
             // dataUsers
             // 
             this.dataUsers.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataUsers.Location = new System.Drawing.Point(6, 68);
+            this.dataUsers.Location = new System.Drawing.Point(12, 131);
+            this.dataUsers.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.dataUsers.Name = "dataUsers";
-            this.dataUsers.Size = new System.Drawing.Size(266, 239);
+            this.dataUsers.Size = new System.Drawing.Size(532, 460);
             this.dataUsers.TabIndex = 0;
             this.dataUsers.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataUsers_CellContentClick);
             // 
@@ -52,18 +53,21 @@
             this.groupBox1.Controls.Add(this.lblName);
             this.groupBox1.Controls.Add(this.txtName);
             this.groupBox1.Controls.Add(this.dataUsers);
-            this.groupBox1.Location = new System.Drawing.Point(12, 12);
+            this.groupBox1.Location = new System.Drawing.Point(24, 23);
+            this.groupBox1.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(278, 318);
+            this.groupBox1.Padding = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.groupBox1.Size = new System.Drawing.Size(556, 612);
             this.groupBox1.TabIndex = 1;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Manage users";
             // 
             // btnAdd
             // 
-            this.btnAdd.Location = new System.Drawing.Point(140, 39);
+            this.btnAdd.Location = new System.Drawing.Point(280, 75);
+            this.btnAdd.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.btnAdd.Name = "btnAdd";
-            this.btnAdd.Size = new System.Drawing.Size(63, 23);
+            this.btnAdd.Size = new System.Drawing.Size(126, 44);
             this.btnAdd.TabIndex = 3;
             this.btnAdd.Text = "Add";
             this.btnAdd.UseVisualStyleBackColor = true;
@@ -72,25 +76,29 @@
             // lblName
             // 
             this.lblName.AutoSize = true;
-            this.lblName.Location = new System.Drawing.Point(6, 26);
+            this.lblName.Location = new System.Drawing.Point(12, 50);
+            this.lblName.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.lblName.Name = "lblName";
-            this.lblName.Size = new System.Drawing.Size(38, 13);
+            this.lblName.Size = new System.Drawing.Size(74, 25);
             this.lblName.TabIndex = 2;
             this.lblName.Text = "Name:";
             // 
             // txtName
             // 
-            this.txtName.Location = new System.Drawing.Point(6, 42);
+            this.txtName.Location = new System.Drawing.Point(12, 81);
+            this.txtName.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.txtName.Name = "txtName";
-            this.txtName.Size = new System.Drawing.Size(128, 20);
+            this.txtName.Size = new System.Drawing.Size(252, 31);
             this.txtName.TabIndex = 1;
+            this.txtName.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtName_KeyPress);
             // 
             // ManageUsers
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(303, 338);
+            this.ClientSize = new System.Drawing.Size(606, 650);
             this.Controls.Add(this.groupBox1);
+            this.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.Name = "ManageUsers";
             this.Text = "ManageUsers";
             ((System.ComponentModel.ISupportInitialize)(this.dataUsers)).EndInit();
