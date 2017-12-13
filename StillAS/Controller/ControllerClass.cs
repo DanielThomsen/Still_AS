@@ -97,6 +97,14 @@ namespace Controller
             int Current = DBR.UpdateWaits(InBox);
             return Current;
         }
+        public string TimeNow()
+        {
+            return MC.ClockNow();
+        }
+        public string TimeNY()
+        {
+            return MC.ClockNY();
+        }
         //[Krognos slut]
 
         //Daniels metoder:
