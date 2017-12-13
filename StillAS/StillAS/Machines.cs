@@ -24,15 +24,22 @@ namespace StillAS
             try
             {
                 CC.PopulateListbox(modelname); // HENTER DATA FRA DATABASEN OG SENDER DET OP I EN LISTE
-                for (int i = 0; i < modelname.Count; i++)
+                int i = 0;
+                while (modelname.Count > i)
                 {
                     libModelName.Items.Add(modelname[i].ToString()); // INDSÆTTER I LISTBOXEN
+                    i++;
                 }
+                if (i == 0)
+                {
+                    MessageBox.Show("Connection error");
+                }
+                
             }
             catch (Exception)
             {
 
-                MessageBox.Show("Connection error");
+                
             }
 
         }
@@ -128,24 +135,21 @@ namespace StillAS
                 {
                     string demoNumberSelected = libDemoNumber.SelectedItem.ToString();
 
-                    try
-                    {
-                        CC.RemoveMachine(demoNumberSelected);
-                        MessageBox.Show("Machine removed: Demo number:" + demoNumberSelected);
-                    }
-                    catch (Exception)
-                    {
-                        MessageBox.Show("Connection error");
-                    }
-                }
-                else
+                try
                 {
+                    CC.RemoveMachine(demoNumberSelected);
+                    MessageBox.Show("Machine with demo number: " + demoNumberSelected + " has been removed");
+                }
+                catch (Exception)
+                {
+                    MessageBox.Show("Connection error");
+                }
 
                 }
             }
             catch (Exception)
             {
-                MessageBox.Show("Machine not chosen");
+                MessageBox.Show("Error: Machine not chosen");
             }
         }
 
@@ -245,6 +249,13 @@ namespace StillAS
         private void libModelNumber_SelectedIndexChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void btnBackToMenu_Click(object sender, EventArgs e)
+        {
+            Frontpage fp = new Frontpage();
+            fp.Visible = true;
+            this.Visible = false;
         }
     }
 }

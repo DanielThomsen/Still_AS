@@ -33,6 +33,7 @@
             this.btnAdd = new System.Windows.Forms.Button();
             this.lblName = new System.Windows.Forms.Label();
             this.txtName = new System.Windows.Forms.TextBox();
+            this.btnBackToMenu = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataUsers)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
@@ -92,11 +93,22 @@
             this.txtName.TabIndex = 1;
             this.txtName.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtName_KeyPress);
             // 
+            // btnBackToMenu
+            // 
+            this.btnBackToMenu.Location = new System.Drawing.Point(36, 669);
+            this.btnBackToMenu.Name = "btnBackToMenu";
+            this.btnBackToMenu.Size = new System.Drawing.Size(203, 41);
+            this.btnBackToMenu.TabIndex = 2;
+            this.btnBackToMenu.Text = "Back To Menu";
+            this.btnBackToMenu.UseVisualStyleBackColor = true;
+            this.btnBackToMenu.Click += new System.EventHandler(this.btnBackToMenu_Click);
+            // 
             // ManageUsers
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(404, 418);
+            this.ClientSize = new System.Drawing.Size(606, 763);
+            this.Controls.Add(this.btnBackToMenu);
             this.Controls.Add(this.groupBox1);
             this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "ManageUsers";
@@ -115,5 +127,6 @@
         private System.Windows.Forms.Button btnAdd;
         private System.Windows.Forms.Label lblName;
         private System.Windows.Forms.TextBox txtName;
+        private System.Windows.Forms.Button btnBackToMenu;
     }
 }

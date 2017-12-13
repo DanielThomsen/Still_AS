@@ -167,6 +167,8 @@ namespace StillAS
 
         private void btnBackToBooking_Click(object sender, EventArgs e)
         {
+            Bookings bookings = new Bookings();
+            bookings.Show();
             this.Visible = false;
         }
         private void btnCancel_Click(object sender, EventArgs e)

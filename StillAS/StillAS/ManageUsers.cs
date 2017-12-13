@@ -65,5 +65,12 @@ namespace StillAS
             //MessageBox.Show("hej");
             btnAdd.Enabled = true;
         }
+
+        private void btnBackToMenu_Click(object sender, EventArgs e)
+        {
+            Frontpage fp = new Frontpage();
+            fp.Show();
+            this.Visible = false;
+        }
     }
 }

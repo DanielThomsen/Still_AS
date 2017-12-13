@@ -23,6 +23,7 @@ namespace StillAS
         {
             Machines M = new Machines();
             M.Show();
+            this.Visible = false;
         }
 
         private void btnBookings_Click(object sender, EventArgs e)
@@ -31,11 +32,13 @@ namespace StillAS
             {
                 WorkshopBookings WB = new WorkshopBookings();
                 WB.Show();
+                this.Visible = false;
             }
             else
             {
                 Bookings B = new Bookings();
                 B.Show();
+                this.Visible = false;
             }
         }
 
@@ -71,6 +74,7 @@ namespace StillAS
                 {
                     ManageUsers MU = new ManageUsers();
                     MU.Show();
+                    this.Visible = false;
                 }
 
                 else

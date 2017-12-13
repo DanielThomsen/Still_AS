@@ -17,48 +17,81 @@ namespace StillAS
         public WorkshopBookings()
         {
             InitializeComponent();
-
-            List<string> bookingIDs = new List<string>();
-
-            bookingIDs = CC.GetWaiting();
-
-            foreach (string s in bookingIDs)
+            try
             {
-                lbBookings.Items.Add(s);
+                List<string> bookingIDs = new List<string>();
+
+                bookingIDs = CC.GetWaiting();
+
+                foreach (string s in bookingIDs)
+                {
+                    lbBookings.Items.Add(s);
+                }
             }
+            catch (Exception)
+            {
+
+                MessageBox.Show("Connection error");
+            }
+         
+
+            
         }
 
         private void btnShow_Click(object sender, EventArgs e)
         {
             try
             {
+                string s = lbBookings.SelectedItem.ToString();
                 int bookingIDSelected = Convert.ToInt32(lbBookings.SelectedItem);
-                ShowBooking SB = new ShowBooking(bookingIDSelected);
-                CC.SetBookingID(bookingIDSelected);
-                SB.Show();
+               
+
+                try
+                {
+                    CC.SetBookingID(bookingIDSelected);
+                    ShowBooking SB = new ShowBooking(bookingIDSelected);
+                    SB.Show();
+                }
+                catch (Exception)
+                {
+
+                    MessageBox.Show("Connection error");
+                }
+
+               
                 
             }
             catch (Exception)
             {
-                MessageBox.Show("Error: Machine not found");
+                MessageBox.Show("Error: Booking not found");
             }
         }
 
         private void btnUpdate_Click(object sender, EventArgs e)
         {
-            int Check = CC.UpdateNews(lbBookings.Items.Count);
-            if (Check > lbBookings.Items.Count)
+            try
             {
-                Check = Check - lbBookings.Items.Count;
-                MessageBox.Show("There is " + Check + " new booking(s)");
+                int Check = CC.UpdateNews(lbBookings.Items.Count);
+                if (Check > lbBookings.Items.Count)
+                {
+                    Check = Check - lbBookings.Items.Count;
+                    MessageBox.Show("There is " + Check + " new booking(s)");
+                }
+                lbBookings.Items.Clear();
+                List<string> bookingIDs = new List<string>();
+                bookingIDs = CC.GetWaiting();
+                foreach (string s in bookingIDs)
+                {
+                    lbBookings.Items.Add(s);
+                }
             }
-            lbBookings.Items.Clear();
-            List<string> bookingIDs = new List<string>();
-            bookingIDs = CC.GetWaiting();
-            foreach (string s in bookingIDs)
+            catch (Exception)
             {
-                lbBookings.Items.Add(s);
+
+                MessageBox.Show("Connection error");
             }
+
+            
         }
     }
 }

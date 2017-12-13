@@ -40,22 +40,24 @@
             this.lblCustomerName = new System.Windows.Forms.Label();
             this.lblCity = new System.Windows.Forms.Label();
             this.lblBookingID = new System.Windows.Forms.Label();
+            this.btnBackToMenu = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // lblBookings
             // 
             this.lblBookings.AutoSize = true;
             this.lblBookings.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
-            this.lblBookings.Location = new System.Drawing.Point(337, 25);
+            this.lblBookings.Location = new System.Drawing.Point(506, 39);
+            this.lblBookings.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblBookings.Name = "lblBookings";
-            this.lblBookings.Size = new System.Drawing.Size(88, 24);
+            this.lblBookings.Size = new System.Drawing.Size(140, 36);
             this.lblBookings.TabIndex = 15;
             this.lblBookings.Text = "Bookings";
             // 
             // btnShow
             // 
-            this.btnShow.Location = new System.Drawing.Point(620, 160);
-            this.btnShow.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
+            this.btnShow.Location = new System.Drawing.Point(930, 250);
+            this.btnShow.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
             this.btnShow.Name = "btnShow";
             this.btnShow.Size = new System.Drawing.Size(75, 42);
             this.btnShow.TabIndex = 2;
@@ -65,8 +67,8 @@
             // 
             // btnRemove
             // 
-            this.btnRemove.Location = new System.Drawing.Point(620, 228);
-            this.btnRemove.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
+            this.btnRemove.Location = new System.Drawing.Point(930, 356);
+            this.btnRemove.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
             this.btnRemove.Name = "btnRemove";
             this.btnRemove.Size = new System.Drawing.Size(75, 42);
             this.btnRemove.TabIndex = 3;
@@ -76,8 +78,8 @@
             // 
             // btnAddBooking
             // 
-            this.btnAddBooking.Location = new System.Drawing.Point(620, 96);
-            this.btnAddBooking.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.btnAddBooking.Location = new System.Drawing.Point(930, 150);
+            this.btnAddBooking.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.btnAddBooking.Name = "btnAddBooking";
             this.btnAddBooking.Size = new System.Drawing.Size(75, 42);
             this.btnAddBooking.TabIndex = 1;
@@ -88,9 +90,9 @@
             // libBookingID
             // 
             this.libBookingID.FormattingEnabled = true;
-            this.libBookingID.ItemHeight = 16;
-            this.libBookingID.Location = new System.Drawing.Point(408, 96);
-            this.libBookingID.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.libBookingID.ItemHeight = 25;
+            this.libBookingID.Location = new System.Drawing.Point(612, 150);
+            this.libBookingID.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.libBookingID.Name = "libBookingID";
             this.libBookingID.Size = new System.Drawing.Size(152, 356);
             this.libBookingID.TabIndex = 8;
@@ -98,9 +100,9 @@
             // libCity
             // 
             this.libCity.FormattingEnabled = true;
-            this.libCity.ItemHeight = 16;
-            this.libCity.Location = new System.Drawing.Point(227, 96);
-            this.libCity.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.libCity.ItemHeight = 25;
+            this.libCity.Location = new System.Drawing.Point(340, 150);
+            this.libCity.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.libCity.Name = "libCity";
             this.libCity.Size = new System.Drawing.Size(152, 356);
             this.libCity.TabIndex = 7;
@@ -109,9 +111,9 @@
             // libCustomerName
             // 
             this.libCustomerName.FormattingEnabled = true;
-            this.libCustomerName.ItemHeight = 16;
-            this.libCustomerName.Location = new System.Drawing.Point(47, 96);
-            this.libCustomerName.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.libCustomerName.ItemHeight = 25;
+            this.libCustomerName.Location = new System.Drawing.Point(70, 150);
+            this.libCustomerName.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.libCustomerName.Name = "libCustomerName";
             this.libCustomerName.Size = new System.Drawing.Size(152, 356);
             this.libCustomerName.TabIndex = 6;
@@ -143,38 +145,46 @@
             // lblCustomerName
             // 
             this.lblCustomerName.AutoSize = true;
-            this.lblCustomerName.Location = new System.Drawing.Point(44, 75);
-            this.lblCustomerName.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblCustomerName.Location = new System.Drawing.Point(66, 117);
             this.lblCustomerName.Name = "lblCustomerName";
-            this.lblCustomerName.Size = new System.Drawing.Size(109, 17);
+            this.lblCustomerName.Size = new System.Drawing.Size(166, 25);
             this.lblCustomerName.TabIndex = 17;
             this.lblCustomerName.Text = "Customer Name";
             // 
             // lblCity
             // 
             this.lblCity.AutoSize = true;
-            this.lblCity.Location = new System.Drawing.Point(224, 75);
-            this.lblCity.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblCity.Location = new System.Drawing.Point(336, 117);
             this.lblCity.Name = "lblCity";
-            this.lblCity.Size = new System.Drawing.Size(31, 17);
+            this.lblCity.Size = new System.Drawing.Size(49, 25);
             this.lblCity.TabIndex = 18;
             this.lblCity.Text = "City";
             // 
             // lblBookingID
             // 
             this.lblBookingID.AutoSize = true;
-            this.lblBookingID.Location = new System.Drawing.Point(405, 75);
-            this.lblBookingID.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblBookingID.Location = new System.Drawing.Point(608, 117);
             this.lblBookingID.Name = "lblBookingID";
-            this.lblBookingID.Size = new System.Drawing.Size(76, 17);
+            this.lblBookingID.Size = new System.Drawing.Size(116, 25);
             this.lblBookingID.TabIndex = 19;
             this.lblBookingID.Text = "Booking ID";
             // 
+            // btnBackToMenu
+            // 
+            this.btnBackToMenu.Location = new System.Drawing.Point(70, 861);
+            this.btnBackToMenu.Name = "btnBackToMenu";
+            this.btnBackToMenu.Size = new System.Drawing.Size(217, 40);
+            this.btnBackToMenu.TabIndex = 20;
+            this.btnBackToMenu.Text = "Back To Menu";
+            this.btnBackToMenu.UseVisualStyleBackColor = true;
+            this.btnBackToMenu.Click += new System.EventHandler(this.btnBackToMenu_Click);
+            // 
             // Bookings
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(748, 527);
+            this.ClientSize = new System.Drawing.Size(1122, 938);
+            this.Controls.Add(this.btnBackToMenu);
             this.Controls.Add(this.lblBookingID);
             this.Controls.Add(this.lblCity);
             this.Controls.Add(this.lblCustomerName);
@@ -187,7 +197,7 @@
             this.Controls.Add(this.libBookingID);
             this.Controls.Add(this.libCity);
             this.Controls.Add(this.libCustomerName);
-            this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.Name = "Bookings";
             this.Text = "Bookings";
             this.Load += new System.EventHandler(this.Bookings_Load);
@@ -210,5 +220,6 @@
         private System.Windows.Forms.Label lblCity;
         private System.Windows.Forms.Label lblBookingID;
         private System.Windows.Forms.Button btnRefresh;
+        private System.Windows.Forms.Button btnBackToMenu;
     }
 }
