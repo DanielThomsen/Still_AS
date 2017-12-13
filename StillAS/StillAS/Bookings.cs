@@ -243,6 +243,9 @@ namespace StillAS
         {
             try
             {
+                libBookingID.Items.Clear();
+                libCity.Items.Clear();
+                libCustomerName.Items.Clear();
                 List<string> customers = CC.GetAllCustomers();
                 foreach (string s in customers)
                 {

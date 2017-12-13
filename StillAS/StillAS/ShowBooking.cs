@@ -94,8 +94,8 @@ namespace StillAS
                 libBookingMachines.Items.Add(s);
             }
 
+            txtConfigs.Text = CC.GetConfigs(bookingID);
             //MessageBox.Show("All machines in booking: " + allMachinesInBooking);
-
 
 
             //Vis alle konfigurationer på bookings maskiner:

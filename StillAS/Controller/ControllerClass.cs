@@ -68,6 +68,11 @@ namespace Controller
             DBR.CreateBookingLine(DemoMachines, Konfigs);
             DemoMachines.Clear();
         }
+        public string GetConfigs(int BookingID)
+        {
+            string Config = DBR.GetConfig(BookingID);
+            return Config;
+        }
         public string GetModelName(string Demo)
         {
             return DBR.GetModelName(Demo);

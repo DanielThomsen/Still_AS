@@ -80,6 +80,8 @@ namespace Database
 
         List<string> GetAllModels();
 
+        string GetConfig(int BookingID);
+
         List<string> GetModelNumbers(string s);
 
         string GetConnection();
@@ -254,6 +256,12 @@ namespace Database
         public int GetAccessLevel()
         {
             return AccessLevel;
+        }
+
+        public string GetConfig(int BookingID)
+        {
+            string Configs = meContext.BookingLinjes.Find(BookingID).KonfigurationTekst;
+            return Configs;
         }
         public string GetModelName(string Demo)
         {
