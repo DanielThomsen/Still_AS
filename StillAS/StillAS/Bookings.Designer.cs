@@ -58,7 +58,7 @@
             this.btnShow.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.btnShow.Name = "btnShow";
             this.btnShow.Size = new System.Drawing.Size(75, 42);
-            this.btnShow.TabIndex = 14;
+            this.btnShow.TabIndex = 2;
             this.btnShow.Text = "Show";
             this.btnShow.UseVisualStyleBackColor = true;
             this.btnShow.Click += new System.EventHandler(this.btnShow_Click);
@@ -69,7 +69,7 @@
             this.btnRemove.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.btnRemove.Name = "btnRemove";
             this.btnRemove.Size = new System.Drawing.Size(75, 42);
-            this.btnRemove.TabIndex = 13;
+            this.btnRemove.TabIndex = 3;
             this.btnRemove.Text = "Remove";
             this.btnRemove.UseVisualStyleBackColor = true;
             this.btnRemove.Click += new System.EventHandler(this.btnRemove_Click);
@@ -80,7 +80,7 @@
             this.btnAddBooking.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnAddBooking.Name = "btnAddBooking";
             this.btnAddBooking.Size = new System.Drawing.Size(75, 42);
-            this.btnAddBooking.TabIndex = 11;
+            this.btnAddBooking.TabIndex = 1;
             this.btnAddBooking.Text = "Add new booking";
             this.btnAddBooking.UseVisualStyleBackColor = true;
             this.btnAddBooking.Click += new System.EventHandler(this.btnAddBooking_Click);
@@ -93,7 +93,7 @@
             this.libBookingID.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.libBookingID.Name = "libBookingID";
             this.libBookingID.Size = new System.Drawing.Size(152, 356);
-            this.libBookingID.TabIndex = 10;
+            this.libBookingID.TabIndex = 8;
             // 
             // libCity
             // 
@@ -103,7 +103,7 @@
             this.libCity.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.libCity.Name = "libCity";
             this.libCity.Size = new System.Drawing.Size(152, 356);
-            this.libCity.TabIndex = 9;
+            this.libCity.TabIndex = 7;
             this.libCity.Click += new System.EventHandler(this.libCity_Click);
             // 
             // libCustomerName
@@ -114,17 +114,17 @@
             this.libCustomerName.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.libCustomerName.Name = "libCustomerName";
             this.libCustomerName.Size = new System.Drawing.Size(152, 356);
-            this.libCustomerName.TabIndex = 8;
+            this.libCustomerName.TabIndex = 6;
             this.libCustomerName.Click += new System.EventHandler(this.libCustomerName_Click);
             this.libCustomerName.SelectedIndexChanged += new System.EventHandler(this.libCustomerName_SelectedIndexChanged);
             // 
             // btnShowBookingsOverview
             // 
             this.btnShowBookingsOverview.Location = new System.Drawing.Point(577, 401);
-            this.btnShowBookingsOverview.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
+            this.btnShowBookingsOverview.Margin = new System.Windows.Forms.Padding(1);
             this.btnShowBookingsOverview.Name = "btnShowBookingsOverview";
             this.btnShowBookingsOverview.Size = new System.Drawing.Size(118, 51);
-            this.btnShowBookingsOverview.TabIndex = 16;
+            this.btnShowBookingsOverview.TabIndex = 4;
             this.btnShowBookingsOverview.Text = "Show Bookings Overview";
             this.btnShowBookingsOverview.UseVisualStyleBackColor = true;
             this.btnShowBookingsOverview.Click += new System.EventHandler(this.btnShowBookingsOverview_Click);
@@ -132,10 +132,10 @@
             // btnRefresh
             // 
             this.btnRefresh.Location = new System.Drawing.Point(47, 476);
-            this.btnRefresh.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnRefresh.Margin = new System.Windows.Forms.Padding(2);
             this.btnRefresh.Name = "btnRefresh";
             this.btnRefresh.Size = new System.Drawing.Size(81, 29);
-            this.btnRefresh.TabIndex = 17;
+            this.btnRefresh.TabIndex = 5;
             this.btnRefresh.Text = "Refresh";
             this.btnRefresh.UseVisualStyleBackColor = true;
             this.btnRefresh.Click += new System.EventHandler(this.btnRefresh_Click);

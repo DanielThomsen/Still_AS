@@ -94,11 +94,9 @@
             this.groupBox4.Controls.Add(this.lblWidth);
             this.groupBox4.Controls.Add(this.txtHeight);
             this.groupBox4.Controls.Add(this.lblLength);
-            this.groupBox4.Location = new System.Drawing.Point(810, 642);
-            this.groupBox4.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBox4.Location = new System.Drawing.Point(540, 411);
             this.groupBox4.Name = "groupBox4";
-            this.groupBox4.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.groupBox4.Size = new System.Drawing.Size(524, 219);
+            this.groupBox4.Size = new System.Drawing.Size(349, 140);
             this.groupBox4.TabIndex = 103;
             this.groupBox4.TabStop = false;
             this.groupBox4.Text = "Dimenstions";
@@ -106,76 +104,72 @@
             // lblWeight
             // 
             this.lblWeight.AutoSize = true;
-            this.lblWeight.Location = new System.Drawing.Point(38, 52);
-            this.lblWeight.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblWeight.Location = new System.Drawing.Point(25, 33);
             this.lblWeight.Name = "lblWeight";
-            this.lblWeight.Size = new System.Drawing.Size(85, 25);
+            this.lblWeight.Size = new System.Drawing.Size(56, 17);
             this.lblWeight.TabIndex = 51;
             this.lblWeight.Text = "Weight:";
             // 
             // txtWidth
             // 
-            this.txtWidth.Location = new System.Drawing.Point(290, 162);
-            this.txtWidth.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
+            this.txtWidth.Location = new System.Drawing.Point(193, 104);
+            this.txtWidth.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtWidth.Name = "txtWidth";
-            this.txtWidth.Size = new System.Drawing.Size(190, 31);
+            this.txtWidth.Size = new System.Drawing.Size(128, 22);
             this.txtWidth.TabIndex = 19;
             this.txtWidth.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtWidth_KeyPress);
             // 
             // lblHeight
             // 
             this.lblHeight.AutoSize = true;
-            this.lblHeight.Location = new System.Drawing.Point(284, 52);
-            this.lblHeight.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblHeight.Location = new System.Drawing.Point(189, 33);
             this.lblHeight.Name = "lblHeight";
-            this.lblHeight.Size = new System.Drawing.Size(80, 25);
+            this.lblHeight.Size = new System.Drawing.Size(53, 17);
             this.lblHeight.TabIndex = 52;
             this.lblHeight.Text = "Heigth:";
             // 
             // txtLength
             // 
-            this.txtLength.Location = new System.Drawing.Point(44, 162);
-            this.txtLength.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
+            this.txtLength.Location = new System.Drawing.Point(29, 104);
+            this.txtLength.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtLength.Name = "txtLength";
-            this.txtLength.Size = new System.Drawing.Size(190, 31);
+            this.txtLength.Size = new System.Drawing.Size(128, 22);
             this.txtLength.TabIndex = 18;
             this.txtLength.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtLength_KeyPress);
             // 
             // txtWeight
             // 
-            this.txtWeight.Location = new System.Drawing.Point(44, 81);
-            this.txtWeight.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
+            this.txtWeight.Location = new System.Drawing.Point(29, 52);
+            this.txtWeight.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtWeight.Name = "txtWeight";
-            this.txtWeight.Size = new System.Drawing.Size(190, 31);
+            this.txtWeight.Size = new System.Drawing.Size(128, 22);
             this.txtWeight.TabIndex = 16;
             this.txtWeight.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtWeight_KeyPress);
             // 
             // lblWidth
             // 
             this.lblWidth.AutoSize = true;
-            this.lblWidth.Location = new System.Drawing.Point(284, 135);
-            this.lblWidth.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblWidth.Location = new System.Drawing.Point(189, 86);
             this.lblWidth.Name = "lblWidth";
-            this.lblWidth.Size = new System.Drawing.Size(73, 25);
+            this.lblWidth.Size = new System.Drawing.Size(48, 17);
             this.lblWidth.TabIndex = 77;
             this.lblWidth.Text = "Width:";
             // 
             // txtHeight
             // 
-            this.txtHeight.Location = new System.Drawing.Point(290, 81);
-            this.txtHeight.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
+            this.txtHeight.Location = new System.Drawing.Point(193, 52);
+            this.txtHeight.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtHeight.Name = "txtHeight";
-            this.txtHeight.Size = new System.Drawing.Size(190, 31);
+            this.txtHeight.Size = new System.Drawing.Size(128, 22);
             this.txtHeight.TabIndex = 17;
             this.txtHeight.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtHeight_KeyPress);
             // 
             // lblLength
             // 
             this.lblLength.AutoSize = true;
-            this.lblLength.Location = new System.Drawing.Point(38, 135);
-            this.lblLength.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblLength.Location = new System.Drawing.Point(25, 86);
             this.lblLength.Name = "lblLength";
-            this.lblLength.Size = new System.Drawing.Size(84, 25);
+            this.lblLength.Size = new System.Drawing.Size(56, 17);
             this.lblLength.TabIndex = 76;
             this.lblLength.Text = "Length:";
             // 
@@ -195,138 +189,129 @@
             this.groupBox3.Controls.Add(this.lblBatteryNumber);
             this.groupBox3.Controls.Add(this.txtAggregateNumber);
             this.groupBox3.Controls.Add(this.lblBatteryType);
-            this.groupBox3.Location = new System.Drawing.Point(88, 623);
-            this.groupBox3.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBox3.Location = new System.Drawing.Point(59, 399);
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.groupBox3.Size = new System.Drawing.Size(524, 360);
+            this.groupBox3.Size = new System.Drawing.Size(349, 230);
             this.groupBox3.TabIndex = 102;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Aggregate, battery, charger and controller";
             // 
             // txtController
             // 
-            this.txtController.Location = new System.Drawing.Point(44, 302);
-            this.txtController.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
+            this.txtController.Location = new System.Drawing.Point(29, 193);
+            this.txtController.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtController.Name = "txtController";
-            this.txtController.Size = new System.Drawing.Size(190, 31);
+            this.txtController.Size = new System.Drawing.Size(128, 22);
             this.txtController.TabIndex = 84;
             // 
             // txtChargerNumber
             // 
-            this.txtChargerNumber.Location = new System.Drawing.Point(290, 231);
-            this.txtChargerNumber.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
+            this.txtChargerNumber.Location = new System.Drawing.Point(193, 148);
+            this.txtChargerNumber.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtChargerNumber.Name = "txtChargerNumber";
-            this.txtChargerNumber.Size = new System.Drawing.Size(190, 31);
+            this.txtChargerNumber.Size = new System.Drawing.Size(128, 22);
             this.txtChargerNumber.TabIndex = 15;
             // 
             // lblController
             // 
             this.lblController.AutoSize = true;
-            this.lblController.Location = new System.Drawing.Point(40, 273);
-            this.lblController.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblController.Location = new System.Drawing.Point(27, 175);
             this.lblController.Name = "lblController";
-            this.lblController.Size = new System.Drawing.Size(111, 25);
+            this.lblController.Size = new System.Drawing.Size(73, 17);
             this.lblController.TabIndex = 83;
             this.lblController.Text = "Controller:";
             // 
             // txtChargerType
             // 
-            this.txtChargerType.Location = new System.Drawing.Point(44, 231);
-            this.txtChargerType.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
+            this.txtChargerType.Location = new System.Drawing.Point(29, 148);
+            this.txtChargerType.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtChargerType.Name = "txtChargerType";
-            this.txtChargerType.Size = new System.Drawing.Size(190, 31);
+            this.txtChargerType.Size = new System.Drawing.Size(128, 22);
             this.txtChargerType.TabIndex = 14;
             // 
             // lblChargerNumber
             // 
             this.lblChargerNumber.AutoSize = true;
-            this.lblChargerNumber.Location = new System.Drawing.Point(284, 202);
-            this.lblChargerNumber.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblChargerNumber.Location = new System.Drawing.Point(189, 129);
             this.lblChargerNumber.Name = "lblChargerNumber";
-            this.lblChargerNumber.Size = new System.Drawing.Size(173, 25);
+            this.lblChargerNumber.Size = new System.Drawing.Size(115, 17);
             this.lblChargerNumber.TabIndex = 81;
             this.lblChargerNumber.Text = "Charger number:";
             // 
             // lblChargerType
             // 
             this.lblChargerType.AutoSize = true;
-            this.lblChargerType.Location = new System.Drawing.Point(38, 202);
-            this.lblChargerType.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblChargerType.Location = new System.Drawing.Point(25, 129);
             this.lblChargerType.Name = "lblChargerType";
-            this.lblChargerType.Size = new System.Drawing.Size(142, 25);
+            this.lblChargerType.Size = new System.Drawing.Size(94, 17);
             this.lblChargerType.TabIndex = 80;
             this.lblChargerType.Text = "Charger type:";
             // 
             // lblAggregateType
             // 
             this.lblAggregateType.AutoSize = true;
-            this.lblAggregateType.Location = new System.Drawing.Point(38, 52);
-            this.lblAggregateType.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblAggregateType.Location = new System.Drawing.Point(25, 33);
             this.lblAggregateType.Name = "lblAggregateType";
-            this.lblAggregateType.Size = new System.Drawing.Size(164, 25);
+            this.lblAggregateType.Size = new System.Drawing.Size(109, 17);
             this.lblAggregateType.TabIndex = 51;
             this.lblAggregateType.Text = "Aggregate type:";
             // 
             // txtBatteryNumber
             // 
-            this.txtBatteryNumber.Location = new System.Drawing.Point(290, 156);
-            this.txtBatteryNumber.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
+            this.txtBatteryNumber.Location = new System.Drawing.Point(193, 100);
+            this.txtBatteryNumber.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtBatteryNumber.Name = "txtBatteryNumber";
-            this.txtBatteryNumber.Size = new System.Drawing.Size(190, 31);
+            this.txtBatteryNumber.Size = new System.Drawing.Size(128, 22);
             this.txtBatteryNumber.TabIndex = 13;
             // 
             // lblAggregateNumber
             // 
             this.lblAggregateNumber.AutoSize = true;
-            this.lblAggregateNumber.Location = new System.Drawing.Point(284, 52);
-            this.lblAggregateNumber.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblAggregateNumber.Location = new System.Drawing.Point(189, 33);
             this.lblAggregateNumber.Name = "lblAggregateNumber";
-            this.lblAggregateNumber.Size = new System.Drawing.Size(195, 25);
+            this.lblAggregateNumber.Size = new System.Drawing.Size(130, 17);
             this.lblAggregateNumber.TabIndex = 52;
             this.lblAggregateNumber.Text = "Aggregate number:";
             // 
             // txtBatteryType
             // 
-            this.txtBatteryType.Location = new System.Drawing.Point(44, 156);
-            this.txtBatteryType.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
+            this.txtBatteryType.Location = new System.Drawing.Point(29, 100);
+            this.txtBatteryType.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtBatteryType.Name = "txtBatteryType";
-            this.txtBatteryType.Size = new System.Drawing.Size(190, 31);
+            this.txtBatteryType.Size = new System.Drawing.Size(128, 22);
             this.txtBatteryType.TabIndex = 12;
             // 
             // txtAggregateType
             // 
-            this.txtAggregateType.Location = new System.Drawing.Point(44, 81);
-            this.txtAggregateType.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
+            this.txtAggregateType.Location = new System.Drawing.Point(29, 52);
+            this.txtAggregateType.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtAggregateType.Name = "txtAggregateType";
-            this.txtAggregateType.Size = new System.Drawing.Size(190, 31);
+            this.txtAggregateType.Size = new System.Drawing.Size(128, 22);
             this.txtAggregateType.TabIndex = 10;
             // 
             // lblBatteryNumber
             // 
             this.lblBatteryNumber.AutoSize = true;
-            this.lblBatteryNumber.Location = new System.Drawing.Point(284, 127);
-            this.lblBatteryNumber.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblBatteryNumber.Location = new System.Drawing.Point(189, 81);
             this.lblBatteryNumber.Name = "lblBatteryNumber";
-            this.lblBatteryNumber.Size = new System.Drawing.Size(164, 25);
+            this.lblBatteryNumber.Size = new System.Drawing.Size(109, 17);
             this.lblBatteryNumber.TabIndex = 77;
             this.lblBatteryNumber.Text = "Battery number:";
             // 
             // txtAggregateNumber
             // 
-            this.txtAggregateNumber.Location = new System.Drawing.Point(290, 81);
-            this.txtAggregateNumber.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
+            this.txtAggregateNumber.Location = new System.Drawing.Point(193, 52);
+            this.txtAggregateNumber.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtAggregateNumber.Name = "txtAggregateNumber";
-            this.txtAggregateNumber.Size = new System.Drawing.Size(190, 31);
+            this.txtAggregateNumber.Size = new System.Drawing.Size(128, 22);
             this.txtAggregateNumber.TabIndex = 11;
             // 
             // lblBatteryType
             // 
             this.lblBatteryType.AutoSize = true;
-            this.lblBatteryType.Location = new System.Drawing.Point(38, 127);
-            this.lblBatteryType.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblBatteryType.Location = new System.Drawing.Point(25, 81);
             this.lblBatteryType.Name = "lblBatteryType";
-            this.lblBatteryType.Size = new System.Drawing.Size(133, 25);
+            this.lblBatteryType.Size = new System.Drawing.Size(88, 17);
             this.lblBatteryType.TabIndex = 76;
             this.lblBatteryType.Text = "Battery type:";
             // 
@@ -340,11 +325,9 @@
             this.groupBox2.Controls.Add(this.lblMastFreeLift);
             this.groupBox2.Controls.Add(this.txtMastBuildingHeight);
             this.groupBox2.Controls.Add(this.lblMastLiftingHeight);
-            this.groupBox2.Location = new System.Drawing.Point(88, 369);
-            this.groupBox2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBox2.Location = new System.Drawing.Point(59, 236);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.groupBox2.Size = new System.Drawing.Size(524, 219);
+            this.groupBox2.Size = new System.Drawing.Size(349, 140);
             this.groupBox2.TabIndex = 101;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Mast";
@@ -352,75 +335,71 @@
             // lblMastType
             // 
             this.lblMastType.AutoSize = true;
-            this.lblMastType.Location = new System.Drawing.Point(38, 52);
-            this.lblMastType.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblMastType.Location = new System.Drawing.Point(25, 33);
             this.lblMastType.Name = "lblMastType";
-            this.lblMastType.Size = new System.Drawing.Size(112, 25);
+            this.lblMastType.Size = new System.Drawing.Size(73, 17);
             this.lblMastType.TabIndex = 51;
             this.lblMastType.Text = "Mast type:";
             // 
             // txtMastFreeLift
             // 
-            this.txtMastFreeLift.Location = new System.Drawing.Point(290, 162);
-            this.txtMastFreeLift.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
+            this.txtMastFreeLift.Location = new System.Drawing.Point(193, 104);
+            this.txtMastFreeLift.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtMastFreeLift.Name = "txtMastFreeLift";
-            this.txtMastFreeLift.Size = new System.Drawing.Size(190, 31);
+            this.txtMastFreeLift.Size = new System.Drawing.Size(128, 22);
             this.txtMastFreeLift.TabIndex = 9;
             this.txtMastFreeLift.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtMastFreeLift_KeyPress);
             // 
             // lblMastBuildingHeight
             // 
             this.lblMastBuildingHeight.AutoSize = true;
-            this.lblMastBuildingHeight.Location = new System.Drawing.Point(284, 52);
-            this.lblMastBuildingHeight.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblMastBuildingHeight.Location = new System.Drawing.Point(189, 33);
             this.lblMastBuildingHeight.Name = "lblMastBuildingHeight";
-            this.lblMastBuildingHeight.Size = new System.Drawing.Size(211, 25);
+            this.lblMastBuildingHeight.Size = new System.Drawing.Size(138, 17);
             this.lblMastBuildingHeight.TabIndex = 52;
             this.lblMastBuildingHeight.Text = "Mast building height:";
             // 
             // txtMastLiftingHeight
             // 
-            this.txtMastLiftingHeight.Location = new System.Drawing.Point(44, 162);
-            this.txtMastLiftingHeight.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
+            this.txtMastLiftingHeight.Location = new System.Drawing.Point(29, 104);
+            this.txtMastLiftingHeight.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtMastLiftingHeight.Name = "txtMastLiftingHeight";
-            this.txtMastLiftingHeight.Size = new System.Drawing.Size(190, 31);
+            this.txtMastLiftingHeight.Size = new System.Drawing.Size(128, 22);
             this.txtMastLiftingHeight.TabIndex = 8;
             this.txtMastLiftingHeight.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtMastLiftingHeight_KeyPress);
             // 
             // txtMastType
             // 
-            this.txtMastType.Location = new System.Drawing.Point(44, 81);
-            this.txtMastType.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
+            this.txtMastType.Location = new System.Drawing.Point(29, 52);
+            this.txtMastType.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtMastType.Name = "txtMastType";
-            this.txtMastType.Size = new System.Drawing.Size(190, 31);
+            this.txtMastType.Size = new System.Drawing.Size(128, 22);
             this.txtMastType.TabIndex = 6;
             // 
             // lblMastFreeLift
             // 
             this.lblMastFreeLift.AutoSize = true;
-            this.lblMastFreeLift.Location = new System.Drawing.Point(284, 135);
-            this.lblMastFreeLift.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblMastFreeLift.Location = new System.Drawing.Point(189, 86);
             this.lblMastFreeLift.Name = "lblMastFreeLift";
-            this.lblMastFreeLift.Size = new System.Drawing.Size(131, 25);
+            this.lblMastFreeLift.Size = new System.Drawing.Size(86, 17);
             this.lblMastFreeLift.TabIndex = 77;
             this.lblMastFreeLift.Text = "Mast free-lift";
             // 
             // txtMastBuildingHeight
             // 
-            this.txtMastBuildingHeight.Location = new System.Drawing.Point(290, 81);
-            this.txtMastBuildingHeight.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
+            this.txtMastBuildingHeight.Location = new System.Drawing.Point(193, 52);
+            this.txtMastBuildingHeight.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtMastBuildingHeight.Name = "txtMastBuildingHeight";
-            this.txtMastBuildingHeight.Size = new System.Drawing.Size(190, 31);
+            this.txtMastBuildingHeight.Size = new System.Drawing.Size(128, 22);
             this.txtMastBuildingHeight.TabIndex = 7;
             this.txtMastBuildingHeight.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtMastBuildingHeight_KeyPress);
             // 
             // lblMastLiftingHeight
             // 
             this.lblMastLiftingHeight.AutoSize = true;
-            this.lblMastLiftingHeight.Location = new System.Drawing.Point(38, 135);
-            this.lblMastLiftingHeight.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblMastLiftingHeight.Location = new System.Drawing.Point(25, 86);
             this.lblMastLiftingHeight.Name = "lblMastLiftingHeight";
-            this.lblMastLiftingHeight.Size = new System.Drawing.Size(187, 25);
+            this.lblMastLiftingHeight.Size = new System.Drawing.Size(122, 17);
             this.lblMastLiftingHeight.TabIndex = 76;
             this.lblMastLiftingHeight.Text = "Mast lifting height:";
             // 
@@ -436,11 +415,9 @@
             this.groupBox1.Controls.Add(this.txtDemoMachine);
             this.groupBox1.Controls.Add(this.lblChassisNumber);
             this.groupBox1.Controls.Add(this.lblBrand);
-            this.groupBox1.Location = new System.Drawing.Point(88, 46);
-            this.groupBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBox1.Location = new System.Drawing.Point(59, 29);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.groupBox1.Size = new System.Drawing.Size(524, 292);
+            this.groupBox1.Size = new System.Drawing.Size(349, 187);
             this.groupBox1.TabIndex = 100;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Machine";
@@ -449,100 +426,95 @@
             // 
             this.cbModelName.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbModelName.FormattingEnabled = true;
-            this.cbModelName.Location = new System.Drawing.Point(46, 146);
-            this.cbModelName.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.cbModelName.Location = new System.Drawing.Point(31, 93);
+            this.cbModelName.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.cbModelName.Name = "cbModelName";
-            this.cbModelName.Size = new System.Drawing.Size(186, 33);
-            this.cbModelName.TabIndex = 81;
+            this.cbModelName.Size = new System.Drawing.Size(125, 24);
+            this.cbModelName.TabIndex = 2;
             // 
             // lblModelNumber
             // 
             this.lblModelNumber.AutoSize = true;
-            this.lblModelNumber.Location = new System.Drawing.Point(284, 119);
-            this.lblModelNumber.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblModelNumber.Location = new System.Drawing.Point(189, 76);
             this.lblModelNumber.Name = "lblModelNumber";
-            this.lblModelNumber.Size = new System.Drawing.Size(155, 25);
+            this.lblModelNumber.Size = new System.Drawing.Size(102, 17);
             this.lblModelNumber.TabIndex = 80;
             this.lblModelNumber.Text = "Model number:";
             // 
             // txtModelNumber
             // 
-            this.txtModelNumber.Location = new System.Drawing.Point(290, 146);
-            this.txtModelNumber.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
+            this.txtModelNumber.Location = new System.Drawing.Point(193, 93);
+            this.txtModelNumber.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtModelNumber.Name = "txtModelNumber";
-            this.txtModelNumber.Size = new System.Drawing.Size(190, 31);
+            this.txtModelNumber.Size = new System.Drawing.Size(128, 22);
             this.txtModelNumber.TabIndex = 3;
             // 
             // lblDemoMachine
             // 
             this.lblDemoMachine.AutoSize = true;
-            this.lblDemoMachine.Location = new System.Drawing.Point(36, 40);
-            this.lblDemoMachine.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblDemoMachine.Location = new System.Drawing.Point(24, 26);
             this.lblDemoMachine.Name = "lblDemoMachine";
-            this.lblDemoMachine.Size = new System.Drawing.Size(161, 25);
+            this.lblDemoMachine.Size = new System.Drawing.Size(106, 17);
             this.lblDemoMachine.TabIndex = 51;
             this.lblDemoMachine.Text = "Demo machine:";
             // 
             // txtChassisNumber
             // 
-            this.txtChassisNumber.Location = new System.Drawing.Point(292, 212);
-            this.txtChassisNumber.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
+            this.txtChassisNumber.Location = new System.Drawing.Point(195, 136);
+            this.txtChassisNumber.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtChassisNumber.Name = "txtChassisNumber";
-            this.txtChassisNumber.Size = new System.Drawing.Size(190, 31);
+            this.txtChassisNumber.Size = new System.Drawing.Size(128, 22);
             this.txtChassisNumber.TabIndex = 5;
             // 
             // lblModelName
             // 
             this.lblModelName.AutoSize = true;
-            this.lblModelName.Location = new System.Drawing.Point(40, 119);
-            this.lblModelName.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblModelName.Location = new System.Drawing.Point(27, 76);
             this.lblModelName.Name = "lblModelName";
-            this.lblModelName.Size = new System.Drawing.Size(136, 25);
+            this.lblModelName.Size = new System.Drawing.Size(89, 17);
             this.lblModelName.TabIndex = 52;
             this.lblModelName.Text = "Model name:";
             // 
             // txtBrand
             // 
-            this.txtBrand.Location = new System.Drawing.Point(44, 212);
-            this.txtBrand.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
+            this.txtBrand.Location = new System.Drawing.Point(29, 136);
+            this.txtBrand.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtBrand.Name = "txtBrand";
-            this.txtBrand.Size = new System.Drawing.Size(190, 31);
+            this.txtBrand.Size = new System.Drawing.Size(128, 22);
             this.txtBrand.TabIndex = 4;
             // 
             // txtDemoMachine
             // 
-            this.txtDemoMachine.Location = new System.Drawing.Point(42, 69);
-            this.txtDemoMachine.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
+            this.txtDemoMachine.Location = new System.Drawing.Point(28, 44);
+            this.txtDemoMachine.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtDemoMachine.Name = "txtDemoMachine";
-            this.txtDemoMachine.Size = new System.Drawing.Size(190, 31);
+            this.txtDemoMachine.Size = new System.Drawing.Size(128, 22);
             this.txtDemoMachine.TabIndex = 1;
             // 
             // lblChassisNumber
             // 
             this.lblChassisNumber.AutoSize = true;
-            this.lblChassisNumber.Location = new System.Drawing.Point(284, 187);
-            this.lblChassisNumber.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblChassisNumber.Location = new System.Drawing.Point(189, 120);
             this.lblChassisNumber.Name = "lblChassisNumber";
-            this.lblChassisNumber.Size = new System.Drawing.Size(173, 25);
+            this.lblChassisNumber.Size = new System.Drawing.Size(113, 17);
             this.lblChassisNumber.TabIndex = 77;
             this.lblChassisNumber.Text = "Chassis number:";
             // 
             // lblBrand
             // 
             this.lblBrand.AutoSize = true;
-            this.lblBrand.Location = new System.Drawing.Point(40, 187);
-            this.lblBrand.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblBrand.Location = new System.Drawing.Point(27, 120);
             this.lblBrand.Name = "lblBrand";
-            this.lblBrand.Size = new System.Drawing.Size(75, 25);
+            this.lblBrand.Size = new System.Drawing.Size(50, 17);
             this.lblBrand.TabIndex = 76;
             this.lblBrand.Text = "Brand:";
             // 
             // btnEditMachine
             // 
-            this.btnEditMachine.Location = new System.Drawing.Point(854, 894);
-            this.btnEditMachine.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
+            this.btnEditMachine.Location = new System.Drawing.Point(569, 572);
+            this.btnEditMachine.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnEditMachine.Name = "btnEditMachine";
-            this.btnEditMachine.Size = new System.Drawing.Size(200, 69);
+            this.btnEditMachine.Size = new System.Drawing.Size(133, 44);
             this.btnEditMachine.TabIndex = 95;
             this.btnEditMachine.Text = "Edit machine";
             this.btnEditMachine.UseVisualStyleBackColor = true;
@@ -557,10 +529,10 @@
             // 
             // btnSaveMachine
             // 
-            this.btnSaveMachine.Location = new System.Drawing.Point(1088, 894);
-            this.btnSaveMachine.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
+            this.btnSaveMachine.Location = new System.Drawing.Point(725, 572);
+            this.btnSaveMachine.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnSaveMachine.Name = "btnSaveMachine";
-            this.btnSaveMachine.Size = new System.Drawing.Size(200, 69);
+            this.btnSaveMachine.Size = new System.Drawing.Size(133, 44);
             this.btnSaveMachine.TabIndex = 94;
             this.btnSaveMachine.Text = "Save machine";
             this.btnSaveMachine.UseVisualStyleBackColor = true;
@@ -578,10 +550,10 @@
             // 
             // btnAddMachine
             // 
-            this.btnAddMachine.Location = new System.Drawing.Point(1088, 896);
-            this.btnAddMachine.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.btnAddMachine.Location = new System.Drawing.Point(725, 573);
+            this.btnAddMachine.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnAddMachine.Name = "btnAddMachine";
-            this.btnAddMachine.Size = new System.Drawing.Size(200, 67);
+            this.btnAddMachine.Size = new System.Drawing.Size(133, 43);
             this.btnAddMachine.TabIndex = 104;
             this.btnAddMachine.Text = "Add Machine";
             this.btnAddMachine.UseVisualStyleBackColor = true;
@@ -590,16 +562,16 @@
             // label1
             // 
             this.label1.Location = new System.Drawing.Point(0, 0);
-            this.label1.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
+            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(200, 44);
+            this.label1.Size = new System.Drawing.Size(133, 28);
             this.label1.TabIndex = 105;
             // 
             // AddMachine
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1428, 1004);
+            this.ClientSize = new System.Drawing.Size(952, 643);
             this.Controls.Add(this.groupBox4);
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.groupBox2);
@@ -608,7 +580,7 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.btnAddMachine);
             this.Controls.Add(this.btnSaveMachine);
-            this.Margin = new System.Windows.Forms.Padding(8, 10, 8, 10);
+            this.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
             this.Name = "AddMachine";
             this.Text = "TilføjMaskine";
             this.Load += new System.EventHandler(this.AddMachine_Load);

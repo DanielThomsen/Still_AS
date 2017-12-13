@@ -121,7 +121,7 @@
             this.groupBox3.Name = "groupBox3";
             this.groupBox3.Padding = new System.Windows.Forms.Padding(4);
             this.groupBox3.Size = new System.Drawing.Size(469, 330);
-            this.groupBox3.TabIndex = 9;
+            this.groupBox3.TabIndex = 2;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Booking Information";
             // 
@@ -131,7 +131,7 @@
             this.coboSalesRep.Location = new System.Drawing.Point(13, 42);
             this.coboSalesRep.Name = "coboSalesRep";
             this.coboSalesRep.Size = new System.Drawing.Size(197, 24);
-            this.coboSalesRep.TabIndex = 15;
+            this.coboSalesRep.TabIndex = 9;
             // 
             // rbtnNo
             // 
@@ -140,7 +140,7 @@
             this.rbtnNo.Margin = new System.Windows.Forms.Padding(4);
             this.rbtnNo.Name = "rbtnNo";
             this.rbtnNo.Size = new System.Drawing.Size(47, 21);
-            this.rbtnNo.TabIndex = 14;
+            this.rbtnNo.TabIndex = 16;
             this.rbtnNo.TabStop = true;
             this.rbtnNo.Text = "No";
             this.rbtnNo.UseVisualStyleBackColor = true;
@@ -152,7 +152,7 @@
             this.rbtnYes.Margin = new System.Windows.Forms.Padding(4);
             this.rbtnYes.Name = "rbtnYes";
             this.rbtnYes.Size = new System.Drawing.Size(53, 21);
-            this.rbtnYes.TabIndex = 13;
+            this.rbtnYes.TabIndex = 15;
             this.rbtnYes.TabStop = true;
             this.rbtnYes.Text = "Yes";
             this.rbtnYes.UseVisualStyleBackColor = true;
@@ -233,7 +233,7 @@
             this.txtDeliveryNote.Multiline = true;
             this.txtDeliveryNote.Name = "txtDeliveryNote";
             this.txtDeliveryNote.Size = new System.Drawing.Size(203, 106);
-            this.txtDeliveryNote.TabIndex = 5;
+            this.txtDeliveryNote.TabIndex = 14;
             // 
             // txtMessageToWorkshop
             // 
@@ -242,7 +242,7 @@
             this.txtMessageToWorkshop.Multiline = true;
             this.txtMessageToWorkshop.Name = "txtMessageToWorkshop";
             this.txtMessageToWorkshop.Size = new System.Drawing.Size(203, 106);
-            this.txtMessageToWorkshop.TabIndex = 4;
+            this.txtMessageToWorkshop.TabIndex = 13;
             // 
             // txtCarrier
             // 
@@ -250,7 +250,7 @@
             this.txtCarrier.Margin = new System.Windows.Forms.Padding(4);
             this.txtCarrier.Name = "txtCarrier";
             this.txtCarrier.Size = new System.Drawing.Size(200, 22);
-            this.txtCarrier.TabIndex = 3;
+            this.txtCarrier.TabIndex = 10;
             // 
             // txtRetrievalDate
             // 
@@ -258,7 +258,7 @@
             this.txtRetrievalDate.Margin = new System.Windows.Forms.Padding(4);
             this.txtRetrievalDate.Name = "txtRetrievalDate";
             this.txtRetrievalDate.Size = new System.Drawing.Size(199, 22);
-            this.txtRetrievalDate.TabIndex = 2;
+            this.txtRetrievalDate.TabIndex = 12;
             // 
             // txtDeliveryDate
             // 
@@ -266,7 +266,7 @@
             this.txtDeliveryDate.Margin = new System.Windows.Forms.Padding(4);
             this.txtDeliveryDate.Name = "txtDeliveryDate";
             this.txtDeliveryDate.Size = new System.Drawing.Size(197, 22);
-            this.txtDeliveryDate.TabIndex = 1;
+            this.txtDeliveryDate.TabIndex = 11;
             // 
             // groupBox2
             // 
@@ -279,7 +279,7 @@
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Padding = new System.Windows.Forms.Padding(4);
             this.groupBox2.Size = new System.Drawing.Size(456, 400);
-            this.groupBox2.TabIndex = 8;
+            this.groupBox2.TabIndex = 3;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Machines On Booking";
             // 
@@ -290,7 +290,7 @@
             this.txtConfigs.Multiline = true;
             this.txtConfigs.Name = "txtConfigs";
             this.txtConfigs.Size = new System.Drawing.Size(191, 311);
-            this.txtConfigs.TabIndex = 4;
+            this.txtConfigs.TabIndex = 17;
             // 
             // label1
             // 
@@ -357,7 +357,7 @@
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Padding = new System.Windows.Forms.Padding(4);
             this.groupBox1.Size = new System.Drawing.Size(469, 236);
-            this.groupBox1.TabIndex = 6;
+            this.groupBox1.TabIndex = 1;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Customer Information";
             // 
@@ -378,7 +378,7 @@
             this.coboCountry.Margin = new System.Windows.Forms.Padding(4);
             this.coboCountry.Name = "coboCountry";
             this.coboCountry.Size = new System.Drawing.Size(203, 24);
-            this.coboCountry.TabIndex = 14;
+            this.coboCountry.TabIndex = 7;
             // 
             // lblPhone
             // 
@@ -445,7 +445,7 @@
             this.txtCity.Margin = new System.Windows.Forms.Padding(4);
             this.txtCity.Name = "txtCity";
             this.txtCity.Size = new System.Drawing.Size(203, 22);
-            this.txtCity.TabIndex = 7;
+            this.txtCity.TabIndex = 6;
             // 
             // txtZipCode
             // 
@@ -453,7 +453,7 @@
             this.txtZipCode.Margin = new System.Windows.Forms.Padding(4);
             this.txtZipCode.Name = "txtZipCode";
             this.txtZipCode.Size = new System.Drawing.Size(203, 22);
-            this.txtZipCode.TabIndex = 6;
+            this.txtZipCode.TabIndex = 5;
             this.txtZipCode.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtZipCode_KeyPress);
             // 
             // txtAdresss
@@ -462,7 +462,7 @@
             this.txtAdresss.Margin = new System.Windows.Forms.Padding(4);
             this.txtAdresss.Name = "txtAdresss";
             this.txtAdresss.Size = new System.Drawing.Size(203, 22);
-            this.txtAdresss.TabIndex = 5;
+            this.txtAdresss.TabIndex = 4;
             // 
             // txtATT
             // 
@@ -470,7 +470,7 @@
             this.txtATT.Margin = new System.Windows.Forms.Padding(4);
             this.txtATT.Name = "txtATT";
             this.txtATT.Size = new System.Drawing.Size(203, 22);
-            this.txtATT.TabIndex = 4;
+            this.txtATT.TabIndex = 3;
             // 
             // lblName2
             // 

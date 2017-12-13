@@ -65,7 +65,7 @@
             this.btnAddMachine.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnAddMachine.Name = "btnAddMachine";
             this.btnAddMachine.Size = new System.Drawing.Size(101, 44);
-            this.btnAddMachine.TabIndex = 9;
+            this.btnAddMachine.TabIndex = 4;
             this.btnAddMachine.Text = "Add new machine";
             this.btnAddMachine.UseVisualStyleBackColor = true;
             this.btnAddMachine.Click += new System.EventHandler(this.btnAddMachine_Click);
@@ -98,7 +98,7 @@
             this.btnRefresh.Margin = new System.Windows.Forms.Padding(4);
             this.btnRefresh.Name = "btnRefresh";
             this.btnRefresh.Size = new System.Drawing.Size(84, 28);
-            this.btnRefresh.TabIndex = 14;
+            this.btnRefresh.TabIndex = 3;
             this.btnRefresh.Text = "Refresh";
             this.btnRefresh.UseVisualStyleBackColor = true;
             this.btnRefresh.Click += new System.EventHandler(this.btnRefresh_Click);
@@ -110,7 +110,7 @@
             this.btnRemove.Margin = new System.Windows.Forms.Padding(4);
             this.btnRemove.Name = "btnRemove";
             this.btnRemove.Size = new System.Drawing.Size(35, 28);
-            this.btnRemove.TabIndex = 13;
+            this.btnRemove.TabIndex = 6;
             this.btnRemove.Text = "-";
             this.btnRemove.UseVisualStyleBackColor = true;
             this.btnRemove.Click += new System.EventHandler(this.btnRemove_Click);
@@ -122,7 +122,7 @@
             this.btnAdd.Margin = new System.Windows.Forms.Padding(4);
             this.btnAdd.Name = "btnAdd";
             this.btnAdd.Size = new System.Drawing.Size(35, 28);
-            this.btnAdd.TabIndex = 12;
+            this.btnAdd.TabIndex = 5;
             this.btnAdd.Text = "+";
             this.btnAdd.UseVisualStyleBackColor = true;
             this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
@@ -144,7 +144,7 @@
             this.libDemoNumber.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.libDemoNumber.Name = "libDemoNumber";
             this.libDemoNumber.Size = new System.Drawing.Size(152, 356);
-            this.libDemoNumber.TabIndex = 10;
+            this.libDemoNumber.TabIndex = 9;
             // 
             // lblModelName
             // 
@@ -172,7 +172,7 @@
             this.libModelName.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.libModelName.Name = "libModelName";
             this.libModelName.Size = new System.Drawing.Size(152, 356);
-            this.libModelName.TabIndex = 3;
+            this.libModelName.TabIndex = 7;
             this.libModelName.Click += new System.EventHandler(this.libModelName_Click);
             // 
             // btnRemoveMachine
@@ -181,7 +181,7 @@
             this.btnRemoveMachine.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnRemoveMachine.Name = "btnRemoveMachine";
             this.btnRemoveMachine.Size = new System.Drawing.Size(84, 28);
-            this.btnRemoveMachine.TabIndex = 7;
+            this.btnRemoveMachine.TabIndex = 2;
             this.btnRemoveMachine.Text = "Remove";
             this.btnRemoveMachine.UseVisualStyleBackColor = true;
             this.btnRemoveMachine.Click += new System.EventHandler(this.btnRemoveMachine_Click);
@@ -194,7 +194,7 @@
             this.libModelNumber.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.libModelNumber.Name = "libModelNumber";
             this.libModelNumber.Size = new System.Drawing.Size(152, 356);
-            this.libModelNumber.TabIndex = 4;
+            this.libModelNumber.TabIndex = 8;
             this.libModelNumber.Click += new System.EventHandler(this.libModelNumber_Click);
             this.libModelNumber.SelectedIndexChanged += new System.EventHandler(this.libModelNumber_SelectedIndexChanged);
             // 
@@ -204,7 +204,7 @@
             this.btnShowMachine.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnShowMachine.Name = "btnShowMachine";
             this.btnShowMachine.Size = new System.Drawing.Size(84, 28);
-            this.btnShowMachine.TabIndex = 5;
+            this.btnShowMachine.TabIndex = 1;
             this.btnShowMachine.Text = "Show";
             this.btnShowMachine.UseVisualStyleBackColor = true;
             this.btnShowMachine.Click += new System.EventHandler(this.btnShowMachine_Click);
