@@ -17,14 +17,6 @@ namespace StillAS
         public AddMachine()
         {
             InitializeComponent();
-            //cbConfigurations.Visible = true;
-            //libConfigurations.Visible = false;
-            //List<string> configurationsList = CC.GetAllConfigurations();
-
-            //foreach (string s in configurationsList)
-            //{
-            //    cbConfigurations.Items.Add(s);
-            //}
             btnSaveMachine.Visible = false;
             btnEditMachine.Visible = false;
         }
@@ -43,8 +35,7 @@ namespace StillAS
             cbModelName.Enabled = false;
             cbModelName.Text = CC.GetModelName(demoNumber);
             txtDemoMachine.Text = demoNumber;
-            //List<string> configurations = CC.GetConfigurations(demoNumber);
-
+            
             txtDemoMachine.ReadOnly = true; // -- Lea
             int i = 0;
             foreach (TextBox tb in textBoxList)
@@ -54,10 +45,6 @@ namespace StillAS
                 i++;
             }
 
-            //foreach (string s in configurations)
-            //{
-            //    libConfigurations.Items.Add(s);
-            //}
             btnAddMachine.Visible = false;
             btnSaveMachine.Visible = false;
             btnEditMachine.Visible = true;
@@ -88,10 +75,6 @@ namespace StillAS
                 decimal Width = Convert.ToDecimal(txtWidth.Text.Replace('.', ','));
 
                 List<string> configurationsList = new List<string>();
-                //foreach (object itemChecked in cbConfigurations.CheckedItems)
-                //{
-                //    configurationsList.Add(itemChecked + "");
-                //}
                 List<TextBox> textBoxList = new List<TextBox>
             { txtDemoMachine, txtModelNumber,
                 txtBrand, txtChassisNumber, txtMastType, txtMastBuildingHeight,

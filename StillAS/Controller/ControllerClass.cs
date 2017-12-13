@@ -72,11 +72,6 @@ namespace Controller
         {
             return DBR.GetModelName(Demo);
         }
-       // public int GetCustomerID()
-        //{
-        //    int ID = DatabaseRepository.CustomerID;
-        //    return ID;
-        //}
         public int AccessLevel()
         {
             return DBR.GetAccessLevel();
@@ -84,16 +79,6 @@ namespace Controller
         public int Validation(string ID1, string ID2)
         {
             return DBR.LoginValidation(ID1, ID2);
-        }
-            // SKal til Model
-        public string TimeNow()
-        {
-            return MC.ClockNow();
-        }
-        //Skal til model
-        public string TimeNY()
-        {
-            return MC.ClockNY();
         }
         public List<string> GetWaiting()
         {

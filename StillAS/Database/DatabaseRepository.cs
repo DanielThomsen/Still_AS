@@ -137,16 +137,6 @@ namespace Database
                 Length = Length, Width = Width};
             meContext.Maskines.Add(Machine);
             meContext.SaveChanges();
-            
-            //foreach (string s in configurationsList)
-            //{
-            //    var machineConfiguration = new MaskineKonfiguration();
-            //    machineConfiguration.DemoNummer = DemoNumber;
-            //    machineConfiguration.Konfiguration = s;
-            //    meContext.MaskineKonfigurations.Add(machineConfiguration);
-            //    meContext.SaveChanges();
-            //}
-
         }
         public void CreateCustomer(string Name1, string Name2, string Att, string Address, int ZIP, string City, string Country, int Phone)
         {
