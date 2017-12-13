@@ -53,7 +53,6 @@
             this.btnNext.TabIndex = 27;
             this.btnNext.Text = "Next";
             this.btnNext.UseVisualStyleBackColor = true;
-            this.btnNext.Click += new System.EventHandler(this.btnFinish_Click);
             // 
             // rbRampNo
             // 

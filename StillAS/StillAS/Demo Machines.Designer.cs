@@ -39,6 +39,7 @@
             this.txtKonfig = new System.Windows.Forms.TextBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.coboSalesRep = new System.Windows.Forms.ComboBox();
             this.dtpRetrievalDate = new System.Windows.Forms.DateTimePicker();
             this.dtpDeliveryDate = new System.Windows.Forms.DateTimePicker();
             this.rbtnNo = new System.Windows.Forms.RadioButton();
@@ -70,7 +71,6 @@
             this.txtName2 = new System.Windows.Forms.TextBox();
             this.txtName1 = new System.Windows.Forms.TextBox();
             this.lblName1 = new System.Windows.Forms.Label();
-            this.coboSalesRep = new System.Windows.Forms.ComboBox();
             this.gbMachines.SuspendLayout();
             this.gbConfigurations.SuspendLayout();
             this.groupBox1.SuspendLayout();
@@ -212,6 +212,14 @@
             this.groupBox3.TabIndex = 23;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Booking Information";
+            // 
+            // coboSalesRep
+            // 
+            this.coboSalesRep.FormattingEnabled = true;
+            this.coboSalesRep.Location = new System.Drawing.Point(9, 36);
+            this.coboSalesRep.Name = "coboSalesRep";
+            this.coboSalesRep.Size = new System.Drawing.Size(150, 21);
+            this.coboSalesRep.TabIndex = 17;
             // 
             // dtpRetrievalDate
             // 
@@ -493,14 +501,6 @@
             this.lblName1.Size = new System.Drawing.Size(38, 13);
             this.lblName1.TabIndex = 0;
             this.lblName1.Text = "Name:";
-            // 
-            // coboSalesRep
-            // 
-            this.coboSalesRep.FormattingEnabled = true;
-            this.coboSalesRep.Location = new System.Drawing.Point(9, 36);
-            this.coboSalesRep.Name = "coboSalesRep";
-            this.coboSalesRep.Size = new System.Drawing.Size(150, 21);
-            this.coboSalesRep.TabIndex = 17;
             // 
             // Demo_Maskiner
             // 

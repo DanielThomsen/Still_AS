@@ -44,8 +44,6 @@
             this.txtDeliveryNote = new System.Windows.Forms.TextBox();
             this.txtMessageToWorkshop = new System.Windows.Forms.TextBox();
             this.txtCarrier = new System.Windows.Forms.TextBox();
-            this.txtRetrievalDate = new System.Windows.Forms.TextBox();
-            this.txtDeliveryDate = new System.Windows.Forms.TextBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.txtConfigs = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
@@ -73,6 +71,10 @@
             this.btnCancel = new System.Windows.Forms.Button();
             this.btnApprove = new System.Windows.Forms.Button();
             this.btnDont = new System.Windows.Forms.Button();
+            this.dtpDeliveryDate = new System.Windows.Forms.DateTimePicker();
+            this.dtpRetrievalDate = new System.Windows.Forms.DateTimePicker();
+            this.txtDeliveryDate = new System.Windows.Forms.TextBox();
+            this.txtRetrievalDate = new System.Windows.Forms.TextBox();
             this.groupBox3.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox1.SuspendLayout();
@@ -91,7 +93,7 @@
             // btnBackToBooking
             // 
             this.btnBackToBooking.Location = new System.Drawing.Point(603, 412);
-            this.btnBackToBooking.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnBackToBooking.Margin = new System.Windows.Forms.Padding(2);
             this.btnBackToBooking.Name = "btnBackToBooking";
             this.btnBackToBooking.Size = new System.Drawing.Size(100, 50);
             this.btnBackToBooking.TabIndex = 10;
@@ -101,6 +103,10 @@
             // 
             // groupBox3
             // 
+            this.groupBox3.Controls.Add(this.txtRetrievalDate);
+            this.groupBox3.Controls.Add(this.txtDeliveryDate);
+            this.groupBox3.Controls.Add(this.dtpRetrievalDate);
+            this.groupBox3.Controls.Add(this.dtpDeliveryDate);
             this.groupBox3.Controls.Add(this.coboSalesRep);
             this.groupBox3.Controls.Add(this.rbtnNo);
             this.groupBox3.Controls.Add(this.rbtnYes);
@@ -114,10 +120,8 @@
             this.groupBox3.Controls.Add(this.txtDeliveryNote);
             this.groupBox3.Controls.Add(this.txtMessageToWorkshop);
             this.groupBox3.Controls.Add(this.txtCarrier);
-            this.groupBox3.Controls.Add(this.txtRetrievalDate);
-            this.groupBox3.Controls.Add(this.txtDeliveryDate);
             this.groupBox3.Location = new System.Drawing.Point(9, 240);
-            this.groupBox3.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupBox3.Margin = new System.Windows.Forms.Padding(2);
             this.groupBox3.Name = "groupBox3";
             this.groupBox3.Size = new System.Drawing.Size(352, 265);
             this.groupBox3.TabIndex = 9;
@@ -127,10 +131,10 @@
             // coboSalesRep
             // 
             this.coboSalesRep.FormattingEnabled = true;
-            this.coboSalesRep.Location = new System.Drawing.Point(12, 35);
-            this.coboSalesRep.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.coboSalesRep.Location = new System.Drawing.Point(9, 35);
+            this.coboSalesRep.Margin = new System.Windows.Forms.Padding(2);
             this.coboSalesRep.Name = "coboSalesRep";
-            this.coboSalesRep.Size = new System.Drawing.Size(147, 21);
+            this.coboSalesRep.Size = new System.Drawing.Size(153, 21);
             this.coboSalesRep.TabIndex = 15;
             // 
             // rbtnNo
@@ -199,12 +203,12 @@
             this.lblRetrievalDate.Name = "lblRetrievalDate";
             this.lblRetrievalDate.Size = new System.Drawing.Size(76, 13);
             this.lblRetrievalDate.TabIndex = 8;
-            this.lblRetrievalDate.Text = "Retrievel date:";
+            this.lblRetrievalDate.Text = "Retrieval date:";
             // 
             // lblDeliveryDate
             // 
             this.lblDeliveryDate.AutoSize = true;
-            this.lblDeliveryDate.Location = new System.Drawing.Point(8, 71);
+            this.lblDeliveryDate.Location = new System.Drawing.Point(9, 71);
             this.lblDeliveryDate.Name = "lblDeliveryDate";
             this.lblDeliveryDate.Size = new System.Drawing.Size(72, 13);
             this.lblDeliveryDate.TabIndex = 7;
@@ -221,7 +225,7 @@
             // 
             // txtDeliveryNote
             // 
-            this.txtDeliveryNote.Location = new System.Drawing.Point(184, 134);
+            this.txtDeliveryNote.Location = new System.Drawing.Point(187, 134);
             this.txtDeliveryNote.Multiline = true;
             this.txtDeliveryNote.Name = "txtDeliveryNote";
             this.txtDeliveryNote.Size = new System.Drawing.Size(153, 87);
@@ -229,7 +233,7 @@
             // 
             // txtMessageToWorkshop
             // 
-            this.txtMessageToWorkshop.Location = new System.Drawing.Point(10, 134);
+            this.txtMessageToWorkshop.Location = new System.Drawing.Point(9, 134);
             this.txtMessageToWorkshop.Multiline = true;
             this.txtMessageToWorkshop.Name = "txtMessageToWorkshop";
             this.txtMessageToWorkshop.Size = new System.Drawing.Size(153, 87);
@@ -237,24 +241,10 @@
             // 
             // txtCarrier
             // 
-            this.txtCarrier.Location = new System.Drawing.Point(184, 36);
+            this.txtCarrier.Location = new System.Drawing.Point(187, 36);
             this.txtCarrier.Name = "txtCarrier";
-            this.txtCarrier.Size = new System.Drawing.Size(151, 20);
+            this.txtCarrier.Size = new System.Drawing.Size(153, 20);
             this.txtCarrier.TabIndex = 3;
-            // 
-            // txtRetrievalDate
-            // 
-            this.txtRetrievalDate.Location = new System.Drawing.Point(184, 86);
-            this.txtRetrievalDate.Name = "txtRetrievalDate";
-            this.txtRetrievalDate.Size = new System.Drawing.Size(150, 20);
-            this.txtRetrievalDate.TabIndex = 2;
-            // 
-            // txtDeliveryDate
-            // 
-            this.txtDeliveryDate.Location = new System.Drawing.Point(10, 85);
-            this.txtDeliveryDate.Name = "txtDeliveryDate";
-            this.txtDeliveryDate.Size = new System.Drawing.Size(149, 20);
-            this.txtDeliveryDate.TabIndex = 1;
             // 
             // groupBox2
             // 
@@ -473,7 +463,7 @@
             // btnSaveBooking
             // 
             this.btnSaveBooking.Location = new System.Drawing.Point(602, 411);
-            this.btnSaveBooking.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnSaveBooking.Margin = new System.Windows.Forms.Padding(2);
             this.btnSaveBooking.Name = "btnSaveBooking";
             this.btnSaveBooking.Size = new System.Drawing.Size(100, 50);
             this.btnSaveBooking.TabIndex = 12;
@@ -484,7 +474,7 @@
             // btnCancel
             // 
             this.btnCancel.Location = new System.Drawing.Point(523, 412);
-            this.btnCancel.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnCancel.Margin = new System.Windows.Forms.Padding(2);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(75, 50);
             this.btnCancel.TabIndex = 13;
@@ -495,7 +485,7 @@
             // btnApprove
             // 
             this.btnApprove.Location = new System.Drawing.Point(442, 396);
-            this.btnApprove.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnApprove.Margin = new System.Windows.Forms.Padding(2);
             this.btnApprove.Name = "btnApprove";
             this.btnApprove.Size = new System.Drawing.Size(89, 67);
             this.btnApprove.TabIndex = 14;
@@ -506,13 +496,41 @@
             // btnDont
             // 
             this.btnDont.Location = new System.Drawing.Point(572, 396);
-            this.btnDont.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnDont.Margin = new System.Windows.Forms.Padding(2);
             this.btnDont.Name = "btnDont";
             this.btnDont.Size = new System.Drawing.Size(89, 67);
             this.btnDont.TabIndex = 15;
             this.btnDont.Text = "Don\'t Approve";
             this.btnDont.UseVisualStyleBackColor = true;
             this.btnDont.Click += new System.EventHandler(this.btnDont_Click);
+            // 
+            // dtpDeliveryDate
+            // 
+            this.dtpDeliveryDate.Location = new System.Drawing.Point(9, 86);
+            this.dtpDeliveryDate.Name = "dtpDeliveryDate";
+            this.dtpDeliveryDate.Size = new System.Drawing.Size(153, 20);
+            this.dtpDeliveryDate.TabIndex = 16;
+            // 
+            // dtpRetrievalDate
+            // 
+            this.dtpRetrievalDate.Location = new System.Drawing.Point(185, 86);
+            this.dtpRetrievalDate.Name = "dtpRetrievalDate";
+            this.dtpRetrievalDate.Size = new System.Drawing.Size(155, 20);
+            this.dtpRetrievalDate.TabIndex = 16;
+            // 
+            // txtDeliveryDate
+            // 
+            this.txtDeliveryDate.Location = new System.Drawing.Point(9, 86);
+            this.txtDeliveryDate.Name = "txtDeliveryDate";
+            this.txtDeliveryDate.Size = new System.Drawing.Size(153, 20);
+            this.txtDeliveryDate.TabIndex = 17;
+            // 
+            // txtRetrievalDate
+            // 
+            this.txtRetrievalDate.Location = new System.Drawing.Point(185, 86);
+            this.txtRetrievalDate.Name = "txtRetrievalDate";
+            this.txtRetrievalDate.Size = new System.Drawing.Size(155, 20);
+            this.txtRetrievalDate.TabIndex = 18;
             // 
             // ShowBooking
             // 
@@ -561,8 +579,6 @@
         private System.Windows.Forms.TextBox txtDeliveryNote;
         private System.Windows.Forms.TextBox txtMessageToWorkshop;
         private System.Windows.Forms.TextBox txtCarrier;
-        private System.Windows.Forms.TextBox txtRetrievalDate;
-        private System.Windows.Forms.TextBox txtDeliveryDate;
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label lblMachines;
@@ -591,5 +607,9 @@
         private System.Windows.Forms.Label lblCountry;
         private System.Windows.Forms.ComboBox coboCountry;
         private System.Windows.Forms.ComboBox coboSalesRep;
+        private System.Windows.Forms.DateTimePicker dtpRetrievalDate;
+        private System.Windows.Forms.DateTimePicker dtpDeliveryDate;
+        private System.Windows.Forms.TextBox txtRetrievalDate;
+        private System.Windows.Forms.TextBox txtDeliveryDate;
     }
 }
