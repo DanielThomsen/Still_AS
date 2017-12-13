@@ -65,8 +65,25 @@ namespace StillAS
 
         private void btnManageUsers_Click(object sender, EventArgs e)
         {
-            ManageUsers MU = new ManageUsers();
-            MU.Show();
+            try
+            {
+                if (CC.CheckConnection() == true)
+                {
+                    ManageUsers MU = new ManageUsers();
+                    MU.Show();
+                }
+
+                else
+                {
+                    MessageBox.Show("Connection error");
+                }
+            }
+            catch (Exception)
+            {
+
+                MessageBox.Show("Connection error");
+            }
+            
         }
     }
 }
