@@ -1063,7 +1063,7 @@ namespace Database
                 SqlDataAdapter sda = new SqlDataAdapter(selectUsers, conn);
                 sda.Fill(dat);
             }
-            catch (Exception ex)
+            catch (Exception)
             {
 
             }
