@@ -84,6 +84,8 @@ namespace Database
 
         List<string> GetModelNumbers(string s);
 
+        List<string> GetStatus(string Address);
+
         string GetConnection();
 
         List<string> PopulateListboxes(List<string> modelname);
@@ -278,6 +280,20 @@ namespace Database
             string ModelName = meContext.Maskines.Find(Demo).ModelName;
             return ModelName;
         }
+        public List<string> GetStatus(string Address)
+        {
+            List<string> status = new List<string>();
+            var bookings = meContext.Bookings;
+            foreach (Booking b in bookings)
+            {
+                // Hent alle bookingID'er hvor kundens adresse = adress
+                if (b.Kunde.Adresse == Address)
+                {
+                    status.Add(b.Status.ToString());
+                }
+            }
+            return status;
+        }
         public List<string> GetWaiting()
         { 
             List<string> bookingList = new List<string>();
@@ -402,9 +418,19 @@ namespace Database
 
         public void RemoveBooking(int bookingID)
         {
-            var booking = meContext.Bookings.Find(bookingID);
-            meContext.Bookings.Remove(booking);
-            meContext.SaveChanges();
+            conn = new SqlConnection(GetConnection());
+            conn.Open();
+            try
+            {
+                string deleteBooking = "delete from Bookinglinje where BookingID = " + bookingID + " delete from Booking where BookingID = " + bookingID;
+                SqlCommand com = new SqlCommand(@deleteBooking, conn);
+                com.ExecuteNonQuery();
+            }
+            catch
+            {
+
+            }
+            conn.Close();
         }
 
         public List<String> ShowMachine(string DemoNumber)
@@ -605,7 +631,7 @@ namespace Database
                 {
                     if (b.BookingID == bookingID)
                     {
-                        machinesList.Add(bl.Maskine.DemoNummer);
+                        machinesList.Add(bl.DemoNummer);
                     }
                 }
             }

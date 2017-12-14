@@ -88,5 +88,21 @@ namespace Model
             }
             return time;
         }
+        public string BooingIntSpawner(string a)
+        {
+            string Number = "";
+            for (int i = 0; i < a.Length; i++)
+            {
+                if (a[i] != ',')
+                {
+                    Number += a[i];
+                }
+                else
+                {
+                    break;
+                }
+            }
+            return Number;
+        }
     }
 }

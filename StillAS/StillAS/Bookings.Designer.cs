@@ -95,6 +95,7 @@
             this.libBookingID.Name = "libBookingID";
             this.libBookingID.Size = new System.Drawing.Size(156, 260);
             this.libBookingID.TabIndex = 8;
+            this.libBookingID.SelectedIndexChanged += new System.EventHandler(this.libBookingID_SelectedIndexChanged);
             // 
             // libCity
             // 
@@ -133,7 +134,7 @@
             // btnRefresh
             // 
             this.btnRefresh.Location = new System.Drawing.Point(30, 374);
-            this.btnRefresh.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
+            this.btnRefresh.Margin = new System.Windows.Forms.Padding(1);
             this.btnRefresh.Name = "btnRefresh";
             this.btnRefresh.Size = new System.Drawing.Size(81, 38);
             this.btnRefresh.TabIndex = 5;
@@ -174,7 +175,7 @@
             // btnBackToMenu
             // 
             this.btnBackToMenu.Location = new System.Drawing.Point(30, 437);
-            this.btnBackToMenu.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnBackToMenu.Margin = new System.Windows.Forms.Padding(2);
             this.btnBackToMenu.Name = "btnBackToMenu";
             this.btnBackToMenu.Size = new System.Drawing.Size(145, 26);
             this.btnBackToMenu.TabIndex = 20;

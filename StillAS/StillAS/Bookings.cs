@@ -25,7 +25,7 @@ namespace StillAS
                 {
                     libCustomerName.Items.Add(s);
                 }
-        }
+            }
             catch (Exception)
             {
 
@@ -34,7 +34,7 @@ namespace StillAS
 
 
 
-}
+        }
 
         private void btnRemove_Click(object sender, EventArgs e)
         {
@@ -48,12 +48,14 @@ namespace StillAS
 
                 try
                 {
-                    DialogResult dRes = MessageBox.Show("Are you sure you want to delete Booking ID " + libBookingID.SelectedItem + "?", "Attention!", MessageBoxButtons.YesNo);
+                    DialogResult dRes = MessageBox.Show("Are you sure you want to delete Booking ID " + CC.BookingIntSpawner(libBookingID.SelectedItem.ToString()) + "?", "Attention!", MessageBoxButtons.YesNo);
                     if (dRes == DialogResult.Yes)
                     {
-                        int bookingIDSelected = Convert.ToInt32(libBookingID.SelectedItem);
+                        string BookingID = CC.BookingIntSpawner(libBookingID.SelectedItem.ToString());
+                        int bookingIDSelected = Convert.ToInt32(BookingID);
                         CC.RemoveBooking(bookingIDSelected);
                         MessageBox.Show("Booking removed: Booking ID:" + bookingIDSelected);
+                        libBookingID.Items.Clear();
                     }
                     else
                     {
@@ -65,9 +67,9 @@ namespace StillAS
 
                     MessageBox.Show("Error: Booking not removed");
                 }
-            
+
             }
-            
+
             catch (Exception
             )
             {
@@ -85,7 +87,8 @@ namespace StillAS
             {
                 if (CC.CheckConnection() == true)
                 {
-                    int bookingIDSelected = Convert.ToInt32(libBookingID.SelectedItem);
+                    string lib = CC.BookingIntSpawner(libBookingID.SelectedItem.ToString());
+                    int bookingIDSelected = Convert.ToInt32(lib);
                     ShowBooking SB = new ShowBooking(bookingIDSelected);
                     SB.Show();
                     this.Visible = false;
@@ -95,12 +98,13 @@ namespace StillAS
                 {
                     MessageBox.Show("Connection error");
                 }
+
             }
             catch (NullReferenceException)
             {
                 MessageBox.Show("Error: Booking not found");
             }
-            //catch(Exception)
+            //catch (Exception)
             //{
             //    MessageBox.Show("Connection error");
             //}
@@ -123,7 +127,7 @@ namespace StillAS
             try
             {
                 libCity.Items.Clear();
-
+                libBookingID.Items.Clear();
                 List<string> addresses = new List<string>();
                 string customer = libCustomerName.SelectedItem.ToString();
 
@@ -181,13 +185,16 @@ namespace StillAS
                 libBookingID.Items.Clear();
 
                 List<string> bookingIDs = new List<string>();
+                List<string> status = new List<string>();
                 string adress = libCity.SelectedItem.ToString();
 
                 bookingIDs = CC.GetBookingID(adress);
-
+                status = CC.GetStatus(adress);
+                int i = 0;
                 foreach (string s in bookingIDs)
                 {
-                    libBookingID.Items.Add(s);
+                    libBookingID.Items.Add(s + ", " + status[i]);
+                    i++;
                 }
             }
             catch (Exception)
@@ -276,6 +283,11 @@ namespace StillAS
             Frontpage fp = new Frontpage();
             fp.Show();
             this.Visible = false;
+        }
+
+        private void libBookingID_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }
