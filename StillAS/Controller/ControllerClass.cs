@@ -77,9 +77,19 @@ namespace Controller
         {
             return DBR.GetModelName(Demo);
         }
+        public List<string> GetStatus(string address)
+        {
+            List<string> status = DBR.GetStatus(address);
+            return status;
+        }
         public int AccessLevel()
         {
             return DBR.GetAccessLevel();
+        }
+        public string BookingIntSpawner(string Booking)
+        {
+            string Toint = MC.BooingIntSpawner(Booking);
+           return Toint;
         }
         public int Validation(string ID1, string ID2)
         {
@@ -160,7 +170,7 @@ namespace Controller
             List<string> bookingIDs = DBR.GetBookingID(adress);
             return bookingIDs;
         }
-
+        
         public void RemoveBooking(int bookingID)
         {
             DBR.RemoveBooking(bookingID);
