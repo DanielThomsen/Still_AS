@@ -161,6 +161,9 @@
     <EmbeddedResource Include="BookingsOverview.resx">
       <DependentUpon>BookingsOverview.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="CarrierForm.resx">
+      <DependentUpon>CarrierForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Clocks.resx">
       <DependentUpon>Clocks.cs</DependentUpon>
     </EmbeddedResource>

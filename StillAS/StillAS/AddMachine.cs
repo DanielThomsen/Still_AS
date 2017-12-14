@@ -234,6 +234,12 @@ namespace StillAS
                 btnAddMachine.Visible = false;
                 btnSaveMachine.Visible = false;
             }
+            if (CC.AccessLevel() == 4)
+            {
+                btnEditMachine.Visible = false;
+                btnAddMachine.Visible = false;
+                btnSaveMachine.Visible = false;
+            }
         }
 
         private void txtMastBuildingHeight_KeyPress(object sender, KeyPressEventArgs e)

@@ -237,6 +237,19 @@ namespace Controller
             List<string> modelNumbers = DBR.GetModelNumbers(s);
             return modelNumbers;
         }
+
+        public List<int> GetBookingsForCarrier(DateTime d)
+        {
+            List<int> list = DBR.GetBookingsForCarrier(d);
+            return list;
+        }
+
+        public List<string> GetDemoNumbersByBooking(int id)
+        {
+            List<string> list = DBR.GetDemoNumbersByBooking(id);
+            return list;
+        }
+
         // LEA ARBEJDER HERFRA ----------
         public List<string> PopulateListbox(List<string> modelname)
         {
