@@ -44,21 +44,30 @@ namespace StillAS
                 {
                     throw new Exception();
                 }
-                
+
 
                 try
                 {
-                    int bookingIDSelected = Convert.ToInt32(libBookingID.SelectedItem);
-                    CC.RemoveBooking(bookingIDSelected);
-                    MessageBox.Show("Booking removed: Booking ID:" + bookingIDSelected);
+                    DialogResult dRes = MessageBox.Show("Are you sure you want to delete Booking ID " + libBookingID.SelectedItem + "?", "Attention!", MessageBoxButtons.YesNo);
+                    if (dRes == DialogResult.Yes)
+                    {
+                        int bookingIDSelected = Convert.ToInt32(libBookingID.SelectedItem);
+                        CC.RemoveBooking(bookingIDSelected);
+                        MessageBox.Show("Booking removed: Booking ID:" + bookingIDSelected);
+                    }
+                    else
+                    {
+
+                    }
                 }
                 catch (Exception)
                 {
 
                     MessageBox.Show("Error: Booking not removed");
                 }
-                
+            
             }
+            
             catch (Exception
             )
             {

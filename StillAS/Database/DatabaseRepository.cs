@@ -385,9 +385,19 @@ namespace Database
         }
         public void RemoveMachine(string DemoNumber)
         {
-            var machine = meContext.Maskines.Find(DemoNumber);
-            meContext.Maskines.Remove(machine);
-            meContext.SaveChanges();
+            conn = new SqlConnection(GetConnection());
+            conn.Open();
+            try
+            {
+                string deleteModelName = "alter table Bookinglinje nocheck constraint all delete from Maskine where Demonummer = '" + DemoNumber + "' alter table Bookinglinje check constraint all";
+                SqlCommand com = new SqlCommand(@deleteModelName, conn);
+                com.ExecuteNonQuery();
+            }
+            catch
+            {
+
+            }
+            conn.Close();
         }
 
         public void RemoveBooking(int bookingID)
@@ -814,7 +824,6 @@ namespace Database
         // LEA ARBEJDER HERFRA ---------------------------------- >
         // Machines Listboxe
         private SqlConnection conn;
-        private SqlTransaction transaction = null;
         private string get;
 
         public object Properties { get; private set; }
@@ -1026,7 +1035,7 @@ namespace Database
             conn.Open();
             try
             {
-                string deleteModelName = "delete from ModelNavn where Modelnavn = '" + modelname + "'";
+                string deleteModelName = "alter table Bookinglinje nocheck constraint all delete from Maskine where ModelName = '"+ modelname +"' delete from ModelNavn where Modelnavn = '" + modelname +"' alter table Bookinglinje check constraint all";
                 SqlCommand com = new SqlCommand(@deleteModelName, conn);
                 com.ExecuteNonQuery();
             }
@@ -1091,7 +1100,7 @@ namespace Database
                     }
                 }
             }
-            catch (Exception ex)
+            catch (Exception)
             {
 
             }
@@ -1118,7 +1127,7 @@ namespace Database
                     }
                 }
             }
-            catch (Exception ex)
+            catch (Exception)
             {
 
             }
@@ -1147,7 +1156,7 @@ namespace Database
                     }
                 }
             }
-            catch (Exception ex)
+            catch (Exception)
             {
 
             }
@@ -1176,7 +1185,7 @@ namespace Database
                     }
                 }
             }
-            catch (Exception ex)
+            catch (Exception)
             {
 
             }
