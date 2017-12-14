@@ -93,5 +93,10 @@ namespace StillAS
 
             
         }
+
+        private void WorkshopBookings_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

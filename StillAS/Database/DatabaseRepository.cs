@@ -208,7 +208,7 @@ namespace Database
             string BeskedTilVærksted = MessageForWorkshop;
             string BeskedTilFølgeSeddel = DeliveryNote;
             int RampeVedLevering = Ramp;
-            string Status = "Venter";
+            string Status = "Waiting";
 
             conn = new SqlConnection(GetConnection());
             conn.Open();
@@ -303,7 +303,7 @@ namespace Database
 
             foreach (Booking b in bookings)
             {
-                if (b.Status == "Venter")
+                if (b.Status == "Waiting")
                 {
                     bookingList.Add(b.BookingID.ToString());
                 }

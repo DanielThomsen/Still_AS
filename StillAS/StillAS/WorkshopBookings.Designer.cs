@@ -72,6 +72,7 @@
             this.Controls.Add(this.btnUpdate);
             this.Name = "WorkshopBookings";
             this.Text = "WorkshopBookings";
+            this.Load += new System.EventHandler(this.WorkshopBookings_Load);
             this.ResumeLayout(false);
 
         }
