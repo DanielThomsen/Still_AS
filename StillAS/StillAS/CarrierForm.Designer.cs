@@ -28,7 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.gpSelectDate = new System.Windows.Forms.GroupBox();
+            this.lblDateExplanation = new System.Windows.Forms.Label();
             this.btnShowBookings = new System.Windows.Forms.Button();
             this.dtpStartDate = new System.Windows.Forms.DateTimePicker();
             this.libBookingID = new System.Windows.Forms.ListBox();
@@ -36,21 +37,29 @@
             this.lblBookingID = new System.Windows.Forms.Label();
             this.lblDemoNumber = new System.Windows.Forms.Label();
             this.btnShow = new System.Windows.Forms.Button();
-            this.lblDateExplanation = new System.Windows.Forms.Label();
-            this.groupBox1.SuspendLayout();
+            this.gpSelectDate.SuspendLayout();
             this.SuspendLayout();
             // 
-            // groupBox1
+            // gpSelectDate
             // 
-            this.groupBox1.Controls.Add(this.lblDateExplanation);
-            this.groupBox1.Controls.Add(this.btnShowBookings);
-            this.groupBox1.Controls.Add(this.dtpStartDate);
-            this.groupBox1.Location = new System.Drawing.Point(34, 39);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(723, 156);
-            this.groupBox1.TabIndex = 0;
-            this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "groupBox1";
+            this.gpSelectDate.Controls.Add(this.lblDateExplanation);
+            this.gpSelectDate.Controls.Add(this.btnShowBookings);
+            this.gpSelectDate.Controls.Add(this.dtpStartDate);
+            this.gpSelectDate.Location = new System.Drawing.Point(34, 39);
+            this.gpSelectDate.Name = "gpSelectDate";
+            this.gpSelectDate.Size = new System.Drawing.Size(723, 156);
+            this.gpSelectDate.TabIndex = 0;
+            this.gpSelectDate.TabStop = false;
+            this.gpSelectDate.Text = "Select dates:";
+            // 
+            // lblDateExplanation
+            // 
+            this.lblDateExplanation.AutoSize = true;
+            this.lblDateExplanation.Location = new System.Drawing.Point(21, 50);
+            this.lblDateExplanation.Name = "lblDateExplanation";
+            this.lblDateExplanation.Size = new System.Drawing.Size(484, 25);
+            this.lblDateExplanation.TabIndex = 6;
+            this.lblDateExplanation.Text = "Select the monday of the week you want to show:";
             // 
             // btnShowBookings
             // 
@@ -116,15 +125,6 @@
             this.btnShow.UseVisualStyleBackColor = true;
             this.btnShow.Click += new System.EventHandler(this.btnShow_Click);
             // 
-            // lblDateExplanation
-            // 
-            this.lblDateExplanation.AutoSize = true;
-            this.lblDateExplanation.Location = new System.Drawing.Point(21, 50);
-            this.lblDateExplanation.Name = "lblDateExplanation";
-            this.lblDateExplanation.Size = new System.Drawing.Size(484, 25);
-            this.lblDateExplanation.TabIndex = 6;
-            this.lblDateExplanation.Text = "Select the monday of the week you want to show:";
-            // 
             // CarrierForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
@@ -135,11 +135,11 @@
             this.Controls.Add(this.lblBookingID);
             this.Controls.Add(this.libDemoNumber);
             this.Controls.Add(this.libBookingID);
-            this.Controls.Add(this.groupBox1);
+            this.Controls.Add(this.gpSelectDate);
             this.Name = "CarrierForm";
             this.Text = "CarrierForm";
-            this.groupBox1.ResumeLayout(false);
-            this.groupBox1.PerformLayout();
+            this.gpSelectDate.ResumeLayout(false);
+            this.gpSelectDate.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -147,7 +147,7 @@
 
         #endregion
 
-        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.GroupBox gpSelectDate;
         private System.Windows.Forms.Button btnShowBookings;
         private System.Windows.Forms.DateTimePicker dtpStartDate;
         private System.Windows.Forms.ListBox libBookingID;
