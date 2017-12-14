@@ -34,7 +34,7 @@ namespace StillAS
                 WB.Show();
                 this.Visible = false;
             }
-            if (CC.AccessLevel() == 4)
+            else if (CC.AccessLevel() == 4)
             {
                 CarrierForm cf = new CarrierForm();
                 cf.Show();
