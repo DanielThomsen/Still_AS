@@ -19,11 +19,20 @@ namespace StillAS
             InitializeComponent();
 
             try
-            {
+            {                
                 List<string> customers = CC.GetAllCustomers();
+                string count = "";
                 foreach (string s in customers)
                 {
-                    libCustomerName.Items.Add(s);
+                    if (s == count)
+                    {
+
+                    }
+                    else
+                    {
+                        libCustomerName.Items.Add(s);
+                        count = s;
+                    }
                 }
             }
             catch (Exception)
@@ -261,13 +270,22 @@ namespace StillAS
         {
             try
             {
+                libCustomerName.Items.Clear();
                 libBookingID.Items.Clear();
                 libCity.Items.Clear();
-                libCustomerName.Items.Clear();
                 List<string> customers = CC.GetAllCustomers();
+                string count = "";
                 foreach (string s in customers)
                 {
-                    libCustomerName.Items.Add(s);
+                    if (s == count)
+                    {
+
+                    }
+                    else
+                    {
+                        libCustomerName.Items.Add(s);
+                        count = s;
+                    }
                 }
                 libCity.Items.Clear();
                 libBookingID.Items.Clear();
