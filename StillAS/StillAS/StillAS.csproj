@@ -73,6 +73,12 @@
     <Compile Include="BookingsOverview.Designer.cs">
       <DependentUpon>BookingsOverview.cs</DependentUpon>
     </Compile>
+    <Compile Include="CarrierForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CarrierForm.Designer.cs">
+      <DependentUpon>CarrierForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Clocks.cs">
       <SubType>Form</SubType>
     </Compile>
