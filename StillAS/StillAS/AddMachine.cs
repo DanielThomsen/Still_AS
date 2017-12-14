@@ -14,6 +14,7 @@ namespace StillAS
     public partial class AddMachine : Form
     {
         ControllerClass CC = new ControllerClass();
+        static string demoNumbers;
         public AddMachine()
         {
             InitializeComponent();
@@ -33,6 +34,7 @@ namespace StillAS
                 txtChargerNumber, txtController, txtWeight, txtHeight, txtLength,
                 txtWidth };
             cbModelName.Enabled = false;
+            cbModelName.Items.Add(CC.GetModelName(demoNumber));
             cbModelName.Text = CC.GetModelName(demoNumber);
             txtDemoMachine.Text = demoNumber;
             
@@ -44,10 +46,10 @@ namespace StillAS
                 tb.ReadOnly = true; // -- Lea
                 i++;
             }
-
             btnAddMachine.Visible = false;
             btnSaveMachine.Visible = false;
             btnEditMachine.Visible = true;
+            demoNumbers = demoNumber;
         }
         private void btnAddMachine_Click(object sender, EventArgs e)
         {
@@ -118,6 +120,14 @@ namespace StillAS
         public string oldDemoNumber;
         private void btnEditMachine_Click(object sender, EventArgs e)
         {
+            cbModelName.Items.Clear();
+            List<string> cb = new List<string>();
+            cb = CC.PopulateListbox(cb);
+            foreach (string X in cb)
+            {
+                cbModelName.Items.Add(X);
+            }
+            cbModelName.Text = CC.GetModelName(demoNumbers);
             oldDemoNumber = txtDemoMachine.Text;
             btnAddMachine.Visible = false;
             btnSaveMachine.Visible = true;
