@@ -34,6 +34,12 @@ namespace StillAS
                 WB.Show();
                 this.Visible = false;
             }
+            if (CC.AccessLevel() == 4)
+            {
+                CarrierForm cf = new CarrierForm();
+                cf.Show();
+                this.Visible = false;
+            }
             else
             {
                 Bookings B = new Bookings();

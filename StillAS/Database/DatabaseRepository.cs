@@ -111,6 +111,8 @@ namespace Database
         string GetOneSalesRep(int bookingID);
         string GetCountry(int bookingID);
         List<string> GetDates(int bookingID);
+        List<int> GetBookingsForCarrier(DateTime d);
+        List<string> GetDemoNumbersByBooking(int id);
 
     }
     public class DatabaseRepository : IDatabase
@@ -809,6 +811,43 @@ namespace Database
             }
 
             return modelNumbers;
+        }
+
+        public List<int> GetBookingsForCarrier(DateTime d)
+        {
+            var bookings = meContext.Bookings;
+            List<int> list = new List<int>();
+            
+
+            foreach (Booking b in bookings)
+            {
+                for (int i = 0; i < 5; i++)
+                {
+                    if (b.LeveringsDato.ToString() == d.AddDays(i).ToString())
+                    {
+                        list.Add(b.BookingID);
+                    }
+                }
+            }
+
+            return list;
+        }
+
+        public List<string> GetDemoNumbersByBooking(int id)
+        {
+            List<string> list = new List<string>();
+
+            var bookinglinjes = meContext.BookingLinjes;
+
+            foreach (BookingLinje bl in bookinglinjes)
+            {
+                if (bl.BookingID == id)
+                {
+                    list.Add(bl.DemoNummer);
+                }
+            }
+
+            return list;
         }
 
         // LEA ARBEJDER HERFRA ---------------------------------- >
