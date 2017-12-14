@@ -130,7 +130,7 @@ namespace StillAS
         {
             try
             {
-                DialogResult dRes = MessageBox.Show("Are you sure you want to delete Demo Machine " + libDemoNumber.SelectedItem + "?", "Sure?", MessageBoxButtons.YesNo);
+                DialogResult dRes = MessageBox.Show("Are you sure you want to delete Demo Machine " + libDemoNumber.SelectedItem + "?", "Attention!", MessageBoxButtons.YesNo);
                 if (dRes == DialogResult.Yes)
                 {
                     string demoNumberSelected = libDemoNumber.SelectedItem.ToString();
@@ -191,7 +191,7 @@ namespace StillAS
         {
             try
             {
-                DialogResult dRes = MessageBox.Show("Are you sure you want to delete Model Name " + libModelName.SelectedItem + "?", "Sure?", MessageBoxButtons.YesNo);
+                DialogResult dRes = MessageBox.Show("Are you sure you want to delete Model Name " + libModelName.SelectedItem + "?", "Attention!", MessageBoxButtons.YesNo);
                 if (dRes == DialogResult.Yes)
                 {
                     if (CC.CheckConnection() == true)

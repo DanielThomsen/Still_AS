@@ -164,6 +164,8 @@ namespace StillAS
                 btnEditBooking.Visible = false;
                 btnSaveBooking.Visible = false;
                 btnCancel.Visible = false;
+                btnApprove.Visible = false;
+                btnDont.Visible = false;
             }
             int bookingID = BookingIDs;
             coboCountry.Enabled = false;            
