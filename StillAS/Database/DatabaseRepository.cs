@@ -814,7 +814,6 @@ namespace Database
         // LEA ARBEJDER HERFRA ---------------------------------- >
         // Machines Listboxe
         private SqlConnection conn;
-        private SqlTransaction transaction = null;
         private string get;
 
         public object Properties { get; private set; }

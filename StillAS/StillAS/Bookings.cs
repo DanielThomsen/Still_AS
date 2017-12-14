@@ -44,8 +44,7 @@ namespace StillAS
                 {
                     throw new Exception();
                 }
-                
-
+               
                 try
                 {
                     int bookingIDSelected = Convert.ToInt32(libBookingID.SelectedItem);
@@ -114,6 +113,7 @@ namespace StillAS
             try
             {
                 libCity.Items.Clear();
+                libBookingID.Items.Clear();
 
                 List<string> addresses = new List<string>();
                 string customer = libCustomerName.SelectedItem.ToString();

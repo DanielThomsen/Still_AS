@@ -237,9 +237,6 @@ namespace Controller
             List<string> modelNumbers = DBR.GetModelNumbers(s);
             return modelNumbers;
         }
-
-
-
         // LEA ARBEJDER HERFRA ----------
         public List<string> PopulateListbox(List<string> modelname)
         {

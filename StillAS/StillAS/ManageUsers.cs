@@ -62,7 +62,6 @@ namespace StillAS
 
         private void txtName_KeyPress(object sender, KeyPressEventArgs e)
         {
-            //MessageBox.Show("hej");
             btnAdd.Enabled = true;
         }
 
