@@ -85,18 +85,6 @@
     <Compile Include="Clocks.Designer.cs">
       <DependentUpon>Clocks.cs</DependentUpon>
     </Compile>
-    <Compile Include="Customer Information.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Customer Information.Designer.cs">
-      <DependentUpon>Customer Information.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Delivery.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Delivery.Designer.cs">
-      <DependentUpon>Delivery.cs</DependentUpon>
-    </Compile>
     <Compile Include="Demo Machines.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -166,12 +154,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Clocks.resx">
       <DependentUpon>Clocks.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Customer Information.resx">
-      <DependentUpon>Customer Information.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Delivery.resx">
-      <DependentUpon>Delivery.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Demo Machines.resx">
       <DependentUpon>Demo Machines.cs</DependentUpon>

@@ -377,6 +377,22 @@ namespace Database
             }
             return Holder;
         }
+        public void RemoveBooking(int bookingID)
+        {
+            conn = new SqlConnection(GetConnection());
+            conn.Open();
+            try
+            {
+                string deleteBooking = "delete from Bookinglinje where BookingID = " + bookingID + " delete from Booking where BookingID = " + bookingID;
+                SqlCommand com = new SqlCommand(@deleteBooking, conn);
+                com.ExecuteNonQuery();
+            }
+            catch
+            {
+
+            }
+            conn.Close();
+        }
         //[Krognos Slut]
 
         // Daniels metoder
@@ -418,22 +434,6 @@ namespace Database
             conn.Close();
         }
 
-        public void RemoveBooking(int bookingID)
-        {
-            conn = new SqlConnection(GetConnection());
-            conn.Open();
-            try
-            {
-                string deleteBooking = "delete from Bookinglinje where BookingID = " + bookingID + " delete from Booking where BookingID = " + bookingID;
-                SqlCommand com = new SqlCommand(@deleteBooking, conn);
-                com.ExecuteNonQuery();
-            }
-            catch
-            {
-
-            }
-            conn.Close();
-        }
 
         public List<String> ShowMachine(string DemoNumber)
         {
