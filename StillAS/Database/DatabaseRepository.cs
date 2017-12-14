@@ -859,7 +859,7 @@ namespace Database
             {
                 for (int i = 0; i < 5; i++)
                 {
-                    if (b.LeveringsDato.ToString() == d.AddDays(i).ToString())
+                    if (b.LeveringsDato.ToString() == d.AddDays(i).ToString() && b.Status == "Approved")
                     {
                         list.Add(b.BookingID);
                     }
