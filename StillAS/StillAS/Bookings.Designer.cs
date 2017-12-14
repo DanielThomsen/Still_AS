@@ -122,7 +122,7 @@
             // 
             // btnShowBookingsOverview
             // 
-            this.btnShowBookingsOverview.Location = new System.Drawing.Point(603, 388);
+            this.btnShowBookingsOverview.Location = new System.Drawing.Point(582, 388);
             this.btnShowBookingsOverview.Margin = new System.Windows.Forms.Padding(1);
             this.btnShowBookingsOverview.Name = "btnShowBookingsOverview";
             this.btnShowBookingsOverview.Size = new System.Drawing.Size(115, 75);
@@ -184,7 +184,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(731, 474);
+            this.ClientSize = new System.Drawing.Size(720, 474);
             this.Controls.Add(this.btnBackToMenu);
             this.Controls.Add(this.lblBookingID);
             this.Controls.Add(this.lblCity);
