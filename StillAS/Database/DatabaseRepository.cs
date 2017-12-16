@@ -131,10 +131,10 @@ namespace Database
         }
 
         //[Krognos Start]
-        public static int CustomerID;
-        public static int BookingID;
-        public static int AccessLevel;
-        public static string Bruger;
+        private static int CustomerID;
+        private static int BookingID;
+        private static int AccessLevel;
+        private static string Bruger;
         public void CreateModelName(string ModelName1)
         {
             var ModelN = new ModelNavn { Modelnavn1 = ModelName1 };
