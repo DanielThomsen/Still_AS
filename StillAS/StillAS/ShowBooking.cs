@@ -367,11 +367,17 @@ namespace StillAS
         private void btnApprove_Click(object sender, EventArgs e)
         {
             CC.SetApproval(0);
+            WorkshopBookings WB = new WorkshopBookings();
+            WB.Show();
+            this.Visible = false;
         }
 
         private void btnDont_Click(object sender, EventArgs e)
         {
             CC.SetApproval(1);
+            WorkshopBookings WB = new WorkshopBookings();
+            WB.Show();
+            this.Visible = false;
         }
 
         private void txtZipCode_KeyPress(object sender, KeyPressEventArgs e)

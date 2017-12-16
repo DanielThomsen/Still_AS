@@ -51,6 +51,7 @@ namespace StillAS
                     CC.SetBookingID(bookingIDSelected);
                     ShowBooking SB = new ShowBooking(bookingIDSelected);
                     SB.Show();
+                    this.Visible = false;
                 }
                 catch (Exception)
                 {

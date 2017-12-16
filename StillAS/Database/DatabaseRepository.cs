@@ -274,8 +274,27 @@ namespace Database
 
         public string GetConfig(int BookingID)
         {
-            string Configs = meContext.BookingLinjes.Find(BookingID).KonfigurationTekst;
-            return Configs;
+            string config = "";
+            conn = new SqlConnection(GetConnection());
+            conn.Open();
+            try
+            {
+                get = "select KonfigurationTekst from Bookinglinje where BookingID = " + BookingID + "";
+                SqlCommand com = new SqlCommand(@get, conn);
+                using (SqlDataReader reader = com.ExecuteReader())
+                {
+                    if (reader.Read())
+                    {
+                        config = reader["KonfigurationTekst"].ToString();
+                    }
+                }
+            }
+            catch
+            {
+
+            }
+            conn.Close();
+            return config;
         }
         public string GetModelName(string Demo)
         {
