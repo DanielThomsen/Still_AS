@@ -178,7 +178,14 @@ namespace StillAS
 
         private void Machines_Load(object sender, EventArgs e)
         {
-
+            if (CC.AccessLevel() == 2)
+            {
+                groupBox2.Visible = false;
+                btnAdd.Visible = false;
+                btnAddMachine.Visible = false;
+                btnRemove.Visible = false;
+                btnRemoveMachine.Visible = false;
+            }
         }
 
         private void btnAdd_Click(object sender, EventArgs e)
@@ -256,6 +263,11 @@ namespace StillAS
             Frontpage fp = new Frontpage();
             fp.Visible = true;
             this.Visible = false;
+        }
+
+        private void menuStrip1_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
+        {
+            
         }
     }
 }

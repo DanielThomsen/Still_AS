@@ -100,7 +100,7 @@
             // btnRefresh
             // 
             this.btnRefresh.Location = new System.Drawing.Point(545, 172);
-            this.btnRefresh.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnRefresh.Margin = new System.Windows.Forms.Padding(4);
             this.btnRefresh.Name = "btnRefresh";
             this.btnRefresh.Size = new System.Drawing.Size(88, 47);
             this.btnRefresh.TabIndex = 3;
@@ -112,7 +112,7 @@
             // 
             this.btnRemove.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
             this.btnRemove.Location = new System.Drawing.Point(71, 371);
-            this.btnRemove.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnRemove.Margin = new System.Windows.Forms.Padding(4);
             this.btnRemove.Name = "btnRemove";
             this.btnRemove.Size = new System.Drawing.Size(37, 25);
             this.btnRemove.TabIndex = 6;
@@ -124,7 +124,7 @@
             // 
             this.btnAdd.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
             this.btnAdd.Location = new System.Drawing.Point(23, 371);
-            this.btnAdd.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnAdd.Margin = new System.Windows.Forms.Padding(4);
             this.btnAdd.Name = "btnAdd";
             this.btnAdd.Size = new System.Drawing.Size(40, 25);
             this.btnAdd.TabIndex = 5;
@@ -235,6 +235,7 @@
             this.menuStrip1.Size = new System.Drawing.Size(892, 26);
             this.menuStrip1.TabIndex = 27;
             this.menuStrip1.Text = "menuStrip1";
+            this.menuStrip1.ItemClicked += new System.Windows.Forms.ToolStripItemClickedEventHandler(this.menuStrip1_ItemClicked);
             // 
             // helpToolStripMenuItem
             // 
@@ -253,7 +254,7 @@
             // btnBackToMenu
             // 
             this.btnBackToMenu.Location = new System.Drawing.Point(20, 507);
-            this.btnBackToMenu.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnBackToMenu.Margin = new System.Windows.Forms.Padding(2);
             this.btnBackToMenu.Name = "btnBackToMenu";
             this.btnBackToMenu.Size = new System.Drawing.Size(117, 28);
             this.btnBackToMenu.TabIndex = 28;
