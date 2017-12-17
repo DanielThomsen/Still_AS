@@ -35,9 +35,8 @@ namespace Controller
     }
     public class ControllerClass
     {
-        ModelClass MC = new ModelClass();
-        //DatabaseRepository DBR = new DatabaseRepository();
-        IDatabase DBR = DatabaseFactory.SelectDatabase();
+        private ModelClass MC = new ModelClass();
+        private IDatabase DBR = DatabaseFactory.SelectDatabase();
 
         public static List<string> DemoMachines = new List<string>();
         //[Krognos start]
