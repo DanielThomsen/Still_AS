@@ -222,7 +222,7 @@ namespace StillAS
 
         }
 
-      
+
 
         //private void button1_Click(object sender, EventArgs e)
         //{
@@ -287,5 +287,9 @@ namespace StillAS
         //        gvBookings.Columns[l].Width = 70;
         //    }
         //}
+        private void viewHelpToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            System.Diagnostics.Process.Start(@"C:\Users\Daniel\Source\Repos\Still_AS\StillAS\StillAS\bin\Debug\Hjælpedokument.pdf");
+        }
     }
 }

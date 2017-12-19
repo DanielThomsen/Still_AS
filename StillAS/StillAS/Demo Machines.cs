@@ -178,5 +178,10 @@ namespace StillAS
                 e.Handled = true;
             }
         }
+
+        private void txtName1_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

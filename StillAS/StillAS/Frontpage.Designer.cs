@@ -33,25 +33,29 @@
             this.btnBookings = new System.Windows.Forms.Button();
             this.btnManageUsers = new System.Windows.Forms.Button();
             this.btnUr = new System.Windows.Forms.Button();
+            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
+            this.helpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.viewHelpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // lblTitle
             // 
             this.lblTitle.AutoSize = true;
             this.lblTitle.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F);
-            this.lblTitle.Location = new System.Drawing.Point(468, 17);
-            this.lblTitle.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
+            this.lblTitle.Location = new System.Drawing.Point(312, 36);
+            this.lblTitle.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblTitle.Name = "lblTitle";
-            this.lblTitle.Size = new System.Drawing.Size(201, 46);
+            this.lblTitle.Size = new System.Drawing.Size(127, 29);
             this.lblTitle.TabIndex = 0;
             this.lblTitle.Text = "STILL A/S";
             // 
             // btnMachines
             // 
-            this.btnMachines.Location = new System.Drawing.Point(478, 196);
-            this.btnMachines.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.btnMachines.Location = new System.Drawing.Point(319, 150);
+            this.btnMachines.Margin = new System.Windows.Forms.Padding(4);
             this.btnMachines.Name = "btnMachines";
-            this.btnMachines.Size = new System.Drawing.Size(200, 96);
+            this.btnMachines.Size = new System.Drawing.Size(133, 61);
             this.btnMachines.TabIndex = 1;
             this.btnMachines.Text = "Machines";
             this.btnMachines.UseVisualStyleBackColor = true;
@@ -59,10 +63,10 @@
             // 
             // btnBookings
             // 
-            this.btnBookings.Location = new System.Drawing.Point(478, 306);
-            this.btnBookings.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.btnBookings.Location = new System.Drawing.Point(319, 221);
+            this.btnBookings.Margin = new System.Windows.Forms.Padding(4);
             this.btnBookings.Name = "btnBookings";
-            this.btnBookings.Size = new System.Drawing.Size(200, 96);
+            this.btnBookings.Size = new System.Drawing.Size(133, 61);
             this.btnBookings.TabIndex = 2;
             this.btnBookings.Text = "Bookings";
             this.btnBookings.UseVisualStyleBackColor = true;
@@ -70,10 +74,10 @@
             // 
             // btnManageUsers
             // 
-            this.btnManageUsers.Location = new System.Drawing.Point(478, 415);
-            this.btnManageUsers.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.btnManageUsers.Location = new System.Drawing.Point(319, 291);
+            this.btnManageUsers.Margin = new System.Windows.Forms.Padding(4);
             this.btnManageUsers.Name = "btnManageUsers";
-            this.btnManageUsers.Size = new System.Drawing.Size(200, 96);
+            this.btnManageUsers.Size = new System.Drawing.Size(133, 61);
             this.btnManageUsers.TabIndex = 3;
             this.btnManageUsers.Text = "Manage Users";
             this.btnManageUsers.UseVisualStyleBackColor = true;
@@ -81,29 +85,57 @@
             // 
             // btnUr
             // 
-            this.btnUr.Location = new System.Drawing.Point(1036, 19);
-            this.btnUr.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnUr.Location = new System.Drawing.Point(691, 37);
             this.btnUr.Name = "btnUr";
-            this.btnUr.Size = new System.Drawing.Size(92, 85);
+            this.btnUr.Size = new System.Drawing.Size(61, 54);
             this.btnUr.TabIndex = 4;
             this.btnUr.Text = "Ur";
             this.btnUr.UseVisualStyleBackColor = true;
             this.btnUr.Click += new System.EventHandler(this.btnUr_Click);
             // 
+            // menuStrip1
+            // 
+            this.menuStrip1.ImageScalingSize = new System.Drawing.Size(32, 32);
+            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.helpToolStripMenuItem});
+            this.menuStrip1.Location = new System.Drawing.Point(0, 0);
+            this.menuStrip1.Name = "menuStrip1";
+            this.menuStrip1.Padding = new System.Windows.Forms.Padding(4, 1, 0, 1);
+            this.menuStrip1.Size = new System.Drawing.Size(765, 26);
+            this.menuStrip1.TabIndex = 28;
+            this.menuStrip1.Text = "menuStrip1";
+            // 
+            // helpToolStripMenuItem
+            // 
+            this.helpToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.viewHelpToolStripMenuItem});
+            this.helpToolStripMenuItem.Name = "helpToolStripMenuItem";
+            this.helpToolStripMenuItem.Size = new System.Drawing.Size(53, 24);
+            this.helpToolStripMenuItem.Text = "Help";
+            // 
+            // viewHelpToolStripMenuItem
+            // 
+            this.viewHelpToolStripMenuItem.Name = "viewHelpToolStripMenuItem";
+            this.viewHelpToolStripMenuItem.Size = new System.Drawing.Size(149, 26);
+            this.viewHelpToolStripMenuItem.Text = "View help";
+            // 
             // Frontpage
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1148, 713);
+            this.ClientSize = new System.Drawing.Size(765, 456);
+            this.Controls.Add(this.menuStrip1);
             this.Controls.Add(this.btnUr);
             this.Controls.Add(this.btnManageUsers);
             this.Controls.Add(this.btnBookings);
             this.Controls.Add(this.btnMachines);
             this.Controls.Add(this.lblTitle);
-            this.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "Frontpage";
             this.Text = "Frontpage";
             this.Load += new System.EventHandler(this.Frontpage_Load);
+            this.menuStrip1.ResumeLayout(false);
+            this.menuStrip1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -116,5 +148,8 @@
         private System.Windows.Forms.Button btnBookings;
         private System.Windows.Forms.Button btnManageUsers;
         private System.Windows.Forms.Button btnUr;
+        private System.Windows.Forms.MenuStrip menuStrip1;
+        private System.Windows.Forms.ToolStripMenuItem helpToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem viewHelpToolStripMenuItem;
     }
 }

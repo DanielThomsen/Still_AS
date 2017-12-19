@@ -99,5 +99,9 @@ namespace StillAS
         {
 
         }
+        private void viewHelpToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            System.Diagnostics.Process.Start(@"C:\Users\Daniel\Source\Repos\Still_AS\StillAS\StillAS\bin\Debug\Hjælpedokument.pdf");
+        }
     }
 }

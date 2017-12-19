@@ -71,5 +71,14 @@ namespace StillAS
             fp.Show();
             this.Visible = false;
         }
+
+        private void ManageUsers_Load(object sender, EventArgs e)
+        {
+
+        }
+        private void viewHelpToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            System.Diagnostics.Process.Start(@"C:\Users\Daniel\Source\Repos\Still_AS\StillAS\StillAS\bin\Debug\Hjælpedokument.pdf");
+        }
     }
 }
