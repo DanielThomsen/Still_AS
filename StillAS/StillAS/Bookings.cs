@@ -311,8 +311,8 @@ namespace StillAS
 
         private void viewHelpToolStripMenuItem_Click_1(object sender, EventArgs e)
         {
-            string filename = "Hjælpedokument";
-            System.Diagnostics.Process.Start(filename); // ÅBNER MANUALEN
+            string filename = "Hjælpedokument.pdf";
+            System.Diagnostics.Process.Start(@filename); // ÅBNER MANUALEN
         }
     }
 }
