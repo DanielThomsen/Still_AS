@@ -144,12 +144,10 @@ namespace StillAS
             {
                 DateTime startdate = dtpStart.Value;
                 DateTime enddate = dtpEnd.Value;
-
                 DataTable dt = new DataTable();
                 dt.Columns.Add("Machine", typeof(string));
 
                 double days = (enddate - startdate).TotalDays;
-
                 int i = 0;
                 while (i < days)
                 {
@@ -158,20 +156,11 @@ namespace StillAS
                 }
 
                 gvBookings.DataSource = dt;
-
                 int columnsInt = dt.Columns.Count;
-
                 i = 0;
                 foreach (string s in demonumbers) // For hver maskine (linje)
                 {
                     dt.Rows.Add(s);
-                    //for (int j = 0; j < columnsInt; j++)
-                    //{
-                    //    if (true)
-                    //    {
-
-                    //    }
-                    //}
 
                     List<string> bookedDates = CC.GetBookedDates(s);
 
@@ -181,17 +170,11 @@ namespace StillAS
                         {
                             if (st == dt.Columns[k].ToString()) // Hvis dato == column-navn
                             {
-                                //MessageBox.Show("Booked date: " + st + "in column: " + k);
-
                                 dt.Rows[i].SetColumnError(k, "Booked");
                             }
                         }
-
-
                     }
-
                     i++;
-                    //MessageBox.Show(dt.Columns[1].ToString());
                 }
 
                 for (int l = 0; l < columnsInt; l++)
@@ -202,7 +185,6 @@ namespace StillAS
             catch (Exception)
             {
                 MessageBox.Show("Connection error");
-                
             }
 
             

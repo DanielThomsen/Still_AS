@@ -715,7 +715,7 @@ namespace Database
 
             using (SqlConnection con = new SqlConnection(connString))
             {
-                using (SqlCommand cmd = new SqlCommand("select b.bookingid, leveringsdato, afhentningsdato, m.modelname, m.type, m.DemoNummer from booking b join BookingLinje bl on b.bookingid = bl.bookingid join Maskine m on bl.demonummer = m.demonummer", con))
+                using (SqlCommand cmd = new SqlCommand("select b.bookingid, b.status, leveringsdato, afhentningsdato, m.modelname, m.type, m.DemoNummer from booking b join BookingLinje bl on b.bookingid = bl.bookingid join Maskine m on bl.demonummer = m.demonummer order by b.status asc", con))
                 {
                     con.Open();
                     var dataReader = cmd.ExecuteReader();
@@ -742,7 +742,7 @@ namespace Database
 
                 using (SqlConnection con = new SqlConnection(connString))
                 {
-                    using (SqlCommand cmd = new SqlCommand("select b.bookingid, leveringsdato, afhentningsdato, m.modelname, m.type, m.DemoNummer from booking b join BookingLinje bl on b.bookingid = bl.bookingid join Maskine m on bl.demonummer = m.demonummer where LeveringsDato = '" + newDate + "'", con))
+                    using (SqlCommand cmd = new SqlCommand("select b.bookingid, b.status, leveringsdato, afhentningsdato, m.modelname, m.type, m.DemoNummer from booking b join BookingLinje bl on b.bookingid = bl.bookingid join Maskine m on bl.demonummer = m.demonummer where LeveringsDato = '" + newDate + "' order by b.status asc", con))
                     {
                         con.Open();
                         var dataReader = cmd.ExecuteReader();
