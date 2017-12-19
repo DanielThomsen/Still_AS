@@ -117,17 +117,17 @@ namespace StillAS
                 }
                 else
                 {
-                    CTRC.AddCustomer(Name1, Name2, Att, Address, ZIP, City, Country, Phone);
-                    CTRC.CreateBooking(salesRep, Date1, Date2, Transporter, Message1, Message2, Selected);
-                    CTRC.CreateBookingLine(Konfig);
-                    this.Visible = false;
+                        CTRC.AddCustomer(Name1, Name2, Att, Address, ZIP, City, Country, Phone);
+                        CTRC.CreateBooking(salesRep, Date1, Date2, Transporter, Message1, Message2, Selected);
+                        CTRC.CreateBookingLine(Konfig);
+                        this.Visible = false;
                 }
             }
             catch
             {
-
+                MessageBox.Show("Please only use alphabetical Aa - Åå");
             }
-            
+
         }
 
         private void btnAdd_Click(object sender, EventArgs e)
