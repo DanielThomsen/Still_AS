@@ -308,9 +308,11 @@ namespace StillAS
         {
 
         }
-        private void viewHelpToolStripMenuItem_Click(object sender, EventArgs e)
+
+        private void viewHelpToolStripMenuItem_Click_1(object sender, EventArgs e)
         {
-            System.Diagnostics.Process.Start(@"C:\Users\Daniel\Source\Repos\Still_AS\StillAS\StillAS\bin\Debug\Hjælpedokument.pdf");
+            string filename = "Hjælpedokument";
+            System.Diagnostics.Process.Start(filename); // ÅBNER MANUALEN
         }
     }
 }
