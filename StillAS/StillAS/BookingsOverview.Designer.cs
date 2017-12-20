@@ -52,6 +52,10 @@
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.helpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.viewHelpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.lblLevering = new System.Windows.Forms.Label();
+            this.lblAfhentning = new System.Windows.Forms.Label();
+            this.lblModelNavn = new System.Windows.Forms.Label();
+            this.lblDemoNummer = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.gvBookings)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.stillasDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.stillasDataSetBindingSource)).BeginInit();
@@ -177,16 +181,20 @@
             // 
             // groupBox5
             // 
+            this.groupBox5.Controls.Add(this.lblDemoNummer);
+            this.groupBox5.Controls.Add(this.lblModelNavn);
+            this.groupBox5.Controls.Add(this.lblAfhentning);
+            this.groupBox5.Controls.Add(this.lblLevering);
             this.groupBox5.Controls.Add(this.cbType);
             this.groupBox5.Controls.Add(this.cbModel);
             this.groupBox5.Controls.Add(this.dtpStart);
             this.groupBox5.Controls.Add(this.btnShowAllMachines);
             this.groupBox5.Controls.Add(this.dtpEnd);
             this.groupBox5.Location = new System.Drawing.Point(256, 136);
-            this.groupBox5.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupBox5.Margin = new System.Windows.Forms.Padding(2);
             this.groupBox5.Name = "groupBox5";
-            this.groupBox5.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.groupBox5.Size = new System.Drawing.Size(636, 76);
+            this.groupBox5.Padding = new System.Windows.Forms.Padding(2);
+            this.groupBox5.Size = new System.Drawing.Size(636, 92);
             this.groupBox5.TabIndex = 3;
             this.groupBox5.TabStop = false;
             this.groupBox5.Text = "Calender for machines";
@@ -194,8 +202,8 @@
             // cbType
             // 
             this.cbType.FormattingEnabled = true;
-            this.cbType.Location = new System.Drawing.Point(459, 28);
-            this.cbType.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.cbType.Location = new System.Drawing.Point(456, 50);
+            this.cbType.Margin = new System.Windows.Forms.Padding(2);
             this.cbType.Name = "cbType";
             this.cbType.Size = new System.Drawing.Size(79, 24);
             this.cbType.TabIndex = 4;
@@ -203,8 +211,8 @@
             // cbModel
             // 
             this.cbModel.FormattingEnabled = true;
-            this.cbModel.Location = new System.Drawing.Point(365, 28);
-            this.cbModel.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.cbModel.Location = new System.Drawing.Point(362, 50);
+            this.cbModel.Margin = new System.Windows.Forms.Padding(2);
             this.cbModel.Name = "cbModel";
             this.cbModel.Size = new System.Drawing.Size(82, 24);
             this.cbModel.TabIndex = 3;
@@ -212,16 +220,16 @@
             // 
             // dtpStart
             // 
-            this.dtpStart.Location = new System.Drawing.Point(13, 28);
-            this.dtpStart.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dtpStart.Location = new System.Drawing.Point(10, 50);
+            this.dtpStart.Margin = new System.Windows.Forms.Padding(2);
             this.dtpStart.Name = "dtpStart";
             this.dtpStart.Size = new System.Drawing.Size(176, 22);
             this.dtpStart.TabIndex = 1;
             // 
             // btnShowAllMachines
             // 
-            this.btnShowAllMachines.Location = new System.Drawing.Point(557, 28);
-            this.btnShowAllMachines.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnShowAllMachines.Location = new System.Drawing.Point(554, 50);
+            this.btnShowAllMachines.Margin = new System.Windows.Forms.Padding(2);
             this.btnShowAllMachines.Name = "btnShowAllMachines";
             this.btnShowAllMachines.Size = new System.Drawing.Size(75, 31);
             this.btnShowAllMachines.TabIndex = 5;
@@ -230,8 +238,8 @@
             // 
             // dtpEnd
             // 
-            this.dtpEnd.Location = new System.Drawing.Point(200, 28);
-            this.dtpEnd.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dtpEnd.Location = new System.Drawing.Point(197, 50);
+            this.dtpEnd.Margin = new System.Windows.Forms.Padding(2);
             this.dtpEnd.Name = "dtpEnd";
             this.dtpEnd.Size = new System.Drawing.Size(153, 22);
             this.dtpEnd.TabIndex = 2;
@@ -262,6 +270,42 @@
             this.viewHelpToolStripMenuItem.Size = new System.Drawing.Size(149, 26);
             this.viewHelpToolStripMenuItem.Text = "View help";
             // 
+            // lblLevering
+            // 
+            this.lblLevering.AutoSize = true;
+            this.lblLevering.Location = new System.Drawing.Point(10, 28);
+            this.lblLevering.Name = "lblLevering";
+            this.lblLevering.Size = new System.Drawing.Size(98, 17);
+            this.lblLevering.TabIndex = 6;
+            this.lblLevering.Text = "Leveringsdato";
+            // 
+            // lblAfhentning
+            // 
+            this.lblAfhentning.AutoSize = true;
+            this.lblAfhentning.Location = new System.Drawing.Point(194, 28);
+            this.lblAfhentning.Name = "lblAfhentning";
+            this.lblAfhentning.Size = new System.Drawing.Size(111, 17);
+            this.lblAfhentning.TabIndex = 29;
+            this.lblAfhentning.Text = "Afhentningsdato";
+            // 
+            // lblModelNavn
+            // 
+            this.lblModelNavn.AutoSize = true;
+            this.lblModelNavn.Location = new System.Drawing.Point(359, 28);
+            this.lblModelNavn.Name = "lblModelNavn";
+            this.lblModelNavn.Size = new System.Drawing.Size(77, 17);
+            this.lblModelNavn.TabIndex = 30;
+            this.lblModelNavn.Text = "Modelnavn";
+            // 
+            // lblDemoNummer
+            // 
+            this.lblDemoNummer.AutoSize = true;
+            this.lblDemoNummer.Location = new System.Drawing.Point(453, 28);
+            this.lblDemoNummer.Name = "lblDemoNummer";
+            this.lblDemoNummer.Size = new System.Drawing.Size(96, 17);
+            this.lblDemoNummer.TabIndex = 31;
+            this.lblDemoNummer.Text = "Demonummer";
+            // 
             // BookingsOverview
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -284,6 +328,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.bookingBindingSource)).EndInit();
             this.groupBox4.ResumeLayout(false);
             this.groupBox5.ResumeLayout(false);
+            this.groupBox5.PerformLayout();
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             this.ResumeLayout(false);
@@ -316,5 +361,9 @@
         private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.ToolStripMenuItem helpToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem viewHelpToolStripMenuItem;
+        private System.Windows.Forms.Label lblAfhentning;
+        private System.Windows.Forms.Label lblLevering;
+        private System.Windows.Forms.Label lblDemoNummer;
+        private System.Windows.Forms.Label lblModelNavn;
     }
 }
