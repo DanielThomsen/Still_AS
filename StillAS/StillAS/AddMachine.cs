@@ -38,12 +38,12 @@ namespace StillAS
             cbModelName.Text = CC.GetModelName(demoNumber);
             txtDemoMachine.Text = demoNumber;
             
-            txtDemoMachine.ReadOnly = true; // -- Lea
+            txtDemoMachine.ReadOnly = true;
             int i = 0;
             foreach (TextBox tb in textBoxList)
             {
                 tb.Text = machineInfo[i];
-                tb.ReadOnly = true; // -- Lea
+                tb.ReadOnly = true;
                 i++;
             }
             btnAddMachine.Visible = false;
@@ -116,7 +116,6 @@ namespace StillAS
             catch { }
         }
             
-        // Lea arbejder herfra ---- >
         public string oldDemoNumber;
         private void btnEditMachine_Click(object sender, EventArgs e)
         {

@@ -145,12 +145,6 @@ namespace Controller
             return configurations;
         }
 
-        //public List<string> GetAllConfigurations()
-        //{
-        //    List<string> configurations = DBR.GetAllConfigurations();
-        //    return configurations;
-        //}
-
         public List<string> GetAllCustomers()
         {
             List<string> customers = DBR.GetAllCustomers();
@@ -192,12 +186,6 @@ namespace Controller
             List<string> machines = DBR.GetMachines(bookingID);
             return machines;
         }
-
-        //public List<List<string>> GetAllBookings()
-        //{
-        //    List<List<string>> bookings = DBR.GetAllBookings();
-        //    return bookings;
-        //}
 
         public DataTable GetAllBookings()
         {
@@ -275,7 +263,6 @@ namespace Controller
             DBR.UpdateThirdListbox(modelnumber, demonumber);
             return demonumber;
         }
-        // EditMachine -----
         public void UpdateInformation(string DemoNumber, string ModelName, string ModelNumber, string Brand, string CNumber,
             string MastType, int MastBuildingHeight, int MastLiftHeight, int MastFreeLift, string AggregatType,
             string AggregatNumber, string BatteryType, string BatteryNumber, string ChargerType, string ChargerNumber,
@@ -285,7 +272,6 @@ namespace Controller
                              MastFreeLift, AggregatType, AggregatNumber, BatteryType, BatteryNumber, ChargerType, ChargerNumber,
                              Controller, Weight, Height, Length, Width, oldDemoNumber);
         }
-        // Edit Booking -----
         public void UpdateBooking(string name1, string name2, string att, string address, string zipCode,
             string city, string phone, string country, string salesRep, string deliveryDate, string retrievalDate, 
             string carrier, string messageToWorkshop, string deliveryNote, string loadingPlatform, int bookingID)
@@ -294,7 +280,6 @@ namespace Controller
                 salesRep, deliveryDate, retrievalDate, carrier, messageToWorkshop, 
                 deliveryNote, loadingPlatform, bookingID);
         }
-        // ADD MODELNAME på Machines form
         public void AddModelName(string modelname)
         {
             DBR.AddModelName(modelname);

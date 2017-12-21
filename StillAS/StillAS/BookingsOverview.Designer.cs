@@ -44,6 +44,10 @@
             this.dtpStartDate = new System.Windows.Forms.DateTimePicker();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
             this.groupBox5 = new System.Windows.Forms.GroupBox();
+            this.lblDemoNummer = new System.Windows.Forms.Label();
+            this.lblModelNavn = new System.Windows.Forms.Label();
+            this.lblAfhentning = new System.Windows.Forms.Label();
+            this.lblLevering = new System.Windows.Forms.Label();
             this.cbType = new System.Windows.Forms.ComboBox();
             this.cbModel = new System.Windows.Forms.ComboBox();
             this.dtpStart = new System.Windows.Forms.DateTimePicker();
@@ -52,10 +56,6 @@
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.helpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.viewHelpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.lblLevering = new System.Windows.Forms.Label();
-            this.lblAfhentning = new System.Windows.Forms.Label();
-            this.lblModelNavn = new System.Windows.Forms.Label();
-            this.lblDemoNummer = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.gvBookings)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.stillasDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.stillasDataSetBindingSource)).BeginInit();
@@ -199,6 +199,42 @@
             this.groupBox5.TabStop = false;
             this.groupBox5.Text = "Calender for machines";
             // 
+            // lblDemoNummer
+            // 
+            this.lblDemoNummer.AutoSize = true;
+            this.lblDemoNummer.Location = new System.Drawing.Point(453, 28);
+            this.lblDemoNummer.Name = "lblDemoNummer";
+            this.lblDemoNummer.Size = new System.Drawing.Size(97, 17);
+            this.lblDemoNummer.TabIndex = 31;
+            this.lblDemoNummer.Text = "Demo number";
+            // 
+            // lblModelNavn
+            // 
+            this.lblModelNavn.AutoSize = true;
+            this.lblModelNavn.Location = new System.Drawing.Point(359, 28);
+            this.lblModelNavn.Name = "lblModelNavn";
+            this.lblModelNavn.Size = new System.Drawing.Size(85, 17);
+            this.lblModelNavn.TabIndex = 30;
+            this.lblModelNavn.Text = "Model name";
+            // 
+            // lblAfhentning
+            // 
+            this.lblAfhentning.AutoSize = true;
+            this.lblAfhentning.Location = new System.Drawing.Point(194, 28);
+            this.lblAfhentning.Name = "lblAfhentning";
+            this.lblAfhentning.Size = new System.Drawing.Size(96, 17);
+            this.lblAfhentning.TabIndex = 29;
+            this.lblAfhentning.Text = "Retrieval date";
+            // 
+            // lblLevering
+            // 
+            this.lblLevering.AutoSize = true;
+            this.lblLevering.Location = new System.Drawing.Point(10, 28);
+            this.lblLevering.Name = "lblLevering";
+            this.lblLevering.Size = new System.Drawing.Size(91, 17);
+            this.lblLevering.TabIndex = 6;
+            this.lblLevering.Text = "Delivery date";
+            // 
             // cbType
             // 
             this.cbType.FormattingEnabled = true;
@@ -269,42 +305,6 @@
             this.viewHelpToolStripMenuItem.Name = "viewHelpToolStripMenuItem";
             this.viewHelpToolStripMenuItem.Size = new System.Drawing.Size(149, 26);
             this.viewHelpToolStripMenuItem.Text = "View help";
-            // 
-            // lblLevering
-            // 
-            this.lblLevering.AutoSize = true;
-            this.lblLevering.Location = new System.Drawing.Point(10, 28);
-            this.lblLevering.Name = "lblLevering";
-            this.lblLevering.Size = new System.Drawing.Size(98, 17);
-            this.lblLevering.TabIndex = 6;
-            this.lblLevering.Text = "Leveringsdato";
-            // 
-            // lblAfhentning
-            // 
-            this.lblAfhentning.AutoSize = true;
-            this.lblAfhentning.Location = new System.Drawing.Point(194, 28);
-            this.lblAfhentning.Name = "lblAfhentning";
-            this.lblAfhentning.Size = new System.Drawing.Size(111, 17);
-            this.lblAfhentning.TabIndex = 29;
-            this.lblAfhentning.Text = "Afhentningsdato";
-            // 
-            // lblModelNavn
-            // 
-            this.lblModelNavn.AutoSize = true;
-            this.lblModelNavn.Location = new System.Drawing.Point(359, 28);
-            this.lblModelNavn.Name = "lblModelNavn";
-            this.lblModelNavn.Size = new System.Drawing.Size(77, 17);
-            this.lblModelNavn.TabIndex = 30;
-            this.lblModelNavn.Text = "Modelnavn";
-            // 
-            // lblDemoNummer
-            // 
-            this.lblDemoNummer.AutoSize = true;
-            this.lblDemoNummer.Location = new System.Drawing.Point(453, 28);
-            this.lblDemoNummer.Name = "lblDemoNummer";
-            this.lblDemoNummer.Size = new System.Drawing.Size(96, 17);
-            this.lblDemoNummer.TabIndex = 31;
-            this.lblDemoNummer.Text = "Demonummer";
             // 
             // BookingsOverview
             // 

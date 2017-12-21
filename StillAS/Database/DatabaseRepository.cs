@@ -144,7 +144,7 @@ namespace Database
         public void CreateMachine(string DemoNumber, string ModelName, string ModelNumber, string Brand, string CNumber,
             string MastType, int MastBuildingHeight, int MastLiftHeight, int MastFreeLift, string AggregatType,
             string AggregatNumber, string BatteryType, string BatteryNumber, string ChargerType, string ChargerNumber,
-            string Controller, decimal Weight, decimal Height, decimal Length, decimal Width, List<string> configurationsList) // indsæt konfigurationer og maskinekonfiguration
+            string Controller, decimal Weight, decimal Height, decimal Length, decimal Width, List<string> configurationsList)
         {
             var Machine = new Maskine { DemoNummer = DemoNumber, ModelName = ModelName, Type = ModelNumber, Fabrikant = Brand, Chassisnummer = CNumber,
                 MastType = MastType, MastByggeHøjde = MastBuildingHeight, MastLøfteHøjde = MastLiftHeight, MastFriLøft = MastFreeLift,
@@ -307,7 +307,6 @@ namespace Database
             var bookings = meContext.Bookings;
             foreach (Booking b in bookings)
             {
-                // Hent alle bookingID'er hvor kundens adresse = adress
                 if (b.Kunde.Adresse == Address)
                 {
                     status.Add(b.Status.ToString());
@@ -362,7 +361,7 @@ namespace Database
             }
             conn.Close();
             return Validation;
-        } //Subject to Change
+        }
         public void SetBookingID(int ID)
         {
             BookingID = ID;
@@ -484,60 +483,13 @@ namespace Database
         public string GetConfigurations(string demoNr)
         {
             string configurations = "";
-
-            // For hver maskinekonfiguration hvor demonummer = demoNr
-            
-
-            
-
-            //MaskineKonfiguration machineConfigurations = new MaskineKonfiguration();
-
-            //machineConfigurations = meContext.MaskineKonfigurations.Find(demoNr);
-
-            //configurations = machineConfigurations.Konfiguration;
-
             return configurations;
 
-            //Kode efter Lazy Loading:
-
-            //List<string> configurationsList = new List<string>();
-            //var machines = meContext.Maskines;
-
-            //foreach (Maskine m in machines)
-            //{
-            //    foreach (MaskineKonfiguration mk in m.MaskineKonfigurations)
-            //    {
-            //        if (m.DemoNummer == demoNr)
-            //        {
-            //            configurationsList.Add(mk.Konfiguration);
-            //        }
-            //    }
-            //}
-
-         //   return configurationsList;
         }
-
-        // DETTE ER UDKOMMENRERET AF LEA, FORDI VI ÆNDREDE I DATABASEN, SÅ DET SKAL HEDDE MASKINEKONFIGURATIONS
-        // ISTEDET FOR KONFIGURATIONS
-
-        //public List<string> GetAllConfigurations()
-        //{
-        //    List<string> configurationsList = new List<string>();
-        //    var configuration = meContext.MaskineKonfigurations;
-
-        //    foreach (MaskineKonfiguration k in configuration)
-        //    {
-        //        configurationsList.Add(k.KonfigurationsNavn);
-        //    }
-
-        //    return configurationsList;
-        //}
 
         public List<string> GetCustomer(int bookingID)
         {
             List<string> customerInfo = new List<string>();
-
-            // Hent kundeoplysninger fra databasen her:
             var booking = meContext.Bookings.Find(bookingID);
             var customer = meContext.Kundes.Find(Convert.ToInt32(booking.KundeID));
 
@@ -586,10 +538,8 @@ namespace Database
         {
             List<string> bookingInfo = new List<string>();
 
-            // Hent bookingoplysninger fra databasen her:
             var booking = meContext.Bookings.Find(bookingID);
 
-            //bookingInfo.Add(booking.Username + "");
             string dDate = booking.LeveringsDato.ToString().Substring(0, 10);
             string rDate = booking.AfhentningsDato.ToString().Substring(0, 10);
             bookingInfo.Add(dDate);
@@ -604,26 +554,11 @@ namespace Database
 
         public List<string> GetBookingID(string adress)
         {
-            //List<string> configurationsList = new List<string>();
-            //var machines = meContext.Maskines;
-
-            //foreach (Maskine m in machines)
-            //{
-            //    foreach (MaskineKonfiguration mk in m.MaskineKonfigurations)
-            //    {
-            //        if (m.DemoNummer == demoNr)
-            //        {
-            //            configurationsList.Add(mk.Konfiguration);
-            //        }
-            //    }
-            //}
-
             List<string> bookingList = new List<string>();
             var bookings = meContext.Bookings;
 
             foreach (Booking b in bookings)
             {
-                // Hent alle bookingID'er hvor kundens adresse = adress
                 if (b.Kunde.Adresse == adress)
                 {
                     bookingList.Add(b.BookingID.ToString());
@@ -635,14 +570,6 @@ namespace Database
 
         public List<string> GetMachines(int bookingID)
         {
-            //List<string> machines = new List<string>();
-
-            // Hent maskineoplysninger fra databasen her:
-            //var booking = meContext.Bookings.Find(bookingID);
-            //var bookingLinje = meContext.BookingLinjes.Find(booking);
-
-            //return machines;
-
             List<string> machinesList = new List<string>();
             var booking = meContext.Bookings;
 
@@ -659,55 +586,8 @@ namespace Database
 
             return machinesList;
         }
-        //public int GetCustomerID(int bookingID)
-        //{
-        //    var booking = meContext.Bookings.Find(bookingID);
-        //    var customer = meContext.Kundes.Find(Convert.ToInt32(booking.KundeID));
-
-        //    return customer.KundeID;
-        //}
-
-        //public List<List<string>> GetAllBookings()
-        //{
-        //    var booking = meContext.Bookings;
-        //    var bookingLine = meContext.BookingLinjes;
-        //    var machine = meContext.Maskines;
-
-        //    List<List<string>> bookings = new List<List<string>>();
-        //    //List<string> data = new List<string>();
-
-        //    foreach (BookingLinje bl in bookingLine)
-        //    {
-        //        //BookingData bd = new BookingData();
-        //        List<string> data = new List<string>();
-        //        //bd.deliveryDate = bl.Booking.LeveringsDato.ToString();
-        //        //bd.retrivalDate = bl.Booking.AfhentningsDato.ToString();
-        //        //bd.modelName = bl.Maskine.ModelName;
-        //        //bd.modelNumber = bl.Maskine.Type;
-        //        //bd.demoNumber = bl.DemoNummer;
-
-        //        data[0] = bl.Booking.LeveringsDato.ToString();
-        //        data[1] = bl.Booking.AfhentningsDato.ToString();
-        //        data[2] = bl.Maskine.ModelName;
-        //        data[3] = bl.Maskine.Type;
-        //        data[4] = bl.DemoNummer;
-
-        //        bookings.Add(data);
-        //    }
-
-        //    return bookings;
-        //}
-
         public DataTable GetAllBookings()
         {
-            //SqlDataAdapter da = new SqlDataAdapter("select * from Booking", GetConnection());
-
-            //DataSet ds = new DataSet();
-            //da.Fill(ds);
-
-            //return ds;
-
-
 
             DataTable dtBookings = new DataTable();
 
@@ -987,7 +867,6 @@ namespace Database
             conn.Close();
             return demonumber;
         }
-        // Edit Machines
         public void UpdatedInformation(string newDemoNumber, string ModelName, string ModelNumber, string Brand, string CNumber,
             string MastType, int MastBuildingHeight, int MastLiftHeight, int MastFreeLift, string AggregatType,
             string AggregatNumber, string BatteryType, string BatteryNumber, string ChargerType, string ChargerNumber,
@@ -1045,15 +924,14 @@ namespace Database
             {
             }
         }
-        // Edit Bookings
-
+        
         public void UpdateBooking(string name1, string name2, string att, string address, string zipCode,
             string city, string phone, string country, string salesRep, string deliveryDate, string retrievalDate, string carrier,
             string messageToWorkshop, string deliveryNote, string loadingPlatform, int bookingIDs)
         {
                 conn = new SqlConnection(GetConnection());
                 conn.Open();
-                var booking = meContext.Bookings.Find(bookingIDs); // Lige lidt random Entity Framework
+                var booking = meContext.Bookings.Find(bookingIDs);
                 var customer = meContext.Kundes.Find(Convert.ToInt32(booking.KundeID));
 
                 CustomerID = customer.KundeID;
@@ -1096,7 +974,6 @@ namespace Database
     
             conn.Close();
         }
-        // ADD MODELNAME på Machines forside
         public void AddModelName(string modelname)
         {
             conn = new SqlConnection(GetConnection());
@@ -1137,7 +1014,7 @@ namespace Database
             conn.Open();
             try
             {
-                string selectUsers = "select * from Sælger"; // Kommando alt afhænging af, hvad man vil.
+                string selectUsers = "select * from Sælger";
                 SqlDataAdapter sda = new SqlDataAdapter(selectUsers, conn);
                 sda.Fill(dat);
             }
@@ -1174,7 +1051,7 @@ namespace Database
             conn.Open();
             try
             {
-                string selectUsers = "select * from Sælger"; // Kommando alt afhænging af, hvad man vil.
+                string selectUsers = "select * from Sælger"; 
                 SqlCommand com = new SqlCommand(@selectUsers, conn);
                 using (SqlDataReader reader = com.ExecuteReader())
                 {
@@ -1201,7 +1078,7 @@ namespace Database
             conn.Open();
             try
             {
-                string selectUser = "select Navn from Booking where BookingID = " + bookingID; // Kommando alt afhænging af, hvad man vil.
+                string selectUser = "select Navn from Booking where BookingID = " + bookingID;
                 SqlCommand com = new SqlCommand(@selectUser, conn);
                 using (SqlDataReader reader = com.ExecuteReader())
                 {
@@ -1230,7 +1107,7 @@ namespace Database
             {
                 string selectUser = "select Land from Kunde k " +
                     "join booking b on k.KundeID = b.KundeID " +
-                    "where b.BookingID = " + bookingID; // Kommando alt afhænging af, hvad man vil.
+                    "where b.BookingID = " + bookingID; 
                 SqlCommand com = new SqlCommand(@selectUser, conn);
                 using (SqlDataReader reader = com.ExecuteReader())
                 {
@@ -1258,7 +1135,7 @@ namespace Database
             try
             {
                 string selectUser = "select LeveringsDato, AfhentningsDato from Booking " +
-                "where BookingID = " + bookingID; // Kommando alt afhænging af, hvad man vil.
+                "where BookingID = " + bookingID; 
                 SqlCommand com = new SqlCommand(@selectUser, conn);
                 using (SqlDataReader reader = com.ExecuteReader())
                 {

@@ -84,10 +84,7 @@ namespace StillAS
             {
                 MessageBox.Show("Connection error");
             }
-            //catch(Exception)
-            //{
-            //    MessageBox.Show("Connection error");
-            //}
+            
         }
 
         private void btnShow_Click(object sender, EventArgs e)
@@ -113,26 +110,10 @@ namespace StillAS
             {
                 MessageBox.Show("Error: Booking not found");
             }
-            //catch (Exception)
-            //{
-            //    MessageBox.Show("Connection error");
-            //}
         }
 
         private void libCustomerName_Click(object sender, EventArgs e)
         {
-            //libBookingConfigurations.Items.Clear();
-
-            //List<string> configurations = new List<string>();
-            //string machine = libBookingMachines.SelectedItem.ToString();
-
-            //configurations = CC.GetConfigurations(machine);
-
-            //foreach (string s in configurations)
-            //{
-            //    libBookingConfigurations.Items.Add(s);
-            //}
-
             try
             {
                 libCity.Items.Clear();
@@ -151,7 +132,7 @@ namespace StillAS
                     }
                     else
                     {
-                        libCity.Items.Add(s); // adresse, eller by?
+                        libCity.Items.Add(s);
                         city = s;
                     }
                 }
@@ -210,7 +191,6 @@ namespace StillAS
             catch (Exception)
             {
                 MessageBox.Show("Connection error");
-                //MessageBox.Show("Error: There is no bookings linked to this customer");
             }
             
         }

@@ -19,7 +19,6 @@ namespace StillAS
         public ShowBooking(int bookingID)
         {
             InitializeComponent();
-            // Leas lille del, der skal være der
             dtpDeliveryDate.Visible = false;
             dtpRetrievalDate.Visible = false;
             coboSalesRep.Enabled = false;
@@ -38,15 +37,12 @@ namespace StillAS
             }
             rbtnNo.Enabled = false;
             rbtnYes.Enabled = false;
-            // Vis alle kundeoplysninger:
             List<string> customers = CC.GetCustomer(bookingID);
             List<TextBox> customerTextboxes = new List<TextBox>() { txtName1, txtName2, txtATT, txtAdresss, txtZipCode, txtCity, txtPhone};
-            //string allCustomerInfoString = "";
-
+            
             int i = 0;
             foreach (string s in customers)
             {
-                //allCustomerInfoString = allCustomerInfoString + s + ", ";
                 if (s == "Denmark" || s == "Sweden")
                 {
                     coboCountry.Text = s;
@@ -58,18 +54,14 @@ namespace StillAS
                 }
             }
 
-            //MessageBox.Show("Booking ID " + bookingID + ", kundeoplysninger:" + allCustomerInfoString);
-
-            // Vis alle bookingoplysninger:      
+            
             List<string> booking = CC.GetBooking(bookingID);
             coboSalesRep.Text = CC.GetOneSalesRep(bookingID);
             List<TextBox> bookingTextboxes = new List<TextBox>() {txtDeliveryDate, txtRetrievalDate, txtCarrier, txtMessageToWorkshop, txtDeliveryNote};
-            //string allBookingInfoString = "";
-
+            
             i = 0;
             foreach (TextBox t in bookingTextboxes)
             {
-                //allBookingInfoString = allBookingInfoString + s + ", ";
                 t.Text = booking[i];
                 i++;
             }
@@ -86,28 +78,14 @@ namespace StillAS
                 rbtnYes.Checked = false;
             }
 
-            //MessageBox.Show("All booking info: " + allBookingInfoString);
-
-            // Vis alle maskiner på booking:
             List<string> machines = CC.GetMachines(bookingID);
-            //string allMachinesInBooking = "";
-
+            
             foreach (string s in machines)
             {
-                //allMachinesInBooking = allMachinesInBooking + s + ", ";
                 libBookingMachines.Items.Add(s);
             }
 
             txtConfigs.Text = CC.GetConfigs(bookingID);
-            //MessageBox.Show("All machines in booking: " + allMachinesInBooking);
-
-
-            //Vis alle konfigurationer på bookings maskiner:
-
-            // Liste af konfigurationer for hver maskine skal hentes og gøres tilgængelig her
-            // så de kan indsættes i listboxen der opdateres alt efter hvilken maskine der vælges
-
-            //MessageBox.Show("Form skal åbnes her. Så vises alt om bookingen.");
             BookingIDs = bookingID;
 
         }
@@ -116,18 +94,13 @@ namespace StillAS
         {
             try
             {
-                //  libBookingConfigurations.Items.Clear();
-
+                
                 string configurations = "";
                 string machine = libBookingMachines.SelectedItem.ToString();
 
                 configurations = CC.GetConfigurations(machine);
 
                 txtConfigs.Text = configurations;
-                //  foreach (string s in configurations)
-                //  {
-                ////      libBookingConfigurations.Items.Add(s);
-                //  }
             }
             catch (Exception)
             {

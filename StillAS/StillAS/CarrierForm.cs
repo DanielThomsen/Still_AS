@@ -23,8 +23,6 @@ namespace StillAS
         {
             libBookingID.Items.Clear();
             DateTime date = dtpStartDate.Value.Date;
-            //string datestring = date.ToString().Substring(0, 10);
-
             List<int> bookingIDList = CC.GetBookingsForCarrier(date);
 
             foreach (int i in bookingIDList)
@@ -49,8 +47,6 @@ namespace StillAS
 
         private void btnShow_Click(object sender, EventArgs e)
         {
-            //AddMachine am = new AddMachine(demonumber);
-            //am.Show();
             try
             {
                 string s = libBookingID.SelectedItem.ToString();
@@ -72,12 +68,10 @@ namespace StillAS
                             sb.Show();
                         }
 
-                        // Åben show machine-form
                        
                     }
                     catch (Exception)
                     {
-                        // Åben show booking-form
                         ShowBooking sb = new ShowBooking(bookingID);
                         sb.Show();
 

@@ -25,9 +25,7 @@ namespace StillAS
         {
             if (e.RowIndex >= 0)
             {
-                // En collection af rows, hvor Cell Click er RowIndex
                 DataGridViewRow row = this.dataUsers.Rows[e.RowIndex];
-                //populate the textbox from specific value of the coordinates of column and row.
                 txtName.Text = row.Cells[0].Value.ToString();
             }
         }
