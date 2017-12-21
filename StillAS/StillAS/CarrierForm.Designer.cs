@@ -50,9 +50,9 @@
             this.gpSelectDate.Controls.Add(this.btnShowBookings);
             this.gpSelectDate.Controls.Add(this.dtpStartDate);
             this.gpSelectDate.Location = new System.Drawing.Point(23, 25);
-            this.gpSelectDate.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.gpSelectDate.Margin = new System.Windows.Forms.Padding(2);
             this.gpSelectDate.Name = "gpSelectDate";
-            this.gpSelectDate.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.gpSelectDate.Padding = new System.Windows.Forms.Padding(2);
             this.gpSelectDate.Size = new System.Drawing.Size(482, 100);
             this.gpSelectDate.TabIndex = 0;
             this.gpSelectDate.TabStop = false;
@@ -71,7 +71,7 @@
             // btnShowBookings
             // 
             this.btnShowBookings.Location = new System.Drawing.Point(217, 58);
-            this.btnShowBookings.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnShowBookings.Margin = new System.Windows.Forms.Padding(2);
             this.btnShowBookings.Name = "btnShowBookings";
             this.btnShowBookings.Size = new System.Drawing.Size(118, 27);
             this.btnShowBookings.TabIndex = 1;
@@ -82,7 +82,7 @@
             // dtpStartDate
             // 
             this.dtpStartDate.Location = new System.Drawing.Point(17, 58);
-            this.dtpStartDate.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dtpStartDate.Margin = new System.Windows.Forms.Padding(2);
             this.dtpStartDate.Name = "dtpStartDate";
             this.dtpStartDate.Size = new System.Drawing.Size(177, 22);
             this.dtpStartDate.TabIndex = 0;
@@ -92,7 +92,7 @@
             this.libBookingID.FormattingEnabled = true;
             this.libBookingID.ItemHeight = 16;
             this.libBookingID.Location = new System.Drawing.Point(40, 170);
-            this.libBookingID.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.libBookingID.Margin = new System.Windows.Forms.Padding(2);
             this.libBookingID.Name = "libBookingID";
             this.libBookingID.Size = new System.Drawing.Size(157, 276);
             this.libBookingID.TabIndex = 1;
@@ -103,7 +103,7 @@
             this.libDemoNumber.FormattingEnabled = true;
             this.libDemoNumber.ItemHeight = 16;
             this.libDemoNumber.Location = new System.Drawing.Point(240, 170);
-            this.libDemoNumber.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.libDemoNumber.Margin = new System.Windows.Forms.Padding(2);
             this.libDemoNumber.Name = "libDemoNumber";
             this.libDemoNumber.Size = new System.Drawing.Size(157, 276);
             this.libDemoNumber.TabIndex = 2;
@@ -131,7 +131,7 @@
             // btnShow
             // 
             this.btnShow.Location = new System.Drawing.Point(440, 170);
-            this.btnShow.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnShow.Margin = new System.Windows.Forms.Padding(2);
             this.btnShow.Name = "btnShow";
             this.btnShow.Size = new System.Drawing.Size(65, 27);
             this.btnShow.TabIndex = 5;
@@ -177,7 +177,7 @@
             this.Controls.Add(this.libDemoNumber);
             this.Controls.Add(this.libBookingID);
             this.Controls.Add(this.gpSelectDate);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "CarrierForm";
             this.Text = "CarrierForm";
             this.Load += new System.EventHandler(this.CarrierForm_Load);

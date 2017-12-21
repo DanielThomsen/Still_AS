@@ -88,9 +88,9 @@
             // 
             this.btnUr.Location = new System.Drawing.Point(691, 37);
             this.btnUr.Name = "btnUr";
-            this.btnUr.Size = new System.Drawing.Size(61, 54);
+            this.btnUr.Size = new System.Drawing.Size(61, 44);
             this.btnUr.TabIndex = 4;
-            this.btnUr.Text = "Ur";
+            this.btnUr.Text = "Clock";
             this.btnUr.UseVisualStyleBackColor = true;
             this.btnUr.Click += new System.EventHandler(this.btnUr_Click);
             // 
