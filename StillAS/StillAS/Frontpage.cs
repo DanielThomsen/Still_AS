@@ -100,5 +100,12 @@ namespace StillAS
             string filename = "Hjælpedokument.pdf";
             System.Diagnostics.Process.Start(@filename);
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            this.Visible = false;
+            LoginScreen LiS = new LoginScreen();
+            LiS.Show();
+        }
     }
 }

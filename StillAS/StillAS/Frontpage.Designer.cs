@@ -36,6 +36,7 @@
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.helpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.viewHelpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.button1 = new System.Windows.Forms.Button();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -119,11 +120,22 @@
             this.viewHelpToolStripMenuItem.Size = new System.Drawing.Size(149, 26);
             this.viewHelpToolStripMenuItem.Text = "View help";
             // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(650, 401);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(102, 43);
+            this.button1.TabIndex = 29;
+            this.button1.Text = "Log ud";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
             // Frontpage
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(765, 456);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.menuStrip1);
             this.Controls.Add(this.btnUr);
             this.Controls.Add(this.btnManageUsers);
@@ -151,5 +163,6 @@
         private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.ToolStripMenuItem helpToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem viewHelpToolStripMenuItem;
+        private System.Windows.Forms.Button button1;
     }
 }
