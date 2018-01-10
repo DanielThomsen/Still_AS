@@ -398,7 +398,7 @@
             this.coboCountry.Location = new System.Drawing.Point(8, 190);
             this.coboCountry.Margin = new System.Windows.Forms.Padding(4);
             this.coboCountry.Name = "coboCountry";
-            this.coboCountry.Size = new System.Drawing.Size(137, 24);
+            this.coboCountry.Size = new System.Drawing.Size(203, 24);
             this.coboCountry.TabIndex = 7;
             // 
             // lblPhone
@@ -465,7 +465,7 @@
             this.txtCity.Location = new System.Drawing.Point(245, 142);
             this.txtCity.Margin = new System.Windows.Forms.Padding(4);
             this.txtCity.Name = "txtCity";
-            this.txtCity.Size = new System.Drawing.Size(137, 22);
+            this.txtCity.Size = new System.Drawing.Size(203, 22);
             this.txtCity.TabIndex = 6;
             // 
             // txtZipCode
@@ -473,7 +473,7 @@
             this.txtZipCode.Location = new System.Drawing.Point(8, 142);
             this.txtZipCode.Margin = new System.Windows.Forms.Padding(4);
             this.txtZipCode.Name = "txtZipCode";
-            this.txtZipCode.Size = new System.Drawing.Size(137, 22);
+            this.txtZipCode.Size = new System.Drawing.Size(203, 22);
             this.txtZipCode.TabIndex = 5;
             this.txtZipCode.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtZipCode_KeyPress);
             // 
@@ -482,7 +482,7 @@
             this.txtAdresss.Location = new System.Drawing.Point(245, 94);
             this.txtAdresss.Margin = new System.Windows.Forms.Padding(4);
             this.txtAdresss.Name = "txtAdresss";
-            this.txtAdresss.Size = new System.Drawing.Size(137, 22);
+            this.txtAdresss.Size = new System.Drawing.Size(203, 22);
             this.txtAdresss.TabIndex = 4;
             // 
             // txtATT
@@ -490,7 +490,7 @@
             this.txtATT.Location = new System.Drawing.Point(8, 94);
             this.txtATT.Margin = new System.Windows.Forms.Padding(4);
             this.txtATT.Name = "txtATT";
-            this.txtATT.Size = new System.Drawing.Size(137, 22);
+            this.txtATT.Size = new System.Drawing.Size(203, 22);
             this.txtATT.TabIndex = 3;
             // 
             // lblName2
