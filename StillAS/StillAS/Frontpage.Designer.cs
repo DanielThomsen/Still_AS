@@ -117,8 +117,9 @@
             // viewHelpToolStripMenuItem
             // 
             this.viewHelpToolStripMenuItem.Name = "viewHelpToolStripMenuItem";
-            this.viewHelpToolStripMenuItem.Size = new System.Drawing.Size(149, 26);
+            this.viewHelpToolStripMenuItem.Size = new System.Drawing.Size(181, 26);
             this.viewHelpToolStripMenuItem.Text = "View help";
+            this.viewHelpToolStripMenuItem.Click += new System.EventHandler(this.viewHelpToolStripMenuItem_Click_1);
             // 
             // button1
             // 

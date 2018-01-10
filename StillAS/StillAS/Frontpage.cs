@@ -107,5 +107,11 @@ namespace StillAS
             LoginScreen LiS = new LoginScreen();
             LiS.Show();
         }
+
+        private void viewHelpToolStripMenuItem_Click_1(object sender, EventArgs e)
+        {
+            string filename = "Hjælpedokument.pdf";
+            System.Diagnostics.Process.Start(@filename);
+        }
     }
 }
