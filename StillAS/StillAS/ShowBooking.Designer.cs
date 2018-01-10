@@ -86,7 +86,7 @@
             // 
             // btnEditBooking
             // 
-            this.btnEditBooking.Location = new System.Drawing.Point(697, 507);
+            this.btnEditBooking.Location = new System.Drawing.Point(693, 525);
             this.btnEditBooking.Margin = new System.Windows.Forms.Padding(4);
             this.btnEditBooking.Name = "btnEditBooking";
             this.btnEditBooking.Size = new System.Drawing.Size(100, 62);
@@ -97,7 +97,7 @@
             // 
             // btnBackToBooking
             // 
-            this.btnBackToBooking.Location = new System.Drawing.Point(804, 507);
+            this.btnBackToBooking.Location = new System.Drawing.Point(800, 525);
             this.btnBackToBooking.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnBackToBooking.Name = "btnBackToBooking";
             this.btnBackToBooking.Size = new System.Drawing.Size(133, 62);
@@ -125,7 +125,7 @@
             this.groupBox3.Controls.Add(this.txtCarrier);
             this.groupBox3.Controls.Add(this.txtRetrievalDate);
             this.groupBox3.Controls.Add(this.txtDeliveryDate);
-            this.groupBox3.Location = new System.Drawing.Point(16, 293);
+            this.groupBox3.Location = new System.Drawing.Point(12, 311);
             this.groupBox3.Name = "groupBox3";
             this.groupBox3.Size = new System.Drawing.Size(467, 330);
             this.groupBox3.TabIndex = 2;
@@ -297,7 +297,7 @@
             this.groupBox2.Controls.Add(this.label1);
             this.groupBox2.Controls.Add(this.lblMachines);
             this.groupBox2.Controls.Add(this.libBookingMachines);
-            this.groupBox2.Location = new System.Drawing.Point(519, 53);
+            this.groupBox2.Location = new System.Drawing.Point(515, 71);
             this.groupBox2.Margin = new System.Windows.Forms.Padding(4);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(447, 380);
@@ -349,7 +349,7 @@
             // 
             this.lblShowBooking.AutoSize = true;
             this.lblShowBooking.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
-            this.lblShowBooking.Location = new System.Drawing.Point(439, 15);
+            this.lblShowBooking.Location = new System.Drawing.Point(435, 43);
             this.lblShowBooking.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblShowBooking.Name = "lblShowBooking";
             this.lblShowBooking.Size = new System.Drawing.Size(131, 24);
@@ -374,7 +374,7 @@
             this.groupBox1.Controls.Add(this.txtName2);
             this.groupBox1.Controls.Add(this.txtName1);
             this.groupBox1.Controls.Add(this.lblName1);
-            this.groupBox1.Location = new System.Drawing.Point(16, 53);
+            this.groupBox1.Location = new System.Drawing.Point(12, 71);
             this.groupBox1.Margin = new System.Windows.Forms.Padding(4);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(467, 233);
@@ -531,7 +531,7 @@
             // 
             // btnSaveBooking
             // 
-            this.btnSaveBooking.Location = new System.Drawing.Point(803, 506);
+            this.btnSaveBooking.Location = new System.Drawing.Point(799, 524);
             this.btnSaveBooking.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnSaveBooking.Name = "btnSaveBooking";
             this.btnSaveBooking.Size = new System.Drawing.Size(133, 62);
@@ -542,7 +542,7 @@
             // 
             // btnCancel
             // 
-            this.btnCancel.Location = new System.Drawing.Point(697, 507);
+            this.btnCancel.Location = new System.Drawing.Point(693, 525);
             this.btnCancel.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(100, 62);
@@ -553,7 +553,7 @@
             // 
             // btnApprove
             // 
-            this.btnApprove.Location = new System.Drawing.Point(587, 486);
+            this.btnApprove.Location = new System.Drawing.Point(583, 504);
             this.btnApprove.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnApprove.Name = "btnApprove";
             this.btnApprove.Size = new System.Drawing.Size(119, 82);
@@ -564,7 +564,7 @@
             // 
             // btnDont
             // 
-            this.btnDont.Location = new System.Drawing.Point(763, 487);
+            this.btnDont.Location = new System.Drawing.Point(759, 505);
             this.btnDont.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnDont.Name = "btnDont";
             this.btnDont.Size = new System.Drawing.Size(119, 82);
@@ -603,7 +603,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(992, 635);
+            this.ClientSize = new System.Drawing.Size(992, 658);
             this.ControlBox = false;
             this.Controls.Add(this.menuStrip1);
             this.Controls.Add(this.btnDont);

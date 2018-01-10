@@ -39,7 +39,7 @@
             // 
             // btnUpdate
             // 
-            this.btnUpdate.Location = new System.Drawing.Point(12, 27);
+            this.btnUpdate.Location = new System.Drawing.Point(12, 39);
             this.btnUpdate.Name = "btnUpdate";
             this.btnUpdate.Size = new System.Drawing.Size(75, 30);
             this.btnUpdate.TabIndex = 0;
@@ -51,14 +51,14 @@
             // 
             this.lbBookings.FormattingEnabled = true;
             this.lbBookings.ItemHeight = 16;
-            this.lbBookings.Location = new System.Drawing.Point(12, 63);
+            this.lbBookings.Location = new System.Drawing.Point(12, 75);
             this.lbBookings.Name = "lbBookings";
             this.lbBookings.Size = new System.Drawing.Size(167, 340);
             this.lbBookings.TabIndex = 1;
             // 
             // btnShow
             // 
-            this.btnShow.Location = new System.Drawing.Point(185, 63);
+            this.btnShow.Location = new System.Drawing.Point(185, 75);
             this.btnShow.Name = "btnShow";
             this.btnShow.Size = new System.Drawing.Size(75, 38);
             this.btnShow.TabIndex = 2;
@@ -96,7 +96,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(272, 405);
+            this.ClientSize = new System.Drawing.Size(272, 430);
             this.Controls.Add(this.menuStrip1);
             this.Controls.Add(this.btnShow);
             this.Controls.Add(this.lbBookings);

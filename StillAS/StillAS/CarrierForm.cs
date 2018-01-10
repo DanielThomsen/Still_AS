@@ -102,5 +102,12 @@ namespace StillAS
             string filename = "Hjælpedokument.pdf";
             System.Diagnostics.Process.Start(@filename);
         }
+
+        private void btnBack_Click(object sender, EventArgs e)
+        {
+            this.Visible = false;
+            Frontpage f = new Frontpage();
+            f.Show();
+        }
     }
 }
