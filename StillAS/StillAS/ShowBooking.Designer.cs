@@ -193,7 +193,7 @@
             // lblDeliveryNote
             // 
             this.lblDeliveryNote.AutoSize = true;
-            this.lblDeliveryNote.Location = new System.Drawing.Point(245, 142);
+            this.lblDeliveryNote.Location = new System.Drawing.Point(248, 152);
             this.lblDeliveryNote.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblDeliveryNote.Name = "lblDeliveryNote";
             this.lblDeliveryNote.Size = new System.Drawing.Size(95, 17);
@@ -203,7 +203,7 @@
             // lblMessageToWorkshop
             // 
             this.lblMessageToWorkshop.AutoSize = true;
-            this.lblMessageToWorkshop.Location = new System.Drawing.Point(9, 142);
+            this.lblMessageToWorkshop.Location = new System.Drawing.Point(12, 152);
             this.lblMessageToWorkshop.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblMessageToWorkshop.Name = "lblMessageToWorkshop";
             this.lblMessageToWorkshop.Size = new System.Drawing.Size(149, 17);
@@ -251,7 +251,7 @@
             // 
             // txtDeliveryNote
             // 
-            this.txtDeliveryNote.Location = new System.Drawing.Point(245, 165);
+            this.txtDeliveryNote.Location = new System.Drawing.Point(248, 175);
             this.txtDeliveryNote.Margin = new System.Windows.Forms.Padding(4);
             this.txtDeliveryNote.Multiline = true;
             this.txtDeliveryNote.Name = "txtDeliveryNote";
@@ -260,7 +260,7 @@
             // 
             // txtMessageToWorkshop
             // 
-            this.txtMessageToWorkshop.Location = new System.Drawing.Point(13, 165);
+            this.txtMessageToWorkshop.Location = new System.Drawing.Point(16, 175);
             this.txtMessageToWorkshop.Margin = new System.Windows.Forms.Padding(4);
             this.txtMessageToWorkshop.Multiline = true;
             this.txtMessageToWorkshop.Name = "txtMessageToWorkshop";
