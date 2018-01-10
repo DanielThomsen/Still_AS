@@ -134,7 +134,7 @@
             // 
             // dtpRetrievalDate
             // 
-            this.dtpRetrievalDate.Location = new System.Drawing.Point(244, 118);
+            this.dtpRetrievalDate.Location = new System.Drawing.Point(246, 112);
             this.dtpRetrievalDate.Margin = new System.Windows.Forms.Padding(2);
             this.dtpRetrievalDate.Name = "dtpRetrievalDate";
             this.dtpRetrievalDate.Size = new System.Drawing.Size(182, 22);
@@ -142,7 +142,7 @@
             // 
             // dtpDeliveryDate
             // 
-            this.dtpDeliveryDate.Location = new System.Drawing.Point(11, 118);
+            this.dtpDeliveryDate.Location = new System.Drawing.Point(13, 112);
             this.dtpDeliveryDate.Margin = new System.Windows.Forms.Padding(2);
             this.dtpDeliveryDate.Name = "dtpDeliveryDate";
             this.dtpDeliveryDate.Size = new System.Drawing.Size(183, 22);
@@ -223,7 +223,7 @@
             // lblRetrievalDate
             // 
             this.lblRetrievalDate.AutoSize = true;
-            this.lblRetrievalDate.Location = new System.Drawing.Point(242, 99);
+            this.lblRetrievalDate.Location = new System.Drawing.Point(244, 93);
             this.lblRetrievalDate.Name = "lblRetrievalDate";
             this.lblRetrievalDate.Size = new System.Drawing.Size(100, 17);
             this.lblRetrievalDate.TabIndex = 8;
@@ -232,7 +232,7 @@
             // lblDeliveryDate
             // 
             this.lblDeliveryDate.AutoSize = true;
-            this.lblDeliveryDate.Location = new System.Drawing.Point(10, 99);
+            this.lblDeliveryDate.Location = new System.Drawing.Point(12, 93);
             this.lblDeliveryDate.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblDeliveryDate.Name = "lblDeliveryDate";
             this.lblDeliveryDate.Size = new System.Drawing.Size(95, 17);
@@ -277,7 +277,7 @@
             // 
             // txtRetrievalDate
             // 
-            this.txtRetrievalDate.Location = new System.Drawing.Point(244, 118);
+            this.txtRetrievalDate.Location = new System.Drawing.Point(246, 112);
             this.txtRetrievalDate.Margin = new System.Windows.Forms.Padding(2);
             this.txtRetrievalDate.Name = "txtRetrievalDate";
             this.txtRetrievalDate.Size = new System.Drawing.Size(182, 22);
@@ -285,7 +285,7 @@
             // 
             // txtDeliveryDate
             // 
-            this.txtDeliveryDate.Location = new System.Drawing.Point(12, 118);
+            this.txtDeliveryDate.Location = new System.Drawing.Point(14, 112);
             this.txtDeliveryDate.Margin = new System.Windows.Forms.Padding(2);
             this.txtDeliveryDate.Name = "txtDeliveryDate";
             this.txtDeliveryDate.Size = new System.Drawing.Size(182, 22);
