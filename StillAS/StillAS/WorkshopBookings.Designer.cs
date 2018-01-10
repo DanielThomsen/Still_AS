@@ -34,6 +34,7 @@
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.helpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.viewHelpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.btnBack = new System.Windows.Forms.Button();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -92,11 +93,21 @@
             this.viewHelpToolStripMenuItem.Size = new System.Drawing.Size(149, 26);
             this.viewHelpToolStripMenuItem.Text = "View help";
             // 
+            // btnBack
+            // 
+            this.btnBack.Location = new System.Drawing.Point(12, 423);
+            this.btnBack.Name = "btnBack";
+            this.btnBack.Size = new System.Drawing.Size(85, 23);
+            this.btnBack.TabIndex = 29;
+            this.btnBack.Text = "Back";
+            this.btnBack.UseVisualStyleBackColor = true;
+            // 
             // WorkshopBookings
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(272, 430);
+            this.ClientSize = new System.Drawing.Size(272, 458);
+            this.Controls.Add(this.btnBack);
             this.Controls.Add(this.menuStrip1);
             this.Controls.Add(this.btnShow);
             this.Controls.Add(this.lbBookings);
@@ -119,5 +130,6 @@
         private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.ToolStripMenuItem helpToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem viewHelpToolStripMenuItem;
+        private System.Windows.Forms.Button btnBack;
     }
 }
