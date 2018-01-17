@@ -384,7 +384,7 @@ namespace Database
             int Current;
             foreach (Booking X in meContext.Bookings)
             {
-                if (X.Status == "Venter")
+                if (X.Status == "Waiting")
                 {
                     Holder++;
                 }
